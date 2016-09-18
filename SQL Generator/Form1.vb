@@ -1,7 +1,7 @@
 ﻿Public Class Form1
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
-    End Sub
+
+
     'Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs) 
     'End Sub
 
