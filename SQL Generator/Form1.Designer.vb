@@ -23,108 +23,120 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.MaterialSingleLineTextField1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.MaterialFlatButton4 = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.MaterialFlatButton5 = New MaterialSkin.Controls.MaterialFlatButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MaterialSingleLineTextField1
-        '
-        Me.MaterialSingleLineTextField1.Depth = 0
-        Me.MaterialSingleLineTextField1.Hint = ""
-        Me.MaterialSingleLineTextField1.Location = New System.Drawing.Point(26, 58)
-        Me.MaterialSingleLineTextField1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.MaterialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField1.Name = "MaterialSingleLineTextField1"
-        Me.MaterialSingleLineTextField1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField1.SelectedText = ""
-        Me.MaterialSingleLineTextField1.SelectionLength = 0
-        Me.MaterialSingleLineTextField1.SelectionStart = 0
-        Me.MaterialSingleLineTextField1.Size = New System.Drawing.Size(272, 23)
-        Me.MaterialSingleLineTextField1.TabIndex = 0
-        Me.MaterialSingleLineTextField1.UseSystemPasswordChar = False
         '
         'MaterialFlatButton1
         '
         Me.MaterialFlatButton1.AutoSize = True
         Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.MaterialFlatButton1.BackColor = System.Drawing.Color.White
         Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(112, 90)
+        Me.MaterialFlatButton1.Location = New System.Drawing.Point(7, 22)
         Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
         Me.MaterialFlatButton1.Primary = False
-        Me.MaterialFlatButton1.Size = New System.Drawing.Size(84, 36)
-        Me.MaterialFlatButton1.TabIndex = 2
-        Me.MaterialFlatButton1.Text = "Add Table"
-        Me.MaterialFlatButton1.UseVisualStyleBackColor = True
+        Me.MaterialFlatButton1.Size = New System.Drawing.Size(107, 36)
+        Me.MaterialFlatButton1.TabIndex = 0
+        Me.MaterialFlatButton1.Text = "Create Table"
+        Me.MaterialFlatButton1.UseVisualStyleBackColor = False
         '
-        'TabControl1
+        'MaterialFlatButton4
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(784, 579)
-        Me.TabControl1.TabIndex = 2
+        Me.MaterialFlatButton4.AutoSize = True
+        Me.MaterialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.MaterialFlatButton4.BackColor = System.Drawing.Color.White
+        Me.MaterialFlatButton4.Depth = 0
+        Me.MaterialFlatButton4.Location = New System.Drawing.Point(239, 22)
+        Me.MaterialFlatButton4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.MaterialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialFlatButton4.Name = "MaterialFlatButton4"
+        Me.MaterialFlatButton4.Primary = False
+        Me.MaterialFlatButton4.Size = New System.Drawing.Size(92, 36)
+        Me.MaterialFlatButton4.TabIndex = 3
+        Me.MaterialFlatButton4.Text = "Drop Table"
+        Me.MaterialFlatButton4.UseVisualStyleBackColor = False
         '
-        'TabPage1
+        'MaterialFlatButton5
         '
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Font = New System.Drawing.Font("Roboto", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TabPage1.Size = New System.Drawing.Size(776, 553)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Your Tables Here"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.MaterialFlatButton5.AutoSize = True
+        Me.MaterialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.MaterialFlatButton5.BackColor = System.Drawing.Color.White
+        Me.MaterialFlatButton5.Depth = 0
+        Me.MaterialFlatButton5.Location = New System.Drawing.Point(122, 22)
+        Me.MaterialFlatButton5.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.MaterialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialFlatButton5.Name = "MaterialFlatButton5"
+        Me.MaterialFlatButton5.Primary = False
+        Me.MaterialFlatButton5.Size = New System.Drawing.Size(109, 36)
+        Me.MaterialFlatButton5.TabIndex = 4
+        Me.MaterialFlatButton5.Text = "Update Table"
+        Me.MaterialFlatButton5.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Controls.Add(Me.MaterialFlatButton1)
-        Me.GroupBox1.Controls.Add(Me.MaterialSingleLineTextField1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 6)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.GroupBox1.Controls.Add(Me.ListBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(453, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.GroupBox1.Size = New System.Drawing.Size(332, 141)
-        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.Size = New System.Drawing.Size(400, 552)
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Add Tables"
+        Me.GroupBox1.Text = "Command Sequence"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.MaterialFlatButton1)
+        Me.GroupBox2.Controls.Add(Me.MaterialFlatButton5)
+        Me.GroupBox2.Controls.Add(Me.MaterialFlatButton4)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 15)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(435, 549)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Ctions"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Items.AddRange(New Object() {"lwaf", "efk;esf", "efmlewsmf"})
+        Me.ListBox1.Location = New System.Drawing.Point(3, 16)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox1.Size = New System.Drawing.Size(394, 533)
+        Me.ListBox1.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(784, 579)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(854, 578)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.ForeColor = System.Drawing.SystemColors.Control
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Form1"
         Me.Text = "SQL Generator"
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents MaterialSingleLineTextField1 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents MaterialFlatButton4 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents MaterialFlatButton5 As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents ListBox1 As ListBox
 End Class
