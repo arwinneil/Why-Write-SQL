@@ -1,0 +1,12 @@
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\SQL Generator.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\SQL Generator.exe
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\SQL Generator.pdb
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\SQL Generator.xml
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.vbprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL_Generator.Form1.resources
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL_Generator.Resources.resources
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.vbproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.exe
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.xml
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.pdb
+c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\MaterialSkin.dll
