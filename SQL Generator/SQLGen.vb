@@ -1,14 +1,60 @@
 ﻿Public Class SQLGENHOME
+    Public NewLine As String
+    Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
 
-    Dim NewLine As String
-    Private Sub GenTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
-        NewLine = "CREATE TABLE " & NewTableField.Text & " ("
-        Sequence.Items.Add(NewLine)
-        NewTableCreate.Enabled = False 'Prevents Creating same table multiple times <DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+        Generate.Table()
+        NewTableCreate.Enabled = False 'Prevents Creating same table multiple times
+        CompleteTable.Enabled = True
 
     End Sub
 
-    Private Sub GenField(sender As Object, e As EventArgs)
+    Private Sub NewField(sender As Object, e As EventArgs) Handles AddField.Click
+        Generate.Field()
+    End Sub
+
+    Private Sub GenComplete(sender As Object, e As EventArgs) Handles CompleteTable.Click
+        Sequence.Items.Add(");")
+        Initialise.NewTable()
+        NewTablePane.Visible = False
+
+    End Sub
+
+    Private Sub Act_Create_Table_Click(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
+        Initialise.NewTable()
+
+        NewTablePane.Visible = True
+        CompleteTable.Enabled = False
+
+    End Sub
+
+End Class
+Public Class Initialise
+    Shared Sub NewTable()
+
+        SQLGENHOME.NewTableField.Text = ""
+        SQLGENHOME.FieldField.Text = ""
+        SQLGENHOME.FieldType.SelectedIndex = -1
+        SQLGENHOME.ReferenceText.Text = ""
+        SQLGENHOME.ConsType.SelectedIndex = -1
+        SQLGENHOME.ConsPositn.SelectedIndex = -1
+        SQLGENHOME.ConsBox.Text = ""
+        SQLGENHOME.NewTableCreate.Enabled = True
+        SQLGENHOME.FieldSize.Value = 0
+        SQLGENHOME.PrimCheck.Checked = False
+        SQLGENHOME.ReferenceBox.Checked = False
+        SQLGENHOME.FieldConsStat.Checked = False
+
+    End Sub
+
+End Class
+
+Public Class Generate
+    Shared Sub Table()
+        SQLGENHOME.NewLine = "CREATE TABLE " & SQLGENHOME.NewTableField.Text & " ("
+        SQLGENHOME.Sequence.Items.Add(SQLGENHOME.NewLine)
+    End Sub
+
+    Shared Sub Field()
         Dim FieldName As String
         Dim LineType As String
         Dim LineSize As String
@@ -19,7 +65,7 @@
         '                 2 - Identify Constraint  
         '                 3 - Get Name,Create Final string using Size, and check for Primary key
 
-        Select Case FieldType.Text
+        Select Case SQLGENHOME.FieldType.Text
             Case "Text"
                 LineType = "VARCHAR"
             Case "Character"
@@ -32,84 +78,70 @@
                 LineType = "BIT"
         End Select
 
-        If FieldConsStat.Checked = True Then 'Check if any constraint apply
+        If SQLGENHOME.FieldConsStat.Checked = True Then 'Check if any constraint apply
+            Constraint = SQLGENHOME.ConsBox.Text
 
-            Select Case ConsType.Text
+            Select Case SQLGENHOME.ConsType.Text
                 Case "Like" 'Case of LIKE
-                    Constraint = ConsBox.Text
 
-                    Select Case ConsPositn.Text 'Case of Position of LIKE String
+
+                    Select Case SQLGENHOME.ConsPositn.Text 'Case of Position of LIKE String
                         Case "Before Any"
                             LineConstraint = "LIKE '" & Constraint & "%" & "'"
                         Case "After Any"
                             LineConstraint = "LIKE '" & "%" & Constraint & "'"
                         Case "Between Any"
                             LineConstraint = "LIKE '" & "%" & Constraint & "%'"
-                        Case "Other / Specific"
-                            LineConstraint = "LIKE " & Constraint & "'"
+                        Case "Other/Specific"
+                            LineConstraint = "LIKE '" & Constraint & "'"
                     End Select
 
                 Case "Predefied" 'Case of Predefined 
 
-                    Dim PreDef As String() = ConsBox.Lines 'Multiline list converted to array
+                    Dim PreDef As String() = SQLGENHOME.ConsBox.Lines 'Multiline list converted to array
 
                     LineConstraint = "IN('"
 
-                    For i As Integer = 0 To ConsBox.Lines.Count - 1  'Loop creat string from array
+                    For i As Integer = 0 To SQLGENHOME.ConsBox.Lines.Count - 1  'Loop creat string from array
                         LineConstraint = LineConstraint + PreDef(i)
-                        If i < ConsBox.Lines.Count - 1 Then
+                        If i < SQLGENHOME.ConsBox.Lines.Count - 1 Then
                             LineConstraint = LineConstraint + "','"
                         Else
                             LineConstraint = LineConstraint + "')"
                         End If
                     Next
 
+                Case "Numeric/Logical/Other"
+                    LineConstraint = Constraint
+
             End Select
         End If
 
-        FieldName = FieldField.Text
-        LineSize = FieldSize.Value
+        FieldName = SQLGENHOME.FieldField.Text
+        LineSize = SQLGENHOME.FieldSize.Value
 
 
 
-        NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
-        If PrimCheck.Checked = True Then
-            NewLine = NewLine & "PRIMARY KEY "
+        SQLGENHOME.NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
+        If SQLGENHOME.PrimCheck.Checked = True Then
+            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "PRIMARY KEY "
         End If
 
-        If FieldConsStat.Checked = True Then
-            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+        If SQLGENHOME.FieldConsStat.Checked = True Then
+            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
-        If ReferenceBox.Checked = True Then
-            NewLine = NewLine & "REFERENCES " & ReferenceText.Text
+        If SQLGENHOME.ReferenceBox.Checked = True Then
+            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "REFERENCES " & SQLGENHOME.ReferenceText.Text & " ON UPDATE CASCADE "
         End If
 
-        If CascadeBox.Checked = True Then
-            NewLine = NewLine & "ON UPDATE CASCADE"
-        End If
 
-        NewLine = NewLine + ","
+        SQLGENHOME.NewLine = vbTab & SQLGENHOME.NewLine + ","
 
-
-        ' If FieldConsStat.Checked = True Then
-        '    If PrimCheck.Checked = True Then
-        ' NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK(" & LineConstraint & "),"
-        'Else
-        '   NewLine = FieldName & " " & LineType & "(" & LineSize & ") (" & LineConstraint & "),"
-        'End If
-        'Else
-        '   If PrimCheck.Checked = True Then
-        '  NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK ),"
-        'Else
-        '   NewLine = FieldName & " " & LineType & "(" & LineSize & "),"
-        'End If
-        ' End If
-
-        Sequence.Items.Add(NewLine)
+        SQLGENHOME.Sequence.Items.Add(SQLGENHOME.NewLine)
 
     End Sub
 
-
 End Class
+
 
