@@ -1,25 +1,34 @@
 ﻿Public Class SQLGENHOME
     Public NewLine As String
     Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
+        If NewTableField.Text = "" Then
+            MsgBox("Please enter table name before continuing.")
+        Else
+            Generate.Table()
+            NewTableCreate.Enabled = False 'Prevents Creating same table multiple times
+            AddField.Enabled = True
+            CompleteTable.Enabled = True
+        End If
 
-        Generate.Table()
-        NewTableCreate.Enabled = False 'Prevents Creating same table multiple times
-        CompleteTable.Enabled = True
 
     End Sub
 
     Private Sub NewField(sender As Object, e As EventArgs) Handles AddField.Click
-        Generate.Field()
+        If Approve.Field() = True Then
+            Generate.Field()
+            Initialise.NewField()
+        End If
+
     End Sub
 
-    Private Sub GenComplete(sender As Object, e As EventArgs) Handles CompleteTable.Click
+    Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CompleteTable.Click
         Sequence.Items.Add(");")
         Initialise.NewTable()
         NewTablePane.Visible = False
 
     End Sub
 
-    Private Sub Act_Create_Table_Click(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
+    Private Sub CreatTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
         Initialise.NewTable()
 
         NewTablePane.Visible = True
@@ -32,6 +41,22 @@ Public Class Initialise
     Shared Sub NewTable()
 
         SQLGENHOME.NewTableField.Text = ""
+        SQLGENHOME.FieldField.Text = ""
+        SQLGENHOME.FieldType.SelectedIndex = -1
+        SQLGENHOME.ReferenceText.Text = ""
+        SQLGENHOME.ConsType.SelectedIndex = -1
+        SQLGENHOME.ConsPositn.SelectedIndex = -1
+        SQLGENHOME.ConsBox.Text = ""
+        SQLGENHOME.NewTableCreate.Enabled = True
+        SQLGENHOME.FieldSize.Value = 0
+        SQLGENHOME.PrimCheck.Checked = False
+        SQLGENHOME.ReferenceBox.Checked = False
+        SQLGENHOME.FieldConsStat.Checked = False
+        SQLGENHOME.AddField.Enabled = False
+
+    End Sub
+    Shared Sub NewField()
+
         SQLGENHOME.FieldField.Text = ""
         SQLGENHOME.FieldType.SelectedIndex = -1
         SQLGENHOME.ReferenceText.Text = ""
@@ -144,4 +169,41 @@ Public Class Generate
 
 End Class
 
+Public Class Approve
+
+    Shared Function Field()
+        Dim Validated As Boolean
+        Validated = True
+
+        If SQLGENHOME.FieldField.Text = "" Then
+            MsgBox("Please enter field name")
+            Validated = False
+        End If
+
+        If SQLGENHOME.FieldType.SelectedIndex = -1 Then
+            MsgBox("Please select field type")
+            Validated = False
+        End If
+
+        If SQLGENHOME.ReferenceBox.Checked = True And SQLGENHOME.ReferenceText.Text = "" Then
+            MsgBox("Please Enter Reference")
+            Validated = False
+        End If
+
+        If SQLGENHOME.ConsType.Text = "Like" And SQLGENHOME.ConsPositn.SelectedIndex = -1 Then
+            MsgBox("Please select position of constraint")
+            Validated = False
+        End If
+
+        If SQLGENHOME.FieldConsStat.Checked = True And ((SQLGENHOME.ConsType.SelectedIndex = -1) Or (SQLGENHOME.ConsBox.Text = "")) Then
+            MsgBox("Please Enter constraint")
+            Validated = False
+        End If
+
+
+
+
+        Return Validated
+    End Function
+End Class
 
