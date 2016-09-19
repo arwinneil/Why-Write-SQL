@@ -4,10 +4,11 @@
     Private Sub GenTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
         NewLine = "CREATE TABLE " & NewTableField.Text & " ("
         Sequence.Items.Add(NewLine)
-        NewTableCreate.Enabled = False 'Prevents Creating same table multiple times 
+        NewTableCreate.Enabled = False 'Prevents Creating same table multiple times <DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+
     End Sub
 
-    Private Sub GenField(sender As Object, e As EventArgs) Handles AddField.Click
+    Private Sub GenField(sender As Object, e As EventArgs)
         Dim FieldName As String
         Dim LineType As String
         Dim LineSize As String
