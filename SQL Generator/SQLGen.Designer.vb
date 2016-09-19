@@ -32,6 +32,9 @@ Partial Class SQLGENHOME
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.NewTableCreate = New MaterialSkin.Controls.MaterialFlatButton()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ReferenceText = New System.Windows.Forms.TextBox()
+        Me.ReferenceBox = New System.Windows.Forms.CheckBox()
+        Me.CascadeBox = New System.Windows.Forms.CheckBox()
         Me.ConsBox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ConsPositn = New System.Windows.Forms.ComboBox()
@@ -109,7 +112,7 @@ Partial Class SQLGENHOME
         Me.GroupBox1.Controls.Add(Me.Sequence)
         Me.GroupBox1.Location = New System.Drawing.Point(523, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(400, 552)
+        Me.GroupBox1.Size = New System.Drawing.Size(500, 627)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Command Sequence"
@@ -117,11 +120,13 @@ Partial Class SQLGENHOME
         'Sequence
         '
         Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Sequence.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sequence.FormattingEnabled = True
+        Me.Sequence.ItemHeight = 15
         Me.Sequence.Location = New System.Drawing.Point(3, 16)
         Me.Sequence.Name = "Sequence"
         Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.Sequence.Size = New System.Drawing.Size(394, 533)
+        Me.Sequence.Size = New System.Drawing.Size(494, 608)
         Me.Sequence.TabIndex = 0
         '
         'GroupBox2
@@ -132,7 +137,7 @@ Partial Class SQLGENHOME
         Me.GroupBox2.Controls.Add(Me.Act_Drop)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(490, 633)
+        Me.GroupBox2.Size = New System.Drawing.Size(490, 727)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Actions"
@@ -146,7 +151,7 @@ Partial Class SQLGENHOME
         Me.GroupBox3.Controls.Add(Me.MaterialRaisedButton1)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 67)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(477, 560)
+        Me.GroupBox3.Size = New System.Drawing.Size(477, 654)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "New Table"
@@ -168,6 +173,9 @@ Partial Class SQLGENHOME
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.ReferenceText)
+        Me.GroupBox4.Controls.Add(Me.ReferenceBox)
+        Me.GroupBox4.Controls.Add(Me.CascadeBox)
         Me.GroupBox4.Controls.Add(Me.ConsBox)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.ConsPositn)
@@ -184,14 +192,43 @@ Partial Class SQLGENHOME
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Location = New System.Drawing.Point(9, 71)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(462, 434)
+        Me.GroupBox4.Size = New System.Drawing.Size(462, 528)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Fields"
         '
+        'ReferenceText
+        '
+        Me.ReferenceText.Location = New System.Drawing.Point(106, 237)
+        Me.ReferenceText.Name = "ReferenceText"
+        Me.ReferenceText.Size = New System.Drawing.Size(330, 20)
+        Me.ReferenceText.TabIndex = 17
+        '
+        'ReferenceBox
+        '
+        Me.ReferenceBox.AutoSize = True
+        Me.ReferenceBox.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.ReferenceBox.Location = New System.Drawing.Point(6, 239)
+        Me.ReferenceBox.Name = "ReferenceBox"
+        Me.ReferenceBox.Size = New System.Drawing.Size(81, 17)
+        Me.ReferenceBox.TabIndex = 16
+        Me.ReferenceBox.Text = "References"
+        Me.ReferenceBox.UseVisualStyleBackColor = True
+        '
+        'CascadeBox
+        '
+        Me.CascadeBox.AutoSize = True
+        Me.CascadeBox.ForeColor = System.Drawing.SystemColors.ActiveBorder
+        Me.CascadeBox.Location = New System.Drawing.Point(6, 198)
+        Me.CascadeBox.Name = "CascadeBox"
+        Me.CascadeBox.Size = New System.Drawing.Size(123, 17)
+        Me.CascadeBox.TabIndex = 15
+        Me.CascadeBox.Text = "On Update Cascade"
+        Me.CascadeBox.UseVisualStyleBackColor = True
+        '
         'ConsBox
         '
-        Me.ConsBox.Location = New System.Drawing.Point(6, 206)
+        Me.ConsBox.Location = New System.Drawing.Point(6, 323)
         Me.ConsBox.Multiline = True
         Me.ConsBox.Name = "ConsBox"
         Me.ConsBox.Size = New System.Drawing.Size(439, 163)
@@ -201,7 +238,7 @@ Partial Class SQLGENHOME
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label6.Location = New System.Drawing.Point(277, 139)
+        Me.Label6.Location = New System.Drawing.Point(277, 272)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(94, 13)
         Me.Label6.TabIndex = 13
@@ -213,7 +250,7 @@ Partial Class SQLGENHOME
         Me.ConsPositn.FormattingEnabled = True
         Me.ConsPositn.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.ConsPositn.Items.AddRange(New Object() {"Before Any", "After Any", "Between Any", "Other/Specific"})
-        Me.ConsPositn.Location = New System.Drawing.Point(280, 155)
+        Me.ConsPositn.Location = New System.Drawing.Point(280, 288)
         Me.ConsPositn.Name = "ConsPositn"
         Me.ConsPositn.Size = New System.Drawing.Size(156, 21)
         Me.ConsPositn.TabIndex = 12
@@ -222,7 +259,7 @@ Partial Class SQLGENHOME
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label5.Location = New System.Drawing.Point(103, 139)
+        Me.Label5.Location = New System.Drawing.Point(103, 272)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(81, 13)
         Me.Label5.TabIndex = 11
@@ -234,7 +271,7 @@ Partial Class SQLGENHOME
         Me.ConsType.FormattingEnabled = True
         Me.ConsType.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.ConsType.Items.AddRange(New Object() {"Like", "Predefied"})
-        Me.ConsType.Location = New System.Drawing.Point(106, 155)
+        Me.ConsType.Location = New System.Drawing.Point(106, 288)
         Me.ConsType.Name = "ConsType"
         Me.ConsType.Size = New System.Drawing.Size(156, 21)
         Me.ConsType.TabIndex = 10
@@ -243,7 +280,7 @@ Partial Class SQLGENHOME
         '
         Me.FieldConsStat.AutoSize = True
         Me.FieldConsStat.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.FieldConsStat.Location = New System.Drawing.Point(6, 157)
+        Me.FieldConsStat.Location = New System.Drawing.Point(6, 290)
         Me.FieldConsStat.Name = "FieldConsStat"
         Me.FieldConsStat.Size = New System.Drawing.Size(73, 17)
         Me.FieldConsStat.TabIndex = 9
@@ -255,7 +292,7 @@ Partial Class SQLGENHOME
         Me.AddField.AutoSize = True
         Me.AddField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.AddField.Depth = 0
-        Me.AddField.Location = New System.Drawing.Point(7, 378)
+        Me.AddField.Location = New System.Drawing.Point(6, 485)
         Me.AddField.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.AddField.MouseState = MaterialSkin.MouseState.HOVER
         Me.AddField.Name = "AddField"
@@ -267,16 +304,16 @@ Partial Class SQLGENHOME
         '
         'FieldSize
         '
-        Me.FieldSize.Location = New System.Drawing.Point(290, 91)
+        Me.FieldSize.Location = New System.Drawing.Point(205, 109)
         Me.FieldSize.Name = "FieldSize"
-        Me.FieldSize.Size = New System.Drawing.Size(128, 20)
+        Me.FieldSize.Size = New System.Drawing.Size(144, 20)
         Me.FieldSize.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label4.Location = New System.Drawing.Point(288, 75)
+        Me.Label4.Location = New System.Drawing.Point(202, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(27, 13)
         Me.Label4.TabIndex = 6
@@ -286,7 +323,7 @@ Partial Class SQLGENHOME
         '
         Me.PrimCheck.AutoSize = True
         Me.PrimCheck.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.PrimCheck.Location = New System.Drawing.Point(6, 94)
+        Me.PrimCheck.Location = New System.Drawing.Point(6, 153)
         Me.PrimCheck.Name = "PrimCheck"
         Me.PrimCheck.Size = New System.Drawing.Size(81, 17)
         Me.PrimCheck.TabIndex = 5
@@ -297,7 +334,7 @@ Partial Class SQLGENHOME
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label3.Location = New System.Drawing.Point(103, 76)
+        Me.Label3.Location = New System.Drawing.Point(6, 78)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
         Me.Label3.TabIndex = 4
@@ -309,7 +346,7 @@ Partial Class SQLGENHOME
         Me.FieldType.FormattingEnabled = True
         Me.FieldType.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.FieldType.Items.AddRange(New Object() {"Text", "Character", "Integer", "Small Integer", "Bit"})
-        Me.FieldType.Location = New System.Drawing.Point(106, 92)
+        Me.FieldType.Location = New System.Drawing.Point(9, 108)
         Me.FieldType.Name = "FieldType"
         Me.FieldType.Size = New System.Drawing.Size(156, 21)
         Me.FieldType.TabIndex = 3
@@ -367,7 +404,7 @@ Partial Class SQLGENHOME
         'MaterialRaisedButton1
         '
         Me.MaterialRaisedButton1.Depth = 0
-        Me.MaterialRaisedButton1.Location = New System.Drawing.Point(151, 511)
+        Me.MaterialRaisedButton1.Location = New System.Drawing.Point(164, 605)
         Me.MaterialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialRaisedButton1.Name = "MaterialRaisedButton1"
         Me.MaterialRaisedButton1.Primary = True
@@ -381,7 +418,7 @@ Partial Class SQLGENHOME
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1051, 657)
+        Me.ClientSize = New System.Drawing.Size(1035, 751)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.ForeColor = System.Drawing.SystemColors.Control
@@ -426,4 +463,7 @@ Partial Class SQLGENHOME
     Friend WithEvents ConsPositn As ComboBox
     Friend WithEvents ConsBox As TextBox
     Friend WithEvents NewTableCreate As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents CascadeBox As CheckBox
+    Friend WithEvents ReferenceText As TextBox
+    Friend WithEvents ReferenceBox As CheckBox
 End Class

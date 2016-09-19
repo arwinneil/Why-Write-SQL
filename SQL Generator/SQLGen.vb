@@ -2,7 +2,7 @@
 
     Dim NewLine As String
     Private Sub GenTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
-        NewLine = "CREATE TABLE " & NewTableField.Text & "("
+        NewLine = "CREATE TABLE " & NewTableField.Text & " ("
         Sequence.Items.Add(NewLine)
         NewTableCreate.Enabled = False 'Prevents Creating same table multiple times 
     End Sub
@@ -22,7 +22,7 @@
             Case "Text"
                 LineType = "VARCHAR"
             Case "Character"
-                LineType = "CHAr"
+                LineType = "CHAR"
             Case "Integer"
                 LineType = "INTEGER"
             Case "Small Integer"
@@ -69,22 +69,46 @@
         FieldName = FieldField.Text
         LineSize = FieldSize.Value
 
-        If FieldConsStat.Checked = True Then
-            If PrimCheck.Checked = True Then
-                NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK(" & LineConstraint & "),"
-            Else
-                NewLine = FieldName & " " & LineType & "(" & LineSize & ") (" & LineConstraint & "),"
-            End If
-        Else
-            If PrimCheck.Checked = True Then
-                NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK ),"
-            Else
-                NewLine = FieldName & " " & LineType & "(" & LineSize & "),"
-            End If
+
+
+        NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
+        If PrimCheck.Checked = True Then
+            NewLine = NewLine & "PRIMARY KEY "
         End If
+
+        If FieldConsStat.Checked = True Then
+            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+        End If
+
+        If ReferenceBox.Checked = True Then
+            NewLine = NewLine & "REFERENCES " & ReferenceText.Text
+        End If
+
+        If CascadeBox.Checked = True Then
+            NewLine = NewLine & "ON UPDATE CASCADE"
+        End If
+
+        NewLine = NewLine + ","
+
+
+        ' If FieldConsStat.Checked = True Then
+        '    If PrimCheck.Checked = True Then
+        ' NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK(" & LineConstraint & "),"
+        'Else
+        '   NewLine = FieldName & " " & LineType & "(" & LineSize & ") (" & LineConstraint & "),"
+        'End If
+        'Else
+        '   If PrimCheck.Checked = True Then
+        '  NewLine = FieldName & " " & LineType & "(" & LineSize & ") PRIMARY KEY CHECK ),"
+        'Else
+        '   NewLine = FieldName & " " & LineType & "(" & LineSize & "),"
+        'End If
+        ' End If
 
         Sequence.Items.Add(NewLine)
 
     End Sub
+
+
 End Class
 
