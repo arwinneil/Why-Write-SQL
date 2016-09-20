@@ -20,4 +20,4 @@ C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Generator.xml
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.vbprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL_Generator.Resources.resources
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.vbproj.GenerateResource.Cache
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL_Generator.SQLGENHOME.resources
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL_Generator.Home.resources

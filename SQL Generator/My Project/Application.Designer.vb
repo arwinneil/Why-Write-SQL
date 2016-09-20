@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.SQL_Generator.SQLGENHOME
+            Me.MainForm = Global.SQL_Generator.Home
         End Sub
     End Class
 End Namespace

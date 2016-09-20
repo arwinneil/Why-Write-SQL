@@ -1,4 +1,4 @@
-﻿Public Class SQLGENHOME
+﻿Public Class Home
     Public NewLine As String
     Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
         If NewTableField.Text = "" Then
@@ -40,34 +40,34 @@ End Class
 Public Class Initialise
     Shared Sub NewTable()
 
-        SQLGENHOME.NewTableField.Text = ""
-        SQLGENHOME.FieldField.Text = ""
-        SQLGENHOME.FieldType.SelectedIndex = -1
-        SQLGENHOME.ReferenceText.Text = ""
-        SQLGENHOME.ConsType.SelectedIndex = -1
-        SQLGENHOME.ConsPositn.SelectedIndex = -1
-        SQLGENHOME.ConsBox.Text = ""
-        SQLGENHOME.NewTableCreate.Enabled = True
-        SQLGENHOME.FieldSize.Value = 0
-        SQLGENHOME.PrimCheck.Checked = False
-        SQLGENHOME.ReferenceBox.Checked = False
-        SQLGENHOME.FieldConsStat.Checked = False
-        SQLGENHOME.AddField.Enabled = False
+        Home.NewTableField.Text = ""
+        Home.FieldField.Text = ""
+        Home.FieldType.SelectedIndex = -1
+        Home.ReferenceText.Text = ""
+        Home.ConsType.SelectedIndex = -1
+        Home.ConsPositn.SelectedIndex = -1
+        Home.ConsBox.Text = ""
+        Home.NewTableCreate.Enabled = True
+        Home.FieldSize.Value = 0
+        Home.PrimCheck.Checked = False
+        Home.ReferenceBox.Checked = False
+        Home.FieldConsStat.Checked = False
+        Home.AddField.Enabled = False
 
     End Sub
     Shared Sub NewField()
 
-        SQLGENHOME.FieldField.Text = ""
-        SQLGENHOME.FieldType.SelectedIndex = -1
-        SQLGENHOME.ReferenceText.Text = ""
-        SQLGENHOME.ConsType.SelectedIndex = -1
-        SQLGENHOME.ConsPositn.SelectedIndex = -1
-        SQLGENHOME.ConsBox.Text = ""
-        SQLGENHOME.NewTableCreate.Enabled = True
-        SQLGENHOME.FieldSize.Value = 0
-        SQLGENHOME.PrimCheck.Checked = False
-        SQLGENHOME.ReferenceBox.Checked = False
-        SQLGENHOME.FieldConsStat.Checked = False
+        Home.FieldField.Text = ""
+        Home.FieldType.SelectedIndex = -1
+        Home.ReferenceText.Text = ""
+        Home.ConsType.SelectedIndex = -1
+        Home.ConsPositn.SelectedIndex = -1
+        Home.ConsBox.Text = ""
+        Home.NewTableCreate.Enabled = True
+        Home.FieldSize.Value = 0
+        Home.PrimCheck.Checked = False
+        Home.ReferenceBox.Checked = False
+        Home.FieldConsStat.Checked = False
 
     End Sub
 
@@ -75,8 +75,8 @@ End Class
 
 Public Class Generate
     Shared Sub Table()
-        SQLGENHOME.NewLine = "CREATE TABLE " & SQLGENHOME.NewTableField.Text & " ("
-        SQLGENHOME.Sequence.Items.Add(SQLGENHOME.NewLine)
+        Home.NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
+        Home.Sequence.Items.Add(Home.NewLine)
     End Sub
 
     Shared Sub Field()
@@ -90,7 +90,7 @@ Public Class Generate
         '                 2 - Identify Constraint  
         '                 3 - Get Name,Create Final string using Size, and check for Primary key
 
-        Select Case SQLGENHOME.FieldType.Text
+        Select Case Home.FieldType.Text
             Case "Text"
                 LineType = "VARCHAR"
             Case "Character"
@@ -103,14 +103,14 @@ Public Class Generate
                 LineType = "BIT"
         End Select
 
-        If SQLGENHOME.FieldConsStat.Checked = True Then 'Check if any constraint apply
-            Constraint = SQLGENHOME.ConsBox.Text
+        If Home.FieldConsStat.Checked = True Then 'Check if any constraint apply
+            Constraint = Home.ConsBox.Text
 
-            Select Case SQLGENHOME.ConsType.Text
+            Select Case Home.ConsType.Text
                 Case "Like" 'Case of LIKE
 
 
-                    Select Case SQLGENHOME.ConsPositn.Text 'Case of Position of LIKE String
+                    Select Case Home.ConsPositn.Text 'Case of Position of LIKE String
                         Case "Before Any"
                             LineConstraint = "LIKE '" & Constraint & "%" & "'"
                         Case "After Any"
@@ -123,13 +123,13 @@ Public Class Generate
 
                 Case "Predefied" 'Case of Predefined 
 
-                    Dim PreDef As String() = SQLGENHOME.ConsBox.Lines 'Multiline list converted to array
+                    Dim PreDef As String() = Home.ConsBox.Lines 'Multiline list converted to array
 
                     LineConstraint = "IN('"
 
-                    For i As Integer = 0 To SQLGENHOME.ConsBox.Lines.Count - 1  'Loop creat string from array
+                    For i As Integer = 0 To Home.ConsBox.Lines.Count - 1  'Loop creat string from array
                         LineConstraint = LineConstraint + PreDef(i)
-                        If i < SQLGENHOME.ConsBox.Lines.Count - 1 Then
+                        If i < Home.ConsBox.Lines.Count - 1 Then
                             LineConstraint = LineConstraint + "','"
                         Else
                             LineConstraint = LineConstraint + "')"
@@ -142,28 +142,28 @@ Public Class Generate
             End Select
         End If
 
-        FieldName = SQLGENHOME.FieldField.Text
-        LineSize = SQLGENHOME.FieldSize.Value
+        FieldName = Home.FieldField.Text
+        LineSize = Home.FieldSize.Value
 
 
 
-        SQLGENHOME.NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
-        If SQLGENHOME.PrimCheck.Checked = True Then
-            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "PRIMARY KEY "
+        Home.NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
+        If Home.PrimCheck.Checked = True Then
+            Home.NewLine = Home.NewLine & "PRIMARY KEY "
         End If
 
-        If SQLGENHOME.FieldConsStat.Checked = True Then
-            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "CHECK (" & LineConstraint & ") "
+        If Home.FieldConsStat.Checked = True Then
+            Home.NewLine = Home.NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
-        If SQLGENHOME.ReferenceBox.Checked = True Then
-            SQLGENHOME.NewLine = SQLGENHOME.NewLine & "REFERENCES " & SQLGENHOME.ReferenceText.Text & " ON UPDATE CASCADE "
+        If Home.ReferenceBox.Checked = True Then
+            Home.NewLine = Home.NewLine & "REFERENCES " & Home.ReferenceText.Text & " ON UPDATE CASCADE "
         End If
 
 
-        SQLGENHOME.NewLine = vbTab & SQLGENHOME.NewLine + ","
+        Home.NewLine = vbTab & Home.NewLine + ","
 
-        SQLGENHOME.Sequence.Items.Add(SQLGENHOME.NewLine)
+        Home.Sequence.Items.Add(Home.NewLine)
 
     End Sub
 
@@ -175,32 +175,30 @@ Public Class Approve
         Dim Validated As Boolean
         Validated = True
 
-        If SQLGENHOME.FieldField.Text = "" Then
+        If Home.FieldField.Text = "" Then
             MsgBox("Please enter field name")
             Validated = False
         End If
 
-        If SQLGENHOME.FieldType.SelectedIndex = -1 Then
+        If Home.FieldType.SelectedIndex = -1 Then
             MsgBox("Please select field type")
             Validated = False
         End If
 
-        If SQLGENHOME.ReferenceBox.Checked = True And SQLGENHOME.ReferenceText.Text = "" Then
+        If Home.ReferenceBox.Checked = True And Home.ReferenceText.Text = "" Then
             MsgBox("Please Enter Reference")
             Validated = False
         End If
 
-        If SQLGENHOME.ConsType.Text = "Like" And SQLGENHOME.ConsPositn.SelectedIndex = -1 Then
+        If Home.ConsType.Text = "Like" And Home.ConsPositn.SelectedIndex = -1 Then
             MsgBox("Please select position of constraint")
             Validated = False
         End If
 
-        If SQLGENHOME.FieldConsStat.Checked = True And ((SQLGENHOME.ConsType.SelectedIndex = -1) Or (SQLGENHOME.ConsBox.Text = "")) Then
+        If Home.FieldConsStat.Checked = True And ((Home.ConsType.SelectedIndex = -1) Or (Home.ConsBox.Text = "")) Then
             MsgBox("Please Enter constraint")
             Validated = False
         End If
-
-
 
 
         Return Validated
