@@ -25,12 +25,13 @@
 #Region "New Table Operation"
 
 #Region "New Table Operation"
-    Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
+    Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
 
         If Approve.Table = True Then
             Generate.Table()
             UpdateUI.EnableTableControls()
         End If
+        FieldGroup.Enabled = True
 
     End Sub
     Private Sub NewField(sender As Object, e As EventArgs) Handles AddField.Click
@@ -80,7 +81,7 @@
         End If
 
     End Sub
-    Private Sub FieldConsBox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldConsBox.CheckedChanged
+    Private Sub FieldConsBox_CheckedChanged(sender As Object, e As EventArgs)
         If FieldConsBox.Checked = True Then
             ConsType.Enabled = True
             ConsList.Enabled = True
@@ -100,7 +101,7 @@
             ConsPositn.Enabled = False
         End If
     End Sub
-    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.TextChanged, FieldType.SelectedIndexChanged
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs)
 
         If Approve.DataTypeSize = "Precise" Then
             FieldSize.Enabled = False
@@ -118,9 +119,6 @@
 
         End If
     End Sub
-
-
-
 
 
 #End Region 'Handles for control dependent ofother controls
@@ -141,12 +139,12 @@ Public Class Initialise
         Home.ConsType.Enabled = False
         Home.ConsPositn.Enabled = False
         Home.ConsList.Text = ""
-        Home.NewTableCreate.Enabled = True
+        Home.CreateButton.Enabled = True
         Home.FieldSize.Value = 0
         Home.PrimCheck.Checked = False
         Home.ReferenceBox.Checked = False
         Home.FieldConsBox.Checked = False
-        Home.AddField.Enabled = False
+        ' Home.AddField.Enabled = False
 
 
     End Sub
@@ -371,7 +369,7 @@ Public Class UpdateUI
         Home.ActionGroup.Visible = False
     End Sub
     Shared Sub EnableTableControls()
-        Home.NewTableCreate.Enabled = False 'Prevents Creating same table multiple times
+        Home.CreateButton.Enabled = False 'Prevents Creating same table multiple times
         Home.AddField.Enabled = True
         Home.CompleteTable.Enabled = True
     End Sub
