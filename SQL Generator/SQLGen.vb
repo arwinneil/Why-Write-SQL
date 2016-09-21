@@ -23,6 +23,8 @@
 #End Region'Handles For the main funtions of the program
 
 #Region "New Table Operation"
+
+#Region "New Table Operation"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
 
         If Approve.Table = True Then
@@ -98,7 +100,32 @@
             ConsPositn.Enabled = False
         End If
     End Sub
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.TextChanged, FieldType.SelectedIndexChanged
+
+        If Approve.DataTypeSize = "Precise" Then
+            FieldSize.Enabled = False
+            Precision.Enabled = True
+            Scale.Enabled = True
+
+        ElseIf Approve.DataTypeSize = "NoSize" Then
+            FieldSize.Enabled = False
+            Precision.Enabled = False
+            Scale.Enabled = False
+        Else
+            FieldSize.Enabled = True
+            Precision.Enabled = False
+            Scale.Enabled = False
+
+        End If
+    End Sub
+
+
+
+
+
 #End Region 'Handles for control dependent ofother controls
+
+#End Region
 
 End Class
 Public Class Initialise
@@ -121,6 +148,7 @@ Public Class Initialise
         Home.FieldConsBox.Checked = False
         Home.AddField.Enabled = False
 
+
     End Sub
     Shared Sub NewField()
 
@@ -131,12 +159,14 @@ Public Class Initialise
         Home.ConsType.Enabled = False
         Home.ConsPositn.Enabled = False
         Home.ConsList.Text = ""
-        Home.NewTableCreate.Enabled = True
         Home.FieldSize.Value = 0
         Home.PrimCheck.Checked = False
         Home.ReferenceBox.Checked = False
         Home.FieldConsBox.Checked = False
         Home.ConsList.Enabled = False
+        Home.FieldSize.Enabled = False
+        Home.Precision.Enabled = False
+        Home.Scale.Enabled = False
         Initialise.ReferenceComponents()
 
     End Sub
@@ -174,28 +204,13 @@ Public Class Generate
         Dim LineConstraint As String
         Dim Constraint As String
 
-        'Field Generation 1 - Identify Type
-        '                 2 - Identify Constraint  
-        '                 3 - Get Name,Create Final string using Size, and check for Primary key
 
-        Select Case Home.FieldType.Text
-            Case "Text"
-                LineType = "VARCHAR"
-            Case "Character"
-                LineType = "CHAR"
-            Case "Integer"
-                LineType = "INTEGER"
-            Case "Small Integer"
-                LineType = "SMALLINTEGER"
-            Case "Bit"
-                LineType = "BIT"
-        End Select
 
         If Home.FieldConsBox.Checked = True Then 'Check if any constraint apply
             Constraint = Home.ConsList.Text
 
             Select Case Home.ConsType.Text
-                Case "Like" 'Case of LIKE
+                Case "Like"
 
 
                     Select Case Home.ConsPositn.Text 'Case of Position of LIKE String
@@ -209,7 +224,7 @@ Public Class Generate
                             LineConstraint = "LIKE '" & Constraint & "'"
                     End Select
 
-                Case "Predefied" 'Case of Predefined 
+                Case "Predefied"
 
                     Dim PreDef As String() = Home.ConsList.Lines 'Multiline list converted to array
 
@@ -235,7 +250,18 @@ Public Class Generate
 
 
 
-        Home.NewLine = FieldName & " " & LineType & "(" & LineSize & ") "
+        Home.NewLine = FieldName & " " & Home.FieldType.Text & " "
+
+        If Approve.DataTypeSize = "Precise" Then
+
+            Home.NewLine = Home.NewLine & "(" & Home.Precision.Value & "," & Home.Scale.Value & ") "
+
+        ElseIf Approve.DataTypeSize = "Integer" Then
+
+            Home.NewLine = Home.NewLine & "(" & Home.FieldSize.Value & ") "
+        End If
+
+
         If Home.PrimCheck.Checked = True Then
             Home.NewLine = Home.NewLine & "PRIMARY KEY "
         End If
@@ -319,6 +345,23 @@ Public Class Approve
         End If
         Return Approved
     End Function
+
+    Shared Function DataTypeSize()
+        Dim Size As String
+        If (Home.FieldType.Text = "NUMERIC") Or (Home.FieldType.Text = "DECIMAL") Then
+
+            Size = "Precise"
+
+        ElseIf (Home.FieldType.Text = "DATE") Or (Home.FieldType.Text = "TIME") Or (Home.FieldType.Text = "INTEGER") Or (Home.FieldType.Text = "BIT") Then
+            Size = "NoSize"
+        Else
+
+            Size = "Integer"
+
+        End If
+        Return Size
+    End Function
+
 
 
 End Class

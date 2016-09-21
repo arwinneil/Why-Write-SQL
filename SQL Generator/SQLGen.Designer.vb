@@ -32,6 +32,7 @@ Partial Class Home
         Me.PanelAction = New System.Windows.Forms.Panel()
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
         Me.CreatePanel = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.FieldConsBox = New System.Windows.Forms.CheckBox()
         Me.ConsType = New System.Windows.Forms.ComboBox()
@@ -62,6 +63,8 @@ Partial Class Home
         Me.NewTablePanel = New System.Windows.Forms.Panel()
         Me.UpdatePanel = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Scale = New System.Windows.Forms.NumericUpDown()
+        Me.Precision = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.PanelAction.SuspendLayout()
@@ -71,6 +74,8 @@ Partial Class Home
         Me.GroupBox3.SuspendLayout()
         CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.Scale, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Precision, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Act_Create_Table
@@ -202,6 +207,9 @@ Partial Class Home
         '
         'CreatePanel
         '
+        Me.CreatePanel.Controls.Add(Me.Precision)
+        Me.CreatePanel.Controls.Add(Me.Scale)
+        Me.CreatePanel.Controls.Add(Me.Label8)
         Me.CreatePanel.Controls.Add(Me.GroupBox9)
         Me.CreatePanel.Controls.Add(Me.GroupBox3)
         Me.CreatePanel.Controls.Add(Me.CompleteTable)
@@ -222,6 +230,16 @@ Partial Class Home
         Me.CreatePanel.Name = "CreatePanel"
         Me.CreatePanel.Size = New System.Drawing.Size(452, 597)
         Me.CreatePanel.TabIndex = 0
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label8.Location = New System.Drawing.Point(297, 164)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(91, 13)
+        Me.Label8.TabIndex = 60
+        Me.Label8.Text = "(Presision , Scale)"
         '
         'GroupBox9
         '
@@ -280,6 +298,7 @@ Partial Class Home
         Me.ConsList.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.ConsList.Size = New System.Drawing.Size(419, 75)
         Me.ConsList.TabIndex = 53
+        Me.ConsList.WordWrap = False
         '
         'ConsPositn
         '
@@ -404,7 +423,7 @@ Partial Class Home
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label7.Location = New System.Drawing.Point(5, 71)
+        Me.Label7.Location = New System.Drawing.Point(5, 65)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 13)
         Me.Label7.TabIndex = 56
@@ -427,16 +446,17 @@ Partial Class Home
         '
         'FieldSize
         '
-        Me.FieldSize.Location = New System.Drawing.Point(158, 185)
+        Me.FieldSize.Enabled = False
+        Me.FieldSize.Location = New System.Drawing.Point(173, 190)
         Me.FieldSize.Name = "FieldSize"
-        Me.FieldSize.Size = New System.Drawing.Size(135, 20)
+        Me.FieldSize.Size = New System.Drawing.Size(85, 20)
         Me.FieldSize.TabIndex = 46
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label4.Location = New System.Drawing.Point(155, 159)
+        Me.Label4.Location = New System.Drawing.Point(170, 164)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(27, 13)
         Me.Label4.TabIndex = 45
@@ -446,7 +466,7 @@ Partial Class Home
         '
         Me.PrimCheck.AutoSize = True
         Me.PrimCheck.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.PrimCheck.Location = New System.Drawing.Point(331, 185)
+        Me.PrimCheck.Location = New System.Drawing.Point(11, 131)
         Me.PrimCheck.Name = "PrimCheck"
         Me.PrimCheck.Size = New System.Drawing.Size(81, 17)
         Me.PrimCheck.TabIndex = 44
@@ -457,7 +477,7 @@ Partial Class Home
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label3.Location = New System.Drawing.Point(4, 159)
+        Me.Label3.Location = New System.Drawing.Point(4, 164)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 13)
         Me.Label3.TabIndex = 43
@@ -468,8 +488,8 @@ Partial Class Home
         Me.FieldType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FieldType.FormattingEnabled = True
         Me.FieldType.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.FieldType.Items.AddRange(New Object() {"Text", "Character", "Integer", "Small Integer", "Bit"})
-        Me.FieldType.Location = New System.Drawing.Point(7, 185)
+        Me.FieldType.Items.AddRange(New Object() {"CHAR", "VARCHAR", "BIT", "INTEGER", "SMALLINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DATE", "TIME"})
+        Me.FieldType.Location = New System.Drawing.Point(7, 190)
         Me.FieldType.Name = "FieldType"
         Me.FieldType.Size = New System.Drawing.Size(129, 21)
         Me.FieldType.TabIndex = 42
@@ -478,7 +498,7 @@ Partial Class Home
         '
         Me.FieldField.Depth = 0
         Me.FieldField.Hint = ""
-        Me.FieldField.Location = New System.Drawing.Point(7, 121)
+        Me.FieldField.Location = New System.Drawing.Point(7, 93)
         Me.FieldField.MouseState = MaterialSkin.MouseState.HOVER
         Me.FieldField.Name = "FieldField"
         Me.FieldField.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -493,7 +513,7 @@ Partial Class Home
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label2.Location = New System.Drawing.Point(155, 105)
+        Me.Label2.Location = New System.Drawing.Point(155, 77)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 13)
         Me.Label2.TabIndex = 40
@@ -569,6 +589,20 @@ Partial Class Home
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Actions"
         '
+        'Scale
+        '
+        Me.Scale.Location = New System.Drawing.Point(347, 190)
+        Me.Scale.Name = "Scale"
+        Me.Scale.Size = New System.Drawing.Size(41, 20)
+        Me.Scale.TabIndex = 62
+        '
+        'Precision
+        '
+        Me.Precision.Location = New System.Drawing.Point(300, 190)
+        Me.Precision.Name = "Precision"
+        Me.Precision.Size = New System.Drawing.Size(41, 20)
+        Me.Precision.TabIndex = 63
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -594,6 +628,8 @@ Partial Class Home
         CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.Scale, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Precision, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -637,4 +673,7 @@ Partial Class Home
     Friend WithEvents GroupBox9 As GroupBox
     Friend WithEvents OnDeleteAction As ComboBox
     Friend WithEvents OnUpdateAction As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Precision As NumericUpDown
+    Friend WithEvents Scale As NumericUpDown
 End Class
