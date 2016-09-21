@@ -1,6 +1,6 @@
 ﻿Public Class Home
     Public NewLine As String
-    '************    MAIN ACTIONS     *************
+#Region "Main Operations"
     Private Sub CreatTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
 
         Initialise.NewTable()
@@ -19,6 +19,10 @@
         Initialise.DeleteTable()
 
     End Sub
+
+#End Region'Handles For the main funtions of the program
+
+#Region "New Table Operation"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles NewTableCreate.Click
 
         If Approve.Table = True Then
@@ -27,8 +31,6 @@
         End If
 
     End Sub
-
-    '************   NEW TABLE ACTION HANDLES     *************
     Private Sub NewField(sender As Object, e As EventArgs) Handles AddField.Click
 
         If Approve.Field() = True Then
@@ -44,18 +46,59 @@
         UpdateUI.ClearUp()
 
     End Sub
+#End Region'Handles For the 'New Table" Operation
+    '  
+#Region "New Table Operation Dependent UI Changes"
     Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs) Handles ReferenceBox.CheckedChanged
 
         If ReferenceBox.Checked = True Then
             OnUpdateBox.Enabled = True
+            ReferenceText.Enabled = True
             OnDeleteBox.Enabled = True
         Else
             Initialise.ReferenceComponents()
         End If
 
     End Sub
+    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnUpdateBox.CheckedChanged
+        If OnUpdateBox.Checked = True Then
+            OnUpdateAction.Enabled = True
+        Else
+            OnUpdateAction.SelectedIndex = -1
+            OnUpdateAction.Enabled = False
+        End If
 
+    End Sub
+    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnDeleteBox.CheckedChanged
+        If OnDeleteBox.Checked = True Then
+            OnDeleteAction.Enabled = True
+        Else
+            OnDeleteAction.SelectedIndex = -1
+            OnDeleteAction.Enabled = False
+        End If
 
+    End Sub
+    Private Sub FieldConsBox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldConsBox.CheckedChanged
+        If FieldConsBox.Checked = True Then
+            ConsType.Enabled = True
+            ConsList.Enabled = True
+        Else
+            ConsType.SelectedIndex = -1
+            ConsType.Enabled = False
+            ConsList.Enabled = False
+            ConsList.Text = ""
+
+        End If
+    End Sub
+    Private Sub ConsType_TextChanged(sender As Object, e As EventArgs) Handles ConsType.TextChanged
+        If ConsType.Text = "Like" Then
+            ConsPositn.Enabled = True
+        Else
+            ConsPositn.SelectedIndex = -1
+            ConsPositn.Enabled = False
+        End If
+    End Sub
+#End Region 'Handles for control dependent ofother controls
 
 End Class
 Public Class Initialise
@@ -68,12 +111,14 @@ Public Class Initialise
         Home.ReferenceText.Text = ""
         Home.ConsType.SelectedIndex = -1
         Home.ConsPositn.SelectedIndex = -1
-        Home.ConsBox.Text = ""
+        Home.ConsType.Enabled = False
+        Home.ConsPositn.Enabled = False
+        Home.ConsList.Text = ""
         Home.NewTableCreate.Enabled = True
         Home.FieldSize.Value = 0
         Home.PrimCheck.Checked = False
         Home.ReferenceBox.Checked = False
-        Home.FieldConsStat.Checked = False
+        Home.FieldConsBox.Checked = False
         Home.AddField.Enabled = False
 
     End Sub
@@ -83,12 +128,15 @@ Public Class Initialise
         Home.FieldType.SelectedIndex = -1
         Home.ConsType.SelectedIndex = -1
         Home.ConsPositn.SelectedIndex = -1
-        Home.ConsBox.Text = ""
+        Home.ConsType.Enabled = False
+        Home.ConsPositn.Enabled = False
+        Home.ConsList.Text = ""
         Home.NewTableCreate.Enabled = True
         Home.FieldSize.Value = 0
         Home.PrimCheck.Checked = False
         Home.ReferenceBox.Checked = False
-        Home.FieldConsStat.Checked = False
+        Home.FieldConsBox.Checked = False
+        Home.ConsList.Enabled = False
         Initialise.ReferenceComponents()
 
     End Sub
@@ -108,6 +156,8 @@ Public Class Initialise
         Home.OnUpdateBox.Checked = False
         Home.OnDeleteBox.Checked = False
         Home.ReferenceText.Text = ""
+        Home.ReferenceText.Enabled = False
+
     End Sub
 
 End Class
@@ -141,8 +191,8 @@ Public Class Generate
                 LineType = "BIT"
         End Select
 
-        If Home.FieldConsStat.Checked = True Then 'Check if any constraint apply
-            Constraint = Home.ConsBox.Text
+        If Home.FieldConsBox.Checked = True Then 'Check if any constraint apply
+            Constraint = Home.ConsList.Text
 
             Select Case Home.ConsType.Text
                 Case "Like" 'Case of LIKE
@@ -161,13 +211,13 @@ Public Class Generate
 
                 Case "Predefied" 'Case of Predefined 
 
-                    Dim PreDef As String() = Home.ConsBox.Lines 'Multiline list converted to array
+                    Dim PreDef As String() = Home.ConsList.Lines 'Multiline list converted to array
 
                     LineConstraint = "IN('"
 
-                    For i As Integer = 0 To Home.ConsBox.Lines.Count - 1  'Loop creat string from array
+                    For i As Integer = 0 To Home.ConsList.Lines.Count - 1  'Loop creat string from array
                         LineConstraint = LineConstraint + PreDef(i)
-                        If i < Home.ConsBox.Lines.Count - 1 Then
+                        If i < Home.ConsList.Lines.Count - 1 Then
                             LineConstraint = LineConstraint + "','"
                         Else
                             LineConstraint = LineConstraint + "')"
@@ -190,7 +240,7 @@ Public Class Generate
             Home.NewLine = Home.NewLine & "PRIMARY KEY "
         End If
 
-        If Home.FieldConsStat.Checked = True Then
+        If Home.FieldConsBox.Checked = True Then
             Home.NewLine = Home.NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
@@ -240,7 +290,7 @@ Public Class Approve
             Approved = False
         End If
 
-        If Home.FieldConsStat.Checked = True And ((Home.ConsType.SelectedIndex = -1) Or (Home.ConsBox.Text = "")) Then
+        If Home.FieldConsBox.Checked = True And ((Home.ConsType.SelectedIndex = -1) Or (Home.ConsList.Text = "")) Then
             MsgBox("Please Enter constraint.")
             Approved = False
         End If

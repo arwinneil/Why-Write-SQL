@@ -33,10 +33,10 @@ Partial Class Home
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
         Me.CreatePanel = New System.Windows.Forms.Panel()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.FieldConsStat = New System.Windows.Forms.CheckBox()
+        Me.FieldConsBox = New System.Windows.Forms.CheckBox()
         Me.ConsType = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ConsBox = New System.Windows.Forms.TextBox()
+        Me.ConsList = New System.Windows.Forms.TextBox()
         Me.ConsPositn = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -225,10 +225,10 @@ Partial Class Home
         '
         'GroupBox9
         '
-        Me.GroupBox9.Controls.Add(Me.FieldConsStat)
+        Me.GroupBox9.Controls.Add(Me.FieldConsBox)
         Me.GroupBox9.Controls.Add(Me.ConsType)
         Me.GroupBox9.Controls.Add(Me.Label5)
-        Me.GroupBox9.Controls.Add(Me.ConsBox)
+        Me.GroupBox9.Controls.Add(Me.ConsList)
         Me.GroupBox9.Controls.Add(Me.ConsPositn)
         Me.GroupBox9.Controls.Add(Me.Label6)
         Me.GroupBox9.Location = New System.Drawing.Point(6, 360)
@@ -238,20 +238,21 @@ Partial Class Home
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Constraints"
         '
-        'FieldConsStat
+        'FieldConsBox
         '
-        Me.FieldConsStat.AutoSize = True
-        Me.FieldConsStat.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldConsStat.Location = New System.Drawing.Point(5, 33)
-        Me.FieldConsStat.Name = "FieldConsStat"
-        Me.FieldConsStat.Size = New System.Drawing.Size(73, 17)
-        Me.FieldConsStat.TabIndex = 48
-        Me.FieldConsStat.Text = "Constraint"
-        Me.FieldConsStat.UseVisualStyleBackColor = True
+        Me.FieldConsBox.AutoSize = True
+        Me.FieldConsBox.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FieldConsBox.Location = New System.Drawing.Point(5, 33)
+        Me.FieldConsBox.Name = "FieldConsBox"
+        Me.FieldConsBox.Size = New System.Drawing.Size(73, 17)
+        Me.FieldConsBox.TabIndex = 48
+        Me.FieldConsBox.Text = "Constraint"
+        Me.FieldConsBox.UseVisualStyleBackColor = True
         '
         'ConsType
         '
         Me.ConsType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ConsType.Enabled = False
         Me.ConsType.FormattingEnabled = True
         Me.ConsType.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.ConsType.Items.AddRange(New Object() {"Like", "Predefied", "Numeric/Logical/Other"})
@@ -270,18 +271,20 @@ Partial Class Home
         Me.Label5.TabIndex = 50
         Me.Label5.Text = "Constraint Type"
         '
-        'ConsBox
+        'ConsList
         '
-        Me.ConsBox.Location = New System.Drawing.Point(5, 72)
-        Me.ConsBox.Multiline = True
-        Me.ConsBox.Name = "ConsBox"
-        Me.ConsBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ConsBox.Size = New System.Drawing.Size(419, 75)
-        Me.ConsBox.TabIndex = 53
+        Me.ConsList.Enabled = False
+        Me.ConsList.Location = New System.Drawing.Point(5, 72)
+        Me.ConsList.Multiline = True
+        Me.ConsList.Name = "ConsList"
+        Me.ConsList.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.ConsList.Size = New System.Drawing.Size(419, 75)
+        Me.ConsList.TabIndex = 53
         '
         'ConsPositn
         '
         Me.ConsPositn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ConsPositn.Enabled = False
         Me.ConsPositn.FormattingEnabled = True
         Me.ConsPositn.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.ConsPositn.Items.AddRange(New Object() {"Before Any", "After Any", "Between Any", "Other/Specific"})
@@ -376,6 +379,7 @@ Partial Class Home
         '
         'ReferenceText
         '
+        Me.ReferenceText.Enabled = False
         Me.ReferenceText.Location = New System.Drawing.Point(93, 25)
         Me.ReferenceText.Name = "ReferenceText"
         Me.ReferenceText.Size = New System.Drawing.Size(212, 20)
@@ -481,7 +485,7 @@ Partial Class Home
         Me.FieldField.SelectedText = ""
         Me.FieldField.SelectionLength = 0
         Me.FieldField.SelectionStart = 0
-        Me.FieldField.Size = New System.Drawing.Size(366, 23)
+        Me.FieldField.Size = New System.Drawing.Size(435, 23)
         Me.FieldField.TabIndex = 41
         Me.FieldField.UseSystemPasswordChar = False
         '
@@ -608,12 +612,12 @@ Partial Class Home
     Friend WithEvents Label7 As Label
     Friend WithEvents ReferenceText As TextBox
     Friend WithEvents ReferenceBox As CheckBox
-    Friend WithEvents ConsBox As TextBox
+    Friend WithEvents ConsList As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents ConsPositn As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents ConsType As ComboBox
-    Friend WithEvents FieldConsStat As CheckBox
+    Friend WithEvents FieldConsBox As CheckBox
     Friend WithEvents AddField As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents FieldSize As NumericUpDown
     Friend WithEvents Label4 As Label
