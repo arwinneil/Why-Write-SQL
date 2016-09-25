@@ -32,17 +32,18 @@ Partial Class Home
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Create = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CheckGroup = New System.Windows.Forms.GroupBox()
-        Me.Check_Type = New System.Windows.Forms.ComboBox()
         Me.CheckBox = New System.Windows.Forms.CheckBox()
+        Me.Check_Type = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Check_String = New System.Windows.Forms.TextBox()
         Me.Check_Position = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ConstraintGroup = New System.Windows.Forms.GroupBox()
+        Me.ForCheck = New System.Windows.Forms.CheckBox()
         Me.Unique = New System.Windows.Forms.CheckBox()
         Me.NotNull = New System.Windows.Forms.CheckBox()
         Me.PrimCheck = New System.Windows.Forms.CheckBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ReferenceGroup = New System.Windows.Forms.GroupBox()
         Me.OnDeleteAction = New System.Windows.Forms.ComboBox()
         Me.OnUpdateAction = New System.Windows.Forms.ComboBox()
         Me.OnDeleteBox = New System.Windows.Forms.CheckBox()
@@ -86,8 +87,8 @@ Partial Class Home
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.CheckGroup.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.ConstraintGroup.SuspendLayout()
+        Me.ReferenceGroup.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.PrimaryGroup.SuspendLayout()
@@ -233,8 +234,8 @@ Partial Class Home
         '
         Me.Panel1.Controls.Add(Me.Create)
         Me.Panel1.Controls.Add(Me.CheckGroup)
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.GroupBox3)
+        Me.Panel1.Controls.Add(Me.ConstraintGroup)
+        Me.Panel1.Controls.Add(Me.ReferenceGroup)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 227)
         Me.Panel1.Name = "Panel1"
@@ -259,18 +260,28 @@ Partial Class Home
         '
         'CheckGroup
         '
-        Me.CheckGroup.Controls.Add(Me.Check_Type)
         Me.CheckGroup.Controls.Add(Me.CheckBox)
+        Me.CheckGroup.Controls.Add(Me.Check_Type)
         Me.CheckGroup.Controls.Add(Me.Label5)
         Me.CheckGroup.Controls.Add(Me.Check_String)
         Me.CheckGroup.Controls.Add(Me.Check_Position)
         Me.CheckGroup.Controls.Add(Me.Label6)
-        Me.CheckGroup.Location = New System.Drawing.Point(4, 109)
+        Me.CheckGroup.Location = New System.Drawing.Point(4, 118)
         Me.CheckGroup.Name = "CheckGroup"
-        Me.CheckGroup.Size = New System.Drawing.Size(442, 162)
+        Me.CheckGroup.Size = New System.Drawing.Size(442, 167)
         Me.CheckGroup.TabIndex = 2
         Me.CheckGroup.TabStop = False
         Me.CheckGroup.Text = "Check"
+        '
+        'CheckBox
+        '
+        Me.CheckBox.AutoSize = True
+        Me.CheckBox.Location = New System.Drawing.Point(13, 32)
+        Me.CheckBox.Name = "CheckBox"
+        Me.CheckBox.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox.TabIndex = 56
+        Me.CheckBox.Text = "CheckBox1"
+        Me.CheckBox.UseVisualStyleBackColor = True
         '
         'Check_Type
         '
@@ -278,27 +289,17 @@ Partial Class Home
         Me.Check_Type.Enabled = False
         Me.Check_Type.FormattingEnabled = True
         Me.Check_Type.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.Check_Type.Items.AddRange(New Object() {"Like", "Predefied", "Numeric/Logical/Other"})
-        Me.Check_Type.Location = New System.Drawing.Point(100, 31)
+        Me.Check_Type.Items.AddRange(New Object() {"None", "Like", "Predefied", "Numeric/Logical Expresion/Other"})
+        Me.Check_Type.Location = New System.Drawing.Point(69, 32)
         Me.Check_Type.Name = "Check_Type"
         Me.Check_Type.Size = New System.Drawing.Size(156, 21)
         Me.Check_Type.TabIndex = 55
-        '
-        'CheckBox
-        '
-        Me.CheckBox.AutoSize = True
-        Me.CheckBox.Location = New System.Drawing.Point(13, 31)
-        Me.CheckBox.Name = "CheckBox"
-        Me.CheckBox.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox.TabIndex = 54
-        Me.CheckBox.Text = "CheckBox1"
-        Me.CheckBox.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label5.Location = New System.Drawing.Point(106, 15)
+        Me.Label5.Location = New System.Drawing.Point(66, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
         Me.Label5.TabIndex = 50
@@ -307,7 +308,7 @@ Partial Class Home
         'Check_String
         '
         Me.Check_String.Enabled = False
-        Me.Check_String.Location = New System.Drawing.Point(6, 58)
+        Me.Check_String.Location = New System.Drawing.Point(6, 57)
         Me.Check_String.Multiline = True
         Me.Check_String.Name = "Check_String"
         Me.Check_String.ScrollBars = System.Windows.Forms.ScrollBars.Both
@@ -322,7 +323,7 @@ Partial Class Home
         Me.Check_Position.FormattingEnabled = True
         Me.Check_Position.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Check_Position.Items.AddRange(New Object() {"Before Any", "After Any", "Between Any", "Other/Specific"})
-        Me.Check_Position.Location = New System.Drawing.Point(277, 29)
+        Me.Check_Position.Location = New System.Drawing.Point(258, 32)
         Me.Check_Position.Name = "Check_Position"
         Me.Check_Position.Size = New System.Drawing.Size(156, 21)
         Me.Check_Position.TabIndex = 51
@@ -331,29 +332,41 @@ Partial Class Home
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label6.Location = New System.Drawing.Point(279, 15)
+        Me.Label6.Location = New System.Drawing.Point(255, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
         Me.Label6.TabIndex = 52
         Me.Label6.Text = "String Position"
         '
-        'GroupBox2
+        'ConstraintGroup
         '
-        Me.GroupBox2.Controls.Add(Me.Unique)
-        Me.GroupBox2.Controls.Add(Me.NotNull)
-        Me.GroupBox2.Controls.Add(Me.PrimCheck)
-        Me.GroupBox2.Location = New System.Drawing.Point(335, 3)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(108, 100)
-        Me.GroupBox2.TabIndex = 64
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Constraints"
+        Me.ConstraintGroup.Controls.Add(Me.ForCheck)
+        Me.ConstraintGroup.Controls.Add(Me.Unique)
+        Me.ConstraintGroup.Controls.Add(Me.NotNull)
+        Me.ConstraintGroup.Controls.Add(Me.PrimCheck)
+        Me.ConstraintGroup.Location = New System.Drawing.Point(335, 3)
+        Me.ConstraintGroup.Name = "ConstraintGroup"
+        Me.ConstraintGroup.Size = New System.Drawing.Size(108, 109)
+        Me.ConstraintGroup.TabIndex = 64
+        Me.ConstraintGroup.TabStop = False
+        Me.ConstraintGroup.Text = "Constraints"
+        '
+        'ForCheck
+        '
+        Me.ForCheck.AutoSize = True
+        Me.ForCheck.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.ForCheck.Location = New System.Drawing.Point(3, 42)
+        Me.ForCheck.Name = "ForCheck"
+        Me.ForCheck.Size = New System.Drawing.Size(98, 17)
+        Me.ForCheck.TabIndex = 58
+        Me.ForCheck.Text = "FOREIGN KEY"
+        Me.ForCheck.UseVisualStyleBackColor = True
         '
         'Unique
         '
         Me.Unique.AutoSize = True
         Me.Unique.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Unique.Location = New System.Drawing.Point(6, 65)
+        Me.Unique.Location = New System.Drawing.Point(3, 90)
         Me.Unique.Name = "Unique"
         Me.Unique.Size = New System.Drawing.Size(68, 17)
         Me.Unique.TabIndex = 57
@@ -364,7 +377,7 @@ Partial Class Home
         '
         Me.NotNull.AutoSize = True
         Me.NotNull.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.NotNull.Location = New System.Drawing.Point(6, 42)
+        Me.NotNull.Location = New System.Drawing.Point(3, 67)
         Me.NotNull.Name = "NotNull"
         Me.NotNull.Size = New System.Drawing.Size(80, 17)
         Me.NotNull.TabIndex = 54
@@ -375,27 +388,28 @@ Partial Class Home
         '
         Me.PrimCheck.AutoSize = True
         Me.PrimCheck.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.PrimCheck.Location = New System.Drawing.Point(6, 19)
+        Me.PrimCheck.Location = New System.Drawing.Point(3, 19)
         Me.PrimCheck.Name = "PrimCheck"
         Me.PrimCheck.Size = New System.Drawing.Size(99, 17)
         Me.PrimCheck.TabIndex = 44
         Me.PrimCheck.Text = "PRIMARY KEY"
         Me.PrimCheck.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'ReferenceGroup
         '
-        Me.GroupBox3.Controls.Add(Me.OnDeleteAction)
-        Me.GroupBox3.Controls.Add(Me.OnUpdateAction)
-        Me.GroupBox3.Controls.Add(Me.OnDeleteBox)
-        Me.GroupBox3.Controls.Add(Me.OnUpdateBox)
-        Me.GroupBox3.Controls.Add(Me.ReferenceBox)
-        Me.GroupBox3.Controls.Add(Me.ReferenceText)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(326, 100)
-        Me.GroupBox3.TabIndex = 58
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Referential"
+        Me.ReferenceGroup.Controls.Add(Me.OnDeleteAction)
+        Me.ReferenceGroup.Controls.Add(Me.OnUpdateAction)
+        Me.ReferenceGroup.Controls.Add(Me.OnDeleteBox)
+        Me.ReferenceGroup.Controls.Add(Me.OnUpdateBox)
+        Me.ReferenceGroup.Controls.Add(Me.ReferenceBox)
+        Me.ReferenceGroup.Controls.Add(Me.ReferenceText)
+        Me.ReferenceGroup.Enabled = False
+        Me.ReferenceGroup.Location = New System.Drawing.Point(3, 3)
+        Me.ReferenceGroup.Name = "ReferenceGroup"
+        Me.ReferenceGroup.Size = New System.Drawing.Size(326, 109)
+        Me.ReferenceGroup.TabIndex = 58
+        Me.ReferenceGroup.TabStop = False
+        Me.ReferenceGroup.Text = "Referential"
         '
         'OnDeleteAction
         '
@@ -404,7 +418,7 @@ Partial Class Home
         Me.OnDeleteAction.FormattingEnabled = True
         Me.OnDeleteAction.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.OnDeleteAction.Items.AddRange(New Object() {"CASCADE", "SET NULL", "SET DEFAULT", "NO ACTION"})
-        Me.OnDeleteAction.Location = New System.Drawing.Point(88, 65)
+        Me.OnDeleteAction.Location = New System.Drawing.Point(87, 82)
         Me.OnDeleteAction.Name = "OnDeleteAction"
         Me.OnDeleteAction.Size = New System.Drawing.Size(124, 21)
         Me.OnDeleteAction.TabIndex = 61
@@ -416,7 +430,7 @@ Partial Class Home
         Me.OnUpdateAction.FormattingEnabled = True
         Me.OnUpdateAction.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.OnUpdateAction.Items.AddRange(New Object() {"CASCADE", "SET NULL", "SET DEFAULT", "NO ACTION"})
-        Me.OnUpdateAction.Location = New System.Drawing.Point(88, 40)
+        Me.OnUpdateAction.Location = New System.Drawing.Point(87, 47)
         Me.OnUpdateAction.Name = "OnUpdateAction"
         Me.OnUpdateAction.Size = New System.Drawing.Size(124, 21)
         Me.OnUpdateAction.TabIndex = 60
@@ -426,7 +440,7 @@ Partial Class Home
         Me.OnDeleteBox.AutoSize = True
         Me.OnDeleteBox.Enabled = False
         Me.OnDeleteBox.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.OnDeleteBox.Location = New System.Drawing.Point(5, 69)
+        Me.OnDeleteBox.Location = New System.Drawing.Point(7, 84)
         Me.OnDeleteBox.Name = "OnDeleteBox"
         Me.OnDeleteBox.Size = New System.Drawing.Size(74, 17)
         Me.OnDeleteBox.TabIndex = 59
@@ -438,7 +452,7 @@ Partial Class Home
         Me.OnUpdateBox.AutoSize = True
         Me.OnUpdateBox.Enabled = False
         Me.OnUpdateBox.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.OnUpdateBox.Location = New System.Drawing.Point(6, 44)
+        Me.OnUpdateBox.Location = New System.Drawing.Point(7, 51)
         Me.OnUpdateBox.Name = "OnUpdateBox"
         Me.OnUpdateBox.Size = New System.Drawing.Size(78, 17)
         Me.OnUpdateBox.TabIndex = 57
@@ -459,7 +473,7 @@ Partial Class Home
         'ReferenceText
         '
         Me.ReferenceText.Enabled = False
-        Me.ReferenceText.Location = New System.Drawing.Point(88, 16)
+        Me.ReferenceText.Location = New System.Drawing.Point(87, 16)
         Me.ReferenceText.Name = "ReferenceText"
         Me.ReferenceText.Size = New System.Drawing.Size(153, 20)
         Me.ReferenceText.TabIndex = 55
@@ -854,10 +868,10 @@ Partial Class Home
         Me.Panel1.PerformLayout()
         Me.CheckGroup.ResumeLayout(False)
         Me.CheckGroup.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.ConstraintGroup.ResumeLayout(False)
+        Me.ConstraintGroup.PerformLayout()
+        Me.ReferenceGroup.ResumeLayout(False)
+        Me.ReferenceGroup.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -892,11 +906,11 @@ Partial Class Home
     Friend WithEvents Check_String As TextBox
     Friend WithEvents Check_Position As ComboBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents ConstraintGroup As GroupBox
     Friend WithEvents Unique As CheckBox
     Friend WithEvents NotNull As CheckBox
     Friend WithEvents PrimCheck As CheckBox
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents ReferenceGroup As GroupBox
     Friend WithEvents OnDeleteAction As ComboBox
     Friend WithEvents OnUpdateAction As ComboBox
     Friend WithEvents OnDeleteBox As CheckBox
@@ -914,7 +928,6 @@ Partial Class Home
     Friend WithEvents CompleteTable_Button As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Add_Field_Button As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Add_Primary_Key_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents CheckBox As CheckBox
     Friend WithEvents PrimaryKeyGroup As GroupBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel3 As Panel
@@ -936,4 +949,6 @@ Partial Class Home
     Friend WithEvents Add_Foreign_Key_Button As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Create As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Check_Type As ComboBox
+    Friend WithEvents ForCheck As CheckBox
+    Friend WithEvents CheckBox As CheckBox
 End Class

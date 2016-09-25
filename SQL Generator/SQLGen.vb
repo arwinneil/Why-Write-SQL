@@ -1,7 +1,6 @@
 ﻿Public Class Home
 
-    Public NewLine, CurrentlyDoing As String
-
+    Public CurrentlyDoing As String
 
 #Region "Main Operations"
     Private Sub CreatTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
@@ -49,9 +48,40 @@
 
     End Sub
     Private Sub Create_Click(sender As Object, e As EventArgs) Handles Create.Click
+        Select Case CurrentlyDoing
+
+            Case = "AddField"
+                If Approve.Field() = True Then
+                    If PrimCheck.Checked = True Then
+                        PrimCheck.Enabled = False
+                        Add_Primary_Key_Button.Enabled = False
+                    End If
+                    Generate.Field()
+                    Initialise.NewField()
+                End If
+
+            Case = "AddPrimaryKey"
+                Generate.PrimaryKey()
+                PrimCheck.Enabled = False
+                Add_Primary_Key_Button.Enabled = False
+
+            Case = "AddForeignKey"
+                Generate.ForeignKey()
+
+        End Select
 
     End Sub
+    Private Sub Add_Field(sender As Object, e As EventArgs) Handles Add_Field_Button.Click
+        CurrentlyDoing = "AddField"
 
+        Initialise.NewField()
+        ReferenceGroup.Enabled = True
+        FieldGroup.Visible = True
+        PrimaryGroup.Visible = False
+        ForeignKeyGroup.Visible = False
+
+
+    End Sub
 
 #End Region'Handles For the 'New Table" Operation
     '  
@@ -85,7 +115,7 @@
         End If
 
     End Sub
-    Private Sub FieldConsBox_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox.CheckedChanged
+    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox.CheckedChanged
         If CheckBox.Checked = True Then
             Check_Type.Enabled = True
             Check_String.Enabled = True
@@ -105,7 +135,7 @@
             Check_Position.Enabled = False
         End If
     End Sub
-    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs)
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.SelectedIndexChanged
 
         If Approve.DataTypeSize = "Precise" Then
             FieldSize.Enabled = False
@@ -128,30 +158,45 @@
         FieldGroup.Visible = False
         PrimaryGroup.Visible = True
         ForeignKeyGroup.Visible = False
-
+        ReferenceGroup.Enabled = False
         Initialise.Keys()
-
+        ConstraintGroup.Enabled = False
     End Sub
     Private Sub Add_Foreign_Key_Button_Click(sender As Object, e As EventArgs) Handles Add_Foreign_Key_Button.Click
         CurrentlyDoing = "AddForeignKey"
+        ReferenceGroup.Enabled = True
         FieldGroup.Visible = False
         PrimaryGroup.Visible = False
         ForeignKeyGroup.Visible = True
 
         Initialise.Keys()
-
+        ConstraintGroup.Enabled = False
     End Sub
-    Private Sub Add_Field(sender As Object, e As EventArgs) Handles Add_Field_Button.Click
-        CurrentlyDoing = "AddField"
-
-        Initialise.NewField()
-
-        FieldGroup.Visible = True
-        PrimaryGroup.Visible = False
-        ForeignKeyGroup.Visible = False
-
-
+    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs) Handles ForCheck.CheckedChanged
+        If ForCheck.Checked = True Then
+            PrimCheck.Checked = False
+            PrimCheck.Enabled = False
+            NotNull.Enabled = False
+            Unique.Enabled = False
+        Else
+            PrimCheck.Enabled = True
+            NotNull.Enabled = True
+            Unique.Enabled = True
+        End If
     End Sub
+    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs) Handles PrimCheck.CheckedChanged
+        If PrimCheck.Checked = True Then
+            ForCheck.Checked = False
+            ForCheck.Enabled = False
+            NotNull.Enabled = False
+            Unique.Enabled = False
+        Else
+            ForCheck.Enabled = True
+            NotNull.Enabled = True
+            Unique.Enabled = True
+        End If
+    End Sub
+
 
 
 
@@ -160,6 +205,7 @@
 #End Region
 
 End Class
+
 Public Class Initialise
 
 #Region "New Table Initialisers"
@@ -186,6 +232,9 @@ Public Class Initialise
         Home.FieldSize.Enabled = False
         Home.Precision.Enabled = False
         Home.Scale_.Enabled = False
+        Home.Precision.Value = 0
+        Home.Scale_.Value = 0
+
 
         Keys()
 
@@ -194,6 +243,7 @@ Public Class Initialise
         Constraints()
     End Sub
     Shared Sub ReferenceComponents()
+
         Home.OnUpdateBox.Enabled = False
         Home.OnUpdateAction.Enabled = False
         Home.OnDeleteAction.Enabled = False
@@ -221,15 +271,14 @@ Public Class Initialise
         Home.Check_String.Text = ""
         Home.CheckBox.Checked = False
     End Sub
-
     Shared Sub Constraints()
+        Home.ConstraintGroup.Enabled = True
         Home.PrimCheck.Checked = False
         Home.NotNull.Checked = False
         Home.Unique.Checked = False
     End Sub
 
 #End Region
-
 
     Shared Sub DeleteTable()
         Home.ActionGroup.Text = "Delete Table"
@@ -240,10 +289,12 @@ Public Class Initialise
 
 
 End Class
+
 Public Class Generate
     Shared Sub Table()
-        Home.NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
-        Home.Sequence.Items.Add(Home.NewLine)
+        Dim NewLine As String
+        NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
+        Home.Sequence.Items.Add(Newline)
     End Sub
     Shared Sub Field()
         Dim FieldName As String
@@ -251,46 +302,14 @@ Public Class Generate
         Dim LineSize As String
         Dim LineConstraint As String
         Dim Constraint As String
+        Dim NewLine As String
+
 
 
 
         If Home.CheckBox.Checked = True Then 'Check if any constraint apply
-            Constraint = Home.Check_String.Text
+            LineConstraint = Constraints()
 
-            Select Case Home.Check_Type.Text
-                Case "Like"
-
-
-                    Select Case Home.Check_Position.Text 'Case of Position of LIKE String
-                        Case "Before Any"
-                            LineConstraint = "LIKE '" & Constraint & "%" & "'"
-                        Case "After Any"
-                            LineConstraint = "LIKE '" & "%" & Constraint & "'"
-                        Case "Between Any"
-                            LineConstraint = "LIKE '" & "%" & Constraint & "%'"
-                        Case "Other/Specific"
-                            LineConstraint = "LIKE '" & Constraint & "'"
-                    End Select
-
-                Case "Predefied"
-
-                    Dim PreDef As String() = Home.Check_String.Lines 'Multiline list converted to array
-
-                    LineConstraint = "IN('"
-
-                    For i As Integer = 0 To Home.Check_String.Lines.Count - 1  'Loop creat string from array
-                        LineConstraint = LineConstraint + PreDef(i)
-                        If i < Home.Check_String.Lines.Count - 1 Then
-                            LineConstraint = LineConstraint + "','"
-                        Else
-                            LineConstraint = LineConstraint + "')"
-                        End If
-                    Next
-
-                Case "Numeric/Logical/Other"
-                    LineConstraint = Constraint
-
-            End Select
         End If
 
         FieldName = Home.FieldField.Text
@@ -298,56 +317,166 @@ Public Class Generate
 
 
 
-        Home.NewLine = FieldName & " " & Home.FieldType.Text & " "
+        NewLine = FieldName & " " & Home.FieldType.Text & " "
 
         If Approve.DataTypeSize = "Precise" Then
 
-            Home.NewLine = Home.NewLine & "(" & Home.Precision.Value & "," & Home.Scale_.Value & ") "
+            NewLine = NewLine & "(" & Home.Precision.Value & "," & Home.Scale_.Value & ") "
 
         ElseIf Approve.DataTypeSize = "Integer" Then
 
-            Home.NewLine = Home.NewLine & "(" & Home.FieldSize.Value & ") "
+            NewLine = NewLine & "(" & Home.FieldSize.Value & ") "
         End If
 
 
         If Home.PrimCheck.Checked = True Then
-            Home.NewLine = Home.NewLine & "PRIMARY KEY "
+            NewLine = NewLine & "PRIMARY KEY "
+        End If
+
+        If Home.ForCheck.Checked = True Then
+            NewLine = NewLine & "FOREIGN KEY "
         End If
 
         If Home.NotNull.Checked = True Then
-            Home.NewLine = Home.NewLine & "NOT NULL "
+            NewLine = NewLine & "NOT NULL "
         End If
 
         If Home.Unique.Checked = True Then
-            Home.NewLine = Home.NewLine & "UNIQUE "
+            NewLine = NewLine & "UNIQUE "
         End If
 
         If Home.CheckBox.Checked = True Then
-            Home.NewLine = Home.NewLine & "CHECK (" & LineConstraint & ") "
+            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
         If Home.ReferenceBox.Checked = True Then
-            Home.NewLine = Home.NewLine & "REFERENCES " & Home.ReferenceText.Text & " "
+            NewLine = NewLine & "REFERENCES " & Home.ReferenceText.Text & " "
 
             If Home.OnUpdateBox.Checked = True Then
-                Home.NewLine = Home.NewLine & "ON UPDATE " & Home.OnUpdateAction.Text & " "
+                NewLine = NewLine & "ON UPDATE " & Home.OnUpdateAction.Text & " "
             End If
 
             If Home.OnDeleteBox.Checked = True Then
-                Home.NewLine = Home.NewLine & "ON DELETE " & Home.OnDeleteAction.Text & " "
+                NewLine = NewLine & "ON DELETE " & Home.OnDeleteAction.Text & " "
             End If
         End If
 
 
-        Home.NewLine = vbTab & Home.NewLine + ","
+        NewLine = vbTab & NewLine + ","
 
-        Home.Sequence.Items.Add(Home.NewLine)
+        Home.Sequence.Items.Add(NewLine)
 
+    End Sub
+
+    Shared Function Constraints()
+        Dim LineConstraint As String
+        Dim Constraint As String
+
+        Constraint = Home.Check_String.Text
+
+        Select Case Home.Check_Type.Text
+            Case "Like"
+
+
+                Select Case Home.Check_Position.Text 'Case of Position of LIKE String
+                    Case "Before Any"
+                        LineConstraint = "LIKE '" & Constraint & "%" & "'"
+                    Case "After Any"
+                        LineConstraint = "LIKE '" & "%" & Constraint & "'"
+                    Case "Between Any"
+                        LineConstraint = "LIKE '" & "%" & Constraint & "%'"
+                    Case "Other/Specific"
+                        LineConstraint = "LIKE '" & Constraint & "'"
+                End Select
+
+            Case "Predefied"
+
+                Dim PreDef As String() = Home.Check_String.Lines 'Multiline list converted to array
+
+                LineConstraint = "IN('"
+
+                For i As Integer = 0 To Home.Check_String.Lines.Count - 1  'Loop creat string from array
+                    LineConstraint = LineConstraint + PreDef(i)
+                    If i < Home.Check_String.Lines.Count - 1 Then
+                        LineConstraint = LineConstraint + "','"
+                    Else
+                        LineConstraint = LineConstraint + "')"
+                    End If
+                Next
+
+            Case "Numeric/Logical/Other"
+                LineConstraint = Constraint
+
+        End Select
+
+        Return LineConstraint
+
+    End Function
+    Shared Sub PrimaryKey()
+        Dim NewLine As String
+        Dim LineConstraint As String
+
+
+        NewLine = "PRIMARY KEY ("
+
+        Dim Keys As String() = Home.PrimaryKeys.Lines 'Multiline list converted to array
+
+        For i As Integer = 0 To Home.PrimaryKeys.Lines.Count - 1  'Loop creat string from array
+
+            NewLine = NewLine + Keys(i)
+
+            If i < Home.PrimaryKeys.Lines.Count - 1 Then
+                NewLine = NewLine + ","
+            Else
+                NewLine = NewLine + ") "
+            End If
+        Next
+
+        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+            LineConstraint = Constraints()
+            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+        End If
+
+        NewLine = vbTab & NewLine + ","
+
+        Home.Sequence.Items.Add(NewLine)
+
+    End Sub
+    Shared Sub ForeignKey()
+
+        Dim NewLine As String
+        Dim LineConstraint As String
+
+        NewLine = "FOREIGN KEY ("
+
+        Dim Keys As String() = Home.ForeignKeys.Lines 'Multiline list converted to array
+
+        For i As Integer = 0 To Home.ForeignKeys.Lines.Count - 1  'Loop creat string from array
+
+            NewLine = NewLine + Keys(i)
+
+            If i < Home.ForeignKeys.Lines.Count - 1 Then
+                NewLine = NewLine + ","
+            Else
+                NewLine = NewLine + ") "
+            End If
+        Next
+
+        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+            LineConstraint = Constraints()
+            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+        End If
+
+
+        NewLine = vbTab & NewLine + ","
+
+        Home.Sequence.Items.Add(NewLine)
     End Sub
 
 
 
 End Class
+
 Public Class Approve
 
     Shared Function Field()
@@ -423,6 +552,7 @@ Public Class Approve
 
 
 End Class
+
 Public Class UpdateUI
 
     Shared Sub ClearUp()
@@ -438,7 +568,3 @@ Public Class UpdateUI
 
 End Class
 
-'If Approve.Field() = True Then
-'Generate.Field()
-'Initialise.NewField()
-'End If
