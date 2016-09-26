@@ -28,7 +28,7 @@ Partial Class Home
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.ContainerPane = New System.Windows.Forms.Panel()
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CreateActionLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Create = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CheckGroup = New System.Windows.Forms.GroupBox()
@@ -77,17 +77,26 @@ Partial Class Home
         Me.CompleteTable_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Field_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Primary_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.PrimaryKeyGroup = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.OperationsPanel = New System.Windows.Forms.Panel()
         Me.Act_Create_Table = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Act_Update = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Act_Drop = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Insert_Button = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.InsertTable = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Columns = New System.Windows.Forms.TextBox()
+        Me.Specify_CheckBox = New System.Windows.Forms.CheckBox()
+        Me.DataItemsGroup = New System.Windows.Forms.GroupBox()
+        Me.DataItems = New System.Windows.Forms.TextBox()
+        Me.UpdateTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
         Me.ActionGroup.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.CreateActionLayout.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.CheckGroup.SuspendLayout()
         Me.ConstraintGroup.SuspendLayout()
@@ -101,8 +110,12 @@ Partial Class Home
         Me.PrimaryGroup.SuspendLayout()
         Me.ForeignKeyGroup.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.PrimaryKeyGroup.SuspendLayout()
         Me.OperationsPanel.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.DataItemsGroup.SuspendLayout()
+        Me.UpdateTableLayout.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -192,8 +205,8 @@ Partial Class Home
         '
         'ActionGroup
         '
-        Me.ActionGroup.Controls.Add(Me.TableLayoutPanel2)
-        Me.ActionGroup.Controls.Add(Me.PrimaryKeyGroup)
+        Me.ActionGroup.Controls.Add(Me.UpdateTableLayout)
+        Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
         Me.ActionGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionGroup.Location = New System.Drawing.Point(0, 0)
         Me.ActionGroup.Name = "ActionGroup"
@@ -203,35 +216,35 @@ Partial Class Home
         Me.ActionGroup.Text = "Action"
         Me.ActionGroup.Visible = False
         '
-        'TableLayoutPanel2
+        'CreateActionLayout
         '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel2, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel3, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Panel4, 0, 1)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 16)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 12
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(452, 675)
-        Me.TableLayoutPanel2.TabIndex = 0
+        Me.CreateActionLayout.ColumnCount = 1
+        Me.CreateActionLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.CreateActionLayout.Controls.Add(Me.Panel1, 0, 5)
+        Me.CreateActionLayout.Controls.Add(Me.Panel2, 0, 0)
+        Me.CreateActionLayout.Controls.Add(Me.Panel3, 0, 2)
+        Me.CreateActionLayout.Controls.Add(Me.Panel4, 0, 1)
+        Me.CreateActionLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CreateActionLayout.Location = New System.Drawing.Point(3, 16)
+        Me.CreateActionLayout.Name = "CreateActionLayout"
+        Me.CreateActionLayout.RowCount = 12
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.CreateActionLayout.Size = New System.Drawing.Size(452, 675)
+        Me.CreateActionLayout.TabIndex = 0
         '
         'Panel1
         '
@@ -242,7 +255,7 @@ Partial Class Home
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 283)
         Me.Panel1.Name = "Panel1"
-        Me.TableLayoutPanel2.SetRowSpan(Me.Panel1, 6)
+        Me.CreateActionLayout.SetRowSpan(Me.Panel1, 6)
         Me.Panel1.Size = New System.Drawing.Size(446, 330)
         Me.Panel1.TabIndex = 9
         '
@@ -544,7 +557,7 @@ Partial Class Home
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(3, 115)
         Me.Panel3.Name = "Panel3"
-        Me.TableLayoutPanel2.SetRowSpan(Me.Panel3, 3)
+        Me.CreateActionLayout.SetRowSpan(Me.Panel3, 3)
         Me.Panel3.Size = New System.Drawing.Size(446, 162)
         Me.Panel3.TabIndex = 10
         '
@@ -811,28 +824,6 @@ Partial Class Home
         Me.Add_Primary_Key_Button.Text = "Add Primay Key"
         Me.Add_Primary_Key_Button.UseVisualStyleBackColor = True
         '
-        'PrimaryKeyGroup
-        '
-        Me.PrimaryKeyGroup.Controls.Add(Me.TextBox1)
-        Me.PrimaryKeyGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PrimaryKeyGroup.Location = New System.Drawing.Point(3, 16)
-        Me.PrimaryKeyGroup.Name = "PrimaryKeyGroup"
-        Me.PrimaryKeyGroup.Size = New System.Drawing.Size(452, 675)
-        Me.PrimaryKeyGroup.TabIndex = 7
-        Me.PrimaryKeyGroup.TabStop = False
-        Me.PrimaryKeyGroup.Text = "Add Primary Key"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(8, 20)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox1.Size = New System.Drawing.Size(432, 80)
-        Me.TextBox1.TabIndex = 54
-        Me.TextBox1.WordWrap = False
-        '
         'OperationsPanel
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.OperationsPanel, 4)
@@ -893,6 +884,159 @@ Partial Class Home
         Me.Act_Drop.Text = "Delete Table"
         Me.Act_Drop.UseVisualStyleBackColor = False
         '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Insert_Button)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Location = New System.Drawing.Point(3, 563)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(446, 50)
+        Me.Panel7.TabIndex = 44
+        '
+        'Insert_Button
+        '
+        Me.Insert_Button.AutoSize = True
+        Me.Insert_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Insert_Button.Depth = 0
+        Me.Insert_Button.Location = New System.Drawing.Point(10, 8)
+        Me.Insert_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Insert_Button.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Insert_Button.Name = "Insert_Button"
+        Me.Insert_Button.Primary = False
+        Me.Insert_Button.Size = New System.Drawing.Size(59, 36)
+        Me.Insert_Button.TabIndex = 39
+        Me.Insert_Button.Text = "Insert"
+        Me.Insert_Button.UseVisualStyleBackColor = True
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Controls.Add(Me.InsertTable)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(3, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(446, 50)
+        Me.Panel6.TabIndex = 0
+        '
+        'InsertTable
+        '
+        Me.InsertTable.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.InsertTable.Depth = 0
+        Me.InsertTable.Hint = ""
+        Me.InsertTable.Location = New System.Drawing.Point(10, 21)
+        Me.InsertTable.MouseState = MaterialSkin.MouseState.HOVER
+        Me.InsertTable.Name = "InsertTable"
+        Me.InsertTable.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.InsertTable.SelectedText = ""
+        Me.InsertTable.SelectionLength = 0
+        Me.InsertTable.SelectionStart = 0
+        Me.InsertTable.Size = New System.Drawing.Size(420, 23)
+        Me.InsertTable.TabIndex = 37
+        Me.InsertTable.UseSystemPasswordChar = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label7.Location = New System.Drawing.Point(161, 5)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 13)
+        Me.Label7.TabIndex = 41
+        Me.Label7.Text = "Enter Table Name"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Specify_CheckBox)
+        Me.GroupBox2.Controls.Add(Me.Columns)
+        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 59)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.UpdateTableLayout.SetRowSpan(Me.GroupBox2, 5)
+        Me.GroupBox2.Size = New System.Drawing.Size(446, 274)
+        Me.GroupBox2.TabIndex = 42
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Specify Columns"
+        '
+        'Columns
+        '
+        Me.Columns.Enabled = False
+        Me.Columns.Location = New System.Drawing.Point(9, 56)
+        Me.Columns.Multiline = True
+        Me.Columns.Name = "Columns"
+        Me.Columns.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.Columns.Size = New System.Drawing.Size(427, 207)
+        Me.Columns.TabIndex = 54
+        Me.Columns.WordWrap = False
+        '
+        'Specify_CheckBox
+        '
+        Me.Specify_CheckBox.AutoSize = True
+        Me.Specify_CheckBox.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Specify_CheckBox.Location = New System.Drawing.Point(10, 27)
+        Me.Specify_CheckBox.Name = "Specify_CheckBox"
+        Me.Specify_CheckBox.Size = New System.Drawing.Size(157, 17)
+        Me.Specify_CheckBox.TabIndex = 55
+        Me.Specify_CheckBox.Text = "Insert Into Specific Columns"
+        Me.Specify_CheckBox.UseVisualStyleBackColor = True
+        '
+        'DataItemsGroup
+        '
+        Me.DataItemsGroup.Controls.Add(Me.DataItems)
+        Me.DataItemsGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataItemsGroup.Location = New System.Drawing.Point(3, 339)
+        Me.DataItemsGroup.Name = "DataItemsGroup"
+        Me.UpdateTableLayout.SetRowSpan(Me.DataItemsGroup, 4)
+        Me.DataItemsGroup.Size = New System.Drawing.Size(446, 218)
+        Me.DataItemsGroup.TabIndex = 43
+        Me.DataItemsGroup.TabStop = False
+        Me.DataItemsGroup.Text = "Data Items"
+        '
+        'DataItems
+        '
+        Me.DataItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataItems.Location = New System.Drawing.Point(10, 19)
+        Me.DataItems.Multiline = True
+        Me.DataItems.Name = "DataItems"
+        Me.DataItems.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.DataItems.Size = New System.Drawing.Size(427, 193)
+        Me.DataItems.TabIndex = 54
+        Me.DataItems.WordWrap = False
+        '
+        'UpdateTableLayout
+        '
+        Me.UpdateTableLayout.ColumnCount = 1
+        Me.UpdateTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.UpdateTableLayout.Controls.Add(Me.DataItemsGroup, 0, 6)
+        Me.UpdateTableLayout.Controls.Add(Me.GroupBox2, 0, 1)
+        Me.UpdateTableLayout.Controls.Add(Me.Panel6, 0, 0)
+        Me.UpdateTableLayout.Controls.Add(Me.Panel7, 0, 10)
+        Me.UpdateTableLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UpdateTableLayout.Location = New System.Drawing.Point(3, 16)
+        Me.UpdateTableLayout.Name = "UpdateTableLayout"
+        Me.UpdateTableLayout.RowCount = 12
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.UpdateTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.UpdateTableLayout.Size = New System.Drawing.Size(452, 675)
+        Me.UpdateTableLayout.TabIndex = 44
+        Me.UpdateTableLayout.Visible = False
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -909,7 +1053,7 @@ Partial Class Home
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ContainerPane.ResumeLayout(False)
         Me.ActionGroup.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.CreateActionLayout.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.CheckGroup.ResumeLayout(False)
@@ -932,27 +1076,41 @@ Partial Class Home
         Me.ForeignKeyGroup.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.PrimaryKeyGroup.ResumeLayout(False)
-        Me.PrimaryKeyGroup.PerformLayout()
         Me.OperationsPanel.ResumeLayout(False)
         Me.OperationsPanel.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.DataItemsGroup.ResumeLayout(False)
+        Me.DataItemsGroup.PerformLayout()
+        Me.UpdateTableLayout.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Sequence As ListBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents OperationsPanel As Panel
+    Friend WithEvents Act_Create_Table As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Act_Update As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Act_Drop As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents ContainerPane As Panel
     Friend WithEvents ActionGroup As GroupBox
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents CreateActionLayout As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Create As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents CheckGroup As GroupBox
+    Friend WithEvents CheckBox As CheckBox
+    Friend WithEvents Check_Type As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Check_String As TextBox
     Friend WithEvents Check_Position As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents ConstraintGroup As GroupBox
+    Friend WithEvents ForCheck As CheckBox
     Friend WithEvents Unique As CheckBox
     Friend WithEvents NotNull As CheckBox
     Friend WithEvents PrimCheck As CheckBox
@@ -967,21 +1125,11 @@ Partial Class Home
     Friend WithEvents Label1 As Label
     Friend WithEvents CreateButton As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents NewTableField As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents OperationsPanel As Panel
-    Friend WithEvents Act_Create_Table As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Act_Update As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Act_Drop As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents CompleteTable_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Add_Field_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Add_Primary_Key_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents PrimaryKeyGroup As GroupBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents PrimaryGroup As GroupBox
-    Friend WithEvents PrimaryKeys As TextBox
-    Friend WithEvents ForeignKeyGroup As GroupBox
-    Friend WithEvents ForeignKeys As TextBox
     Friend WithEvents FieldGroup As GroupBox
+    Friend WithEvents Formula As CheckBox
+    Friend WithEvents DefaultValue As TextBox
+    Friend WithEvents Default_Value_Checkbox As CheckBox
     Friend WithEvents Precision As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents FieldSize As NumericUpDown
@@ -991,13 +1139,25 @@ Partial Class Home
     Friend WithEvents FieldType As ComboBox
     Friend WithEvents FieldField As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Label2 As Label
+    Friend WithEvents PrimaryGroup As GroupBox
+    Friend WithEvents PrimaryKeys As TextBox
+    Friend WithEvents ForeignKeyGroup As GroupBox
+    Friend WithEvents ForeignKeys As TextBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Add_Foreign_Key_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Create As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Check_Type As ComboBox
-    Friend WithEvents ForCheck As CheckBox
-    Friend WithEvents CheckBox As CheckBox
-    Friend WithEvents DefaultValue As TextBox
-    Friend WithEvents Default_Value_Checkbox As CheckBox
-    Friend WithEvents Formula As CheckBox
+    Friend WithEvents CompleteTable_Button As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Add_Field_Button As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Add_Primary_Key_Button As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Sequence As ListBox
+    Friend WithEvents UpdateTableLayout As TableLayoutPanel
+    Friend WithEvents DataItemsGroup As GroupBox
+    Friend WithEvents DataItems As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Specify_CheckBox As CheckBox
+    Friend WithEvents Columns As TextBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents InsertTable As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Insert_Button As MaterialSkin.Controls.MaterialFlatButton
 End Class

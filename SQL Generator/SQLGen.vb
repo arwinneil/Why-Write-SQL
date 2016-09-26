@@ -3,11 +3,11 @@
     Public CurrentlyDoing As String
 
 #Region "Main Operations"
-    Private Sub CreatTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
+    Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
 
         Initialise.NewTable()
-
         ActionGroup.Visible = True
+        CreateActionLayout.Visible = True
         CompleteTable_Button.Enabled = False
 
     End Sub
@@ -15,6 +15,7 @@
 
         UpdateUI.ClearUp()
         Initialise.TableUpdate()
+        UpdateTableLayout.Visible = True
 
     End Sub
     Private Sub DeleteTableAction(sender As Object, e As EventArgs) Handles Act_Drop.Click
@@ -26,7 +27,7 @@
 
 #Region "New Table Operation"
 
-#Region "New Table Operation"
+#Region "New Table Operation Handles"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
 
         If Approve.Table = True Then
@@ -216,11 +217,39 @@
         End If
     End Sub
 
-
-
-
-
 #End Region 'Handles for control dependent ofother controls
+
+#End Region
+
+#Region "Update Table Operation"
+
+    Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
+        Generate.InsertData()
+
+    End Sub
+
+    Private Sub Specify_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Specify_CheckBox.CheckedChanged
+        If Specify_CheckBox.Checked = True Then
+            Columns.Enabled = True
+        Else
+            Columns.Text = ""
+            DataItemsGroup.Text = "Data Values"
+            Columns.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Columns_TextChanged(sender As Object, e As EventArgs) Handles DataItems.TextChanged, Columns.TextChanged
+
+        If Specify_CheckBox.Checked = True Then
+            If DataItems.Lines.Count <= Columns.Lines.Count Then
+                DataItemsGroup.Text = "Data Items" & " ( Enter " & (Columns.Lines.Count - DataItems.Lines.Count) & " more item(s). )"
+            Else
+                DataItemsGroup.Text = "Data Items" & " ( " & (DataItems.Lines.Count - Columns.Lines.Count) & " redundent item(s). )"
+            End If
+        End If
+
+    End Sub
+
 
 #End Region
 
@@ -313,10 +342,12 @@ Public Class Initialise
 End Class
 
 Public Class Generate
+
+#Region "New Table Generators"
     Shared Sub Table()
         Dim NewLine As String
         NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
-        Home.Sequence.Items.Add(Newline)
+        Home.Sequence.Items.Add(NewLine)
     End Sub
     Shared Sub Field()
         Dim FieldName As String
@@ -416,7 +447,7 @@ Public Class Generate
                         LineConstraint = "LIKE '" & "%" & Constraint & "'"
                     Case "Between any string"
                         LineConstraint = "LIKE '" & "%" & Constraint & "%'"
-                    Case "Other/ Specific"
+                    Case "Other/Specific"
                         LineConstraint = "LIKE '" & Constraint & "'"
                 End Select
 
@@ -435,7 +466,7 @@ Public Class Generate
                     End If
                 Next
 
-            Case "Numeric/Logical/Other"
+            Case "Numeric/Logical Expresion/Other"
                 LineConstraint = Constraint
 
         End Select
@@ -504,7 +535,55 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
     End Sub
 
+#End Region
 
+#Region "Update Table Generators"
+
+    Shared Sub InsertData()
+        Dim NewLine As String
+
+        NewLine = "INSERT INTO " & Home.InsertTable.Text
+
+        If Home.Specify_CheckBox.Checked = True Then
+
+            NewLine = NewLine + "("
+
+            Dim columns As String() = Home.Columns.Lines 'Multiline list converted to array
+
+            For i As Integer = 0 To Home.Columns.Lines.Count - 1  'Loop creat string from array
+                NewLine = NewLine + columns(i)
+
+                If i < Home.Columns.Lines.Count - 1 Then
+                    NewLine = NewLine + ","
+                Else
+                    NewLine = NewLine + ") "
+                End If
+
+            Next
+        End If
+
+        Home.Sequence.Items.Add(NewLine)
+
+        NewLine = "VALUES ("
+
+        Dim DataItem As String() = Home.DataItems.Lines 'Multiline list converted to array
+
+        For i As Integer = 0 To Home.DataItems.Lines.Count - 1  'Loop creat string from array
+            NewLine = NewLine + DataItem(i)
+
+            If i < Home.DataItems.Lines.Count - 1 Then
+                NewLine = NewLine + ", "
+            Else
+                NewLine = NewLine + "); "
+            End If
+
+        Next
+
+        Home.Sequence.Items.Add(NewLine)
+
+    End Sub
+
+#End Region
 
 End Class
 
@@ -592,7 +671,9 @@ End Class
 Public Class UpdateUI
 
     Shared Sub ClearUp()
-        Home.ActionGroup.Visible = False
+        Home.CreateActionLayout.Visible = False
+        Home.ActionGroup.Text = "Welcome"
+
     End Sub
     Shared Sub EnableTableControls()
         Home.CreateButton.Enabled = False 'Prevents Creating same table multiple times
