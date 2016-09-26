@@ -38,6 +38,12 @@
         Add_Foreign_Key_Button.Enabled = True
         Add_Primary_Key_Button.Enabled = True
         CompleteTable_Button.Enabled = True
+        NewTableField.Enabled = False
+
+        Add_Field()
+
+
+
 
     End Sub
     Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CompleteTable_Button.Click
@@ -71,7 +77,7 @@
         End Select
 
     End Sub
-    Private Sub Add_Field(sender As Object, e As EventArgs) Handles Add_Field_Button.Click
+    Private Sub Add_Field() Handles Add_Field_Button.Click
         CurrentlyDoing = "AddField"
 
         Initialise.NewField()
@@ -128,7 +134,7 @@
         End If
     End Sub
     Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs) Handles Check_Type.TextChanged
-        If Check_Type.Text = "Like" Then
+        If Check_Type.Text = "LIKE" Then
             Check_Position.Enabled = True
         Else
             Check_Position.SelectedIndex = -1
@@ -196,6 +202,20 @@
             Unique.Enabled = True
         End If
     End Sub
+    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Default_Value_Checkbox.CheckedChanged
+        If Default_Value_Checkbox.Checked = True Then
+            DefaultValue.Enabled = True
+            Formula.Enabled = True
+
+        Else
+            DefaultValue.Text = ""
+            Formula.Checked = False
+            Formula.Enabled = False
+            DefaultValue.Enabled = False
+
+        End If
+    End Sub
+
 
 
 
@@ -234,8 +254,10 @@ Public Class Initialise
         Home.Scale_.Enabled = False
         Home.Precision.Value = 0
         Home.Scale_.Value = 0
-
-
+        Home.DefaultValue.Text = ""
+        Home.Default_Value_Checkbox.Checked = False
+        Home.Formula.Checked = False
+        Home.Formula.Enabled = False
         Keys()
 
         Check()
@@ -329,6 +351,16 @@ Public Class Generate
         End If
 
 
+        If Home.Default_Value_Checkbox.Checked = True Then
+
+            If Home.Formula.Checked = True Then
+
+                NewLine = NewLine & "DEFAULT " & Home.DefaultValue.Text & " "
+            Else
+                NewLine = NewLine & "DEFAULT '" & Home.DefaultValue.Text & "' "
+            End If
+
+        End If
         If Home.PrimCheck.Checked = True Then
             NewLine = NewLine & "PRIMARY KEY "
         End If
@@ -367,7 +399,6 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
 
     End Sub
-
     Shared Function Constraints()
         Dim LineConstraint As String
         Dim Constraint As String
@@ -375,28 +406,28 @@ Public Class Generate
         Constraint = Home.Check_String.Text
 
         Select Case Home.Check_Type.Text
-            Case "Like"
+            Case "LIKE"
 
 
                 Select Case Home.Check_Position.Text 'Case of Position of LIKE String
-                    Case "Before Any"
+                    Case "Before any string"
                         LineConstraint = "LIKE '" & Constraint & "%" & "'"
-                    Case "After Any"
+                    Case "After any string"
                         LineConstraint = "LIKE '" & "%" & Constraint & "'"
-                    Case "Between Any"
+                    Case "Between any string"
                         LineConstraint = "LIKE '" & "%" & Constraint & "%'"
-                    Case "Other/Specific"
+                    Case "Other/ Specific"
                         LineConstraint = "LIKE '" & Constraint & "'"
                 End Select
 
-            Case "Predefied"
+            Case "IN"
 
-                Dim PreDef As String() = Home.Check_String.Lines 'Multiline list converted to array
+                Dim Str As String() = Home.Check_String.Lines 'Multiline list converted to array
 
                 LineConstraint = "IN('"
 
                 For i As Integer = 0 To Home.Check_String.Lines.Count - 1  'Loop creat string from array
-                    LineConstraint = LineConstraint + PreDef(i)
+                    LineConstraint = LineConstraint + Str(i)
                     If i < Home.Check_String.Lines.Count - 1 Then
                         LineConstraint = LineConstraint + "','"
                     Else
@@ -515,6 +546,11 @@ Public Class Approve
 
         If Home.OnDeleteBox.Checked = True And Home.OnDeleteAction.SelectedIndex = -1 Then
             MsgBox("Please specify action on delete.")
+            Approved = False
+        End If
+
+        If Home.Default_Value_Checkbox.Checked = True And Home.DefaultValue.Text = "" Then
+            MsgBox("Please specify field default value.")
             Approved = False
         End If
 
