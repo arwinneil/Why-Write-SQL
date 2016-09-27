@@ -15,6 +15,7 @@
 
         UpdateUI.ClearUp()
         Initialise.TableUpdate()
+        ActionGroup.Visible = True
         UpdateTableLayout.Visible = True
 
     End Sub
@@ -335,7 +336,14 @@ Public Class Initialise
         Home.ActionGroup.Text = "Delete Table"
     End Sub
     Shared Sub TableUpdate()
+
         Home.ActionGroup.Text = "Update Details"
+        Home.InsertTable.Text = ""
+        Home.Specify_CheckBox.Checked = False
+        Home.Columns.Text = ""
+        Home.DataItemsGroup.Text = "Data Items"
+        Home.DataItems.Text = ""
+
     End Sub
 
 
@@ -356,8 +364,6 @@ Public Class Generate
         Dim LineConstraint As String
         Dim Constraint As String
         Dim NewLine As String
-
-
 
 
         If Home.CheckBox.Checked = True Then 'Check if any constraint apply
@@ -566,14 +572,34 @@ Public Class Generate
 
         NewLine = "VALUES ("
 
+
+
         Dim DataItem As String() = Home.DataItems.Lines 'Multiline list converted to array
 
         For i As Integer = 0 To Home.DataItems.Lines.Count - 1  'Loop creat string from array
+
+            If i = 0 And IsNumeric(DataItem(i)) = False Then
+                NewLine = NewLine + "'"
+            End If
+
             NewLine = NewLine + DataItem(i)
 
+            If IsNumeric(DataItem(i)) = False And (i < (Home.DataItems.Lines.Count - 1)) Then
+                NewLine = NewLine + "'"
+            End If
+
             If i < Home.DataItems.Lines.Count - 1 Then
-                NewLine = NewLine + ", "
+                NewLine = NewLine + ","
+
+                If IsNumeric(DataItem(i + 1)) = False Then
+                    NewLine = NewLine + "'"
+                End If
+
             Else
+                If IsNumeric(DataItem(i)) = False Then
+                    NewLine = NewLine + "'"
+                End If
+
                 NewLine = NewLine + "); "
             End If
 
