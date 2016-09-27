@@ -3,7 +3,9 @@
     Public CurrentlyDoing As String
 
 #Region "Main Operations"
-    Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Act_Create_Table.Click
+    Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Create_Table.Click
+
+        CurrentlyDoing = "CreateTable"
 
         Initialise.NewTable()
         ActionGroup.Visible = True
@@ -11,15 +13,20 @@
         CompleteTable_Button.Enabled = False
 
     End Sub
-    Private Sub UpdateTableAction(sender As Object, e As EventArgs) Handles Act_Update.Click
+    Private Sub UpdateTableAction(sender As Object, e As EventArgs) Handles Insert.Click
+
+        CurrentlyDoing = "Insert"
 
         UpdateUI.ClearUp()
         Initialise.TableUpdate()
         ActionGroup.Visible = True
-        UpdateTableLayout.Visible = True
+        InsertTableLayout.Visible = True
 
     End Sub
-    Private Sub DeleteTableAction(sender As Object, e As EventArgs) Handles Act_Drop.Click
+    Private Sub DeleteTableAction(sender As Object, e As EventArgs) Handles Drop_Table.Click
+
+        CurrentlyDoing = "DropTable"
+
         Initialise.DeleteTable()
 
     End Sub
@@ -251,8 +258,31 @@
 
     End Sub
 
+    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
+        CurrentlyDoing = "CreateDatabase"
+
+        Generate.CreateDatabase
+
+    End Sub
+
+    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
+        CurrentlyDoing = "DropDatabase"
+    End Sub
+
+    Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
+        CurrentlyDoing = "SelectDatabase"
+    End Sub
+
+    Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
+        CurrentlyDoing = "AlterTABLE"
+    End Sub
 
 #End Region
+
+#Region "Drop Table Operation"
+
+#End Region
+
 
 End Class
 
@@ -611,6 +641,25 @@ Public Class Generate
 
 #End Region
 
+    Shared Sub CreateDatabase()
+        Dim NewLine As String
+
+        NewLine = "CREATE DATABASE " & Home.SingleLine.Text & ";"
+
+    End Sub
+    Shared Sub DropDatabase()
+        Dim NewLine As String
+
+        NewLine = "DROP DATABASE " & Home.SingleLine.Text & ";"
+
+    End Sub
+    Shared Sub SelectDatabase()
+        Dim NewLine As String
+
+        NewLine = "USE " & Home.SingleLine.Text & ";"
+
+    End Sub
+
 End Class
 
 Public Class Approve
@@ -707,7 +756,7 @@ Public Class UpdateUI
         Home.CompleteTable_Button.Enabled = True
     End Sub
 
-
-
 End Class
+
+
 
