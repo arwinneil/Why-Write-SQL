@@ -4,7 +4,7 @@ Demonstrating basic coding structures, Visual Basic Language, SQL and doing my D
 ![Much Database, So Table, Much Data](https://i.imgflip.com/1aulgw.jpg)
 
 ## Getting Started
-SQL Script Generator is a SQL code generator, aiming to reduce time of coding and debugging, spped up projects, reducng human errors and avoiding repetitive tasks.
+SQL Script Generator is a SQL code generator, aiming to reduce time of coding and debugging, spped up projects, reducing human errors and avoiding repetitive tasks.
 
 Code is generated based on GUI inputs.
 
