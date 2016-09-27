@@ -28,12 +28,26 @@ Partial Class Home
         Me.Home_Main_Layout = New System.Windows.Forms.TableLayoutPanel()
         Me.ContainerPane = New System.Windows.Forms.Panel()
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
+        Me.DropTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TableName = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.DropButton = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.DatabaseTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.DatabaseName = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Create_Database = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Select_Database = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Drop_Database = New MaterialSkin.Controls.MaterialFlatButton()
         Me.InsertTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.DataItemsGroup = New System.Windows.Forms.GroupBox()
+        Me.DataItems = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Specify_CheckBox = New System.Windows.Forms.CheckBox()
         Me.Columns = New System.Windows.Forms.TextBox()
-        Me.DataItemsGroup = New System.Windows.Forms.GroupBox()
-        Me.DataItems = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.InsertTable = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -88,28 +102,26 @@ Partial Class Home
         Me.CompleteTable_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Field_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Primary_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Select_Database = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Drop_Database = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Create_Database = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.SingleLineLayout = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.SingleLine = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Drop_Table = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Insert = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Create_Table = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Alter_Table = New MaterialSkin.Controls.MaterialFlatButton()
         Me.OperationsPanel = New System.Windows.Forms.Panel()
-        Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.MaterialFlatButton2 = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Select_Query = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Database_Operations = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Alter_Table = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Create_Table = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Insert = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Drop_Table = New MaterialSkin.Controls.MaterialFlatButton()
         Me.GroupBox1.SuspendLayout()
         Me.Home_Main_Layout.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
         Me.ActionGroup.SuspendLayout()
+        Me.DropTableLayout.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.DatabaseTableLayout.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel10.SuspendLayout()
         Me.InsertTableLayout.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.DataItemsGroup.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.CreateActionLayout.SuspendLayout()
@@ -126,9 +138,6 @@ Partial Class Home
         Me.PrimaryGroup.SuspendLayout()
         Me.ForeignKeyGroup.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.SingleLineLayout.SuspendLayout()
-        Me.Panel9.SuspendLayout()
-        Me.Panel10.SuspendLayout()
         Me.OperationsPanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -148,10 +157,9 @@ Partial Class Home
         'Sequence
         '
         Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Sequence.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sequence.FormattingEnabled = True
         Me.Sequence.HorizontalScrollbar = True
-        Me.Sequence.ItemHeight = 15
         Me.Sequence.Location = New System.Drawing.Point(3, 16)
         Me.Sequence.Name = "Sequence"
         Me.Sequence.ScrollAlwaysVisible = True
@@ -219,9 +227,10 @@ Partial Class Home
         '
         'ActionGroup
         '
-        Me.ActionGroup.Controls.Add(Me.SingleLineLayout)
+        Me.ActionGroup.Controls.Add(Me.DatabaseTableLayout)
         Me.ActionGroup.Controls.Add(Me.InsertTableLayout)
         Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
+        Me.ActionGroup.Controls.Add(Me.DropTableLayout)
         Me.ActionGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionGroup.Location = New System.Drawing.Point(0, 0)
         Me.ActionGroup.Name = "ActionGroup"
@@ -230,6 +239,224 @@ Partial Class Home
         Me.ActionGroup.TabStop = False
         Me.ActionGroup.Text = "Action"
         Me.ActionGroup.Visible = False
+        '
+        'DropTableLayout
+        '
+        Me.DropTableLayout.ColumnCount = 1
+        Me.DropTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.DropTableLayout.Controls.Add(Me.Panel5, 0, 0)
+        Me.DropTableLayout.Controls.Add(Me.Panel8, 0, 1)
+        Me.DropTableLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropTableLayout.Location = New System.Drawing.Point(3, 16)
+        Me.DropTableLayout.Name = "DropTableLayout"
+        Me.DropTableLayout.RowCount = 12
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DropTableLayout.Size = New System.Drawing.Size(452, 675)
+        Me.DropTableLayout.TabIndex = 47
+        Me.DropTableLayout.Visible = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.TableName)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(3, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(446, 50)
+        Me.Panel5.TabIndex = 0
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label9.Location = New System.Drawing.Point(161, 5)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(93, 13)
+        Me.Label9.TabIndex = 41
+        Me.Label9.Text = "Enter Table Name"
+        '
+        'TableName
+        '
+        Me.TableName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableName.Depth = 0
+        Me.TableName.Hint = ""
+        Me.TableName.Location = New System.Drawing.Point(10, 21)
+        Me.TableName.MouseState = MaterialSkin.MouseState.HOVER
+        Me.TableName.Name = "TableName"
+        Me.TableName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TableName.SelectedText = ""
+        Me.TableName.SelectionLength = 0
+        Me.TableName.SelectionStart = 0
+        Me.TableName.Size = New System.Drawing.Size(420, 23)
+        Me.TableName.TabIndex = 37
+        Me.TableName.UseSystemPasswordChar = False
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.DropButton)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel8.Location = New System.Drawing.Point(3, 59)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(446, 50)
+        Me.Panel8.TabIndex = 44
+        '
+        'DropButton
+        '
+        Me.DropButton.AutoSize = True
+        Me.DropButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.DropButton.BackColor = System.Drawing.Color.White
+        Me.DropButton.Depth = 0
+        Me.DropButton.Location = New System.Drawing.Point(10, 6)
+        Me.DropButton.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.DropButton.MouseState = MaterialSkin.MouseState.HOVER
+        Me.DropButton.Name = "DropButton"
+        Me.DropButton.Primary = False
+        Me.DropButton.Size = New System.Drawing.Size(48, 36)
+        Me.DropButton.TabIndex = 2
+        Me.DropButton.Text = "Done"
+        Me.DropButton.UseVisualStyleBackColor = False
+        '
+        'DatabaseTableLayout
+        '
+        Me.DatabaseTableLayout.ColumnCount = 1
+        Me.DatabaseTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.DatabaseTableLayout.Controls.Add(Me.Panel9, 0, 0)
+        Me.DatabaseTableLayout.Controls.Add(Me.Panel10, 0, 1)
+        Me.DatabaseTableLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DatabaseTableLayout.Location = New System.Drawing.Point(3, 16)
+        Me.DatabaseTableLayout.Name = "DatabaseTableLayout"
+        Me.DatabaseTableLayout.RowCount = 12
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.DatabaseTableLayout.Size = New System.Drawing.Size(452, 675)
+        Me.DatabaseTableLayout.TabIndex = 46
+        Me.DatabaseTableLayout.Visible = False
+        '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.Label10)
+        Me.Panel9.Controls.Add(Me.DatabaseName)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(446, 50)
+        Me.Panel9.TabIndex = 0
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label10.Location = New System.Drawing.Point(161, 5)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(112, 13)
+        Me.Label10.TabIndex = 41
+        Me.Label10.Text = "Enter Database Name"
+        '
+        'DatabaseName
+        '
+        Me.DatabaseName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DatabaseName.Depth = 0
+        Me.DatabaseName.Hint = ""
+        Me.DatabaseName.Location = New System.Drawing.Point(10, 21)
+        Me.DatabaseName.MouseState = MaterialSkin.MouseState.HOVER
+        Me.DatabaseName.Name = "DatabaseName"
+        Me.DatabaseName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.DatabaseName.SelectedText = ""
+        Me.DatabaseName.SelectionLength = 0
+        Me.DatabaseName.SelectionStart = 0
+        Me.DatabaseName.Size = New System.Drawing.Size(420, 23)
+        Me.DatabaseName.TabIndex = 37
+        Me.DatabaseName.UseSystemPasswordChar = False
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Create_Database)
+        Me.Panel10.Controls.Add(Me.Select_Database)
+        Me.Panel10.Controls.Add(Me.Drop_Database)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel10.Location = New System.Drawing.Point(3, 59)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(446, 50)
+        Me.Panel10.TabIndex = 44
+        '
+        'Create_Database
+        '
+        Me.Create_Database.AutoSize = True
+        Me.Create_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Create_Database.BackColor = System.Drawing.Color.White
+        Me.Create_Database.Depth = 0
+        Me.Create_Database.Location = New System.Drawing.Point(6, 6)
+        Me.Create_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Create_Database.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Create_Database.Name = "Create_Database"
+        Me.Create_Database.Primary = False
+        Me.Create_Database.Size = New System.Drawing.Size(135, 36)
+        Me.Create_Database.TabIndex = 3
+        Me.Create_Database.Text = "Create Database"
+        Me.Create_Database.UseVisualStyleBackColor = False
+        '
+        'Select_Database
+        '
+        Me.Select_Database.AutoSize = True
+        Me.Select_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Select_Database.BackColor = System.Drawing.Color.White
+        Me.Select_Database.Depth = 0
+        Me.Select_Database.Location = New System.Drawing.Point(281, 8)
+        Me.Select_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Select_Database.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Select_Database.Name = "Select_Database"
+        Me.Select_Database.Primary = False
+        Me.Select_Database.Size = New System.Drawing.Size(133, 36)
+        Me.Select_Database.TabIndex = 1
+        Me.Select_Database.Text = "Select Database"
+        Me.Select_Database.UseVisualStyleBackColor = False
+        '
+        'Drop_Database
+        '
+        Me.Drop_Database.AutoSize = True
+        Me.Drop_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Drop_Database.BackColor = System.Drawing.Color.White
+        Me.Drop_Database.Depth = 0
+        Me.Drop_Database.Location = New System.Drawing.Point(152, 8)
+        Me.Drop_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Drop_Database.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Drop_Database.Name = "Drop_Database"
+        Me.Drop_Database.Primary = False
+        Me.Drop_Database.Size = New System.Drawing.Size(121, 36)
+        Me.Drop_Database.TabIndex = 2
+        Me.Drop_Database.Text = "Drop Database"
+        Me.Drop_Database.UseVisualStyleBackColor = False
         '
         'InsertTableLayout
         '
@@ -261,6 +488,31 @@ Partial Class Home
         Me.InsertTableLayout.Size = New System.Drawing.Size(452, 675)
         Me.InsertTableLayout.TabIndex = 44
         Me.InsertTableLayout.Visible = False
+        '
+        'DataItemsGroup
+        '
+        Me.DataItemsGroup.Controls.Add(Me.DataItems)
+        Me.DataItemsGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataItemsGroup.Location = New System.Drawing.Point(3, 339)
+        Me.DataItemsGroup.Name = "DataItemsGroup"
+        Me.InsertTableLayout.SetRowSpan(Me.DataItemsGroup, 4)
+        Me.DataItemsGroup.Size = New System.Drawing.Size(446, 218)
+        Me.DataItemsGroup.TabIndex = 43
+        Me.DataItemsGroup.TabStop = False
+        Me.DataItemsGroup.Text = "Data Items"
+        '
+        'DataItems
+        '
+        Me.DataItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataItems.Location = New System.Drawing.Point(10, 19)
+        Me.DataItems.Multiline = True
+        Me.DataItems.Name = "DataItems"
+        Me.DataItems.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.DataItems.Size = New System.Drawing.Size(427, 193)
+        Me.DataItems.TabIndex = 54
+        Me.DataItems.WordWrap = False
         '
         'GroupBox2
         '
@@ -296,31 +548,6 @@ Partial Class Home
         Me.Columns.Size = New System.Drawing.Size(427, 207)
         Me.Columns.TabIndex = 54
         Me.Columns.WordWrap = False
-        '
-        'DataItemsGroup
-        '
-        Me.DataItemsGroup.Controls.Add(Me.DataItems)
-        Me.DataItemsGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataItemsGroup.Location = New System.Drawing.Point(3, 339)
-        Me.DataItemsGroup.Name = "DataItemsGroup"
-        Me.InsertTableLayout.SetRowSpan(Me.DataItemsGroup, 4)
-        Me.DataItemsGroup.Size = New System.Drawing.Size(446, 218)
-        Me.DataItemsGroup.TabIndex = 43
-        Me.DataItemsGroup.TabStop = False
-        Me.DataItemsGroup.Text = "Data Items"
-        '
-        'DataItems
-        '
-        Me.DataItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataItems.Location = New System.Drawing.Point(10, 19)
-        Me.DataItems.Multiline = True
-        Me.DataItems.Name = "DataItems"
-        Me.DataItems.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.DataItems.Size = New System.Drawing.Size(427, 193)
-        Me.DataItems.TabIndex = 54
-        Me.DataItems.WordWrap = False
         '
         'Panel6
         '
@@ -950,7 +1177,7 @@ Partial Class Home
         Me.CompleteTable_Button.AutoSize = True
         Me.CompleteTable_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CompleteTable_Button.Depth = 0
-        Me.CompleteTable_Button.Location = New System.Drawing.Point(358, 8)
+        Me.CompleteTable_Button.Location = New System.Drawing.Point(354, 8)
         Me.CompleteTable_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.CompleteTable_Button.MouseState = MaterialSkin.MouseState.HOVER
         Me.CompleteTable_Button.Name = "CompleteTable_Button"
@@ -992,179 +1219,52 @@ Partial Class Home
         Me.Add_Primary_Key_Button.Text = "Add Primay Key"
         Me.Add_Primary_Key_Button.UseVisualStyleBackColor = True
         '
-        'Select_Database
+        'OperationsPanel
         '
-        Me.Select_Database.AutoSize = True
-        Me.Select_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Select_Database.BackColor = System.Drawing.Color.White
-        Me.Select_Database.Depth = 0
-        Me.Select_Database.Location = New System.Drawing.Point(281, 8)
-        Me.Select_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Select_Database.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Select_Database.Name = "Select_Database"
-        Me.Select_Database.Primary = False
-        Me.Select_Database.Size = New System.Drawing.Size(133, 36)
-        Me.Select_Database.TabIndex = 1
-        Me.Select_Database.Text = "Select Database"
-        Me.Select_Database.UseVisualStyleBackColor = False
+        Me.Home_Main_Layout.SetColumnSpan(Me.OperationsPanel, 4)
+        Me.OperationsPanel.Controls.Add(Me.Select_Query)
+        Me.OperationsPanel.Controls.Add(Me.Database_Operations)
+        Me.OperationsPanel.Controls.Add(Me.Alter_Table)
+        Me.OperationsPanel.Controls.Add(Me.Create_Table)
+        Me.OperationsPanel.Controls.Add(Me.Insert)
+        Me.OperationsPanel.Controls.Add(Me.Drop_Table)
+        Me.OperationsPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.OperationsPanel.Location = New System.Drawing.Point(3, 3)
+        Me.OperationsPanel.Name = "OperationsPanel"
+        Me.OperationsPanel.Size = New System.Drawing.Size(458, 71)
+        Me.OperationsPanel.TabIndex = 6
         '
-        'Drop_Database
+        'Select_Query
         '
-        Me.Drop_Database.AutoSize = True
-        Me.Drop_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Drop_Database.BackColor = System.Drawing.Color.White
-        Me.Drop_Database.Depth = 0
-        Me.Drop_Database.Location = New System.Drawing.Point(152, 8)
-        Me.Drop_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Drop_Database.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Drop_Database.Name = "Drop_Database"
-        Me.Drop_Database.Primary = False
-        Me.Drop_Database.Size = New System.Drawing.Size(121, 36)
-        Me.Drop_Database.TabIndex = 2
-        Me.Drop_Database.Text = "Drop Database"
-        Me.Drop_Database.UseVisualStyleBackColor = False
+        Me.Select_Query.AutoSize = True
+        Me.Select_Query.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Select_Query.BackColor = System.Drawing.Color.White
+        Me.Select_Query.Depth = 0
+        Me.Select_Query.Location = New System.Drawing.Point(179, 0)
+        Me.Select_Query.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Select_Query.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Select_Query.Name = "Select_Query"
+        Me.Select_Query.Primary = False
+        Me.Select_Query.Size = New System.Drawing.Size(107, 36)
+        Me.Select_Query.TabIndex = 7
+        Me.Select_Query.Text = "Select Query"
+        Me.Select_Query.UseVisualStyleBackColor = False
         '
-        'Create_Database
+        'Database_Operations
         '
-        Me.Create_Database.AutoSize = True
-        Me.Create_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Create_Database.BackColor = System.Drawing.Color.White
-        Me.Create_Database.Depth = 0
-        Me.Create_Database.Location = New System.Drawing.Point(6, 6)
-        Me.Create_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Create_Database.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Create_Database.Name = "Create_Database"
-        Me.Create_Database.Primary = False
-        Me.Create_Database.Size = New System.Drawing.Size(135, 36)
-        Me.Create_Database.TabIndex = 3
-        Me.Create_Database.Text = "Create Database"
-        Me.Create_Database.UseVisualStyleBackColor = False
-        '
-        'SingleLineLayout
-        '
-        Me.SingleLineLayout.ColumnCount = 1
-        Me.SingleLineLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.SingleLineLayout.Controls.Add(Me.Panel9, 0, 0)
-        Me.SingleLineLayout.Controls.Add(Me.Panel10, 0, 1)
-        Me.SingleLineLayout.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SingleLineLayout.Location = New System.Drawing.Point(3, 16)
-        Me.SingleLineLayout.Name = "SingleLineLayout"
-        Me.SingleLineLayout.RowCount = 12
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.SingleLineLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.SingleLineLayout.Size = New System.Drawing.Size(452, 675)
-        Me.SingleLineLayout.TabIndex = 46
-        Me.SingleLineLayout.Visible = False
-        '
-        'Panel9
-        '
-        Me.Panel9.Controls.Add(Me.Label10)
-        Me.Panel9.Controls.Add(Me.SingleLine)
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel9.Location = New System.Drawing.Point(3, 3)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(446, 50)
-        Me.Panel9.TabIndex = 0
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label10.Location = New System.Drawing.Point(161, 5)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(112, 13)
-        Me.Label10.TabIndex = 41
-        Me.Label10.Text = "Enter Database Name"
-        '
-        'SingleLine
-        '
-        Me.SingleLine.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SingleLine.Depth = 0
-        Me.SingleLine.Hint = ""
-        Me.SingleLine.Location = New System.Drawing.Point(10, 21)
-        Me.SingleLine.MouseState = MaterialSkin.MouseState.HOVER
-        Me.SingleLine.Name = "SingleLine"
-        Me.SingleLine.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.SingleLine.SelectedText = ""
-        Me.SingleLine.SelectionLength = 0
-        Me.SingleLine.SelectionStart = 0
-        Me.SingleLine.Size = New System.Drawing.Size(420, 23)
-        Me.SingleLine.TabIndex = 37
-        Me.SingleLine.UseSystemPasswordChar = False
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Create_Database)
-        Me.Panel10.Controls.Add(Me.Select_Database)
-        Me.Panel10.Controls.Add(Me.Drop_Database)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 59)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(446, 50)
-        Me.Panel10.TabIndex = 44
-        '
-        'Drop_Table
-        '
-        Me.Drop_Table.AutoSize = True
-        Me.Drop_Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Drop_Table.BackColor = System.Drawing.Color.White
-        Me.Drop_Table.Depth = 0
-        Me.Drop_Table.Location = New System.Drawing.Point(188, 35)
-        Me.Drop_Table.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Drop_Table.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Drop_Table.Name = "Drop_Table"
-        Me.Drop_Table.Primary = False
-        Me.Drop_Table.Size = New System.Drawing.Size(92, 36)
-        Me.Drop_Table.TabIndex = 3
-        Me.Drop_Table.Text = "Drop Table"
-        Me.Drop_Table.UseVisualStyleBackColor = False
-        '
-        'Insert
-        '
-        Me.Insert.AutoSize = True
-        Me.Insert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Insert.BackColor = System.Drawing.Color.White
-        Me.Insert.Depth = 0
-        Me.Insert.Location = New System.Drawing.Point(121, 35)
-        Me.Insert.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Insert.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Insert.Name = "Insert"
-        Me.Insert.Primary = False
-        Me.Insert.Size = New System.Drawing.Size(59, 36)
-        Me.Insert.TabIndex = 4
-        Me.Insert.Text = "Insert"
-        Me.Insert.UseVisualStyleBackColor = False
-        '
-        'Create_Table
-        '
-        Me.Create_Table.AutoSize = True
-        Me.Create_Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Create_Table.BackColor = System.Drawing.Color.White
-        Me.Create_Table.Depth = 0
-        Me.Create_Table.Location = New System.Drawing.Point(6, 35)
-        Me.Create_Table.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Create_Table.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Create_Table.Name = "Create_Table"
-        Me.Create_Table.Primary = False
-        Me.Create_Table.Size = New System.Drawing.Size(107, 36)
-        Me.Create_Table.TabIndex = 0
-        Me.Create_Table.Text = "Create Table"
-        Me.Create_Table.UseVisualStyleBackColor = False
+        Me.Database_Operations.AutoSize = True
+        Me.Database_Operations.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Database_Operations.BackColor = System.Drawing.Color.White
+        Me.Database_Operations.Depth = 0
+        Me.Database_Operations.Location = New System.Drawing.Point(3, 0)
+        Me.Database_Operations.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Database_Operations.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Database_Operations.Name = "Database_Operations"
+        Me.Database_Operations.Primary = False
+        Me.Database_Operations.Size = New System.Drawing.Size(168, 36)
+        Me.Database_Operations.TabIndex = 6
+        Me.Database_Operations.Text = "Database Operations"
+        Me.Database_Operations.UseVisualStyleBackColor = False
         '
         'Alter_Table
         '
@@ -1182,52 +1282,53 @@ Partial Class Home
         Me.Alter_Table.Text = "Alter Table"
         Me.Alter_Table.UseVisualStyleBackColor = False
         '
-        'OperationsPanel
+        'Create_Table
         '
-        Me.Home_Main_Layout.SetColumnSpan(Me.OperationsPanel, 4)
-        Me.OperationsPanel.Controls.Add(Me.MaterialFlatButton2)
-        Me.OperationsPanel.Controls.Add(Me.MaterialFlatButton1)
-        Me.OperationsPanel.Controls.Add(Me.Alter_Table)
-        Me.OperationsPanel.Controls.Add(Me.Create_Table)
-        Me.OperationsPanel.Controls.Add(Me.Insert)
-        Me.OperationsPanel.Controls.Add(Me.Drop_Table)
-        Me.OperationsPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.OperationsPanel.Location = New System.Drawing.Point(3, 3)
-        Me.OperationsPanel.Name = "OperationsPanel"
-        Me.OperationsPanel.Size = New System.Drawing.Size(458, 71)
-        Me.OperationsPanel.TabIndex = 6
+        Me.Create_Table.AutoSize = True
+        Me.Create_Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Create_Table.BackColor = System.Drawing.Color.White
+        Me.Create_Table.Depth = 0
+        Me.Create_Table.Location = New System.Drawing.Point(6, 35)
+        Me.Create_Table.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Create_Table.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Create_Table.Name = "Create_Table"
+        Me.Create_Table.Primary = False
+        Me.Create_Table.Size = New System.Drawing.Size(107, 36)
+        Me.Create_Table.TabIndex = 0
+        Me.Create_Table.Text = "Create Table"
+        Me.Create_Table.UseVisualStyleBackColor = False
         '
-        'MaterialFlatButton1
+        'Insert
         '
-        Me.MaterialFlatButton1.AutoSize = True
-        Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton1.BackColor = System.Drawing.Color.White
-        Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(3, 0)
-        Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
-        Me.MaterialFlatButton1.Primary = False
-        Me.MaterialFlatButton1.Size = New System.Drawing.Size(168, 36)
-        Me.MaterialFlatButton1.TabIndex = 6
-        Me.MaterialFlatButton1.Text = "Database Operations"
-        Me.MaterialFlatButton1.UseVisualStyleBackColor = False
+        Me.Insert.AutoSize = True
+        Me.Insert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Insert.BackColor = System.Drawing.Color.White
+        Me.Insert.Depth = 0
+        Me.Insert.Location = New System.Drawing.Point(121, 35)
+        Me.Insert.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Insert.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Insert.Name = "Insert"
+        Me.Insert.Primary = False
+        Me.Insert.Size = New System.Drawing.Size(59, 36)
+        Me.Insert.TabIndex = 4
+        Me.Insert.Text = "Insert"
+        Me.Insert.UseVisualStyleBackColor = False
         '
-        'MaterialFlatButton2
+        'Drop_Table
         '
-        Me.MaterialFlatButton2.AutoSize = True
-        Me.MaterialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton2.BackColor = System.Drawing.Color.White
-        Me.MaterialFlatButton2.Depth = 0
-        Me.MaterialFlatButton2.Location = New System.Drawing.Point(179, 0)
-        Me.MaterialFlatButton2.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton2.Name = "MaterialFlatButton2"
-        Me.MaterialFlatButton2.Primary = False
-        Me.MaterialFlatButton2.Size = New System.Drawing.Size(107, 36)
-        Me.MaterialFlatButton2.TabIndex = 7
-        Me.MaterialFlatButton2.Text = "Select Query"
-        Me.MaterialFlatButton2.UseVisualStyleBackColor = False
+        Me.Drop_Table.AutoSize = True
+        Me.Drop_Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Drop_Table.BackColor = System.Drawing.Color.White
+        Me.Drop_Table.Depth = 0
+        Me.Drop_Table.Location = New System.Drawing.Point(188, 35)
+        Me.Drop_Table.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Drop_Table.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Drop_Table.Name = "Drop_Table"
+        Me.Drop_Table.Primary = False
+        Me.Drop_Table.Size = New System.Drawing.Size(92, 36)
+        Me.Drop_Table.TabIndex = 3
+        Me.Drop_Table.Text = "Drop Table"
+        Me.Drop_Table.UseVisualStyleBackColor = False
         '
         'Home
         '
@@ -1245,11 +1346,21 @@ Partial Class Home
         Me.Home_Main_Layout.ResumeLayout(False)
         Me.ContainerPane.ResumeLayout(False)
         Me.ActionGroup.ResumeLayout(False)
+        Me.DropTableLayout.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.DatabaseTableLayout.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
         Me.InsertTableLayout.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.DataItemsGroup.ResumeLayout(False)
         Me.DataItemsGroup.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -1277,11 +1388,6 @@ Partial Class Home
         Me.ForeignKeyGroup.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.SingleLineLayout.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
         Me.OperationsPanel.ResumeLayout(False)
         Me.OperationsPanel.PerformLayout()
         Me.ResumeLayout(False)
@@ -1356,16 +1462,22 @@ Partial Class Home
     Friend WithEvents Select_Database As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Drop_Database As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Create_Database As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents SingleLineLayout As TableLayoutPanel
+    Friend WithEvents DatabaseTableLayout As TableLayoutPanel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label10 As Label
-    Friend WithEvents SingleLine As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents DatabaseName As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Panel10 As Panel
     Friend WithEvents OperationsPanel As Panel
-    Friend WithEvents MaterialFlatButton2 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Select_Query As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Database_Operations As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Alter_Table As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Create_Table As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Insert As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Drop_Table As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents DropTableLayout As TableLayoutPanel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TableName As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents DropButton As MaterialSkin.Controls.MaterialFlatButton
 End Class

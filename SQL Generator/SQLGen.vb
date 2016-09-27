@@ -7,6 +7,7 @@
 
         CurrentlyDoing = "CreateTable"
 
+        UpdateUI.ClearUp()
         Initialise.NewTable()
         ActionGroup.Visible = True
         CreateActionLayout.Visible = True
@@ -27,13 +28,23 @@
 
         CurrentlyDoing = "DropTable"
 
-        Initialise.DeleteTable()
+        UpdateUI.ClearUp()
+        Initialise.DropTable()
+        ActionGroup.Visible = True
+        DropTableLayout.Visible = True
 
+
+    End Sub
+    Private Sub Database_Operations_Click(sender As Object, e As EventArgs) Handles Database_Operations.Click
+        UpdateUI.ClearUp()
+        Initialise.Database()
+        ActionGroup.Visible = True
+        DatabaseTableLayout.Visible = True
     End Sub
 
 #End Region'Handles For the main funtions of the program
 
-#Region "New Table Operation"
+#Region "New Table Sub-Operation"
 
 #Region "New Table Operation Handles"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
@@ -58,6 +69,7 @@
     Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CompleteTable_Button.Click
 
         Sequence.Items.Add(");")
+        Sequence.Items.Add("")
         Initialise.NewTable()
         UpdateUI.ClearUp()
 
@@ -229,7 +241,7 @@
 
 #End Region
 
-#Region "Update Table Operation"
+#Region "Update Table Sub-Operation"
 
     Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
         Generate.InsertData()
@@ -258,28 +270,36 @@
 
     End Sub
 
-    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
-        CurrentlyDoing = "CreateDatabase"
-
-        Generate.CreateDatabase
-
-    End Sub
-
-    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
-        CurrentlyDoing = "DropDatabase"
-    End Sub
-
-    Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
-        CurrentlyDoing = "SelectDatabase"
-    End Sub
-
     Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
         CurrentlyDoing = "AlterTABLE"
     End Sub
 
+
+
 #End Region
 
-#Region "Drop Table Operation"
+#Region "Drop Table Sub-Operation"
+    Private Sub DropButton_Click(sender As Object, e As EventArgs) Handles DropButton.Click
+
+        Generate.DropTable()
+        Initialise.DropTable()
+    End Sub
+
+#End Region
+
+#Region "Database Operations Sub Operations"
+    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
+        Generate.CreateDatabase()
+        Initialise.Database()
+    End Sub
+    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
+        Generate.DropDatabase()
+        Initialise.Database()
+    End Sub
+    Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
+        Generate.SelectDatabase()
+        Initialise.Database()
+    End Sub
 
 #End Region
 
@@ -362,8 +382,13 @@ Public Class Initialise
 
 #End Region
 
-    Shared Sub DeleteTable()
-        Home.ActionGroup.Text = "Delete Table"
+    Shared Sub DropTable()
+        Home.ActionGroup.Text = "Drop Table"
+        Home.TableName.Text = ""
+    End Sub
+    Shared Sub Database()
+        Home.ActionGroup.Text = "Database Operations"
+        Home.DatabaseName.Text = ""
     End Sub
     Shared Sub TableUpdate()
 
@@ -377,6 +402,7 @@ Public Class Initialise
     End Sub
 
 
+
 End Class
 
 Public Class Generate
@@ -386,6 +412,7 @@ Public Class Generate
         Dim NewLine As String
         NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
         Home.Sequence.Items.Add(NewLine)
+
     End Sub
     Shared Sub Field()
         Dim FieldName As String
@@ -573,7 +600,7 @@ Public Class Generate
 
 #End Region
 
-#Region "Update Table Generators"
+#Region "Insert Generators"
 
     Shared Sub InsertData()
         Dim NewLine As String
@@ -636,6 +663,7 @@ Public Class Generate
         Next
 
         Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
 
     End Sub
 
@@ -644,21 +672,35 @@ Public Class Generate
     Shared Sub CreateDatabase()
         Dim NewLine As String
 
-        NewLine = "CREATE DATABASE " & Home.SingleLine.Text & ";"
+
+
+        NewLine = "CREATE DATABASE " & Home.DatabaseName.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
 
     End Sub
     Shared Sub DropDatabase()
         Dim NewLine As String
 
-        NewLine = "DROP DATABASE " & Home.SingleLine.Text & ";"
-
+        NewLine = "DROP DATABASE " & Home.DatabaseName.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
     End Sub
     Shared Sub SelectDatabase()
         Dim NewLine As String
 
-        NewLine = "USE " & Home.SingleLine.Text & ";"
-
+        NewLine = "USE " & Home.DatabaseName.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
     End Sub
+    Shared Sub DropTable()
+        Dim NewLine As String
+
+        NewLine = "DROP TABLE " & Home.TableName.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
+    End Sub
+
 
 End Class
 
@@ -747,7 +789,10 @@ Public Class UpdateUI
 
     Shared Sub ClearUp()
         Home.CreateActionLayout.Visible = False
-        Home.ActionGroup.Text = "Welcome"
+        Home.DropTableLayout.Visible = False
+        Home.DatabaseTableLayout.Visible = False
+        Home.InsertTableLayout.Visible = False
+
 
     End Sub
     Shared Sub EnableTableControls()
@@ -757,6 +802,5 @@ Public Class UpdateUI
     End Sub
 
 End Class
-
 
 
