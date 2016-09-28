@@ -13,12 +13,12 @@ Code is generated based on GUI inputs.
 
 ## Features
 * CREATE,DROP & USE Database Commands
-* CREATE,DROP & INSERT INTO Table COmmands
+* CREATE,DROP & INSERT INTO Table Commands
 
 _Comming Soon_
-_ALTER TABLE
-SELECT QUERIES
-EXPORT to .sql & .txt_
+_ALTER TABLE_
+_SELECT QUERIES_
+_EXPORT to .sql & .txt_
 
 ## Version
 Not released yet.
