@@ -1,7 +1,7 @@
 # SQL Script Generator
 
 ##Overview
-Demonstrating basic coding structures, Visual Basic Language, SQL, .NET WinForms themimg and doing my Database Course homework, cause, why not?
+Demonstrating basic coding structures, Visual Basic Language, SQL, .NET WinForms theming and doing my Database Course homework, cause, why not?
 
 <p align="center">
 <img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
