@@ -1,7 +1,7 @@
 # SQL Script Generator
 
 ##Overview
-Demonstrating basic coding structures, Visual Basic Language, SQL and doing my Database Course homework, cause, why not?
+Demonstrating basic coding structures, Visual Basic Language, SQL, .NET WinForms themimg and doing my Database Course homework, cause, why not?
 
 <p align="center">
 <img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
@@ -28,7 +28,10 @@ Code is generated based on GUI inputs.
 Not released yet.
 
 ##Resources
+
 Icon designed by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver) from Flaticon
+
+Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
 ##Licence
 [MIT License](LICENSE)
