@@ -307,6 +307,10 @@
     End Sub
 
 
+#End Region
+
+
+
 End Class
 
 Public Class Initialise
@@ -752,6 +756,14 @@ Public Class Approve
             MsgBox("Please specify field default value.")
             Approved = False
         End If
+
+
+        If Home.Check_Type.Text = "LIKE" And Home.Check_Position.SelectedIndex = -1 Then
+            MsgBox("Please specify string position for LIKE CHECK.")
+            Approved = False
+        End If
+
+
 
         Return Approved
     End Function
