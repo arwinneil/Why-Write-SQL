@@ -271,7 +271,8 @@
     End Sub
 
     Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
-        CurrentlyDoing = "AlterTABLE"
+        CurrentlyDoing = "AlterTable"
+        MsgBox("Comming Soon!")
     End Sub
 
 
@@ -301,7 +302,9 @@
         Initialise.Database()
     End Sub
 
-#End Region
+    Private Sub Select_Query_Click(sender As Object, e As EventArgs) Handles Select_Query.Click
+        MsgBox("Comming Soon!")
+    End Sub
 
 
 End Class
