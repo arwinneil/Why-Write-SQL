@@ -37,7 +37,8 @@ Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/Ignace
 [MIT License](LICENSE)
 
 ##Author
-######Arwin Neil Baichoo
+[Arwin Neil Baichoo](https://github.com/arwinneil)
+
 <a href="https://www.linkedin.com/in/arwinneil"><img src="http://image.flaticon.com/icons/svg/179/179330.svg" align="left" height="48" width="48" ></a><a href="https://www.instagram.com/arwinneil/"><img src="http://image.flaticon.com/icons/svg/145/145805.svg" align="left" height="48" width="48" ></a>
 
 
