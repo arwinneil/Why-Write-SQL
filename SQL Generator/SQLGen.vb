@@ -9,8 +9,12 @@
 
         UpdateUI.ClearUp()
         Initialise.NewTable()
+
         ActionGroup.Visible = True
         CreateActionLayout.Visible = True
+        FieldDetails.Parent = CreateActionLayout
+        CreateActionLayout.SetRow(FieldDetails, 2)
+        FieldGroup.Text = "Add Field"
         CompleteTable_Button.Enabled = False
 
     End Sub
@@ -40,6 +44,19 @@
         Initialise.Database()
         ActionGroup.Visible = True
         DatabaseTableLayout.Visible = True
+    End Sub
+    Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
+        UpdateUI.ClearUp()
+
+        ActionGroup.Visible = True
+        CurrentlyDoing = "AlterTable"
+        AlterTableLayoutPanel.Visible = True
+        FieldDetails.Parent = AlterTableLayoutPanel
+        AlterTableLayoutPanel.SetRow(FieldDetails, 3)
+        FieldGroup.Text = "Modify Field"
+
+
+
     End Sub
 
 #End Region'Handles For the main funtions of the program
@@ -74,7 +91,7 @@
         UpdateUI.ClearUp()
 
     End Sub
-    Private Sub Create_Click(sender As Object, e As EventArgs) Handles Create.Click
+    Private Sub Create_Click(sender As Object, e As EventArgs)
         Select Case CurrentlyDoing
 
             Case = "AddField"
@@ -113,7 +130,7 @@
 #End Region'Handles For the 'New Table" Operation
     '  
 #Region "New Table Operation Dependent UI Changes"
-    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs) Handles ReferenceBox.CheckedChanged
+    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs)
 
         If ReferenceBox.Checked = True Then
             OnUpdateBox.Enabled = True
@@ -124,7 +141,7 @@
         End If
 
     End Sub
-    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnUpdateBox.CheckedChanged
+    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs)
         If OnUpdateBox.Checked = True Then
             OnUpdateAction.Enabled = True
         Else
@@ -133,7 +150,7 @@
         End If
 
     End Sub
-    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnDeleteBox.CheckedChanged
+    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs)
         If OnDeleteBox.Checked = True Then
             OnDeleteAction.Enabled = True
         Else
@@ -142,7 +159,7 @@
         End If
 
     End Sub
-    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox.CheckedChanged
+    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs)
         If CheckBox.Checked = True Then
             Check_Type.Enabled = True
             Check_String.Enabled = True
@@ -154,7 +171,7 @@
 
         End If
     End Sub
-    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs) Handles Check_Type.TextChanged
+    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs)
         If Check_Type.Text = "LIKE" Then
             Check_Position.Enabled = True
         Else
@@ -162,7 +179,7 @@
             Check_Position.Enabled = False
         End If
     End Sub
-    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.SelectedIndexChanged
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs)
 
         If Approve.DataTypeSize = "Precise" Then
             FieldSize.Enabled = False
@@ -199,7 +216,7 @@
         Initialise.Keys()
         ConstraintGroup.Enabled = False
     End Sub
-    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs) Handles ForCheck.CheckedChanged
+    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs)
         If ForCheck.Checked = True Then
             PrimCheck.Checked = False
             PrimCheck.Enabled = False
@@ -211,7 +228,7 @@
             Unique.Enabled = True
         End If
     End Sub
-    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs) Handles PrimCheck.CheckedChanged
+    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs)
         If PrimCheck.Checked = True Then
             ForCheck.Checked = False
             ForCheck.Enabled = False
@@ -223,7 +240,7 @@
             Unique.Enabled = True
         End If
     End Sub
-    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Default_Value_Checkbox.CheckedChanged
+    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs)
         If Default_Value_Checkbox.Checked = True Then
             DefaultValue.Enabled = True
             Formula.Enabled = True
@@ -270,10 +287,7 @@
 
     End Sub
 
-    Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
-        CurrentlyDoing = "AlterTable"
-        MsgBox("Comming Soon!")
-    End Sub
+
 
 
 
@@ -305,6 +319,8 @@
     Private Sub Select_Query_Click(sender As Object, e As EventArgs) Handles Select_Query.Click
         MsgBox("Comming Soon!")
     End Sub
+
+
 
 
 #End Region
@@ -407,8 +423,6 @@ Public Class Initialise
         Home.DataItems.Text = ""
 
     End Sub
-
-
 
 End Class
 
@@ -807,6 +821,7 @@ Public Class UpdateUI
         Home.DropTableLayout.Visible = False
         Home.DatabaseTableLayout.Visible = False
         Home.InsertTableLayout.Visible = False
+        Home.AlterTableLayoutPanel.Visible = False
 
 
     End Sub
