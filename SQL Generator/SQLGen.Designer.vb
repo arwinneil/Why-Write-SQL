@@ -31,11 +31,10 @@ Partial Class Home
         Me.AlterTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.MaterialSingleLineTextField1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.MaterialSingleLineTextField2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Alter_Table_Name = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.MaterialSingleLineTextField3 = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.DropColumn = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Alter_Drop_Table = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.DropTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -91,7 +90,9 @@ Partial Class Home
         Me.ForeignKeyGroup = New System.Windows.Forms.GroupBox()
         Me.ForeignKeys = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Create = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Complete_Alter = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.ModifyField = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.CreateField = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CheckGroup = New System.Windows.Forms.GroupBox()
         Me.CheckBox = New System.Windows.Forms.CheckBox()
         Me.Check_Type = New System.Windows.Forms.ComboBox()
@@ -111,6 +112,7 @@ Partial Class Home
         Me.OnUpdateBox = New System.Windows.Forms.CheckBox()
         Me.ReferenceBox = New System.Windows.Forms.CheckBox()
         Me.ReferenceText = New System.Windows.Forms.TextBox()
+        Me.AddField = New MaterialSkin.Controls.MaterialFlatButton()
         Me.OperationsPanel = New System.Windows.Forms.Panel()
         Me.Select_Query = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Database_Operations = New MaterialSkin.Controls.MaterialFlatButton()
@@ -118,15 +120,15 @@ Partial Class Home
         Me.Create_Table = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Insert = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Drop_Table = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.MaterialFlatButton2 = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Rename = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.NewName = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.GroupBox1.SuspendLayout()
         Me.Home_Main_Layout.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
         Me.ActionGroup.SuspendLayout()
         Me.AlterTableLayoutPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.DropTableLayout.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -155,6 +157,7 @@ Partial Class Home
         Me.ConstraintGroup.SuspendLayout()
         Me.ReferenceGroup.SuspendLayout()
         Me.OperationsPanel.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -261,8 +264,8 @@ Partial Class Home
         '
         Me.AlterTableLayoutPanel.ColumnCount = 1
         Me.AlterTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.AlterTableLayoutPanel.Controls.Add(Me.Panel1, 0, 0)
         Me.AlterTableLayoutPanel.Controls.Add(Me.GroupBox3, 0, 1)
+        Me.AlterTableLayoutPanel.Controls.Add(Me.Panel1, 0, 0)
         Me.AlterTableLayoutPanel.Controls.Add(Me.GroupBox4, 0, 2)
         Me.AlterTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AlterTableLayoutPanel.Location = New System.Drawing.Point(3, 16)
@@ -290,7 +293,7 @@ Partial Class Home
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.MaterialSingleLineTextField1)
+        Me.Panel1.Controls.Add(Me.Alter_Table_Name)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
@@ -307,58 +310,28 @@ Partial Class Home
         Me.Label11.TabIndex = 41
         Me.Label11.Text = "Enter Table Name"
         '
-        'MaterialSingleLineTextField1
+        'Alter_Table_Name
         '
-        Me.MaterialSingleLineTextField1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.Alter_Table_Name.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaterialSingleLineTextField1.Depth = 0
-        Me.MaterialSingleLineTextField1.Hint = ""
-        Me.MaterialSingleLineTextField1.Location = New System.Drawing.Point(9, 24)
-        Me.MaterialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField1.Name = "MaterialSingleLineTextField1"
-        Me.MaterialSingleLineTextField1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField1.SelectedText = ""
-        Me.MaterialSingleLineTextField1.SelectionLength = 0
-        Me.MaterialSingleLineTextField1.SelectionStart = 0
-        Me.MaterialSingleLineTextField1.Size = New System.Drawing.Size(420, 23)
-        Me.MaterialSingleLineTextField1.TabIndex = 37
-        Me.MaterialSingleLineTextField1.UseSystemPasswordChar = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.MaterialFlatButton1)
-        Me.GroupBox3.Controls.Add(Me.MaterialSingleLineTextField2)
-        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 59)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(446, 50)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Add Column"
-        '
-        'MaterialSingleLineTextField2
-        '
-        Me.MaterialSingleLineTextField2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaterialSingleLineTextField2.Depth = 0
-        Me.MaterialSingleLineTextField2.Hint = ""
-        Me.MaterialSingleLineTextField2.Location = New System.Drawing.Point(10, 21)
-        Me.MaterialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField2.Name = "MaterialSingleLineTextField2"
-        Me.MaterialSingleLineTextField2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField2.SelectedText = ""
-        Me.MaterialSingleLineTextField2.SelectionLength = 0
-        Me.MaterialSingleLineTextField2.SelectionStart = 0
-        Me.MaterialSingleLineTextField2.Size = New System.Drawing.Size(354, 23)
-        Me.MaterialSingleLineTextField2.TabIndex = 38
-        Me.MaterialSingleLineTextField2.UseSystemPasswordChar = False
+        Me.Alter_Table_Name.Depth = 0
+        Me.Alter_Table_Name.Hint = ""
+        Me.Alter_Table_Name.Location = New System.Drawing.Point(9, 24)
+        Me.Alter_Table_Name.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Alter_Table_Name.Name = "Alter_Table_Name"
+        Me.Alter_Table_Name.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Alter_Table_Name.SelectedText = ""
+        Me.Alter_Table_Name.SelectionLength = 0
+        Me.Alter_Table_Name.SelectionStart = 0
+        Me.Alter_Table_Name.Size = New System.Drawing.Size(420, 23)
+        Me.Alter_Table_Name.TabIndex = 37
+        Me.Alter_Table_Name.UseSystemPasswordChar = False
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.MaterialFlatButton2)
-        Me.GroupBox4.Controls.Add(Me.MaterialSingleLineTextField3)
+        Me.GroupBox4.Controls.Add(Me.DropColumn)
+        Me.GroupBox4.Controls.Add(Me.Alter_Drop_Table)
         Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox4.Location = New System.Drawing.Point(3, 115)
         Me.GroupBox4.Name = "GroupBox4"
@@ -367,23 +340,39 @@ Partial Class Home
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Drop Column"
         '
-        'MaterialSingleLineTextField3
+        'DropColumn
         '
-        Me.MaterialSingleLineTextField3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.DropColumn.AutoSize = True
+        Me.DropColumn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.DropColumn.BackColor = System.Drawing.Color.White
+        Me.DropColumn.Depth = 0
+        Me.DropColumn.Location = New System.Drawing.Point(378, 11)
+        Me.DropColumn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.DropColumn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.DropColumn.Name = "DropColumn"
+        Me.DropColumn.Primary = False
+        Me.DropColumn.Size = New System.Drawing.Size(48, 36)
+        Me.DropColumn.TabIndex = 39
+        Me.DropColumn.Text = "Done"
+        Me.DropColumn.UseVisualStyleBackColor = False
+        '
+        'Alter_Drop_Table
+        '
+        Me.Alter_Drop_Table.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaterialSingleLineTextField3.Depth = 0
-        Me.MaterialSingleLineTextField3.Hint = ""
-        Me.MaterialSingleLineTextField3.Location = New System.Drawing.Point(10, 21)
-        Me.MaterialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialSingleLineTextField3.Name = "MaterialSingleLineTextField3"
-        Me.MaterialSingleLineTextField3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MaterialSingleLineTextField3.SelectedText = ""
-        Me.MaterialSingleLineTextField3.SelectionLength = 0
-        Me.MaterialSingleLineTextField3.SelectionStart = 0
-        Me.MaterialSingleLineTextField3.Size = New System.Drawing.Size(354, 23)
-        Me.MaterialSingleLineTextField3.TabIndex = 38
-        Me.MaterialSingleLineTextField3.UseSystemPasswordChar = False
+        Me.Alter_Drop_Table.Depth = 0
+        Me.Alter_Drop_Table.Hint = ""
+        Me.Alter_Drop_Table.Location = New System.Drawing.Point(10, 21)
+        Me.Alter_Drop_Table.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Alter_Drop_Table.Name = "Alter_Drop_Table"
+        Me.Alter_Drop_Table.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Alter_Drop_Table.SelectedText = ""
+        Me.Alter_Drop_Table.SelectionLength = 0
+        Me.Alter_Drop_Table.SelectionStart = 0
+        Me.Alter_Drop_Table.Size = New System.Drawing.Size(354, 23)
+        Me.Alter_Drop_Table.TabIndex = 38
+        Me.Alter_Drop_Table.UseSystemPasswordChar = False
         '
         'DropTableLayout
         '
@@ -1123,30 +1112,66 @@ Partial Class Home
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Create)
+        Me.Panel3.Controls.Add(Me.Complete_Alter)
+        Me.Panel3.Controls.Add(Me.ModifyField)
+        Me.Panel3.Controls.Add(Me.CreateField)
         Me.Panel3.Controls.Add(Me.CheckGroup)
         Me.Panel3.Controls.Add(Me.ConstraintGroup)
         Me.Panel3.Controls.Add(Me.ReferenceGroup)
+        Me.Panel3.Controls.Add(Me.AddField)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 163)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(446, 335)
         Me.Panel3.TabIndex = 12
         '
-        'Create
+        'Complete_Alter
         '
-        Me.Create.AutoSize = True
-        Me.Create.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Create.Depth = 0
-        Me.Create.Location = New System.Drawing.Point(17, 288)
-        Me.Create.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Create.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Create.Name = "Create"
-        Me.Create.Primary = False
-        Me.Create.Size = New System.Drawing.Size(48, 36)
-        Me.Create.TabIndex = 68
-        Me.Create.Text = "Done"
-        Me.Create.UseVisualStyleBackColor = True
+        Me.Complete_Alter.AutoSize = True
+        Me.Complete_Alter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Complete_Alter.Depth = 0
+        Me.Complete_Alter.Location = New System.Drawing.Point(199, 293)
+        Me.Complete_Alter.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Complete_Alter.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Complete_Alter.Name = "Complete_Alter"
+        Me.Complete_Alter.Primary = False
+        Me.Complete_Alter.Size = New System.Drawing.Size(166, 36)
+        Me.Complete_Alter.TabIndex = 71
+        Me.Complete_Alter.Text = "Complete Statement"
+        Me.Complete_Alter.UseVisualStyleBackColor = True
+        Me.Complete_Alter.Visible = False
+        '
+        'ModifyField
+        '
+        Me.ModifyField.AutoSize = True
+        Me.ModifyField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ModifyField.Depth = 0
+        Me.ModifyField.Location = New System.Drawing.Point(90, 293)
+        Me.ModifyField.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.ModifyField.MouseState = MaterialSkin.MouseState.HOVER
+        Me.ModifyField.Name = "ModifyField"
+        Me.ModifyField.Primary = False
+        Me.ModifyField.Size = New System.Drawing.Size(101, 36)
+        Me.ModifyField.TabIndex = 70
+        Me.ModifyField.Text = "Modify Field"
+        Me.ModifyField.UseVisualStyleBackColor = True
+        Me.ModifyField.Visible = False
+        '
+        'CreateField
+        '
+        Me.CreateField.AutoSize = True
+        Me.CreateField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.CreateField.Depth = 0
+        Me.CreateField.Location = New System.Drawing.Point(6, 291)
+        Me.CreateField.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.CreateField.MouseState = MaterialSkin.MouseState.HOVER
+        Me.CreateField.Name = "CreateField"
+        Me.CreateField.Primary = False
+        Me.CreateField.Size = New System.Drawing.Size(48, 36)
+        Me.CreateField.TabIndex = 68
+        Me.CreateField.Text = "Done"
+        Me.CreateField.UseVisualStyleBackColor = True
+        Me.CreateField.Visible = False
         '
         'CheckGroup
         '
@@ -1372,6 +1397,22 @@ Partial Class Home
         Me.ReferenceText.Size = New System.Drawing.Size(153, 20)
         Me.ReferenceText.TabIndex = 55
         '
+        'AddField
+        '
+        Me.AddField.AutoSize = True
+        Me.AddField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AddField.Depth = 0
+        Me.AddField.Location = New System.Drawing.Point(6, 293)
+        Me.AddField.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.AddField.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AddField.Name = "AddField"
+        Me.AddField.Primary = False
+        Me.AddField.Size = New System.Drawing.Size(78, 36)
+        Me.AddField.TabIndex = 69
+        Me.AddField.Text = "Add Field"
+        Me.AddField.UseVisualStyleBackColor = True
+        Me.AddField.Visible = False
+        '
         'OperationsPanel
         '
         Me.Home_Main_Layout.SetColumnSpan(Me.OperationsPanel, 4)
@@ -1441,7 +1482,7 @@ Partial Class Home
         Me.Create_Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Create_Table.BackColor = System.Drawing.Color.White
         Me.Create_Table.Depth = 0
-        Me.Create_Table.Location = New System.Drawing.Point(6, 35)
+        Me.Create_Table.Location = New System.Drawing.Point(3, 35)
         Me.Create_Table.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Create_Table.MouseState = MaterialSkin.MouseState.HOVER
         Me.Create_Table.Name = "Create_Table"
@@ -1483,37 +1524,51 @@ Partial Class Home
         Me.Drop_Table.Text = "Drop Table"
         Me.Drop_Table.UseVisualStyleBackColor = False
         '
-        'MaterialFlatButton1
+        'GroupBox3
         '
-        Me.MaterialFlatButton1.AutoSize = True
-        Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton1.BackColor = System.Drawing.Color.White
-        Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(378, 11)
-        Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
-        Me.MaterialFlatButton1.Primary = False
-        Me.MaterialFlatButton1.Size = New System.Drawing.Size(48, 36)
-        Me.MaterialFlatButton1.TabIndex = 39
-        Me.MaterialFlatButton1.Text = "Done"
-        Me.MaterialFlatButton1.UseVisualStyleBackColor = False
+        Me.GroupBox3.Controls.Add(Me.Rename)
+        Me.GroupBox3.Controls.Add(Me.NewName)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 59)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(446, 50)
+        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Rename Table"
         '
-        'MaterialFlatButton2
+        'Rename
         '
-        Me.MaterialFlatButton2.AutoSize = True
-        Me.MaterialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton2.BackColor = System.Drawing.Color.White
-        Me.MaterialFlatButton2.Depth = 0
-        Me.MaterialFlatButton2.Location = New System.Drawing.Point(378, 11)
-        Me.MaterialFlatButton2.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton2.Name = "MaterialFlatButton2"
-        Me.MaterialFlatButton2.Primary = False
-        Me.MaterialFlatButton2.Size = New System.Drawing.Size(48, 36)
-        Me.MaterialFlatButton2.TabIndex = 39
-        Me.MaterialFlatButton2.Text = "Done"
-        Me.MaterialFlatButton2.UseVisualStyleBackColor = False
+        Me.Rename.AutoSize = True
+        Me.Rename.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Rename.BackColor = System.Drawing.Color.White
+        Me.Rename.Depth = 0
+        Me.Rename.Location = New System.Drawing.Point(378, 11)
+        Me.Rename.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Rename.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Rename.Name = "Rename"
+        Me.Rename.Primary = False
+        Me.Rename.Size = New System.Drawing.Size(48, 36)
+        Me.Rename.TabIndex = 39
+        Me.Rename.Text = "Done"
+        Me.Rename.UseVisualStyleBackColor = False
+        '
+        'NewName
+        '
+        Me.NewName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NewName.Depth = 0
+        Me.NewName.Hint = ""
+        Me.NewName.Location = New System.Drawing.Point(10, 21)
+        Me.NewName.MouseState = MaterialSkin.MouseState.HOVER
+        Me.NewName.Name = "NewName"
+        Me.NewName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.NewName.SelectedText = ""
+        Me.NewName.SelectionLength = 0
+        Me.NewName.SelectionStart = 0
+        Me.NewName.Size = New System.Drawing.Size(354, 23)
+        Me.NewName.TabIndex = 38
+        Me.NewName.UseSystemPasswordChar = False
         '
         'Home
         '
@@ -1534,8 +1589,6 @@ Partial Class Home
         Me.AlterTableLayoutPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.DropTableLayout.ResumeLayout(False)
@@ -1583,6 +1636,8 @@ Partial Class Home
         Me.ReferenceGroup.PerformLayout()
         Me.OperationsPanel.ResumeLayout(False)
         Me.OperationsPanel.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1655,7 +1710,7 @@ Partial Class Home
     Friend WithEvents ForeignKeyGroup As GroupBox
     Friend WithEvents ForeignKeys As TextBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Create As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents CreateField As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents CheckGroup As GroupBox
     Friend WithEvents CheckBox As CheckBox
     Friend WithEvents Check_Type As ComboBox
@@ -1677,11 +1732,14 @@ Partial Class Home
     Friend WithEvents ReferenceText As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label11 As Label
-    Friend WithEvents MaterialSingleLineTextField1 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Alter_Table_Name As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents MaterialSingleLineTextField2 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialSingleLineTextField3 As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents MaterialFlatButton2 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Alter_Drop_Table As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents ModifyField As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents AddField As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents DropColumn As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents Complete_Alter As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Rename As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents NewName As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

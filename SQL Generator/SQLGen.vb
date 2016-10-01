@@ -15,6 +15,8 @@
         FieldDetails.Parent = CreateActionLayout
         CreateActionLayout.SetRow(FieldDetails, 2)
         FieldGroup.Text = "Add Field"
+        CreateField.Visible = True
+
         CompleteTable_Button.Enabled = False
 
     End Sub
@@ -54,30 +56,35 @@
         FieldDetails.Parent = AlterTableLayoutPanel
         AlterTableLayoutPanel.SetRow(FieldDetails, 3)
         FieldGroup.Text = "Modify Field"
+        AddField.Visible = True
+        ModifyField.Visible = True
 
-
+        Complete_Alter.Visible = True
 
     End Sub
 
 #End Region'Handles For the main funtions of the program
 
-#Region "New Table Sub-Operation"
+#Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
+    '  
 
 #Region "New Table Operation Handles"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
 
         If Approve.Table = True Then
+CreateButton.Enabled = False
             SQL_Generator.Generate.Table()
             UpdateUI.EnableTableControls()
+
+            NewTableField.Enabled = False
+            Add_Field_Button.Enabled = True
+            Add_Foreign_Key_Button.Enabled = True
+            Add_Primary_Key_Button.Enabled = True
+            CompleteTable_Button.Enabled = True
+
+            Add_Field()
+
         End If
-
-        Add_Field_Button.Enabled = True
-        Add_Foreign_Key_Button.Enabled = True
-        Add_Primary_Key_Button.Enabled = True
-        CompleteTable_Button.Enabled = True
-        NewTableField.Enabled = False
-
-        Add_Field()
 
 
 
@@ -91,7 +98,7 @@
         UpdateUI.ClearUp()
 
     End Sub
-    Private Sub Create_Click(sender As Object, e As EventArgs)
+    Private Sub Create_Click(sender As Object, e As EventArgs) Handles CreateField.Click
         Select Case CurrentlyDoing
 
             Case = "AddField"
@@ -100,7 +107,7 @@
                         PrimCheck.Enabled = False
                         Add_Primary_Key_Button.Enabled = False
                     End If
-                    Generate.Field()
+                    Generate.NewField()
                     Initialise.NewField()
                 End If
 
@@ -127,10 +134,10 @@
 
     End Sub
 
-#End Region'Handles For the 'New Table" Operation
-    '  
+#End Region
+
 #Region "New Table Operation Dependent UI Changes"
-    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs) Handles ReferenceBox.CheckedChanged
 
         If ReferenceBox.Checked = True Then
             OnUpdateBox.Enabled = True
@@ -141,7 +148,7 @@
         End If
 
     End Sub
-    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnUpdateBox.CheckedChanged
         If OnUpdateBox.Checked = True Then
             OnUpdateAction.Enabled = True
         Else
@@ -150,7 +157,7 @@
         End If
 
     End Sub
-    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnDeleteBox.CheckedChanged
         If OnDeleteBox.Checked = True Then
             OnDeleteAction.Enabled = True
         Else
@@ -159,7 +166,7 @@
         End If
 
     End Sub
-    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox.CheckedChanged
         If CheckBox.Checked = True Then
             Check_Type.Enabled = True
             Check_String.Enabled = True
@@ -171,7 +178,7 @@
 
         End If
     End Sub
-    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs)
+    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs) Handles Check_Type.TextChanged
         If Check_Type.Text = "LIKE" Then
             Check_Position.Enabled = True
         Else
@@ -179,7 +186,7 @@
             Check_Position.Enabled = False
         End If
     End Sub
-    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs)
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.TextChanged
 
         If Approve.DataTypeSize = "Precise" Then
             FieldSize.Enabled = False
@@ -216,7 +223,7 @@
         Initialise.Keys()
         ConstraintGroup.Enabled = False
     End Sub
-    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs) Handles ForCheck.CheckedChanged
         If ForCheck.Checked = True Then
             PrimCheck.Checked = False
             PrimCheck.Enabled = False
@@ -228,7 +235,7 @@
             Unique.Enabled = True
         End If
     End Sub
-    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs) Handles PrimCheck.CheckedChanged
         If PrimCheck.Checked = True Then
             ForCheck.Checked = False
             ForCheck.Enabled = False
@@ -240,7 +247,7 @@
             Unique.Enabled = True
         End If
     End Sub
-    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Default_Value_Checkbox.CheckedChanged
         If Default_Value_Checkbox.Checked = True Then
             DefaultValue.Enabled = True
             Formula.Enabled = True
@@ -255,6 +262,7 @@
     End Sub
 
 #End Region 'Handles for control dependent ofother controls
+
 
 #End Region
 
@@ -320,12 +328,53 @@
         MsgBox("Comming Soon!")
     End Sub
 
+#End Region
 
+#Region "Alter Table Sub Operation"
+
+    Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles DropColumn.Click
+        Generate.AlterTable()
+        Generate.DropField()
+    End Sub
+
+    Private Sub ModifyField_Click(sender As Object, e As EventArgs) Handles ModifyField.Click
+
+        If Not (CurrentlyDoing = "ModifyField") Then
+            Generate.AlterTable()
+        End If
+
+        Generate.ModifyField()
+
+        AddField.Enabled = False
+    End Sub
+
+    Private Sub Complete_Alter_Click(sender As Object, e As EventArgs) Handles Complete_Alter.Click
+        CurrentlyDoing = ""
+        Sequence.Items.Add(");")
+        Sequence.Items.Add("")
+
+        AddField.Enabled = True
+        ModifyField.Enabled = True
+
+    End Sub
+
+    Private Sub AddField_Click(sender As Object, e As EventArgs) Handles AddField.Click
+        If Not (CurrentlyDoing = "AddField") Then
+            Generate.AlterTable()
+        End If
+
+        Generate.AddField()
+        ModifyField.Enabled = False
+
+    End Sub
+
+    Private Sub Rename_Click(sender As Object, e As EventArgs) Handles Rename.Click
+        Generate.AlterTable()
+        Generate.RenameTable()
+    End Sub
 
 
 #End Region
-
-
 
 End Class
 
@@ -336,6 +385,8 @@ Public Class Initialise
 
         Home.ActionGroup.Text = "New Table"
         Home.CreateButton.Enabled = True
+        Home.NewTableField.Text = ""
+        Home.NewTableField.Enabled = True
 
         NewField()
 
@@ -361,6 +412,8 @@ Public Class Initialise
         Home.Default_Value_Checkbox.Checked = False
         Home.Formula.Checked = False
         Home.Formula.Enabled = False
+        Home.AddField.Enabled = False
+        Home.ModifyField.Enabled = False
         Keys()
 
         Check()
@@ -435,81 +488,10 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
 
     End Sub
-    Shared Sub Field()
-        Dim FieldName As String
-        Dim LineType As String
-        Dim LineSize As String
-        Dim LineConstraint As String
-        Dim Constraint As String
+    Shared Sub NewField()
         Dim NewLine As String
 
-
-        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
-            LineConstraint = Constraints()
-
-        End If
-
-        FieldName = Home.FieldField.Text
-        LineSize = Home.FieldSize.Value
-
-
-
-        NewLine = FieldName & " " & Home.FieldType.Text & " "
-
-        If Approve.DataTypeSize = "Precise" Then
-
-            NewLine = NewLine & "(" & Home.Precision.Value & "," & Home.Scale_.Value & ") "
-
-        ElseIf Approve.DataTypeSize = "Integer" Then
-
-            NewLine = NewLine & "(" & Home.FieldSize.Value & ") "
-        End If
-
-
-        If Home.Default_Value_Checkbox.Checked = True Then
-
-            If Home.Formula.Checked = True Then
-
-                NewLine = NewLine & "DEFAULT " & Home.DefaultValue.Text & " "
-            Else
-                NewLine = NewLine & "DEFAULT '" & Home.DefaultValue.Text & "' "
-            End If
-
-        End If
-        If Home.PrimCheck.Checked = True Then
-            NewLine = NewLine & "PRIMARY KEY "
-        End If
-
-        If Home.ForCheck.Checked = True Then
-            NewLine = NewLine & "FOREIGN KEY "
-        End If
-
-        If Home.NotNull.Checked = True Then
-            NewLine = NewLine & "NOT NULL "
-        End If
-
-        If Home.Unique.Checked = True Then
-            NewLine = NewLine & "UNIQUE "
-        End If
-
-        If Home.CheckBox.Checked = True Then
-            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
-        End If
-
-        If Home.ReferenceBox.Checked = True Then
-            NewLine = NewLine & "REFERENCES " & Home.ReferenceText.Text & " "
-
-            If Home.OnUpdateBox.Checked = True Then
-                NewLine = NewLine & "ON UPDATE " & Home.OnUpdateAction.Text & " "
-            End If
-
-            If Home.OnDeleteBox.Checked = True Then
-                NewLine = NewLine & "ON DELETE " & Home.OnDeleteAction.Text & " "
-            End If
-        End If
-
-
-        NewLine = vbTab & NewLine + ","
+        NewLine = Field()
 
         Home.Sequence.Items.Add(NewLine)
 
@@ -722,6 +704,140 @@ Public Class Generate
         Home.Sequence.Items.Add("")
     End Sub
 
+    Shared Sub AlterTable()
+        Dim NewLine As String
+        NewLine = "ALTER TABLE " & Home.Alter_Table_Name.Text
+
+        Home.Sequence.Items.Add(NewLine)
+    End Sub
+
+
+    Shared Sub AddField()
+
+        Dim NewLine As String
+
+        If Not (Home.CurrentlyDoing = "AddField") Then
+            NewLine = "ADD "
+        End If
+        Home.CurrentlyDoing = "AddField"
+
+        NewLine = NewLine & Field()
+
+        Home.Sequence.Items.Add(NewLine)
+    End Sub
+
+    Shared Sub DropField()
+        Dim NewLine As String
+
+        NewLine = vbTab & "DROP COLUMN " & Home.Alter_Drop_Table.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
+    End Sub
+
+
+    Shared Sub ModifyField()
+        Dim NewLine As String
+
+        If Not (Home.CurrentlyDoing = "ModifyField") Then
+            NewLine = "MODIFY "
+        End If
+        Home.CurrentlyDoing = "ModifyField"
+
+        NewLine = NewLine & Field()
+
+        Home.Sequence.Items.Add(NewLine)
+    End Sub
+
+    Shared Sub RenameTable()
+        Dim NewLine As String
+
+        NewLine = vbTab & "RENAME TO " & Home.NewName.Text & ";"
+        Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
+    End Sub
+
+    Shared Function Field()
+        Dim FieldName As String
+        Dim LineType As String
+        Dim LineSize As String
+        Dim LineConstraint As String
+        Dim Constraint As String
+        Dim NewLine As String
+
+
+        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+            LineConstraint = Constraints()
+
+        End If
+
+        FieldName = Home.FieldField.Text
+        LineSize = Home.FieldSize.Value
+
+
+
+        NewLine = FieldName & " " & Home.FieldType.Text & " "
+
+        If Approve.DataTypeSize = "Precise" Then
+
+            NewLine = NewLine & "(" & Home.Precision.Value & "," & Home.Scale_.Value & ") "
+
+        ElseIf Approve.DataTypeSize = "Integer" Then
+
+            NewLine = NewLine & "(" & Home.FieldSize.Value & ") "
+        End If
+
+
+        If Home.Default_Value_Checkbox.Checked = True Then
+
+            If Home.Formula.Checked = True Then
+
+                NewLine = NewLine & "DEFAULT " & Home.DefaultValue.Text & " "
+            Else
+                NewLine = NewLine & "DEFAULT '" & Home.DefaultValue.Text & "' "
+            End If
+
+        End If
+        If Home.PrimCheck.Checked = True Then
+            NewLine = NewLine & "PRIMARY KEY "
+        End If
+
+        If Home.ForCheck.Checked = True Then
+            NewLine = NewLine & "FOREIGN KEY "
+        End If
+
+        If Home.NotNull.Checked = True Then
+            NewLine = NewLine & "NOT NULL "
+        End If
+
+        If Home.Unique.Checked = True Then
+            NewLine = NewLine & "UNIQUE "
+        End If
+
+        If Home.CheckBox.Checked = True Then
+            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+        End If
+
+        If Home.ReferenceBox.Checked = True Then
+            NewLine = NewLine & "REFERENCES " & Home.ReferenceText.Text & " "
+
+            If Home.OnUpdateBox.Checked = True Then
+                NewLine = NewLine & "ON UPDATE " & Home.OnUpdateAction.Text & " "
+            End If
+
+            If Home.OnDeleteBox.Checked = True Then
+                NewLine = NewLine & "ON DELETE " & Home.OnDeleteAction.Text & " "
+            End If
+        End If
+
+
+        NewLine = vbTab & NewLine + ","
+
+        Return NewLine
+
+    End Function
+
+
+
 
 End Class
 
@@ -822,11 +938,18 @@ Public Class UpdateUI
         Home.DatabaseTableLayout.Visible = False
         Home.InsertTableLayout.Visible = False
         Home.AlterTableLayoutPanel.Visible = False
+        Home.CreateField.Visible = False
+        Home.AddField.Visible = False
+        Home.ModifyField.Visible = False
+        Home.Complete_Alter.Visible = False
+
+
+
+
 
 
     End Sub
     Shared Sub EnableTableControls()
-        Home.CreateButton.Enabled = False 'Prevents Creating same table multiple times
         Home.Add_Field_Button.Enabled = True
         Home.CompleteTable_Button.Enabled = True
     End Sub
