@@ -29,6 +29,9 @@ Partial Class Home
         Me.ContainerPane = New System.Windows.Forms.Panel()
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
         Me.AlterTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Rename = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.NewTableName = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Alter_Table_Name = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -120,14 +123,12 @@ Partial Class Home
         Me.Create_Table = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Insert = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Drop_Table = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Rename = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.NewName = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.GroupBox1.SuspendLayout()
         Me.Home_Main_Layout.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
         Me.ActionGroup.SuspendLayout()
         Me.AlterTableLayoutPanel.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.DropTableLayout.SuspendLayout()
@@ -157,7 +158,6 @@ Partial Class Home
         Me.ConstraintGroup.SuspendLayout()
         Me.ReferenceGroup.SuspendLayout()
         Me.OperationsPanel.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -246,11 +246,11 @@ Partial Class Home
         '
         'ActionGroup
         '
+        Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
         Me.ActionGroup.Controls.Add(Me.AlterTableLayoutPanel)
         Me.ActionGroup.Controls.Add(Me.DropTableLayout)
         Me.ActionGroup.Controls.Add(Me.DatabaseTableLayout)
         Me.ActionGroup.Controls.Add(Me.InsertTableLayout)
-        Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
         Me.ActionGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionGroup.Location = New System.Drawing.Point(0, 0)
         Me.ActionGroup.Name = "ActionGroup"
@@ -289,6 +289,52 @@ Partial Class Home
         Me.AlterTableLayoutPanel.Size = New System.Drawing.Size(452, 675)
         Me.AlterTableLayoutPanel.TabIndex = 48
         Me.AlterTableLayoutPanel.Visible = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Rename)
+        Me.GroupBox3.Controls.Add(Me.NewTableName)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 59)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(446, 50)
+        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Rename Table"
+        '
+        'Rename
+        '
+        Me.Rename.AutoSize = True
+        Me.Rename.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Rename.BackColor = System.Drawing.Color.White
+        Me.Rename.Depth = 0
+        Me.Rename.Location = New System.Drawing.Point(378, 11)
+        Me.Rename.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Rename.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Rename.Name = "Rename"
+        Me.Rename.Primary = False
+        Me.Rename.Size = New System.Drawing.Size(48, 36)
+        Me.Rename.TabIndex = 39
+        Me.Rename.Text = "Done"
+        Me.Rename.UseVisualStyleBackColor = False
+        '
+        'NewTableName
+        '
+        Me.NewTableName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NewTableName.Depth = 0
+        Me.NewTableName.Hint = ""
+        Me.NewTableName.Location = New System.Drawing.Point(10, 21)
+        Me.NewTableName.MouseState = MaterialSkin.MouseState.HOVER
+        Me.NewTableName.Name = "NewTableName"
+        Me.NewTableName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.NewTableName.SelectedText = ""
+        Me.NewTableName.SelectionLength = 0
+        Me.NewTableName.SelectionStart = 0
+        Me.NewTableName.Size = New System.Drawing.Size(354, 23)
+        Me.NewTableName.TabIndex = 38
+        Me.NewTableName.UseSystemPasswordChar = False
         '
         'Panel1
         '
@@ -1130,6 +1176,7 @@ Partial Class Home
         Me.Complete_Alter.AutoSize = True
         Me.Complete_Alter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Complete_Alter.Depth = 0
+        Me.Complete_Alter.Enabled = False
         Me.Complete_Alter.Location = New System.Drawing.Point(199, 293)
         Me.Complete_Alter.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Complete_Alter.MouseState = MaterialSkin.MouseState.HOVER
@@ -1524,58 +1571,12 @@ Partial Class Home
         Me.Drop_Table.Text = "Drop Table"
         Me.Drop_Table.UseVisualStyleBackColor = False
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Rename)
-        Me.GroupBox3.Controls.Add(Me.NewName)
-        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 59)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(446, 50)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Rename Table"
-        '
-        'Rename
-        '
-        Me.Rename.AutoSize = True
-        Me.Rename.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Rename.BackColor = System.Drawing.Color.White
-        Me.Rename.Depth = 0
-        Me.Rename.Location = New System.Drawing.Point(378, 11)
-        Me.Rename.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Rename.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Rename.Name = "Rename"
-        Me.Rename.Primary = False
-        Me.Rename.Size = New System.Drawing.Size(48, 36)
-        Me.Rename.TabIndex = 39
-        Me.Rename.Text = "Done"
-        Me.Rename.UseVisualStyleBackColor = False
-        '
-        'NewName
-        '
-        Me.NewName.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NewName.Depth = 0
-        Me.NewName.Hint = ""
-        Me.NewName.Location = New System.Drawing.Point(10, 21)
-        Me.NewName.MouseState = MaterialSkin.MouseState.HOVER
-        Me.NewName.Name = "NewName"
-        Me.NewName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.NewName.SelectedText = ""
-        Me.NewName.SelectionLength = 0
-        Me.NewName.SelectionStart = 0
-        Me.NewName.Size = New System.Drawing.Size(354, 23)
-        Me.NewName.TabIndex = 38
-        Me.NewName.UseSystemPasswordChar = False
-        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1164, 773)
+        Me.ClientSize = New System.Drawing.Size(1164, 765)
         Me.Controls.Add(Me.Home_Main_Layout)
         Me.ForeColor = System.Drawing.SystemColors.Control
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1587,6 +1588,8 @@ Partial Class Home
         Me.ContainerPane.ResumeLayout(False)
         Me.ActionGroup.ResumeLayout(False)
         Me.AlterTableLayoutPanel.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -1636,8 +1639,6 @@ Partial Class Home
         Me.ReferenceGroup.PerformLayout()
         Me.OperationsPanel.ResumeLayout(False)
         Me.OperationsPanel.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1741,5 +1742,5 @@ Partial Class Home
     Friend WithEvents Complete_Alter As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Rename As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents NewName As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents NewTableName As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

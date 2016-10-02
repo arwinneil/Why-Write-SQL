@@ -49,8 +49,12 @@
     End Sub
     Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
         UpdateUI.ClearUp()
+        Initialise.Alter_table()
 
         ActionGroup.Visible = True
+
+        ActionGroup.Text = "Alter Table"
+
         CurrentlyDoing = "AlterTable"
         AlterTableLayoutPanel.Visible = True
         FieldDetails.Parent = AlterTableLayoutPanel
@@ -333,19 +337,28 @@ CreateButton.Enabled = False
 #Region "Alter Table Sub Operation"
 
     Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles DropColumn.Click
-        Generate.AlterTable()
-        Generate.DropField()
+        If Approve.Alter_Table() = True And Approve.DropColumn() = True Then
+            Generate.AlterTable()
+            Generate.DropField()
+            Initialise.DropColumn()
+
+        End If
     End Sub
 
     Private Sub ModifyField_Click(sender As Object, e As EventArgs) Handles ModifyField.Click
+        If Approve.Field() And Approve.Alter_Table = True Then
 
-        If Not (CurrentlyDoing = "ModifyField") Then
-            Generate.AlterTable()
+            If Not (CurrentlyDoing = "ModifyField") Then
+                Generate.AlterTable()
+            End If
+
+            Generate.ModifyField()
+
+            AddField.Enabled = False
+            Complete_Alter.Enabled = True
+            Initialise.NewField()
         End If
 
-        Generate.ModifyField()
-
-        AddField.Enabled = False
     End Sub
 
     Private Sub Complete_Alter_Click(sender As Object, e As EventArgs) Handles Complete_Alter.Click
@@ -355,22 +368,34 @@ CreateButton.Enabled = False
 
         AddField.Enabled = True
         ModifyField.Enabled = True
+        Complete_Alter.Enabled = True
 
     End Sub
 
     Private Sub AddField_Click(sender As Object, e As EventArgs) Handles AddField.Click
-        If Not (CurrentlyDoing = "AddField") Then
-            Generate.AlterTable()
-        End If
 
-        Generate.AddField()
-        ModifyField.Enabled = False
+        If Approve.Alter_Table() = True And Approve.Field() = True Then
+            If Not (CurrentlyDoing = "AddField") Then
+                Generate.AlterTable()
+            End If
+
+            Generate.AddField()
+            ModifyField.Enabled = False
+            Complete_Alter.Enabled = True
+            Initialise.NewField()
+        End If
 
     End Sub
 
     Private Sub Rename_Click(sender As Object, e As EventArgs) Handles Rename.Click
-        Generate.AlterTable()
-        Generate.RenameTable()
+
+        If Approve.Alter_Table() = True And Approve.Rename() = True Then
+            Generate.AlterTable()
+            Generate.RenameTable()
+            Initialise.Rename()
+        End If
+
+
     End Sub
 
 
@@ -412,8 +437,8 @@ Public Class Initialise
         Home.Default_Value_Checkbox.Checked = False
         Home.Formula.Checked = False
         Home.Formula.Enabled = False
-        Home.AddField.Enabled = False
-        Home.ModifyField.Enabled = False
+
+
         Keys()
 
         Check()
@@ -476,6 +501,26 @@ Public Class Initialise
         Home.DataItems.Text = ""
 
     End Sub
+
+#Region "Alter Table Initialisers"
+    Shared Sub Rename()
+        Home.NewTableName.Text = ""
+    End Sub
+
+    Shared Sub DropColumn()
+        Home.Alter_Drop_Table.Text = ""
+    End Sub
+
+    Shared Sub Alter_table()
+        Home.Alter_Table_Name.Text = ""
+        Home.Complete_Alter.Enabled = False
+        DropColumn()
+        Rename()
+        NewField()
+
+    End Sub
+#End Region
+
 
 End Class
 
@@ -751,7 +796,7 @@ Public Class Generate
     Shared Sub RenameTable()
         Dim NewLine As String
 
-        NewLine = vbTab & "RENAME TO " & Home.NewName.Text & ";"
+        NewLine = vbTab & "RENAME TO " & Home.NewTableName.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
@@ -924,6 +969,41 @@ Public Class Approve
 
         End If
         Return Size
+    End Function
+
+    Shared Function Alter_Table()
+        Dim Approved As Boolean
+        Approved = True
+
+        If Home.Alter_Table_Name.Text = "" Then
+            MsgBox("Please enter table name before continuing.")
+            Approved = False
+
+        End If
+        Return Approved
+    End Function
+    Shared Function Rename()
+        Dim Approved As Boolean
+        Approved = True
+
+        If Home.NewTableName.Text = "" Then
+            MsgBox("Please enter new table name before continuing.")
+            Approved = False
+
+        End If
+        Return Approved
+    End Function
+
+    Shared Function DropColumn()
+        Dim Approved As Boolean
+        Approved = True
+
+        If Home.Alter_Drop_Table.Text = "" Then
+            MsgBox("Please enter name of column to be deleted.")
+            Approved = False
+
+        End If
+        Return Approved
     End Function
 
 
