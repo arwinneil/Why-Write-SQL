@@ -274,6 +274,7 @@ CreateButton.Enabled = False
 
     Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
         Generate.InsertData()
+        UpdateUI.ClearUp()
 
     End Sub
 
@@ -310,6 +311,8 @@ CreateButton.Enabled = False
 
         Generate.DropTable()
         Initialise.DropTable()
+
+        UpdateUI.ClearUp()
     End Sub
 
 #End Region
@@ -318,10 +321,12 @@ CreateButton.Enabled = False
     Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
         Generate.CreateDatabase()
         Initialise.Database()
+        UpdateUI.ClearUp()
     End Sub
     Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
         Generate.DropDatabase()
         Initialise.Database()
+        UpdateUI.ClearUp()
     End Sub
     Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
         Generate.SelectDatabase()
@@ -369,7 +374,7 @@ CreateButton.Enabled = False
         AddField.Enabled = True
         ModifyField.Enabled = True
         Complete_Alter.Enabled = True
-
+        UpdateUI.ClearUp()
     End Sub
 
     Private Sub AddField_Click(sender As Object, e As EventArgs) Handles AddField.Click

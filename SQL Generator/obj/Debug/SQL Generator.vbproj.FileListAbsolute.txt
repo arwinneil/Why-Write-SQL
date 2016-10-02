@@ -10,14 +10,14 @@ c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator
 c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.xml
 c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\obj\Debug\SQL Generator.pdb
 c:\users\admin\documents\visual studio 2015\Projects\SQL Generator\SQL Generator\bin\Debug\MaterialSkin.dll
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Generator.exe.config
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.exe
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.xml
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.pdb
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Generator.exe
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Generator.pdb
-C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Generator.xml
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.vbprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL_Generator.Resources.resources
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Generator.vbproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL_Generator.Home.resources
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Script Generator.exe.config
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Script Generator.exe
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Script Generator.pdb
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Script Generator.xml
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.exe
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.xml
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.pdb

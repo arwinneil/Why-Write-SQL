@@ -596,7 +596,7 @@ Partial Class Home
         Me.Create_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Create_Database.BackColor = System.Drawing.Color.White
         Me.Create_Database.Depth = 0
-        Me.Create_Database.Location = New System.Drawing.Point(6, 6)
+        Me.Create_Database.Location = New System.Drawing.Point(7, 8)
         Me.Create_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Create_Database.MouseState = MaterialSkin.MouseState.HOVER
         Me.Create_Database.Name = "Create_Database"
