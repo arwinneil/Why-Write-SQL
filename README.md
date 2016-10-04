@@ -19,13 +19,13 @@ Code is generated based on GUI inputs.
 
 - [x] CREATE,DROP & USE Database Commands
 - [x] CREATE,DROP & INSERT INTO Table Commands
-- [ ] ALTER TABLE
+- [x] ALTER TABLE : ADD, DROP, RENAME TO & MODIFY Commands
 - [ ] SELECT QUERIES
 - [ ] EXPORT to .sql & .txt
 - [ ] CODE CLEANUP
 
 ## Version
-Not released yet.
+-  [0.8_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.8_Alpha)
 
 ##Resources
 
