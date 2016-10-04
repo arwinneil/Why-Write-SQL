@@ -153,7 +153,12 @@ Public Class Home
         End Select
 
     End Sub
-    Private Sub Add_Field() Handles Add_Field_Button.Click
+    Private Sub Add_Field_Butt(sender As Object, e As EventArgs) Handles Add_Field_Button.Click
+        Add_Field()
+
+    End Sub
+
+    Private Sub Add_Field()
         CurrentlyDoing = "AddNewField"
 
         Initialise.NewField()
@@ -462,6 +467,12 @@ Public Class Home
         DropGroup.Visible = True
         FieldDetails.Visible = False
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        UpdateUI.ClearUp()
+    End Sub
+
+
 
 #End Region
 
