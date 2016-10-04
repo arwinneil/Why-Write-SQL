@@ -339,18 +339,16 @@ Public Class Home
 
 
 
-
-
 #End Region
 
 #Region "Drop Table Sub-Operation"
     Private Sub DropButton_Click(sender As Object, e As EventArgs) Handles DropButton.Click
 
-        Generate.DropTable()
-        Initialise.DropTable()
-
-        UpdateUI.ClearUp()
-
+        If Approve.DropTable = True Then
+            Generate.DropTable()
+            Initialise.DropTable()
+            UpdateUI.ClearUp()
+        End If
 
     End Sub
 
@@ -358,18 +356,30 @@ Public Class Home
 
 #Region "Database Operations Sub Operations"
     Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
-        Generate.CreateDatabase()
-        Initialise.Database()
-        UpdateUI.ClearUp()
+
+        If Approve.Database = True Then
+            Generate.CreateDatabase()
+            Initialise.Database()
+        End If
+
+
     End Sub
     Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
-        Generate.DropDatabase()
-        Initialise.Database()
-        UpdateUI.ClearUp()
+
+        If Approve.Database = True Then
+            Generate.DropDatabase()
+            Initialise.Database()
+
+        End If
+
+
     End Sub
     Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
-        Generate.SelectDatabase()
-        Initialise.Database()
+        If Approve.Database = True Then
+            Generate.SelectDatabase()
+            Initialise.Database()
+        End If
+
     End Sub
 
     Private Sub Select_Query_Click(sender As Object, e As EventArgs) Handles Select_Query.Click
@@ -1106,7 +1116,29 @@ Public Class Approve
         Return Approved
     End Function
 
+    Shared Function Database()
+        Dim Approved As Boolean
+        Approved = True
 
+        If Home.DatabaseName.Text = "" Then
+            MsgBox("Please enter name of Database.")
+            Approved = False
+
+        End If
+        Return Approved
+    End Function
+
+    Shared Function DropTable()
+        Dim Approved As Boolean
+        Approved = True
+
+        If Home.DatabaseName.Text = "" Then
+            MsgBox("Please enter name of Database.")
+            Approved = False
+
+        End If
+        Return Approved
+    End Function
 
 
 
