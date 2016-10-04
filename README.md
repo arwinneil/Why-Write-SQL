@@ -31,7 +31,7 @@ Code is generated based on GUI inputs.
 
 Home Icon by [Freepik](http://www.flaticon.com/authors/freepik) from Flaticon
 
-Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
+Material Skin from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
 ##Licence
 [MIT License](LICENSE)
