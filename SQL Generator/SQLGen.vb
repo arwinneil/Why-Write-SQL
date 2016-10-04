@@ -9,6 +9,7 @@ Public Class Home
     End Sub
 
     Public CurrentlyDoing As String
+    Public First As Boolean
 
 #Region "Main Operations"
     Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Create_Table.Click
@@ -70,11 +71,12 @@ Public Class Home
         AlterTableLayoutPanel.SetRow(FieldDetails, 2)
         AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
         FieldDetails.Dock = DockStyle.Fill
-        FieldGroup.Text = "Modify Field"
-        AddField.Visible = True
-        ModifyField.Visible = True
 
-        Complete_Alter.Visible = True
+
+
+        FieldDetails.Visible = False
+
+
 
     End Sub
 
@@ -124,7 +126,7 @@ Public Class Home
     Private Sub Create_Click(sender As Object, e As EventArgs) Handles CreateField.Click
         Select Case CurrentlyDoing
 
-            Case = "AddField"
+            Case = "AddNewField"
                 If Approve.Field() = True Then
                     If PrimCheck.Checked = True Then
                         PrimCheck.Enabled = False
@@ -142,11 +144,17 @@ Public Class Home
             Case = "AddForeignKey"
                 Generate.ForeignKey()
 
+            Case = "AddField"
+                AlterAddField()
+
+            Case = "ModifyField"
+                AlterModifyField()
+
         End Select
 
     End Sub
     Private Sub Add_Field() Handles Add_Field_Button.Click
-        CurrentlyDoing = "AddField"
+        CurrentlyDoing = "AddNewField"
 
         Initialise.NewField()
         ReferenceGroup.Enabled = True
@@ -376,43 +384,33 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub ModifyField_Click(sender As Object, e As EventArgs) Handles ModifyField.Click
+    Private Sub AlterModifyField()
         If Approve.Field() And Approve.Alter_Table = True Then
 
-            If Not (CurrentlyDoing = "ModifyField") Then
-                Generate.AlterTable()
-            End If
 
-            Generate.ModifyField()
+            Generate.AlterTable()
 
-            AddField.Enabled = False
-            Complete_Alter.Enabled = True
+
+                Generate.ModifyField()
+
+
+
             Initialise.NewField()
         End If
 
     End Sub
 
-    Private Sub Complete_Alter_Click(sender As Object, e As EventArgs) Handles Complete_Alter.Click
-        CurrentlyDoing = ""
-        Sequence.Items.Add(");")
-        Sequence.Items.Add("")
 
-        AddField.Enabled = True
-        ModifyField.Enabled = True
-        Complete_Alter.Enabled = True
-        UpdateUI.ClearUp()
-    End Sub
 
-    Private Sub AddField_Click(sender As Object, e As EventArgs) Handles AddField.Click
+    Private Sub AlterAddField()
 
         If Approve.Alter_Table() = True And Approve.Field() = True Then
-            If Not (CurrentlyDoing = "AddField") Then
-                Generate.AlterTable()
-            End If
+
+            Generate.AlterTable()
 
             Generate.AddField()
-            ModifyField.Enabled = False
-            Complete_Alter.Enabled = True
+
+
             Initialise.NewField()
         End If
 
@@ -429,9 +427,41 @@ Public Class Home
 
     End Sub
 
+    Private Sub AlterRename_Click(sender As Object, e As EventArgs) Handles AlterRename.Click
+        RenameGroup.Visible = True
+        DropGroup.Visible = False
+        FieldDetails.Visible = False
+
+    End Sub
+
+    Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterAdd.Click
+
+        RenameGroup.Visible = False
+        DropGroup.Visible = False
+        FieldDetails.Visible = True
+
+        FieldGroup.Text = "Add Field"
+        CurrentlyDoing = "AddField"
+        First = True
 
 
+    End Sub
 
+    Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
+        RenameGroup.Visible = False
+        DropGroup.Visible = False
+        FieldDetails.Visible = True
+
+        FieldGroup.Text = "Modify Field"
+        CurrentlyDoing = "ModifyField"
+        First = True
+    End Sub
+
+    Private Sub AlterDrop_Click(sender As Object, e As EventArgs) Handles AlterDrop.Click
+        RenameGroup.Visible = False
+        DropGroup.Visible = True
+        FieldDetails.Visible = False
+    End Sub
 
 #End Region
 
@@ -550,7 +580,7 @@ Public Class Initialise
 
     Shared Sub Alter_table()
         Home.Alter_Table_Name.Text = ""
-        Home.Complete_Alter.Enabled = False
+
         DropColumn()
         Rename()
         NewField()
@@ -798,20 +828,16 @@ Public Class Generate
 
         Dim NewLine As String
 
-        If Not (Home.CurrentlyDoing = "AddField") Then
-            NewLine = "ADD "
-        End If
-        Home.CurrentlyDoing = "AddField"
-
-        NewLine = NewLine & Field()
+        NewLine = "ADD " & Field()
 
         Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
     End Sub
 
     Shared Sub DropField()
         Dim NewLine As String
 
-        NewLine = vbTab & "DROP COLUMN " & Home.Alter_Drop_Table.Text & ";"
+        NewLine = "DROP COLUMN " & Home.Alter_Drop_Table.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
@@ -820,14 +846,11 @@ Public Class Generate
     Shared Sub ModifyField()
         Dim NewLine As String
 
-        If Not (Home.CurrentlyDoing = "ModifyField") Then
-            NewLine = "MODIFY "
-        End If
-        Home.CurrentlyDoing = "ModifyField"
-
-        NewLine = NewLine & Field()
+        NewLine = "MODIFY " & Field()
 
         Home.Sequence.Items.Add(NewLine)
+        Home.Sequence.Items.Add("")
+
     End Sub
 
     Shared Sub RenameTable()
@@ -911,8 +934,15 @@ Public Class Generate
             End If
         End If
 
+        If Home.CurrentlyDoing = "AddNewField" Then
+            NewLine = vbTab & NewLine + ","
 
-        NewLine = vbTab & NewLine + ","
+        Else
+            NewLine = NewLine + ";"
+        End If
+
+
+
 
         Return NewLine
 
@@ -1079,12 +1109,9 @@ Public Class UpdateUI
         Home.DatabaseTableLayout.Visible = False
         Home.InsertTableLayout.Visible = False
         Home.AlterTableLayoutPanel.Visible = False
-        Home.CreateField.Visible = False
-        Home.AddField.Visible = False
-        Home.ModifyField.Visible = False
-        Home.Complete_Alter.Visible = False
-
         Home.ActionGroup.Visible = False
+
+        Home.First = False
 
     End Sub
     Shared Sub EnableTableControls()
