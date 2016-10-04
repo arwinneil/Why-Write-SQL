@@ -13,7 +13,7 @@ Demonstrating basic coding structures, Visual Basic Language, SQL, .NET WinForms
 Code is generated based on GUI inputs.
 
 
-![SQL SCRIPT GENERATOR](http://i.imgur.com/Om3HIPH.png)
+![SQL SCRIPT GENERATOR](http://i.imgur.com/fujnaeb.png)
 
 ## Progress & Features
 
