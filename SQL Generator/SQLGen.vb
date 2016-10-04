@@ -1043,6 +1043,7 @@ Public Class Approve
         Return Approved
     End Function
     Shared Function Insert()
+
         Dim Approved As Boolean
         Approved = True
 
