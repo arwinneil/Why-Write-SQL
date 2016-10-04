@@ -1,4 +1,12 @@
-﻿Public Class Home
+﻿Imports MaterialSkin
+Public Class Home
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.Red600, Primary.Red800, Primary.Red400, Accent.Lime400, TextShade.WHITE)
+    End Sub
 
     Public CurrentlyDoing As String
 
@@ -17,12 +25,12 @@
         FieldGroup.Text = "Add Field"
         CreateField.Visible = True
 
-        CompleteTable_Button.Enabled = False
+
 
     End Sub
     Private Sub UpdateTableAction(sender As Object, e As EventArgs) Handles Insert.Click
 
-        CurrentlyDoing = "Insert"
+        CurrentlyDoing = "Insert Into"
 
         UpdateUI.ClearUp()
         Initialise.TableUpdate()
@@ -42,6 +50,7 @@
 
     End Sub
     Private Sub Database_Operations_Click(sender As Object, e As EventArgs) Handles Database_Operations.Click
+
         UpdateUI.ClearUp()
         Initialise.Database()
         ActionGroup.Visible = True
@@ -58,7 +67,9 @@
         CurrentlyDoing = "AlterTable"
         AlterTableLayoutPanel.Visible = True
         FieldDetails.Parent = AlterTableLayoutPanel
-        AlterTableLayoutPanel.SetRow(FieldDetails, 3)
+        AlterTableLayoutPanel.SetRow(FieldDetails, 2)
+        AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
+        FieldDetails.Dock = DockStyle.Fill
         FieldGroup.Text = "Modify Field"
         AddField.Visible = True
         ModifyField.Visible = True
@@ -76,8 +87,8 @@
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
 
         If Approve.Table = True Then
-CreateButton.Enabled = False
-            SQL_Generator.Generate.Table()
+            CreateButton.Enabled = False
+            Generate.Table()
             UpdateUI.EnableTableControls()
 
             NewTableField.Enabled = False
@@ -100,6 +111,14 @@ CreateButton.Enabled = False
         Sequence.Items.Add("")
         Initialise.NewTable()
         UpdateUI.ClearUp()
+
+        Add_Field_Button.Enabled = False
+        Add_Primary_Key_Button.Enabled = False
+        Add_Foreign_Key_Button.Enabled = False
+        CompleteTable_Button.Enabled = False
+
+
+
 
     End Sub
     Private Sub Create_Click(sender As Object, e As EventArgs) Handles CreateField.Click
@@ -134,6 +153,8 @@ CreateButton.Enabled = False
         FieldGroup.Visible = True
         PrimaryGroup.Visible = False
         ForeignKeyGroup.Visible = False
+
+        CreateField.Enabled = True
 
 
     End Sub
@@ -270,11 +291,14 @@ CreateButton.Enabled = False
 
 #End Region
 
-#Region "Update Table Sub-Operation"
+#Region "Insert Table Sub-Operation"
 
     Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
-        Generate.InsertData()
-        UpdateUI.ClearUp()
+        If Approve.Insert() = True Then
+            Generate.InsertData()
+            UpdateUI.ClearUp()
+
+        End If
 
     End Sub
 
@@ -313,6 +337,8 @@ CreateButton.Enabled = False
         Initialise.DropTable()
 
         UpdateUI.ClearUp()
+
+
     End Sub
 
 #End Region
@@ -404,6 +430,9 @@ CreateButton.Enabled = False
     End Sub
 
 
+
+
+
 #End Region
 
 End Class
@@ -417,6 +446,8 @@ Public Class Initialise
         Home.CreateButton.Enabled = True
         Home.NewTableField.Text = ""
         Home.NewTableField.Enabled = True
+
+
 
         NewField()
 
@@ -442,6 +473,7 @@ Public Class Initialise
         Home.Default_Value_Checkbox.Checked = False
         Home.Formula.Checked = False
         Home.Formula.Enabled = False
+
 
 
         Keys()
@@ -1010,6 +1042,29 @@ Public Class Approve
         End If
         Return Approved
     End Function
+    Shared Function Insert()
+        Dim Approved As Boolean
+        Approved = True
+
+        If Home.InsertTable.Text = "" Then
+            MsgBox("Please enter name of Table.")
+            Approved = False
+        End If
+
+        If Home.Specify_CheckBox.Checked = True And Home.Columns.Text = "" Then
+            MsgBox("Please enter Columns.")
+            Approved = False
+        End If
+
+        If Home.DataItems.Text = "" Then
+            MsgBox("Please enter data items.")
+            Approved = False
+        End If
+
+        Return Approved
+    End Function
+
+
 
 
 
@@ -1028,10 +1083,7 @@ Public Class UpdateUI
         Home.ModifyField.Visible = False
         Home.Complete_Alter.Visible = False
 
-
-
-
-
+        Home.ActionGroup.Visible = False
 
     End Sub
     Shared Sub EnableTableControls()

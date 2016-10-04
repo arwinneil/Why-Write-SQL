@@ -21,3 +21,4 @@ C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\SQL Script Genera
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.exe
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.xml
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Debug\SQL Script Generator.pdb
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Debug\MaterialSkin.dll
