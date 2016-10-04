@@ -16,7 +16,7 @@ Code is generated based on GUI inputs.
 ![SQL SCRIPT GENERATOR](http://i.imgur.com/fujnaeb.png)
 
 ## Progress & Features
-
+- [x] [Material Design Form](#resources)
 - [x] CREATE,DROP & USE Database Commands
 - [x] CREATE,DROP & INSERT INTO Table Commands
 - [x] ALTER TABLE : ADD, DROP, RENAME TO & MODIFY Commands
@@ -29,7 +29,7 @@ Code is generated based on GUI inputs.
 
 ##Resources
 
-Icon designed by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver) from Flaticon
+Home Icon by [Freepik](http://www.flaticon.com/authors/freepik) from Flaticon
 
 Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
