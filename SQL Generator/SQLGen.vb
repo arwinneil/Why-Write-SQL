@@ -148,6 +148,7 @@ Public Class Home
     Private Sub Add_Field()
         CurrentlyDoing = "AddNewField"
 
+        FieldDetails.Visible = True
         Initialise.NewField()
         ReferenceGroup.Enabled = True
         FieldGroup.Visible = True
