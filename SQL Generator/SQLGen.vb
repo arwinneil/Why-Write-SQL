@@ -26,8 +26,6 @@ Public Class Home
         FieldGroup.Text = "Add Field"
         CreateField.Visible = True
 
-
-
     End Sub
     Private Sub UpdateTableAction(sender As Object, e As EventArgs) Handles Insert.Click
 
@@ -47,7 +45,6 @@ Public Class Home
         Initialise.DropTable()
         ActionGroup.Visible = True
         DropTableLayout.Visible = True
-
 
     End Sub
     Private Sub Database_Operations_Click(sender As Object, e As EventArgs) Handles Database_Operations.Click
@@ -72,18 +69,14 @@ Public Class Home
         AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
         FieldDetails.Dock = DockStyle.Fill
 
-
-
         FieldDetails.Visible = False
-
-
 
     End Sub
 
 #End Region'Handles For the main funtions of the program
 
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
-    '  
+    '
 
 #Region "New Table Operation Handles"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
@@ -103,9 +96,6 @@ Public Class Home
 
         End If
 
-
-
-
     End Sub
     Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CompleteTable_Button.Click
 
@@ -118,9 +108,6 @@ Public Class Home
         Add_Primary_Key_Button.Enabled = False
         Add_Foreign_Key_Button.Enabled = False
         CompleteTable_Button.Enabled = False
-
-
-
 
     End Sub
     Private Sub Create_Click(sender As Object, e As EventArgs) Handles CreateField.Click
@@ -168,7 +155,6 @@ Public Class Home
         ForeignKeyGroup.Visible = False
 
         CreateField.Enabled = True
-
 
     End Sub
 
@@ -301,7 +287,6 @@ Public Class Home
 
 #End Region 'Handles for control dependent ofother controls
 
-
 #End Region
 
 #Region "Insert Table Sub-Operation"
@@ -337,8 +322,6 @@ Public Class Home
 
     End Sub
 
-
-
 #End Region
 
 #Region "Drop Table Sub-Operation"
@@ -362,7 +345,6 @@ Public Class Home
             Initialise.Database()
         End If
 
-
     End Sub
     Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
 
@@ -371,7 +353,6 @@ Public Class Home
             Initialise.Database()
 
         End If
-
 
     End Sub
     Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
@@ -402,20 +383,14 @@ Public Class Home
     Private Sub AlterModifyField()
         If Approve.Field() And Approve.Alter_Table = True Then
 
-
             Generate.AlterTable()
 
-
-                Generate.ModifyField()
-
-
+            Generate.ModifyField()
 
             Initialise.NewField()
         End If
 
     End Sub
-
-
 
     Private Sub AlterAddField()
 
@@ -424,7 +399,6 @@ Public Class Home
             Generate.AlterTable()
 
             Generate.AddField()
-
 
             Initialise.NewField()
         End If
@@ -438,7 +412,6 @@ Public Class Home
             Generate.RenameTable()
             Initialise.Rename()
         End If
-
 
     End Sub
 
@@ -458,7 +431,6 @@ Public Class Home
         FieldGroup.Text = "Add Field"
         CurrentlyDoing = "AddField"
         First = True
-
 
     End Sub
 
@@ -482,8 +454,6 @@ Public Class Home
         UpdateUI.ClearUp()
     End Sub
 
-
-
 #End Region
 
 End Class
@@ -498,8 +468,6 @@ Public Class Initialise
         Home.NewTableField.Text = ""
         Home.NewTableField.Enabled = True
 
-
-
         NewField()
 
         Keys()
@@ -507,7 +475,6 @@ Public Class Initialise
         Check()
 
         Constraints()
-
 
     End Sub
     Shared Sub NewField()
@@ -524,8 +491,6 @@ Public Class Initialise
         Home.Default_Value_Checkbox.Checked = False
         Home.Formula.Checked = False
         Home.Formula.Enabled = False
-
-
 
         Keys()
 
@@ -609,7 +574,6 @@ Public Class Initialise
     End Sub
 #End Region
 
-
 End Class
 
 Public Class Generate
@@ -637,7 +601,6 @@ Public Class Generate
 
         Select Case Home.Check_Type.Text
             Case "LIKE"
-
 
                 Select Case Home.Check_Position.Text 'Case of Position of LIKE String
                     Case "Before any string"
@@ -676,7 +639,6 @@ Public Class Generate
     Shared Sub PrimaryKey()
         Dim NewLine As String
         Dim LineConstraint As String
-
 
         NewLine = "PRIMARY KEY ("
 
@@ -728,7 +690,6 @@ Public Class Generate
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
-
         NewLine = vbTab & NewLine + ","
 
         Home.Sequence.Items.Add(NewLine)
@@ -764,8 +725,6 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
 
         NewLine = "VALUES ("
-
-
 
         Dim DataItem As String() = Home.DataItems.Lines 'Multiline list converted to array
 
@@ -808,8 +767,6 @@ Public Class Generate
     Shared Sub CreateDatabase()
         Dim NewLine As String
 
-
-
         NewLine = "CREATE DATABASE " & Home.DatabaseName.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
@@ -844,7 +801,6 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
     End Sub
 
-
     Shared Sub AddField()
 
         Dim NewLine As String
@@ -862,7 +818,6 @@ Public Class Generate
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
-
 
     Shared Sub ModifyField()
         Dim NewLine As String
@@ -890,7 +845,6 @@ Public Class Generate
         Dim Constraint As String
         Dim NewLine As String
 
-
         If Home.CheckBox.Checked = True Then 'Check if any constraint apply
             LineConstraint = Constraints()
 
@@ -898,8 +852,6 @@ Public Class Generate
 
         FieldName = Home.FieldField.Text
         LineSize = Home.FieldSize.Value
-
-
 
         NewLine = FieldName & " " & Home.FieldType.Text & " "
 
@@ -911,7 +863,6 @@ Public Class Generate
 
             NewLine = NewLine & "(" & Home.FieldSize.Value & ") "
         End If
-
 
         If Home.Default_Value_Checkbox.Checked = True Then
 
@@ -962,15 +913,9 @@ Public Class Generate
             NewLine = NewLine + ";"
         End If
 
-
-
-
         Return NewLine
 
     End Function
-
-
-
 
 End Class
 
@@ -1020,13 +965,10 @@ Public Class Approve
             Approved = False
         End If
 
-
         If Home.Check_Type.Text = "LIKE" And Home.Check_Position.SelectedIndex = -1 Then
             MsgBox("Please specify string position for LIKE CHECK.")
             Approved = False
         End If
-
-
 
         Return Approved
     End Function
@@ -1140,8 +1082,6 @@ Public Class Approve
         Return Approved
     End Function
 
-
-
 End Class
 
 Public Class UpdateUI
@@ -1163,5 +1103,3 @@ Public Class UpdateUI
     End Sub
 
 End Class
-
-
