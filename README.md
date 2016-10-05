@@ -25,7 +25,7 @@ Code is generated based on GUI inputs.
 - [ ] CODE CLEANUP
 
 ## Version
--  [0.8_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.8_Alpha)
+-  [0.9_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.9_Alpha)
 
 ##Resources
 
