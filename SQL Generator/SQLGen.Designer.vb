@@ -320,11 +320,11 @@ Partial Class Home
         '
         'ActionGroup
         '
-        Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
         Me.ActionGroup.Controls.Add(Me.AlterTableLayoutPanel)
         Me.ActionGroup.Controls.Add(Me.DropTableLayout)
         Me.ActionGroup.Controls.Add(Me.DatabaseTableLayout)
         Me.ActionGroup.Controls.Add(Me.InsertTableLayout)
+        Me.ActionGroup.Controls.Add(Me.CreateActionLayout)
         Me.ActionGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ActionGroup.Location = New System.Drawing.Point(0, 0)
         Me.ActionGroup.Name = "ActionGroup"
@@ -1277,8 +1277,8 @@ Partial Class Home
         '
         'Panel12
         '
-        Me.Panel12.Controls.Add(Me.RenameGroup)
         Me.Panel12.Controls.Add(Me.DropGroup)
+        Me.Panel12.Controls.Add(Me.RenameGroup)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel12.Location = New System.Drawing.Point(3, 113)
         Me.Panel12.Name = "Panel12"
@@ -1348,7 +1348,7 @@ Partial Class Home
         Me.DropGroup.Size = New System.Drawing.Size(446, 45)
         Me.DropGroup.TabIndex = 3
         Me.DropGroup.TabStop = False
-        Me.DropGroup.Text = "Drop Column"
+        Me.DropGroup.Text = "Drop Field"
         Me.DropGroup.Visible = False
         '
         'Alter_Drop_Table
