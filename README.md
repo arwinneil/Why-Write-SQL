@@ -1,12 +1,5 @@
 # SQL Script Generator
 
-##Overview
-Demonstrating basic coding structures, Visual Basic Language, SQL, .NET WinForms theming and doing my Database Course homework, cause, why not?
-
-<p align="center">
-<img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
-<p/>
-
 ## Getting Started
 [SQL Script Generator](https://github.com/arwinneil/Why-Write-SQL) is a SQL code generator, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.
 
@@ -14,6 +7,12 @@ Code is generated based on GUI inputs.
 
 
 ![SQL SCRIPT GENERATOR](http://i.imgur.com/fujnaeb.png)
+
+The aim of tthis open source  to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
+
+<p align="center">
+<img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
+<p/>
 
 ## Progress & Features
 - [x] [Material Design Form](#resources)
@@ -32,6 +31,10 @@ Code is generated based on GUI inputs.
 Home Icon by [Freepik](http://www.flaticon.com/authors/freepik) from Flaticon
 
 Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
+
+##Resources
+- [ILMerge](https://www.microsoft.com/en-us/download/confirmation.aspx?id=17630) & [ILMerge-GUI](http://ilmergegui.codeplex.com/)- For merging assemblies. (.exe & dlls)
+- [CodeMaid](http://www.codemaid.net/) - Visual Studio Extenion with some handy coding tools.
 
 ##Licence
 [MIT License](LICENSE)
