@@ -1,6 +1,8 @@
+<p align="center">
+<img src="http://i.imgur.com/M058kks.jpg"  height="200" >
+<p/>
 
-![SQL SCROPT GENERATOR](http://i.imgur.com/M058kks.jpg)
-# Getting Started
+## Getting Started
 [SQL Script Generator](https://github.com/arwinneil/Why-Write-SQL) is a SQL code generator, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.
 
 Code is generated based on GUI inputs.
