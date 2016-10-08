@@ -453,6 +453,9 @@ Public Class Home
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         UpdateUI.ClearUp()
+
+        HomeContainerPanel.Visible = True
+
     End Sub
 
 #End Region
@@ -867,7 +870,7 @@ Public Class Generate
 
         If Home.Default_Value_Checkbox.Checked = True Then
 
-            If Home.Formula.Checked = True Then
+            If Home.Formula.Checked = True Or IsNumeric(Home.DefaultValue.Text) = True Then
 
                 NewLine = NewLine & "DEFAULT " & Home.DefaultValue.Text & " "
             Else
@@ -1075,8 +1078,8 @@ Public Class Approve
         Dim Approved As Boolean
         Approved = True
 
-        If Home.DatabaseName.Text = "" Then
-            MsgBox("Please enter name of Database.")
+        If Home.TableName.Text = "" Then
+            MsgBox("Please enter name of table.")
             Approved = False
 
         End If
@@ -1094,6 +1097,8 @@ Public Class UpdateUI
         Home.InsertTableLayout.Visible = False
         Home.AlterTableLayoutPanel.Visible = False
         Home.ActionGroup.Visible = False
+
+        Home.HomeContainerPanel.Visible = False
 
         Home.First = False
 
