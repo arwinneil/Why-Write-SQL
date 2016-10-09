@@ -1,15 +1,14 @@
 ﻿Imports MaterialSkin
 Public Class Home
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Public CurrentlyDoing As String
+    Public First As Boolean
+    Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
         SkinManager.ColorScheme = New ColorScheme(Primary.Red600, Primary.Red800, Primary.Red400, Accent.Lime400, TextShade.WHITE)
     End Sub
-
-    Public CurrentlyDoing As String
-    Public First As Boolean
 
 #Region "Main Operations"
     Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Create_Table.Click
@@ -85,6 +84,7 @@ Public Class Home
             CreateButton.Enabled = False
             Generate.Table()
             UpdateUI.EnableTableControls()
+            UpdateLine()
 
             NewTableField.Enabled = False
             Add_Field_Button.Enabled = True
@@ -468,6 +468,7 @@ Public Class Home
 
 #End Region
 
+#Region "Home UI"
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         Do
             Me.Opacity = Me.Opacity - 0.02
@@ -479,11 +480,23 @@ Public Class Home
     End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Inc.Click
-        Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size + 1, Sequence.Font.Style)
+        If Sequence.Font.Size >= 40 Then
+            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Max.)"
+        Else
+            Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size + 1, Sequence.Font.Style)
+            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size
+        End If
+
     End Sub
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Dec.Click
-        Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size - 1, Sequence.Font.Style)
+
+        If Sequence.Font.Size <= 6 Then
+            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Min.)"
+        Else
+            Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size - 1, Sequence.Font.Style)
+            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size
+        End If
     End Sub
 
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles Br.Click
@@ -514,6 +527,14 @@ Public Class Home
         Loop Until Opacity = 0
 
     End Sub
+
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+
+        Sequence.Font = New Font(Sequence.Font.FontFamily, 9.75, Sequence.Font.Style)
+        ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
+    End Sub
+#End Region
+
 End Class
 
 Class Initialise

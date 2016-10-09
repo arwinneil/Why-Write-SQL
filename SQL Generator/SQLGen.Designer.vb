@@ -143,6 +143,8 @@ Partial Class Home
         Me.Sequence = New System.Windows.Forms.ListBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Home_Main_Layout.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
@@ -295,16 +297,11 @@ Partial Class Home
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 16)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 5
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(452, 611)
         Me.TableLayoutPanel3.TabIndex = 0
         '
@@ -314,9 +311,9 @@ Partial Class Home
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(273, 491)
+        Me.PictureBox4.Location = New System.Drawing.Point(273, 473)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(84, 117)
+        Me.PictureBox4.Size = New System.Drawing.Size(84, 135)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 17
         Me.PictureBox4.TabStop = False
@@ -328,9 +325,9 @@ Partial Class Home
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(363, 491)
+        Me.PictureBox3.Location = New System.Drawing.Point(363, 473)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(86, 117)
+        Me.PictureBox3.Size = New System.Drawing.Size(86, 135)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 16
         Me.PictureBox3.TabStop = False
@@ -344,7 +341,7 @@ Partial Class Home
         Me.Br.Image = CType(resources.GetObject("Br.Image"), System.Drawing.Image)
         Me.Br.Location = New System.Drawing.Point(273, 3)
         Me.Br.Name = "Br"
-        Me.Br.Size = New System.Drawing.Size(84, 116)
+        Me.Br.Size = New System.Drawing.Size(84, 44)
         Me.Br.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Br.TabIndex = 15
         Me.Br.TabStop = False
@@ -358,7 +355,7 @@ Partial Class Home
         Me.Undo.Image = CType(resources.GetObject("Undo.Image"), System.Drawing.Image)
         Me.Undo.Location = New System.Drawing.Point(3, 3)
         Me.Undo.Name = "Undo"
-        Me.Undo.Size = New System.Drawing.Size(84, 116)
+        Me.Undo.Size = New System.Drawing.Size(84, 44)
         Me.Undo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Undo.TabIndex = 14
         Me.Undo.TabStop = False
@@ -372,7 +369,7 @@ Partial Class Home
         Me.Inc.Image = CType(resources.GetObject("Inc.Image"), System.Drawing.Image)
         Me.Inc.Location = New System.Drawing.Point(93, 3)
         Me.Inc.Name = "Inc"
-        Me.Inc.Size = New System.Drawing.Size(84, 116)
+        Me.Inc.Size = New System.Drawing.Size(84, 44)
         Me.Inc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Inc.TabIndex = 13
         Me.Inc.TabStop = False
@@ -386,7 +383,7 @@ Partial Class Home
         Me.Dec.Image = CType(resources.GetObject("Dec.Image"), System.Drawing.Image)
         Me.Dec.Location = New System.Drawing.Point(183, 3)
         Me.Dec.Name = "Dec"
-        Me.Dec.Size = New System.Drawing.Size(84, 116)
+        Me.Dec.Size = New System.Drawing.Size(84, 44)
         Me.Dec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Dec.TabIndex = 12
         Me.Dec.TabStop = False
@@ -401,7 +398,7 @@ Partial Class Home
         Me.Export.Location = New System.Drawing.Point(363, 3)
         Me.Export.Name = "Export"
         Me.Export.Padding = New System.Windows.Forms.Padding(10)
-        Me.Export.Size = New System.Drawing.Size(86, 116)
+        Me.Export.Size = New System.Drawing.Size(86, 44)
         Me.Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Export.TabIndex = 11
         Me.Export.TabStop = False
@@ -1872,7 +1869,7 @@ Partial Class Home
         'ToolStrip1
         '
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.ToolStripLabel2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 676)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(694, 25)
@@ -1881,10 +1878,27 @@ Partial Class Home
         '
         'ToolStripLabel1
         '
+        Me.ToolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
         Me.ToolStripLabel1.Size = New System.Drawing.Size(43, 22)
         Me.ToolStripLabel1.Text = "0 Lines"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(108, 22)
+        Me.ToolStripLabel2.Text = "Sequence.Font.Size"
+        Me.ToolStripLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ToolStripLabel2.ToolTipText = "Click to reset font size."
         '
         'Home
         '
@@ -2095,4 +2109,6 @@ Partial Class Home
     Friend WithEvents Sequence As ListBox
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
 End Class
