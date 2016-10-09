@@ -121,16 +121,17 @@ Public Class Home
                     End If
                     Generate.NewField()
                     Initialise.NewField()
+                    UpdateLine()
                 End If
 
             Case = "AddPrimaryKey"
                 Generate.PrimaryKey()
                 PrimCheck.Enabled = False
                 Add_Primary_Key_Button.Enabled = False
-
+                UpdateLine()
             Case = "AddForeignKey"
                 Generate.ForeignKey()
-
+                UpdateLine()
             Case = "AddField"
                 AlterAddField()
 
@@ -295,6 +296,7 @@ Public Class Home
     Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
         If Approve.Insert() = True Then
             Generate.InsertData()
+            UpdateLine()
             UpdateUI.ClearUp()
 
         End If
@@ -332,6 +334,7 @@ Public Class Home
             Generate.DropTable()
             Initialise.DropTable()
             UpdateUI.ClearUp()
+            UpdateLine()
         End If
 
     End Sub
@@ -344,6 +347,7 @@ Public Class Home
         If Approve.Database = True Then
             Generate.CreateDatabase()
             Initialise.Database()
+            UpdateLine()
         End If
 
     End Sub
@@ -352,7 +356,7 @@ Public Class Home
         If Approve.Database = True Then
             Generate.DropDatabase()
             Initialise.Database()
-
+            UpdateLine()
         End If
 
     End Sub
@@ -360,6 +364,7 @@ Public Class Home
         If Approve.Database = True Then
             Generate.SelectDatabase()
             Initialise.Database()
+            UpdateLine()
         End If
 
     End Sub
@@ -377,6 +382,7 @@ Public Class Home
             Generate.AlterTable()
             Generate.DropField()
             Initialise.DropColumn()
+            UpdateLine()
 
         End If
     End Sub
@@ -387,7 +393,7 @@ Public Class Home
             Generate.AlterTable()
 
             Generate.ModifyField()
-
+            UpdateLine()
             Initialise.NewField()
         End If
 
@@ -400,6 +406,7 @@ Public Class Home
             Generate.AlterTable()
 
             Generate.AddField()
+            UpdateLine()
 
             Initialise.NewField()
         End If
@@ -412,6 +419,7 @@ Public Class Home
             Generate.AlterTable()
             Generate.RenameTable()
             Initialise.Rename()
+            UpdateLine()
         End If
 
     End Sub
@@ -458,12 +466,57 @@ Public Class Home
 
     End Sub
 
-
 #End Region
 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Do
+            Me.Opacity = Me.Opacity - 0.02
+            System.Threading.Thread.Sleep(4)
+        Loop Until Opacity = 0
+
+        Me.Close()
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Inc.Click
+        Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size + 1, Sequence.Font.Style)
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Dec.Click
+        Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size - 1, Sequence.Font.Style)
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles Br.Click
+        Sequence.Items.Add("")
+        UpdateLine()
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles Undo.Click
+        If Sequence.Items.Count > -1 Then
+
+            Sequence.Items.RemoveAt(Sequence.Items.Count - 1)
+            UpdateLine()
+
+        End If
+    End Sub
+    Private Sub SequenceSelectedIndexChanged(sender As Object, e As EventArgs) Handles Sequence.TextChanged, Sequence.SelectedIndexChanged
+        UpdateLine()
+
+    End Sub
+    Sub UpdateLine()
+        ToolStripLabel1.Text = (Sequence.Items.Count) & " lines"
+    End Sub
+
+    Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Do
+            Me.Opacity = Me.Opacity - 0.02
+            System.Threading.Thread.Sleep(4)
+        Loop Until Opacity = 0
+
+    End Sub
 End Class
 
-Public Class Initialise
+Class Initialise
 
 #Region "New Table Initialisers"
     Shared Sub NewTable()

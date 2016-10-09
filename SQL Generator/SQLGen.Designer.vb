@@ -23,35 +23,20 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Sequence = New System.Windows.Forms.ListBox()
         Me.Home_Main_Layout = New System.Windows.Forms.TableLayoutPanel()
         Me.ContainerPane = New System.Windows.Forms.Panel()
         Me.HomeContainerPanel = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton6 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton5 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton4 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton3 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel14 = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton2 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Export = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Br = New System.Windows.Forms.PictureBox()
+        Me.Undo = New System.Windows.Forms.PictureBox()
+        Me.Inc = New System.Windows.Forms.PictureBox()
+        Me.Dec = New System.Windows.Forms.PictureBox()
+        Me.Export = New System.Windows.Forms.PictureBox()
         Me.ActionGroup = New System.Windows.Forms.GroupBox()
         Me.CreateActionLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -153,26 +138,24 @@ Partial Class Home
         Me.Insert = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.Drop_Table = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.Database_Operations = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.GroupBox1.SuspendLayout()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Sequence = New System.Windows.Forms.ListBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Home_Main_Layout.SuspendLayout()
         Me.ContainerPane.SuspendLayout()
         Me.HomeContainerPanel.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
-        Me.Panel17.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel16.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel15.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel14.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel13.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Br, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Undo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Inc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dec, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Export, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ActionGroup.SuspendLayout()
         Me.CreateActionLayout.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -209,33 +192,10 @@ Partial Class Home
         Me.Panel7.SuspendLayout()
         Me.OperationsPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel4.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.Home_Main_Layout.SetColumnSpan(Me.GroupBox1, 6)
-        Me.GroupBox1.Controls.Add(Me.Sequence)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(467, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.Home_Main_Layout.SetRowSpan(Me.GroupBox1, 10)
-        Me.GroupBox1.Size = New System.Drawing.Size(694, 706)
-        Me.GroupBox1.TabIndex = 5
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Script"
-        '
-        'Sequence
-        '
-        Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sequence.FormattingEnabled = True
-        Me.Sequence.HorizontalScrollbar = True
-        Me.Sequence.Location = New System.Drawing.Point(3, 16)
-        Me.Sequence.Name = "Sequence"
-        Me.Sequence.ScrollAlwaysVisible = True
-        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.Sequence.Size = New System.Drawing.Size(688, 687)
-        Me.Sequence.TabIndex = 0
         '
         'Home_Main_Layout
         '
@@ -256,8 +216,8 @@ Partial Class Home
         Me.Home_Main_Layout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.999999!))
         Me.Home_Main_Layout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.Home_Main_Layout.Controls.Add(Me.ContainerPane, 0, 1)
-        Me.Home_Main_Layout.Controls.Add(Me.GroupBox1, 1, 0)
         Me.Home_Main_Layout.Controls.Add(Me.OperationsPanel, 0, 0)
+        Me.Home_Main_Layout.Controls.Add(Me.TableLayoutPanel4, 4, 0)
         Me.Home_Main_Layout.Location = New System.Drawing.Point(0, 65)
         Me.Home_Main_Layout.Name = "Home_Main_Layout"
         Me.Home_Main_Layout.RowCount = 10
@@ -318,22 +278,22 @@ Partial Class Home
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.ColumnCount = 4
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel17, 0, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel16, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel4, 2, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel15, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel14, 2, 4)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel13, 3, 4)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel10, 3, 0)
+        Me.TableLayoutPanel3.ColumnCount = 5
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox4, 3, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox3, 4, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.Br, 3, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Undo, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Inc, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Dec, 2, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Export, 4, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 16)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.Padding = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel3.RowCount = 5
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -341,178 +301,12 @@ Partial Class Home
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(452, 611)
         Me.TableLayoutPanel3.TabIndex = 0
-        '
-        'Panel17
-        '
-        Me.Panel17.Controls.Add(Me.PictureBox8)
-        Me.Panel17.Controls.Add(Me.MaterialFlatButton6)
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel17.Location = New System.Drawing.Point(8, 128)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(104, 114)
-        Me.Panel17.TabIndex = 9
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(104, 78)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 0
-        Me.PictureBox8.TabStop = False
-        '
-        'MaterialFlatButton6
-        '
-        Me.MaterialFlatButton6.AutoSize = True
-        Me.MaterialFlatButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton6.Depth = 0
-        Me.MaterialFlatButton6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton6.Enabled = False
-        Me.MaterialFlatButton6.Location = New System.Drawing.Point(0, 78)
-        Me.MaterialFlatButton6.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton6.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton6.Name = "MaterialFlatButton6"
-        Me.MaterialFlatButton6.Primary = False
-        Me.MaterialFlatButton6.Size = New System.Drawing.Size(104, 36)
-        Me.MaterialFlatButton6.TabIndex = 1
-        Me.MaterialFlatButton6.Text = "Break"
-        Me.MaterialFlatButton6.UseVisualStyleBackColor = True
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.PictureBox7)
-        Me.Panel16.Controls.Add(Me.MaterialFlatButton5)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(118, 8)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(104, 114)
-        Me.Panel16.TabIndex = 8
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(104, 78)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 0
-        Me.PictureBox7.TabStop = False
-        '
-        'MaterialFlatButton5
-        '
-        Me.MaterialFlatButton5.AutoSize = True
-        Me.MaterialFlatButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton5.Depth = 0
-        Me.MaterialFlatButton5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton5.Enabled = False
-        Me.MaterialFlatButton5.Location = New System.Drawing.Point(0, 78)
-        Me.MaterialFlatButton5.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton5.Name = "MaterialFlatButton5"
-        Me.MaterialFlatButton5.Primary = False
-        Me.MaterialFlatButton5.Size = New System.Drawing.Size(104, 36)
-        Me.MaterialFlatButton5.TabIndex = 1
-        Me.MaterialFlatButton5.Text = "Increase Script Size" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.MaterialFlatButton5.UseVisualStyleBackColor = True
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.PictureBox6)
-        Me.Panel4.Controls.Add(Me.MaterialFlatButton4)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(228, 8)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(104, 114)
-        Me.Panel4.TabIndex = 7
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(104, 78)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 0
-        Me.PictureBox6.TabStop = False
-        '
-        'MaterialFlatButton4
-        '
-        Me.MaterialFlatButton4.AutoSize = True
-        Me.MaterialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton4.Depth = 0
-        Me.MaterialFlatButton4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton4.Enabled = False
-        Me.MaterialFlatButton4.Location = New System.Drawing.Point(0, 78)
-        Me.MaterialFlatButton4.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton4.Name = "MaterialFlatButton4"
-        Me.MaterialFlatButton4.Primary = False
-        Me.MaterialFlatButton4.Size = New System.Drawing.Size(104, 36)
-        Me.MaterialFlatButton4.TabIndex = 1
-        Me.MaterialFlatButton4.Text = "Decrease Script Size"
-        Me.MaterialFlatButton4.UseVisualStyleBackColor = True
-        '
-        'Panel15
-        '
-        Me.Panel15.Controls.Add(Me.PictureBox5)
-        Me.Panel15.Controls.Add(Me.MaterialFlatButton3)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel15.Location = New System.Drawing.Point(8, 8)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(104, 114)
-        Me.Panel15.TabIndex = 6
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(104, 78)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'MaterialFlatButton3
-        '
-        Me.MaterialFlatButton3.AutoSize = True
-        Me.MaterialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton3.Depth = 0
-        Me.MaterialFlatButton3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton3.Enabled = False
-        Me.MaterialFlatButton3.Location = New System.Drawing.Point(0, 78)
-        Me.MaterialFlatButton3.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton3.Name = "MaterialFlatButton3"
-        Me.MaterialFlatButton3.Primary = False
-        Me.MaterialFlatButton3.Size = New System.Drawing.Size(104, 36)
-        Me.MaterialFlatButton3.TabIndex = 1
-        Me.MaterialFlatButton3.Text = "Undo"
-        Me.MaterialFlatButton3.UseVisualStyleBackColor = True
-        '
-        'Panel14
-        '
-        Me.Panel14.Controls.Add(Me.PictureBox4)
-        Me.Panel14.Controls.Add(Me.MaterialFlatButton2)
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel14.Location = New System.Drawing.Point(228, 488)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(104, 115)
-        Me.Panel14.TabIndex = 5
         '
         'PictureBox4
         '
@@ -520,39 +314,13 @@ Partial Class Home
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox4.Location = New System.Drawing.Point(273, 491)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(104, 79)
+        Me.PictureBox4.Size = New System.Drawing.Size(84, 117)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabIndex = 17
         Me.PictureBox4.TabStop = False
-        '
-        'MaterialFlatButton2
-        '
-        Me.MaterialFlatButton2.AutoSize = True
-        Me.MaterialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton2.Depth = 0
-        Me.MaterialFlatButton2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton2.Enabled = False
-        Me.MaterialFlatButton2.Location = New System.Drawing.Point(0, 79)
-        Me.MaterialFlatButton2.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton2.Name = "MaterialFlatButton2"
-        Me.MaterialFlatButton2.Primary = False
-        Me.MaterialFlatButton2.Size = New System.Drawing.Size(104, 36)
-        Me.MaterialFlatButton2.TabIndex = 1
-        Me.MaterialFlatButton2.Text = "About"
-        Me.MaterialFlatButton2.UseVisualStyleBackColor = True
-        '
-        'Panel13
-        '
-        Me.Panel13.Controls.Add(Me.PictureBox3)
-        Me.Panel13.Controls.Add(Me.MaterialFlatButton1)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel13.Location = New System.Drawing.Point(338, 488)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(106, 115)
-        Me.Panel13.TabIndex = 4
+        Me.Tip.SetToolTip(Me.PictureBox4, "About")
         '
         'PictureBox3
         '
@@ -560,69 +328,84 @@ Partial Class Home
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox3.Location = New System.Drawing.Point(363, 491)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(106, 79)
+        Me.PictureBox3.Size = New System.Drawing.Size(86, 117)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabIndex = 16
         Me.PictureBox3.TabStop = False
+        Me.Tip.SetToolTip(Me.PictureBox3, "Exit")
         '
-        'MaterialFlatButton1
+        'Br
         '
-        Me.MaterialFlatButton1.AutoSize = True
-        Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MaterialFlatButton1.Enabled = False
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(0, 79)
-        Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
-        Me.MaterialFlatButton1.Primary = False
-        Me.MaterialFlatButton1.Size = New System.Drawing.Size(106, 36)
-        Me.MaterialFlatButton1.TabIndex = 1
-        Me.MaterialFlatButton1.Text = "Exit"
-        Me.MaterialFlatButton1.UseVisualStyleBackColor = True
+        Me.Br.BackColor = System.Drawing.Color.Transparent
+        Me.Br.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Br.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Br.Image = CType(resources.GetObject("Br.Image"), System.Drawing.Image)
+        Me.Br.Location = New System.Drawing.Point(273, 3)
+        Me.Br.Name = "Br"
+        Me.Br.Size = New System.Drawing.Size(84, 116)
+        Me.Br.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Br.TabIndex = 15
+        Me.Br.TabStop = False
+        Me.Tip.SetToolTip(Me.Br, "Break")
         '
-        'Panel10
+        'Undo
         '
-        Me.Panel10.Controls.Add(Me.PictureBox2)
-        Me.Panel10.Controls.Add(Me.Export)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(338, 8)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(106, 114)
-        Me.Panel10.TabIndex = 3
+        Me.Undo.BackColor = System.Drawing.Color.Transparent
+        Me.Undo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Undo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Undo.Image = CType(resources.GetObject("Undo.Image"), System.Drawing.Image)
+        Me.Undo.Location = New System.Drawing.Point(3, 3)
+        Me.Undo.Name = "Undo"
+        Me.Undo.Size = New System.Drawing.Size(84, 116)
+        Me.Undo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Undo.TabIndex = 14
+        Me.Undo.TabStop = False
+        Me.Tip.SetToolTip(Me.Undo, "Undo")
         '
-        'PictureBox2
+        'Inc
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(106, 78)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.Inc.BackColor = System.Drawing.Color.Transparent
+        Me.Inc.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Inc.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Inc.Image = CType(resources.GetObject("Inc.Image"), System.Drawing.Image)
+        Me.Inc.Location = New System.Drawing.Point(93, 3)
+        Me.Inc.Name = "Inc"
+        Me.Inc.Size = New System.Drawing.Size(84, 116)
+        Me.Inc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Inc.TabIndex = 13
+        Me.Inc.TabStop = False
+        Me.Tip.SetToolTip(Me.Inc, "Increaese Text Size")
+        '
+        'Dec
+        '
+        Me.Dec.BackColor = System.Drawing.Color.Transparent
+        Me.Dec.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Dec.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dec.Image = CType(resources.GetObject("Dec.Image"), System.Drawing.Image)
+        Me.Dec.Location = New System.Drawing.Point(183, 3)
+        Me.Dec.Name = "Dec"
+        Me.Dec.Size = New System.Drawing.Size(84, 116)
+        Me.Dec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Dec.TabIndex = 12
+        Me.Dec.TabStop = False
+        Me.Tip.SetToolTip(Me.Dec, "Decrease Text Size")
         '
         'Export
         '
-        Me.Export.AutoSize = True
-        Me.Export.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Export.Depth = 0
-        Me.Export.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Export.Enabled = False
-        Me.Export.Location = New System.Drawing.Point(0, 78)
-        Me.Export.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Export.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Export.BackColor = System.Drawing.Color.Transparent
+        Me.Export.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Export.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Export.Image = CType(resources.GetObject("Export.Image"), System.Drawing.Image)
+        Me.Export.Location = New System.Drawing.Point(363, 3)
         Me.Export.Name = "Export"
-        Me.Export.Primary = False
-        Me.Export.Size = New System.Drawing.Size(106, 36)
-        Me.Export.TabIndex = 1
-        Me.Export.Text = "Export Script"
-        Me.Export.UseVisualStyleBackColor = True
+        Me.Export.Padding = New System.Windows.Forms.Padding(10)
+        Me.Export.Size = New System.Drawing.Size(86, 116)
+        Me.Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Export.TabIndex = 11
+        Me.Export.TabStop = False
+        Me.Tip.SetToolTip(Me.Export, "Export")
         '
         'ActionGroup
         '
@@ -2045,6 +1828,64 @@ Partial Class Home
         Me.Database_Operations.Text = "Database Operations"
         Me.Database_Operations.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.Home_Main_Layout.SetColumnSpan(Me.TableLayoutPanel4, 6)
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.GroupBox1, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.ToolStrip1, 0, 1)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(467, 3)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 2
+        Me.Home_Main_Layout.SetRowSpan(Me.TableLayoutPanel4, 10)
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(694, 706)
+        Me.TableLayoutPanel4.TabIndex = 7
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Sequence)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(688, 670)
+        Me.GroupBox1.TabIndex = 7
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Script"
+        '
+        'Sequence
+        '
+        Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sequence.FormattingEnabled = True
+        Me.Sequence.HorizontalScrollbar = True
+        Me.Sequence.Location = New System.Drawing.Point(3, 16)
+        Me.Sequence.Name = "Sequence"
+        Me.Sequence.ScrollAlwaysVisible = True
+        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.Sequence.Size = New System.Drawing.Size(682, 651)
+        Me.Sequence.TabIndex = 0
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 676)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(694, 25)
+        Me.ToolStrip1.TabIndex = 8
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(43, 22)
+        Me.ToolStripLabel1.Text = "0 Lines"
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2057,33 +1898,18 @@ Partial Class Home
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Home"
         Me.Text = "SQL Script Generator"
-        Me.GroupBox1.ResumeLayout(False)
         Me.Home_Main_Layout.ResumeLayout(False)
         Me.ContainerPane.ResumeLayout(False)
         Me.HomeContainerPanel.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.Panel17.ResumeLayout(False)
-        Me.Panel17.PerformLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel16.ResumeLayout(False)
-        Me.Panel16.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel14.ResumeLayout(False)
-        Me.Panel14.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel13.ResumeLayout(False)
-        Me.Panel13.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Br, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Undo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Inc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dec, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Export, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ActionGroup.ResumeLayout(False)
         Me.CreateActionLayout.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -2141,14 +1967,17 @@ Partial Class Home
         Me.Panel7.PerformLayout()
         Me.OperationsPanel.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Home_Main_Layout As TableLayoutPanel
     Friend WithEvents OperationsPanel As Panel
-    Friend WithEvents Sequence As ListBox
     Friend WithEvents Database_Operations As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents Drop_Table As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents Create_Table As MaterialSkin.Controls.MaterialRaisedButton
@@ -2157,6 +1986,17 @@ Partial Class Home
     Friend WithEvents Select_Query As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ContainerPane As Panel
+    Friend WithEvents Tip As ToolTip
+    Friend WithEvents HomeContainerPanel As Panel
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Br As PictureBox
+    Friend WithEvents Undo As PictureBox
+    Friend WithEvents Inc As PictureBox
+    Friend WithEvents Dec As PictureBox
+    Friend WithEvents Export As PictureBox
     Friend WithEvents ActionGroup As GroupBox
     Friend WithEvents CreateActionLayout As TableLayoutPanel
     Friend WithEvents Panel2 As Panel
@@ -2250,28 +2090,9 @@ Partial Class Home
     Friend WithEvents InsertTable As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Insert_Button As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents HomeContainerPanel As Panel
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents MaterialFlatButton3 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Export As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents MaterialFlatButton5 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents MaterialFlatButton4 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel17 As Panel
-    Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents MaterialFlatButton6 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel14 As Panel
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents MaterialFlatButton2 As MaterialSkin.Controls.MaterialFlatButton
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Sequence As ListBox
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
 End Class
