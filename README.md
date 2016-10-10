@@ -21,8 +21,8 @@ The aim of tthis open source  to demonstrate basic coding structures, Visual Bas
 - [x] CREATE,DROP & USE Database Commands
 - [x] CREATE,DROP & INSERT INTO Table Commands
 - [x] ALTER TABLE : ADD, DROP, RENAME TO & MODIFY Commands
+- [x] EXPORT to .sql & .txt
 - [ ] SELECT QUERIES
-- [ ] EXPORT to .sql & .txt
 - [ ] CODE CLEANUP
 
 ## Version
