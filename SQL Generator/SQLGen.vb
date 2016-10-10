@@ -505,7 +505,7 @@ Public Class Home
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles Undo.Click
-        If Sequence.Items.Count > -1 Then
+        If Sequence.Items.Count > 0 Then
 
             Sequence.Items.RemoveAt(Sequence.Items.Count - 1)
             UpdateLine()
@@ -533,6 +533,23 @@ Public Class Home
         Sequence.Font = New Font(Sequence.Font.FontFamily, 9.75, Sequence.Font.Style)
         ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
     End Sub
+
+    Private Sub Export_Click(sender As Object, e As EventArgs) Handles Export.Click
+        SaveFileDialog1.Filter = "SQL File|*.sql|Text File|*.txt"
+        SaveFileDialog1.Title = "Save an Image File"
+        SaveFileDialog1.ShowDialog()
+
+        Dim objWriter As New System.IO.StreamWriter(SaveFileDialog1.FileName)
+
+        For i As Integer = 0 To Sequence.Items.Count - 1  'Loop creat string from array
+
+            objWriter.WriteLine(Sequence.Items.Item(i))
+
+        Next
+        objWriter.Close()
+
+    End Sub
+
 #End Region
 
 End Class
