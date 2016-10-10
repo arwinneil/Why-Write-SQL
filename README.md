@@ -30,7 +30,7 @@ The aim of tthis open source  to demonstrate basic coding structures, Visual Bas
 
 ##Resources
 
-Home Icon by [Freepik](http://www.flaticon.com/authors/freepik) from Flaticon
+[Material Icons](https://design.google.com/icons/) 
 
 Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
