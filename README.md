@@ -30,11 +30,12 @@ The aim of tthis open source  to demonstrate basic coding structures, Visual Bas
 
 ##Resources
 
-[Material Icons](https://design.google.com/icons/) 
+Icons from [Material Icons](https://design.google.com/icons/) 
 
-Material Buttons from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
+Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
-##Resources
+##Tools & Utilities
+
 - [ILMerge](https://www.microsoft.com/en-us/download/confirmation.aspx?id=17630) & [ILMerge-GUI](http://ilmergegui.codeplex.com/)- For merging assemblies. (.exe & dlls)
 - [CodeMaid](http://www.codemaid.net/) - Visual Studio Extenion with some handy coding tools.
 
