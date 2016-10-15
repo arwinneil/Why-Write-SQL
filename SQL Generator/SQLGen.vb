@@ -7,72 +7,8 @@ Public Class Home
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
-        SkinManager.ColorScheme = New ColorScheme(Primary.Red600, Primary.Red800, Primary.Red400, Accent.Lime400, TextShade.WHITE)
+        SkinManager.ColorScheme = New ColorScheme(Primary.Red600, Primary.Red800, Primary.Red400, Accent.Cyan400, TextShade.WHITE)
     End Sub
-
-#Region "Main Operations"
-    Private Sub CreateTableAction(sender As Object, e As EventArgs) Handles Create_Table.Click
-
-        CurrentlyDoing = "CreateTable"
-
-        UpdateUI.ClearUp()
-        Initialise.NewTable()
-
-        ActionGroup.Visible = True
-        CreateActionLayout.Visible = True
-        FieldDetails.Parent = CreateActionLayout
-        CreateActionLayout.SetRow(FieldDetails, 2)
-        FieldGroup.Text = "Add Field"
-        CreateField.Visible = True
-
-    End Sub
-    Private Sub UpdateTableAction(sender As Object, e As EventArgs) Handles Insert.Click
-
-        CurrentlyDoing = "Insert Into"
-
-        UpdateUI.ClearUp()
-        Initialise.TableUpdate()
-        ActionGroup.Visible = True
-        InsertTableLayout.Visible = True
-
-    End Sub
-    Private Sub DeleteTableAction(sender As Object, e As EventArgs) Handles Drop_Table.Click
-
-        CurrentlyDoing = "DropTable"
-
-        UpdateUI.ClearUp()
-        Initialise.DropTable()
-        ActionGroup.Visible = True
-        DropTableLayout.Visible = True
-
-    End Sub
-    Private Sub Database_Operations_Click(sender As Object, e As EventArgs) Handles Database_Operations.Click
-
-        UpdateUI.ClearUp()
-        Initialise.Database()
-        ActionGroup.Visible = True
-        DatabaseTableLayout.Visible = True
-    End Sub
-    Private Sub Alter_Table_Click(sender As Object, e As EventArgs) Handles Alter_Table.Click
-        UpdateUI.ClearUp()
-        Initialise.Alter_table()
-
-        ActionGroup.Visible = True
-
-        ActionGroup.Text = "Alter Table"
-
-        CurrentlyDoing = "AlterTable"
-        AlterTableLayoutPanel.Visible = True
-        FieldDetails.Parent = AlterTableLayoutPanel
-        AlterTableLayoutPanel.SetRow(FieldDetails, 2)
-        AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
-        FieldDetails.Dock = DockStyle.Fill
-
-        FieldDetails.Visible = False
-
-    End Sub
-
-#End Region'Handles For the main funtions of the program
 
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
     '
@@ -369,8 +305,9 @@ Public Class Home
 
     End Sub
 
-    Private Sub Select_Query_Click(sender As Object, e As EventArgs) Handles Select_Query.Click
+    Private Sub Select_Query_Click(sender As Object, e As EventArgs)
         MsgBox("Comming Soon!")
+
     End Sub
 
 #End Region
@@ -459,10 +396,8 @@ Public Class Home
         FieldDetails.Visible = False
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
         UpdateUI.ClearUp()
-
-        HomeContainerPanel.Visible = True
 
     End Sub
 
@@ -536,7 +471,7 @@ Public Class Home
 
     Private Sub Export_Click(sender As Object, e As EventArgs) Handles Export.Click
         SaveFileDialog1.Filter = "SQL File|*.sql|Text File|*.txt"
-        SaveFileDialog1.Title = "Save an Image File"
+        SaveFileDialog1.Title = "Export Script"
         SaveFileDialog1.ShowDialog()
 
         Dim objWriter As New System.IO.StreamWriter(SaveFileDialog1.FileName)
@@ -550,6 +485,15 @@ Public Class Home
 
     End Sub
 
+    Private Sub Database_Operations_Click_1(sender As Object, e As EventArgs)
+        Dim tabpage As New TabPage
+        tabpage.Text = "Database"
+
+        MaterialTabControl1.TabPages.Add(tabpage)
+        MaterialTabControl1.SelectTab(2)
+
+    End Sub
+
 #End Region
 
 End Class
@@ -559,7 +503,6 @@ Class Initialise
 #Region "New Table Initialisers"
     Shared Sub NewTable()
 
-        Home.ActionGroup.Text = "New Table"
         Home.CreateButton.Enabled = True
         Home.NewTableField.Text = ""
         Home.NewTableField.Enabled = True
@@ -633,16 +576,14 @@ Class Initialise
 #End Region
 
     Shared Sub DropTable()
-        Home.ActionGroup.Text = "Drop Table"
+
         Home.TableName.Text = ""
     End Sub
     Shared Sub Database()
-        Home.ActionGroup.Text = "Database Operations"
         Home.DatabaseName.Text = ""
     End Sub
     Shared Sub TableUpdate()
 
-        Home.ActionGroup.Text = "Update Details"
         Home.InsertTable.Text = ""
         Home.Specify_CheckBox.Checked = False
         Home.Columns.Text = ""
@@ -1188,9 +1129,6 @@ Public Class UpdateUI
         Home.DatabaseTableLayout.Visible = False
         Home.InsertTableLayout.Visible = False
         Home.AlterTableLayoutPanel.Visible = False
-        Home.ActionGroup.Visible = False
-
-        Home.HomeContainerPanel.Visible = False
 
         Home.First = False
 
