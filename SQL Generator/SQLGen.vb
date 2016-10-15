@@ -494,33 +494,6 @@ Public Class Home
 
     End Sub
 
-    Private Sub MaterialTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaterialTabControl1.SelectedIndexChanged
-        If MaterialTabControl1.SelectedIndex = 3 Then
-            CurrentlyDoing = "AlterTable"
-            AlterTableLayoutPanel.Visible = True
-            FieldDetails.Parent = AlterTableLayoutPanel
-            AlterTableLayoutPanel.SetRow(FieldDetails, 2)
-            AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
-            FieldDetails.Dock = DockStyle.Fill
-
-            FieldDetails.Visible = False
-
-        End If
-
-        If MaterialTabControl1.SelectedIndex = 2 Then
-
-            FieldDetails.Parent = CreateActionLayout
-            CreateActionLayout.SetRow(FieldDetails, 2)
-            FieldGroup.Text = "Add Field"
-            CreateField.Visible = True
-
-            FieldDetails.Visible = True
-        End If
-
-    End Sub
-
-
-
 #End Region
 
 End Class
@@ -1151,6 +1124,11 @@ End Class
 Public Class UpdateUI
 
     Shared Sub ClearUp()
+        Home.CreateActionLayout.Visible = False
+        Home.DropTableLayout.Visible = False
+        Home.DatabaseTableLayout.Visible = False
+        Home.InsertTableLayout.Visible = False
+        Home.AlterTableLayoutPanel.Visible = False
 
         Home.First = False
 
