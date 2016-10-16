@@ -308,7 +308,7 @@ Partial Class Home
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
         Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(450, 74)
         Me.TableLayoutPanel5.TabIndex = 2
         '

@@ -11,7 +11,6 @@ Public Class Home
     End Sub
 
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
-    '
 
 #Region "New Table Operation Handles"
     Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
@@ -406,7 +405,7 @@ Public Class Home
 #Region "Home UI"
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
         Do
-            Me.Opacity = Me.Opacity - 0.02
+            Me.Opacity = Me.Opacity - 0.03
             System.Threading.Thread.Sleep(4)
         Loop Until Opacity = 0
 
@@ -527,6 +526,11 @@ Public Class Home
 
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Sequence.Items.Clear()
+    End Sub
+
+    Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        About.Show()
+
     End Sub
 
 #End Region
