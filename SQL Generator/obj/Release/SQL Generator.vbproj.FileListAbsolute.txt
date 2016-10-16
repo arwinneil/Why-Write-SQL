@@ -10,3 +10,4 @@ C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Release\SQL Script Gene
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Release\SQL Script Generator.pdb
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Release\SQL Script Generator.xml
 C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\bin\Release\MaterialSkin.dll
+C:\Users\Admin\Documents\Why-Write-SQL\SQL Generator\obj\Release\SQL_Generator.About.resources

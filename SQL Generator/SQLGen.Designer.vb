@@ -325,7 +325,7 @@ Partial Class Home
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox7.TabIndex = 11
         Me.PictureBox7.TabStop = False
-        Me.Tip.SetToolTip(Me.PictureBox7, "Export Script")
+        Me.Tip.SetToolTip(Me.PictureBox7, "About")
         '
         'GroupBox3
         '
@@ -1844,6 +1844,7 @@ Partial Class Home
         Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.Sequence.Size = New System.Drawing.Size(688, 657)
         Me.Sequence.TabIndex = 0
+        Me.Tip.SetToolTip(Me.Sequence, "Clear Script")
         '
         'ToolStrip1
         '
