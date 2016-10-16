@@ -29,7 +29,11 @@ Partial Class Home
         Me.TabContainerPanel = New System.Windows.Forms.Panel()
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Br = New System.Windows.Forms.PictureBox()
         Me.Undo = New System.Windows.Forms.PictureBox()
         Me.Inc = New System.Windows.Forms.PictureBox()
@@ -92,9 +96,9 @@ Partial Class Home
         Me.Check_Position = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TableButtonTableLayout = New System.Windows.Forms.TableLayoutPanel()
-        Me.Add_Foreign_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Primary_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CompleteTable_Button = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.Add_Foreign_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.Add_Field_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.AlterTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
@@ -146,7 +150,11 @@ Partial Class Home
         Me.TabContainerPanel.SuspendLayout()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Br, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Undo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Inc, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,7 +282,8 @@ Partial Class Home
         '
         Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.TabPage1.Controls.Add(Me.TableLayoutPanel3)
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel5)
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -282,6 +291,52 @@ Partial Class Home
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Home"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.TableLayoutPanel5.ColumnCount = 5
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.PictureBox7, 4, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 609)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(450, 74)
+        Me.TableLayoutPanel5.TabIndex = 2
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(363, 3)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Padding = New System.Windows.Forms.Padding(10)
+        Me.PictureBox7.Size = New System.Drawing.Size(84, 58)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 11
+        Me.PictureBox7.TabStop = False
+        Me.Tip.SetToolTip(Me.PictureBox7, "Export Script")
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TableLayoutPanel3)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(450, 154)
+        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Manage Script"
         '
         'TableLayoutPanel3
         '
@@ -292,20 +347,36 @@ Partial Class Home
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox1, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Br, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Undo, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Inc, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Dec, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Export, 4, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 16)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(450, 71)
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(444, 135)
         Me.TableLayoutPanel3.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 64)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(82, 58)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        Me.Tip.SetToolTip(Me.PictureBox1, "New")
         '
         'Br
         '
@@ -313,9 +384,9 @@ Partial Class Home
         Me.Br.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Br.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Br.Image = CType(resources.GetObject("Br.Image"), System.Drawing.Image)
-        Me.Br.Location = New System.Drawing.Point(273, 3)
+        Me.Br.Location = New System.Drawing.Point(267, 3)
         Me.Br.Name = "Br"
-        Me.Br.Size = New System.Drawing.Size(84, 55)
+        Me.Br.Size = New System.Drawing.Size(82, 55)
         Me.Br.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Br.TabIndex = 15
         Me.Br.TabStop = False
@@ -329,11 +400,11 @@ Partial Class Home
         Me.Undo.Image = CType(resources.GetObject("Undo.Image"), System.Drawing.Image)
         Me.Undo.Location = New System.Drawing.Point(3, 3)
         Me.Undo.Name = "Undo"
-        Me.Undo.Size = New System.Drawing.Size(84, 55)
+        Me.Undo.Size = New System.Drawing.Size(82, 55)
         Me.Undo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Undo.TabIndex = 14
         Me.Undo.TabStop = False
-        Me.Tip.SetToolTip(Me.Undo, "Undo")
+        Me.Tip.SetToolTip(Me.Undo, "Undo last line")
         '
         'Inc
         '
@@ -341,9 +412,9 @@ Partial Class Home
         Me.Inc.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Inc.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Inc.Image = CType(resources.GetObject("Inc.Image"), System.Drawing.Image)
-        Me.Inc.Location = New System.Drawing.Point(93, 3)
+        Me.Inc.Location = New System.Drawing.Point(91, 3)
         Me.Inc.Name = "Inc"
-        Me.Inc.Size = New System.Drawing.Size(84, 55)
+        Me.Inc.Size = New System.Drawing.Size(82, 55)
         Me.Inc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Inc.TabIndex = 13
         Me.Inc.TabStop = False
@@ -353,8 +424,9 @@ Partial Class Home
         '
         Me.Dec.BackColor = System.Drawing.Color.Transparent
         Me.Dec.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Dec.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dec.Image = CType(resources.GetObject("Dec.Image"), System.Drawing.Image)
-        Me.Dec.Location = New System.Drawing.Point(183, 3)
+        Me.Dec.Location = New System.Drawing.Point(179, 3)
         Me.Dec.Name = "Dec"
         Me.Dec.Size = New System.Drawing.Size(82, 55)
         Me.Dec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -368,14 +440,14 @@ Partial Class Home
         Me.Export.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Export.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Export.Image = CType(resources.GetObject("Export.Image"), System.Drawing.Image)
-        Me.Export.Location = New System.Drawing.Point(363, 3)
+        Me.Export.Location = New System.Drawing.Point(355, 3)
         Me.Export.Name = "Export"
         Me.Export.Padding = New System.Windows.Forms.Padding(10)
-        Me.Export.Size = New System.Drawing.Size(84, 55)
+        Me.Export.Size = New System.Drawing.Size(86, 55)
         Me.Export.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Export.TabIndex = 11
         Me.Export.TabStop = False
-        Me.Tip.SetToolTip(Me.Export, "Export")
+        Me.Tip.SetToolTip(Me.Export, "Export Script")
         '
         'TabPage2
         '
@@ -384,7 +456,7 @@ Partial Class Home
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(450, 680)
+        Me.TabPage2.Size = New System.Drawing.Size(456, 686)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Database"
         '
@@ -413,7 +485,7 @@ Partial Class Home
         Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.DatabaseTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.DatabaseTableLayout.Size = New System.Drawing.Size(444, 674)
+        Me.DatabaseTableLayout.Size = New System.Drawing.Size(450, 680)
         Me.DatabaseTableLayout.TabIndex = 46
         '
         'Panel9
@@ -423,7 +495,7 @@ Partial Class Home
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel9.Location = New System.Drawing.Point(3, 3)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(438, 50)
+        Me.Panel9.Size = New System.Drawing.Size(444, 50)
         Me.Panel9.TabIndex = 0
         '
         'Label10
@@ -450,7 +522,7 @@ Partial Class Home
         Me.DatabaseName.SelectedText = ""
         Me.DatabaseName.SelectionLength = 0
         Me.DatabaseName.SelectionStart = 0
-        Me.DatabaseName.Size = New System.Drawing.Size(412, 23)
+        Me.DatabaseName.Size = New System.Drawing.Size(418, 23)
         Me.DatabaseName.TabIndex = 37
         Me.DatabaseName.UseSystemPasswordChar = False
         '
@@ -468,7 +540,7 @@ Partial Class Home
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(438, 50)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(444, 50)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'Select_Database
@@ -477,7 +549,7 @@ Partial Class Home
         Me.Select_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Select_Database.BackColor = System.Drawing.Color.White
         Me.Select_Database.Depth = 0
-        Me.Select_Database.Location = New System.Drawing.Point(296, 6)
+        Me.Select_Database.Location = New System.Drawing.Point(300, 6)
         Me.Select_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Select_Database.MouseState = MaterialSkin.MouseState.HOVER
         Me.Select_Database.Name = "Select_Database"
@@ -509,7 +581,7 @@ Partial Class Home
         Me.Drop_Database.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Drop_Database.BackColor = System.Drawing.Color.White
         Me.Drop_Database.Depth = 0
-        Me.Drop_Database.Location = New System.Drawing.Point(150, 6)
+        Me.Drop_Database.Location = New System.Drawing.Point(152, 6)
         Me.Drop_Database.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Drop_Database.MouseState = MaterialSkin.MouseState.HOVER
         Me.Drop_Database.Name = "Drop_Database"
@@ -526,7 +598,7 @@ Partial Class Home
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(450, 680)
+        Me.TabPage3.Size = New System.Drawing.Size(456, 686)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Create Table"
         '
@@ -555,7 +627,7 @@ Partial Class Home
         Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.CreateActionLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.CreateActionLayout.Size = New System.Drawing.Size(444, 674)
+        Me.CreateActionLayout.Size = New System.Drawing.Size(450, 680)
         Me.CreateActionLayout.TabIndex = 0
         '
         'Panel2
@@ -566,7 +638,7 @@ Partial Class Home
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(438, 55)
+        Me.Panel2.Size = New System.Drawing.Size(444, 55)
         Me.Panel2.TabIndex = 5
         '
         'Label1
@@ -585,7 +657,7 @@ Partial Class Home
         Me.CreateButton.AutoSize = True
         Me.CreateButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CreateButton.Depth = 0
-        Me.CreateButton.Location = New System.Drawing.Point(367, 11)
+        Me.CreateButton.Location = New System.Drawing.Point(373, 11)
         Me.CreateButton.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.CreateButton.MouseState = MaterialSkin.MouseState.HOVER
         Me.CreateButton.Name = "CreateButton"
@@ -608,7 +680,7 @@ Partial Class Home
         Me.NewTableField.SelectedText = ""
         Me.NewTableField.SelectionLength = 0
         Me.NewTableField.SelectionStart = 0
-        Me.NewTableField.Size = New System.Drawing.Size(346, 23)
+        Me.NewTableField.Size = New System.Drawing.Size(352, 23)
         Me.NewTableField.TabIndex = 37
         Me.NewTableField.UseSystemPasswordChar = False
         '
@@ -620,7 +692,7 @@ Partial Class Home
         Me.FieldDetails.Location = New System.Drawing.Point(3, 125)
         Me.FieldDetails.Name = "FieldDetails"
         Me.CreateActionLayout.SetRowSpan(Me.FieldDetails, 9)
-        Me.FieldDetails.Size = New System.Drawing.Size(438, 546)
+        Me.FieldDetails.Size = New System.Drawing.Size(444, 552)
         Me.FieldDetails.TabIndex = 0
         '
         'Panel11
@@ -631,7 +703,7 @@ Partial Class Home
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(438, 160)
+        Me.Panel11.Size = New System.Drawing.Size(444, 160)
         Me.Panel11.TabIndex = 13
         '
         'FieldGroup
@@ -652,7 +724,7 @@ Partial Class Home
         Me.FieldGroup.ForeColor = System.Drawing.SystemColors.WindowText
         Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
         Me.FieldGroup.Name = "FieldGroup"
-        Me.FieldGroup.Size = New System.Drawing.Size(438, 160)
+        Me.FieldGroup.Size = New System.Drawing.Size(444, 160)
         Me.FieldGroup.TabIndex = 7
         Me.FieldGroup.TabStop = False
         Me.FieldGroup.Text = "Add Field"
@@ -764,7 +836,7 @@ Partial Class Home
         Me.FieldField.SelectedText = ""
         Me.FieldField.SelectionLength = 0
         Me.FieldField.SelectionStart = 0
-        Me.FieldField.Size = New System.Drawing.Size(421, 23)
+        Me.FieldField.Size = New System.Drawing.Size(427, 23)
         Me.FieldField.TabIndex = 41
         Me.FieldField.UseSystemPasswordChar = False
         '
@@ -787,7 +859,7 @@ Partial Class Home
         Me.PrimaryGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PrimaryGroup.Location = New System.Drawing.Point(0, 0)
         Me.PrimaryGroup.Name = "PrimaryGroup"
-        Me.PrimaryGroup.Size = New System.Drawing.Size(438, 160)
+        Me.PrimaryGroup.Size = New System.Drawing.Size(444, 160)
         Me.PrimaryGroup.TabIndex = 9
         Me.PrimaryGroup.TabStop = False
         Me.PrimaryGroup.Text = "Add Primary Key"
@@ -808,7 +880,7 @@ Partial Class Home
         Me.ForeignKeyGroup.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ForeignKeyGroup.Location = New System.Drawing.Point(0, 0)
         Me.ForeignKeyGroup.Name = "ForeignKeyGroup"
-        Me.ForeignKeyGroup.Size = New System.Drawing.Size(438, 160)
+        Me.ForeignKeyGroup.Size = New System.Drawing.Size(444, 160)
         Me.ForeignKeyGroup.TabIndex = 8
         Me.ForeignKeyGroup.TabStop = False
         Me.ForeignKeyGroup.Text = "Add Foreign Key"
@@ -833,7 +905,7 @@ Partial Class Home
         Me.Panel3.Location = New System.Drawing.Point(0, 163)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(438, 335)
+        Me.Panel3.Size = New System.Drawing.Size(444, 335)
         Me.Panel3.TabIndex = 12
         '
         'TableLayoutPanel1
@@ -850,7 +922,7 @@ Partial Class Home
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(441, 110)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(447, 110)
         Me.TableLayoutPanel1.TabIndex = 73
         '
         'ConstraintGroup
@@ -860,10 +932,10 @@ Partial Class Home
         Me.ConstraintGroup.Controls.Add(Me.NotNull)
         Me.ConstraintGroup.Controls.Add(Me.PrimCheck)
         Me.ConstraintGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ConstraintGroup.Location = New System.Drawing.Point(271, 0)
+        Me.ConstraintGroup.Location = New System.Drawing.Point(275, 0)
         Me.ConstraintGroup.Margin = New System.Windows.Forms.Padding(7, 0, 5, 0)
         Me.ConstraintGroup.Name = "ConstraintGroup"
-        Me.ConstraintGroup.Size = New System.Drawing.Size(165, 110)
+        Me.ConstraintGroup.Size = New System.Drawing.Size(167, 110)
         Me.ConstraintGroup.TabIndex = 66
         Me.ConstraintGroup.TabStop = False
         Me.ConstraintGroup.Text = "Constraints"
@@ -926,7 +998,7 @@ Partial Class Home
         Me.ReferenceGroup.Margin = New System.Windows.Forms.Padding(0)
         Me.ReferenceGroup.Name = "ReferenceGroup"
         Me.ReferenceGroup.Padding = New System.Windows.Forms.Padding(0)
-        Me.ReferenceGroup.Size = New System.Drawing.Size(264, 110)
+        Me.ReferenceGroup.Size = New System.Drawing.Size(268, 110)
         Me.ReferenceGroup.TabIndex = 65
         Me.ReferenceGroup.TabStop = False
         Me.ReferenceGroup.Text = "Referential"
@@ -1026,7 +1098,7 @@ Partial Class Home
         Me.CheckGroup.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckGroup.Name = "CheckGroup"
         Me.CheckGroup.Padding = New System.Windows.Forms.Padding(0)
-        Me.CheckGroup.Size = New System.Drawing.Size(438, 167)
+        Me.CheckGroup.Size = New System.Drawing.Size(444, 167)
         Me.CheckGroup.TabIndex = 2
         Me.CheckGroup.TabStop = False
         Me.CheckGroup.Text = "Check Constraint"
@@ -1074,7 +1146,7 @@ Partial Class Home
         Me.Check_String.Multiline = True
         Me.Check_String.Name = "Check_String"
         Me.Check_String.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Check_String.Size = New System.Drawing.Size(429, 99)
+        Me.Check_String.Size = New System.Drawing.Size(435, 99)
         Me.Check_String.TabIndex = 53
         Me.Check_String.WordWrap = False
         '
@@ -1116,24 +1188,8 @@ Partial Class Home
         Me.TableButtonTableLayout.Name = "TableButtonTableLayout"
         Me.TableButtonTableLayout.RowCount = 1
         Me.TableButtonTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableButtonTableLayout.Size = New System.Drawing.Size(438, 55)
+        Me.TableButtonTableLayout.Size = New System.Drawing.Size(444, 55)
         Me.TableButtonTableLayout.TabIndex = 6
-        '
-        'Add_Foreign_Key_Button
-        '
-        Me.Add_Foreign_Key_Button.AutoSize = True
-        Me.Add_Foreign_Key_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Add_Foreign_Key_Button.Depth = 0
-        Me.Add_Foreign_Key_Button.Enabled = False
-        Me.Add_Foreign_Key_Button.Location = New System.Drawing.Point(222, 6)
-        Me.Add_Foreign_Key_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.Add_Foreign_Key_Button.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Add_Foreign_Key_Button.Name = "Add_Foreign_Key_Button"
-        Me.Add_Foreign_Key_Button.Primary = False
-        Me.Add_Foreign_Key_Button.Size = New System.Drawing.Size(101, 36)
-        Me.Add_Foreign_Key_Button.TabIndex = 67
-        Me.Add_Foreign_Key_Button.Text = "Add Foreign Key"
-        Me.Add_Foreign_Key_Button.UseVisualStyleBackColor = True
         '
         'Add_Primary_Key_Button
         '
@@ -1141,12 +1197,12 @@ Partial Class Home
         Me.Add_Primary_Key_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Add_Primary_Key_Button.Depth = 0
         Me.Add_Primary_Key_Button.Enabled = False
-        Me.Add_Primary_Key_Button.Location = New System.Drawing.Point(113, 6)
+        Me.Add_Primary_Key_Button.Location = New System.Drawing.Point(115, 6)
         Me.Add_Primary_Key_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.Add_Primary_Key_Button.MouseState = MaterialSkin.MouseState.HOVER
         Me.Add_Primary_Key_Button.Name = "Add_Primary_Key_Button"
         Me.Add_Primary_Key_Button.Primary = False
-        Me.Add_Primary_Key_Button.Size = New System.Drawing.Size(101, 36)
+        Me.Add_Primary_Key_Button.Size = New System.Drawing.Size(103, 36)
         Me.Add_Primary_Key_Button.TabIndex = 65
         Me.Add_Primary_Key_Button.Text = "Add Primay Key"
         Me.Add_Primary_Key_Button.UseVisualStyleBackColor = True
@@ -1158,7 +1214,7 @@ Partial Class Home
         Me.CompleteTable_Button.Depth = 0
         Me.CompleteTable_Button.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CompleteTable_Button.Enabled = False
-        Me.CompleteTable_Button.Location = New System.Drawing.Point(331, 6)
+        Me.CompleteTable_Button.Location = New System.Drawing.Point(337, 6)
         Me.CompleteTable_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.CompleteTable_Button.MouseState = MaterialSkin.MouseState.HOVER
         Me.CompleteTable_Button.Name = "CompleteTable_Button"
@@ -1167,6 +1223,22 @@ Partial Class Home
         Me.CompleteTable_Button.TabIndex = 68
         Me.CompleteTable_Button.Text = "complete table"
         Me.CompleteTable_Button.UseVisualStyleBackColor = True
+        '
+        'Add_Foreign_Key_Button
+        '
+        Me.Add_Foreign_Key_Button.AutoSize = True
+        Me.Add_Foreign_Key_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Add_Foreign_Key_Button.Depth = 0
+        Me.Add_Foreign_Key_Button.Enabled = False
+        Me.Add_Foreign_Key_Button.Location = New System.Drawing.Point(226, 6)
+        Me.Add_Foreign_Key_Button.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.Add_Foreign_Key_Button.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Add_Foreign_Key_Button.Name = "Add_Foreign_Key_Button"
+        Me.Add_Foreign_Key_Button.Primary = False
+        Me.Add_Foreign_Key_Button.Size = New System.Drawing.Size(103, 36)
+        Me.Add_Foreign_Key_Button.TabIndex = 67
+        Me.Add_Foreign_Key_Button.Text = "Add Foreign Key"
+        Me.Add_Foreign_Key_Button.UseVisualStyleBackColor = True
         '
         'Add_Field_Button
         '
@@ -1180,7 +1252,7 @@ Partial Class Home
         Me.Add_Field_Button.MouseState = MaterialSkin.MouseState.HOVER
         Me.Add_Field_Button.Name = "Add_Field_Button"
         Me.Add_Field_Button.Primary = False
-        Me.Add_Field_Button.Size = New System.Drawing.Size(101, 43)
+        Me.Add_Field_Button.Size = New System.Drawing.Size(103, 43)
         Me.Add_Field_Button.TabIndex = 66
         Me.Add_Field_Button.Text = "Add Field"
         Me.Add_Field_Button.UseVisualStyleBackColor = True
@@ -1471,7 +1543,7 @@ Partial Class Home
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(450, 680)
+        Me.TabPage5.Size = New System.Drawing.Size(456, 686)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Insert"
         '
@@ -1502,17 +1574,17 @@ Partial Class Home
         Me.InsertTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.InsertTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.InsertTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.InsertTableLayout.Size = New System.Drawing.Size(444, 674)
+        Me.InsertTableLayout.Size = New System.Drawing.Size(450, 680)
         Me.InsertTableLayout.TabIndex = 44
         '
         'DataItemsGroup
         '
         Me.DataItemsGroup.Controls.Add(Me.DataItems)
         Me.DataItemsGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataItemsGroup.Location = New System.Drawing.Point(3, 337)
+        Me.DataItemsGroup.Location = New System.Drawing.Point(3, 338)
         Me.DataItemsGroup.Name = "DataItemsGroup"
         Me.InsertTableLayout.SetRowSpan(Me.DataItemsGroup, 4)
-        Me.DataItemsGroup.Size = New System.Drawing.Size(438, 218)
+        Me.DataItemsGroup.Size = New System.Drawing.Size(444, 218)
         Me.DataItemsGroup.TabIndex = 43
         Me.DataItemsGroup.TabStop = False
         Me.DataItemsGroup.Text = "Data Items"
@@ -1526,7 +1598,7 @@ Partial Class Home
         Me.DataItems.Multiline = True
         Me.DataItems.Name = "DataItems"
         Me.DataItems.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.DataItems.Size = New System.Drawing.Size(419, 193)
+        Me.DataItems.Size = New System.Drawing.Size(425, 193)
         Me.DataItems.TabIndex = 54
         Me.DataItems.WordWrap = False
         '
@@ -1538,7 +1610,7 @@ Partial Class Home
         Me.GroupBox2.Location = New System.Drawing.Point(3, 59)
         Me.GroupBox2.Name = "GroupBox2"
         Me.InsertTableLayout.SetRowSpan(Me.GroupBox2, 5)
-        Me.GroupBox2.Size = New System.Drawing.Size(438, 272)
+        Me.GroupBox2.Size = New System.Drawing.Size(444, 273)
         Me.GroupBox2.TabIndex = 42
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Specify Columns"
@@ -1558,11 +1630,11 @@ Partial Class Home
         '
         Me.Columns.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Columns.Enabled = False
-        Me.Columns.Location = New System.Drawing.Point(9, 70)
+        Me.Columns.Location = New System.Drawing.Point(9, 71)
         Me.Columns.Multiline = True
         Me.Columns.Name = "Columns"
         Me.Columns.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Columns.Size = New System.Drawing.Size(419, 188)
+        Me.Columns.Size = New System.Drawing.Size(425, 188)
         Me.Columns.TabIndex = 54
         Me.Columns.WordWrap = False
         '
@@ -1573,7 +1645,7 @@ Partial Class Home
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(438, 50)
+        Me.Panel6.Size = New System.Drawing.Size(444, 50)
         Me.Panel6.TabIndex = 0
         '
         'Label7
@@ -1600,7 +1672,7 @@ Partial Class Home
         Me.InsertTable.SelectedText = ""
         Me.InsertTable.SelectionLength = 0
         Me.InsertTable.SelectionStart = 0
-        Me.InsertTable.Size = New System.Drawing.Size(412, 23)
+        Me.InsertTable.Size = New System.Drawing.Size(418, 23)
         Me.InsertTable.TabIndex = 37
         Me.InsertTable.UseSystemPasswordChar = False
         '
@@ -1608,9 +1680,9 @@ Partial Class Home
         '
         Me.Panel7.Controls.Add(Me.Insert_Button)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(3, 561)
+        Me.Panel7.Location = New System.Drawing.Point(3, 562)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(438, 50)
+        Me.Panel7.Size = New System.Drawing.Size(444, 50)
         Me.Panel7.TabIndex = 44
         '
         'Insert_Button
@@ -1635,7 +1707,7 @@ Partial Class Home
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(450, 680)
+        Me.TabPage6.Size = New System.Drawing.Size(456, 686)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Delete Table"
         '
@@ -1664,7 +1736,7 @@ Partial Class Home
         Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.DropTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.DropTableLayout.Size = New System.Drawing.Size(444, 674)
+        Me.DropTableLayout.Size = New System.Drawing.Size(450, 680)
         Me.DropTableLayout.TabIndex = 47
         '
         'Panel5
@@ -1674,7 +1746,7 @@ Partial Class Home
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(438, 50)
+        Me.Panel5.Size = New System.Drawing.Size(444, 50)
         Me.Panel5.TabIndex = 0
         '
         'Label9
@@ -1701,7 +1773,7 @@ Partial Class Home
         Me.TableName.SelectedText = ""
         Me.TableName.SelectionLength = 0
         Me.TableName.SelectionStart = 0
-        Me.TableName.Size = New System.Drawing.Size(412, 23)
+        Me.TableName.Size = New System.Drawing.Size(418, 23)
         Me.TableName.TabIndex = 37
         Me.TableName.UseSystemPasswordChar = False
         '
@@ -1711,7 +1783,7 @@ Partial Class Home
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel8.Location = New System.Drawing.Point(3, 59)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(438, 50)
+        Me.Panel8.Size = New System.Drawing.Size(444, 50)
         Me.Panel8.TabIndex = 44
         '
         'DropButton
@@ -1751,15 +1823,17 @@ Partial Class Home
         '
         Me.GroupBox1.Controls.Add(Me.Sequence)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(688, 670)
+        Me.GroupBox1.Size = New System.Drawing.Size(694, 676)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Script"
         '
         'Sequence
         '
+        Me.Sequence.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sequence.FormattingEnabled = True
@@ -1767,8 +1841,8 @@ Partial Class Home
         Me.Sequence.Location = New System.Drawing.Point(3, 16)
         Me.Sequence.Name = "Sequence"
         Me.Sequence.ScrollAlwaysVisible = True
-        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.Sequence.Size = New System.Drawing.Size(682, 651)
+        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.Sequence.Size = New System.Drawing.Size(688, 657)
         Me.Sequence.TabIndex = 0
         '
         'ToolStrip1
@@ -1834,7 +1908,11 @@ Partial Class Home
         Me.TabContainerPanel.ResumeLayout(False)
         Me.MaterialTabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Br, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Undo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Inc, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2025,4 +2103,8 @@ Partial Class Home
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents TabContainerPanel As Panel
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
