@@ -1310,7 +1310,7 @@ Partial Class Home
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label11.Location = New System.Drawing.Point(177, 2)
+        Me.Label11.Location = New System.Drawing.Point(176, 2)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 13)
         Me.Label11.TabIndex = 41
@@ -1652,7 +1652,7 @@ Partial Class Home
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label7.Location = New System.Drawing.Point(177, 5)
+        Me.Label7.Location = New System.Drawing.Point(176, 5)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(93, 13)
         Me.Label7.TabIndex = 41
@@ -1753,7 +1753,7 @@ Partial Class Home
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label9.Location = New System.Drawing.Point(177, 5)
+        Me.Label9.Location = New System.Drawing.Point(176, 5)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(93, 13)
         Me.Label9.TabIndex = 41
