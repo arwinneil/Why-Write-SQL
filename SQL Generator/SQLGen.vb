@@ -533,9 +533,6 @@ Public Class Home
 
     End Sub
 
-    Private Sub Alter_Drop_Table_Click(sender As Object, e As EventArgs) Handles Alter_Drop_Table.Click
-
-    End Sub
 
 
 #End Region

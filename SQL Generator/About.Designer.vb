@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class About
     Inherits MaterialSkin.Controls.MaterialForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,12 @@ Partial Class About
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -36,6 +35,7 @@ Partial Class About
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,21 +72,11 @@ Partial Class About
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(27, 190)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(462, 41)
+        Me.Label1.Size = New System.Drawing.Size(476, 41)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "SQL Script Generator is a SQL code generator, aiming to reduce time of coding and" &
     " debugging, speed up projects, reducing human errors and avoiding repetitive tas" &
     "ks."
-        '
-        'ListBox1
-        '
-        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"MIT License", "", "Copyright (c) 2016 Arwin Neil Baichoo", "", "Permission is hereby granted, free of charge, to any person obtaining a copy", "of this software and associated documentation files (the ""Software""), to deal", "in the Software without restriction, including without limitation the rights", "to use, copy, modify, merge, publish, distribute, sublicense, and/or sell", "copies of the Software, and to permit persons to whom the Software is", "furnished to do so, subject to the following conditions:", "", "The above copyright notice and this permission notice shall be included in all", "copies or substantial portions of the Software.", "", "THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR", "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,", "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE", "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER", "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,", "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE", "SOFTWARE."})
-        Me.ListBox1.Location = New System.Drawing.Point(30, 353)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(459, 104)
-        Me.ListBox1.TabIndex = 16
         '
         'Label4
         '
@@ -161,7 +151,7 @@ Partial Class About
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(27, 473)
+        Me.Label5.Location = New System.Drawing.Point(27, 488)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 15)
         Me.Label5.TabIndex = 17
@@ -172,7 +162,7 @@ Partial Class About
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel1.Location = New System.Drawing.Point(27, 524)
+        Me.LinkLabel1.Location = New System.Drawing.Point(27, 539)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(125, 13)
         Me.LinkLabel1.TabIndex = 18
@@ -184,22 +174,35 @@ Partial Class About
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel2.Location = New System.Drawing.Point(27, 499)
+        Me.LinkLabel2.Location = New System.Drawing.Point(27, 514)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(235, 13)
         Me.LinkLabel2.TabIndex = 19
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "MaterialSkin for .NET WinForms By IgnaceMaes"
         '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Location = New System.Drawing.Point(30, 353)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox1.Size = New System.Drawing.Size(473, 117)
+        Me.TextBox1.TabIndex = 20
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
+        '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(511, 577)
+        Me.ClientSize = New System.Drawing.Size(529, 577)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
@@ -227,7 +230,6 @@ Partial Class About
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
@@ -237,4 +239,5 @@ Partial Class About
     Friend WithEvents Label5 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents TextBox1 As TextBox
 End Class
