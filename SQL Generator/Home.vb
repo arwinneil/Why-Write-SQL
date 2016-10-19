@@ -414,15 +414,7 @@ Public Class Home
 #End Region
 
 #Region "Home UI"
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
-        Do
-            Me.Opacity = Me.Opacity - 0.03
-            System.Threading.Thread.Sleep(4)
-        Loop Until Opacity = 0
 
-        Me.Close()
-
-    End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Inc.Click
         If Sequence.Font.Size >= 40 Then
@@ -466,10 +458,8 @@ Public Class Home
     End Sub
 
     Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Do
-            Me.Opacity = Me.Opacity - 0.02
-            System.Threading.Thread.Sleep(4)
-        Loop Until Opacity = 0
+
+        Animation.Close(sender)
 
     End Sub
 

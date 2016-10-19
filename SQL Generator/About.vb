@@ -20,5 +20,7 @@ Public Class About
         Process.Start("https://www.instagram.com/arwinneil/")
     End Sub
 
-
+    Private Sub About_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Animation.Close(sender)
+    End Sub
 End Class

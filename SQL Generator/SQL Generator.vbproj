@@ -121,6 +121,7 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Animation.vb" />
     <Compile Include="Approve.vb" />
     <Compile Include="Generate.vb" />
     <Compile Include="Initialise.vb" />
