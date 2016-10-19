@@ -376,6 +376,7 @@ Public Class Home
     End Sub
 
     Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterAdd.Click
+        Label17.Text = "Add Column"
 
         RenameGroup.Visible = False
         DropGroup.Visible = False
@@ -388,7 +389,7 @@ Public Class Home
     End Sub
 
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
-
+        Label17.Text = "Modify Column"
 
         RenameGroup.Visible = False
         DropGroup.Visible = False
@@ -523,6 +524,8 @@ Public Class Home
         End If
 
         If MaterialTabControl1.SelectedIndex = 2 Then
+
+            Label17.Text = "Add Column"
 
             FieldDetails.Parent = CreateActionLayout
             CreateActionLayout.SetRow(FieldDetails, 2)
