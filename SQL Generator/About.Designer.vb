@@ -216,6 +216,7 @@ Partial Class About
         Me.MinimizeBox = False
         Me.Name = "About"
         Me.Sizable = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -60,13 +60,21 @@ Public Class Home
                 End If
 
             Case = "AddPrimaryKey"
-                Generate.PrimaryKey()
-                PrimCheck.Enabled = False
-                Add_Primary_Key_Button.Enabled = False
-                UpdateLine()
+
+                If Approve.PrimaryKey() = True Then
+                    Generate.PrimaryKey()
+                    PrimCheck.Enabled = False
+                    Add_Primary_Key_Button.Enabled = False
+                    UpdateLine()
+                End If
+
             Case = "AddForeignKey"
-                Generate.ForeignKey()
-                UpdateLine()
+
+                If Approve.ForeignKey() = True Then
+                    Generate.ForeignKey()
+                    UpdateLine()
+                End If
+
             Case = "AddField"
                 AlterAddField()
 
@@ -380,6 +388,8 @@ Public Class Home
     End Sub
 
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
+
+
         RenameGroup.Visible = False
         DropGroup.Visible = False
         FieldDetails.Visible = True
@@ -532,6 +542,7 @@ Public Class Home
         About.Show()
 
     End Sub
+
 
 
 
@@ -1158,6 +1169,31 @@ Public Class Approve
 
         End If
         Return Approved
+    End Function
+
+
+    Shared Function PrimaryKey()
+        Dim Approved As Boolean = True
+
+        If Home.PrimaryKeys.Text = "" Then
+            MsgBox("Please enter name(s) of primary key(s).")
+            Approved = False
+        End If
+
+        Return Approved
+
+    End Function
+
+    Shared Function ForeignKey()
+        Dim Approved As Boolean = True
+
+        If Home.ForeignKeys.Text = "" Then
+            MsgBox("Please enter name(s) of foreign key(s).")
+            Approved = False
+        End If
+
+        Return Approved
+
     End Function
 
 End Class

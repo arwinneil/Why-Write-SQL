@@ -57,28 +57,51 @@ Partial Class Home
         Me.NewTableField = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FieldDetails = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.FieldGroup = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Formula = New System.Windows.Forms.CheckBox()
+        Me.FieldType = New System.Windows.Forms.ComboBox()
+        Me.DefaultValue = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Default_Value_Checkbox = New System.Windows.Forms.CheckBox()
+        Me.FieldField = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.Precision = New System.Windows.Forms.NumericUpDown()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.FieldSize = New System.Windows.Forms.NumericUpDown()
+        Me.Scale_ = New System.Windows.Forms.NumericUpDown()
+        Me.ForeignKeyGroup = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.ForeignKeys = New System.Windows.Forms.TextBox()
         Me.PrimaryGroup = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PrimaryKeys = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.CheckGroup = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.CheckBox = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Check_Type = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Check_Position = New System.Windows.Forms.ComboBox()
+        Me.Check_String = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ForCheck = New System.Windows.Forms.CheckBox()
-        Me.Unique = New System.Windows.Forms.CheckBox()
-        Me.NotNull = New System.Windows.Forms.CheckBox()
-        Me.PrimCheck = New System.Windows.Forms.CheckBox()
+        Me.ReferenceGroup = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.OnDeleteAction = New System.Windows.Forms.ComboBox()
+        Me.ReferenceBox = New System.Windows.Forms.CheckBox()
         Me.OnUpdateAction = New System.Windows.Forms.ComboBox()
+        Me.ReferenceText = New System.Windows.Forms.TextBox()
         Me.OnDeleteBox = New System.Windows.Forms.CheckBox()
         Me.OnUpdateBox = New System.Windows.Forms.CheckBox()
-        Me.ReferenceBox = New System.Windows.Forms.CheckBox()
-        Me.ReferenceText = New System.Windows.Forms.TextBox()
+        Me.ConstraintGroup = New System.Windows.Forms.Panel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.ForCheck = New System.Windows.Forms.CheckBox()
+        Me.NotNull = New System.Windows.Forms.CheckBox()
+        Me.Unique = New System.Windows.Forms.CheckBox()
+        Me.PrimCheck = New System.Windows.Forms.CheckBox()
         Me.CreateField = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.CheckBox = New System.Windows.Forms.CheckBox()
-        Me.Check_Type = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Check_String = New System.Windows.Forms.TextBox()
-        Me.Check_Position = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TableButtonTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.Add_Primary_Key_Button = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CompleteTable_Button = New MaterialSkin.Controls.MaterialFlatButton()
@@ -126,23 +149,7 @@ Partial Class Home
         Me.DropButton = New MaterialSkin.Controls.MaterialFlatButton()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ForeignKeyGroup = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.ForeignKeys = New System.Windows.Forms.TextBox()
-        Me.FieldGroup = New System.Windows.Forms.Panel()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Formula = New System.Windows.Forms.CheckBox()
-        Me.FieldType = New System.Windows.Forms.ComboBox()
-        Me.DefaultValue = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Default_Value_Checkbox = New System.Windows.Forms.CheckBox()
-        Me.FieldField = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.Precision = New System.Windows.Forms.NumericUpDown()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.FieldSize = New System.Windows.Forms.NumericUpDown()
-        Me.Scale_ = New System.Windows.Forms.NumericUpDown()
+        Me.Sequence = New System.Windows.Forms.ListBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -150,13 +157,6 @@ Partial Class Home
         Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.ReferenceGroup = New System.Windows.Forms.Panel()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.ConstraintGroup = New System.Windows.Forms.Panel()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.CheckGroup = New System.Windows.Forms.Panel()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Sequence = New System.Windows.Forms.ListBox()
         Me.Home_Main_Layout.SuspendLayout()
         Me.TabContainerPanel.SuspendLayout()
         Me.MaterialTabControl1.SuspendLayout()
@@ -180,9 +180,17 @@ Partial Class Home
         Me.Panel2.SuspendLayout()
         Me.FieldDetails.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.FieldGroup.SuspendLayout()
+        CType(Me.Precision, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Scale_, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ForeignKeyGroup.SuspendLayout()
         Me.PrimaryGroup.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.CheckGroup.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.ReferenceGroup.SuspendLayout()
+        Me.ConstraintGroup.SuspendLayout()
         Me.TableButtonTableLayout.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.AlterTableLayoutPanel.SuspendLayout()
@@ -203,15 +211,7 @@ Partial Class Home
         Me.Panel8.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.ForeignKeyGroup.SuspendLayout()
-        Me.FieldGroup.SuspendLayout()
-        CType(Me.Precision, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Scale_, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.ReferenceGroup.SuspendLayout()
-        Me.ConstraintGroup.SuspendLayout()
-        Me.CheckGroup.SuspendLayout()
         Me.SuspendLayout()
         '
         'Home_Main_Layout
@@ -729,6 +729,198 @@ Partial Class Home
         Me.Panel11.Size = New System.Drawing.Size(444, 160)
         Me.Panel11.TabIndex = 13
         '
+        'FieldGroup
+        '
+        Me.FieldGroup.Controls.Add(Me.Label17)
+        Me.FieldGroup.Controls.Add(Me.Formula)
+        Me.FieldGroup.Controls.Add(Me.FieldType)
+        Me.FieldGroup.Controls.Add(Me.DefaultValue)
+        Me.FieldGroup.Controls.Add(Me.Label2)
+        Me.FieldGroup.Controls.Add(Me.Default_Value_Checkbox)
+        Me.FieldGroup.Controls.Add(Me.FieldField)
+        Me.FieldGroup.Controls.Add(Me.Precision)
+        Me.FieldGroup.Controls.Add(Me.Label8)
+        Me.FieldGroup.Controls.Add(Me.Label4)
+        Me.FieldGroup.Controls.Add(Me.Label3)
+        Me.FieldGroup.Controls.Add(Me.FieldSize)
+        Me.FieldGroup.Controls.Add(Me.Scale_)
+        Me.FieldGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
+        Me.FieldGroup.Margin = New System.Windows.Forms.Padding(0)
+        Me.FieldGroup.Name = "FieldGroup"
+        Me.FieldGroup.Size = New System.Drawing.Size(444, 160)
+        Me.FieldGroup.TabIndex = 8
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label17.Location = New System.Drawing.Point(6, 5)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(84, 15)
+        Me.Label17.TabIndex = 67
+        Me.Label17.Text = "Add Column"
+        '
+        'Formula
+        '
+        Me.Formula.AccessibleDescription = "Formula"
+        Me.Formula.AutoSize = True
+        Me.Formula.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Formula.Location = New System.Drawing.Point(111, 128)
+        Me.Formula.Name = "Formula"
+        Me.Formula.Size = New System.Drawing.Size(63, 17)
+        Me.Formula.TabIndex = 66
+        Me.Formula.Text = "Formula"
+        Me.Formula.UseVisualStyleBackColor = True
+        '
+        'FieldType
+        '
+        Me.FieldType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FieldType.FormattingEnabled = True
+        Me.FieldType.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.FieldType.Items.AddRange(New Object() {"CHAR", "VARCHAR", "BIT", "INTEGER", "SMALLINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DATE", "TIME"})
+        Me.FieldType.Location = New System.Drawing.Point(11, 85)
+        Me.FieldType.Name = "FieldType"
+        Me.FieldType.Size = New System.Drawing.Size(127, 21)
+        Me.FieldType.TabIndex = 42
+        '
+        'DefaultValue
+        '
+        Me.DefaultValue.Enabled = False
+        Me.DefaultValue.Location = New System.Drawing.Point(187, 125)
+        Me.DefaultValue.Name = "DefaultValue"
+        Me.DefaultValue.Size = New System.Drawing.Size(241, 20)
+        Me.DefaultValue.TabIndex = 65
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label2.Location = New System.Drawing.Point(161, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 13)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = "Enter Column Name"
+        '
+        'Default_Value_Checkbox
+        '
+        Me.Default_Value_Checkbox.AutoSize = True
+        Me.Default_Value_Checkbox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Default_Value_Checkbox.Location = New System.Drawing.Point(15, 127)
+        Me.Default_Value_Checkbox.Name = "Default_Value_Checkbox"
+        Me.Default_Value_Checkbox.Size = New System.Drawing.Size(90, 17)
+        Me.Default_Value_Checkbox.TabIndex = 64
+        Me.Default_Value_Checkbox.Text = "Default Value"
+        Me.Default_Value_Checkbox.UseVisualStyleBackColor = True
+        '
+        'FieldField
+        '
+        Me.FieldField.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldField.Depth = 0
+        Me.FieldField.Hint = ""
+        Me.FieldField.Location = New System.Drawing.Point(11, 34)
+        Me.FieldField.MouseState = MaterialSkin.MouseState.HOVER
+        Me.FieldField.Name = "FieldField"
+        Me.FieldField.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.FieldField.SelectedText = ""
+        Me.FieldField.SelectionLength = 0
+        Me.FieldField.SelectionStart = 0
+        Me.FieldField.Size = New System.Drawing.Size(424, 23)
+        Me.FieldField.TabIndex = 41
+        Me.FieldField.UseSystemPasswordChar = False
+        '
+        'Precision
+        '
+        Me.Precision.Location = New System.Drawing.Point(340, 85)
+        Me.Precision.Name = "Precision"
+        Me.Precision.Size = New System.Drawing.Size(41, 20)
+        Me.Precision.TabIndex = 63
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label8.Location = New System.Drawing.Point(337, 66)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(91, 13)
+        Me.Label8.TabIndex = 60
+        Me.Label8.Text = "(Presision , Scale)"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label4.Location = New System.Drawing.Point(189, 69)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(27, 13)
+        Me.Label4.TabIndex = 45
+        Me.Label4.Text = "Size"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label3.Location = New System.Drawing.Point(9, 69)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.TabIndex = 43
+        Me.Label3.Text = "Type"
+        '
+        'FieldSize
+        '
+        Me.FieldSize.Enabled = False
+        Me.FieldSize.Location = New System.Drawing.Point(187, 85)
+        Me.FieldSize.Maximum = New Decimal(New Integer() {9999, 0, 0, 0})
+        Me.FieldSize.Name = "FieldSize"
+        Me.FieldSize.Size = New System.Drawing.Size(85, 20)
+        Me.FieldSize.TabIndex = 46
+        '
+        'Scale_
+        '
+        Me.Scale_.Location = New System.Drawing.Point(387, 85)
+        Me.Scale_.Name = "Scale_"
+        Me.Scale_.Size = New System.Drawing.Size(41, 20)
+        Me.Scale_.TabIndex = 62
+        '
+        'ForeignKeyGroup
+        '
+        Me.ForeignKeyGroup.Controls.Add(Me.Label18)
+        Me.ForeignKeyGroup.Controls.Add(Me.ForeignKeys)
+        Me.ForeignKeyGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ForeignKeyGroup.Location = New System.Drawing.Point(0, 0)
+        Me.ForeignKeyGroup.Name = "ForeignKeyGroup"
+        Me.ForeignKeyGroup.Size = New System.Drawing.Size(444, 160)
+        Me.ForeignKeyGroup.TabIndex = 0
+        Me.ForeignKeyGroup.Visible = False
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label18.Location = New System.Drawing.Point(7, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(111, 15)
+        Me.Label18.TabIndex = 68
+        Me.Label18.Text = "Add Foreign Key"
+        '
+        'ForeignKeys
+        '
+        Me.ForeignKeys.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ForeignKeys.Location = New System.Drawing.Point(4, 23)
+        Me.ForeignKeys.Multiline = True
+        Me.ForeignKeys.Name = "ForeignKeys"
+        Me.ForeignKeys.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.ForeignKeys.Size = New System.Drawing.Size(434, 134)
+        Me.ForeignKeys.TabIndex = 54
+        Me.ForeignKeys.WordWrap = False
+        '
         'PrimaryGroup
         '
         Me.PrimaryGroup.Controls.Add(Me.Label19)
@@ -738,6 +930,7 @@ Partial Class Home
         Me.PrimaryGroup.Name = "PrimaryGroup"
         Me.PrimaryGroup.Size = New System.Drawing.Size(444, 160)
         Me.PrimaryGroup.TabIndex = 0
+        Me.PrimaryGroup.Visible = False
         '
         'Label19
         '
@@ -774,6 +967,100 @@ Partial Class Home
         Me.Panel3.Size = New System.Drawing.Size(444, 335)
         Me.Panel3.TabIndex = 12
         '
+        'CheckGroup
+        '
+        Me.CheckGroup.Controls.Add(Me.Label22)
+        Me.CheckGroup.Controls.Add(Me.CheckBox)
+        Me.CheckGroup.Controls.Add(Me.Label5)
+        Me.CheckGroup.Controls.Add(Me.Check_Type)
+        Me.CheckGroup.Controls.Add(Me.Label6)
+        Me.CheckGroup.Controls.Add(Me.Check_Position)
+        Me.CheckGroup.Controls.Add(Me.Check_String)
+        Me.CheckGroup.Location = New System.Drawing.Point(0, 110)
+        Me.CheckGroup.Name = "CheckGroup"
+        Me.CheckGroup.Size = New System.Drawing.Size(441, 174)
+        Me.CheckGroup.TabIndex = 74
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label22.Location = New System.Drawing.Point(6, 3)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(46, 15)
+        Me.Label22.TabIndex = 70
+        Me.Label22.Text = "Check"
+        '
+        'CheckBox
+        '
+        Me.CheckBox.AutoSize = True
+        Me.CheckBox.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.CheckBox.Location = New System.Drawing.Point(5, 37)
+        Me.CheckBox.Name = "CheckBox"
+        Me.CheckBox.Size = New System.Drawing.Size(57, 17)
+        Me.CheckBox.TabIndex = 56
+        Me.CheckBox.Text = "Check"
+        Me.CheckBox.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label5.Location = New System.Drawing.Point(82, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 13)
+        Me.Label5.TabIndex = 50
+        Me.Label5.Text = "Check Type"
+        '
+        'Check_Type
+        '
+        Me.Check_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Check_Type.Enabled = False
+        Me.Check_Type.FormattingEnabled = True
+        Me.Check_Type.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.Check_Type.Items.AddRange(New Object() {"LIKE", "IN", "Numeric/Logical Expresion/Other"})
+        Me.Check_Type.Location = New System.Drawing.Point(88, 40)
+        Me.Check_Type.Name = "Check_Type"
+        Me.Check_Type.Size = New System.Drawing.Size(156, 21)
+        Me.Check_Type.TabIndex = 55
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label6.Location = New System.Drawing.Point(254, 21)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 52
+        Me.Label6.Text = "String Position"
+        '
+        'Check_Position
+        '
+        Me.Check_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Check_Position.Enabled = False
+        Me.Check_Position.FormattingEnabled = True
+        Me.Check_Position.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.Check_Position.Items.AddRange(New Object() {"Before any string", "After any string", "Between any string", "Other/Specific"})
+        Me.Check_Position.Location = New System.Drawing.Point(260, 40)
+        Me.Check_Position.Name = "Check_Position"
+        Me.Check_Position.Size = New System.Drawing.Size(156, 21)
+        Me.Check_Position.TabIndex = 51
+        '
+        'Check_String
+        '
+        Me.Check_String.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Check_String.Enabled = False
+        Me.Check_String.Location = New System.Drawing.Point(6, 70)
+        Me.Check_String.Multiline = True
+        Me.Check_String.Name = "Check_String"
+        Me.Check_String.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.Check_String.Size = New System.Drawing.Size(435, 104)
+        Me.Check_String.TabIndex = 53
+        Me.Check_String.WordWrap = False
+        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -791,49 +1078,32 @@ Partial Class Home
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(447, 110)
         Me.TableLayoutPanel1.TabIndex = 73
         '
-        'ForCheck
+        'ReferenceGroup
         '
-        Me.ForCheck.AutoSize = True
-        Me.ForCheck.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.ForCheck.Location = New System.Drawing.Point(3, 45)
-        Me.ForCheck.Name = "ForCheck"
-        Me.ForCheck.Size = New System.Drawing.Size(98, 17)
-        Me.ForCheck.TabIndex = 58
-        Me.ForCheck.Text = "FOREIGN KEY"
-        Me.ForCheck.UseVisualStyleBackColor = True
+        Me.ReferenceGroup.Controls.Add(Me.Label20)
+        Me.ReferenceGroup.Controls.Add(Me.OnDeleteAction)
+        Me.ReferenceGroup.Controls.Add(Me.ReferenceBox)
+        Me.ReferenceGroup.Controls.Add(Me.OnUpdateAction)
+        Me.ReferenceGroup.Controls.Add(Me.ReferenceText)
+        Me.ReferenceGroup.Controls.Add(Me.OnDeleteBox)
+        Me.ReferenceGroup.Controls.Add(Me.OnUpdateBox)
+        Me.ReferenceGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ReferenceGroup.Location = New System.Drawing.Point(0, 0)
+        Me.ReferenceGroup.Margin = New System.Windows.Forms.Padding(0)
+        Me.ReferenceGroup.Name = "ReferenceGroup"
+        Me.ReferenceGroup.Size = New System.Drawing.Size(268, 110)
+        Me.ReferenceGroup.TabIndex = 67
         '
-        'Unique
+        'Label20
         '
-        Me.Unique.AutoSize = True
-        Me.Unique.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Unique.Location = New System.Drawing.Point(3, 91)
-        Me.Unique.Name = "Unique"
-        Me.Unique.Size = New System.Drawing.Size(68, 17)
-        Me.Unique.TabIndex = 57
-        Me.Unique.Text = "UNIQUE"
-        Me.Unique.UseVisualStyleBackColor = True
-        '
-        'NotNull
-        '
-        Me.NotNull.AutoSize = True
-        Me.NotNull.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.NotNull.Location = New System.Drawing.Point(3, 68)
-        Me.NotNull.Name = "NotNull"
-        Me.NotNull.Size = New System.Drawing.Size(80, 17)
-        Me.NotNull.TabIndex = 54
-        Me.NotNull.Text = "NOT NULL"
-        Me.NotNull.UseVisualStyleBackColor = True
-        '
-        'PrimCheck
-        '
-        Me.PrimCheck.AutoSize = True
-        Me.PrimCheck.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.PrimCheck.Location = New System.Drawing.Point(3, 24)
-        Me.PrimCheck.Name = "PrimCheck"
-        Me.PrimCheck.Size = New System.Drawing.Size(99, 17)
-        Me.PrimCheck.TabIndex = 44
-        Me.PrimCheck.Text = "PRIMARY KEY"
-        Me.PrimCheck.UseVisualStyleBackColor = True
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label20.Location = New System.Drawing.Point(6, -3)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(78, 15)
+        Me.Label20.TabIndex = 70
+        Me.Label20.Text = "Referential"
         '
         'OnDeleteAction
         '
@@ -847,6 +1117,17 @@ Partial Class Home
         Me.OnDeleteAction.Size = New System.Drawing.Size(124, 21)
         Me.OnDeleteAction.TabIndex = 61
         '
+        'ReferenceBox
+        '
+        Me.ReferenceBox.AutoSize = True
+        Me.ReferenceBox.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.ReferenceBox.Location = New System.Drawing.Point(9, 25)
+        Me.ReferenceBox.Name = "ReferenceBox"
+        Me.ReferenceBox.Size = New System.Drawing.Size(81, 17)
+        Me.ReferenceBox.TabIndex = 54
+        Me.ReferenceBox.Text = "References"
+        Me.ReferenceBox.UseVisualStyleBackColor = True
+        '
         'OnUpdateAction
         '
         Me.OnUpdateAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -858,6 +1139,14 @@ Partial Class Home
         Me.OnUpdateAction.Name = "OnUpdateAction"
         Me.OnUpdateAction.Size = New System.Drawing.Size(124, 21)
         Me.OnUpdateAction.TabIndex = 60
+        '
+        'ReferenceText
+        '
+        Me.ReferenceText.Enabled = False
+        Me.ReferenceText.Location = New System.Drawing.Point(91, 22)
+        Me.ReferenceText.Name = "ReferenceText"
+        Me.ReferenceText.Size = New System.Drawing.Size(153, 20)
+        Me.ReferenceText.TabIndex = 55
         '
         'OnDeleteBox
         '
@@ -883,24 +1172,74 @@ Partial Class Home
         Me.OnUpdateBox.Text = "On Update"
         Me.OnUpdateBox.UseVisualStyleBackColor = True
         '
-        'ReferenceBox
+        'ConstraintGroup
         '
-        Me.ReferenceBox.AutoSize = True
-        Me.ReferenceBox.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.ReferenceBox.Location = New System.Drawing.Point(9, 25)
-        Me.ReferenceBox.Name = "ReferenceBox"
-        Me.ReferenceBox.Size = New System.Drawing.Size(81, 17)
-        Me.ReferenceBox.TabIndex = 54
-        Me.ReferenceBox.Text = "References"
-        Me.ReferenceBox.UseVisualStyleBackColor = True
+        Me.ConstraintGroup.Controls.Add(Me.Label21)
+        Me.ConstraintGroup.Controls.Add(Me.ForCheck)
+        Me.ConstraintGroup.Controls.Add(Me.NotNull)
+        Me.ConstraintGroup.Controls.Add(Me.Unique)
+        Me.ConstraintGroup.Controls.Add(Me.PrimCheck)
+        Me.ConstraintGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ConstraintGroup.Location = New System.Drawing.Point(268, 0)
+        Me.ConstraintGroup.Margin = New System.Windows.Forms.Padding(0)
+        Me.ConstraintGroup.Name = "ConstraintGroup"
+        Me.ConstraintGroup.Size = New System.Drawing.Size(179, 110)
+        Me.ConstraintGroup.TabIndex = 68
         '
-        'ReferenceText
+        'Label21
         '
-        Me.ReferenceText.Enabled = False
-        Me.ReferenceText.Location = New System.Drawing.Point(91, 22)
-        Me.ReferenceText.Name = "ReferenceText"
-        Me.ReferenceText.Size = New System.Drawing.Size(153, 20)
-        Me.ReferenceText.TabIndex = 55
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label21.Location = New System.Drawing.Point(0, -3)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(79, 15)
+        Me.Label21.TabIndex = 70
+        Me.Label21.Text = "Constraints"
+        '
+        'ForCheck
+        '
+        Me.ForCheck.AutoSize = True
+        Me.ForCheck.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.ForCheck.Location = New System.Drawing.Point(3, 45)
+        Me.ForCheck.Name = "ForCheck"
+        Me.ForCheck.Size = New System.Drawing.Size(98, 17)
+        Me.ForCheck.TabIndex = 58
+        Me.ForCheck.Text = "FOREIGN KEY"
+        Me.ForCheck.UseVisualStyleBackColor = True
+        '
+        'NotNull
+        '
+        Me.NotNull.AutoSize = True
+        Me.NotNull.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.NotNull.Location = New System.Drawing.Point(3, 68)
+        Me.NotNull.Name = "NotNull"
+        Me.NotNull.Size = New System.Drawing.Size(80, 17)
+        Me.NotNull.TabIndex = 54
+        Me.NotNull.Text = "NOT NULL"
+        Me.NotNull.UseVisualStyleBackColor = True
+        '
+        'Unique
+        '
+        Me.Unique.AutoSize = True
+        Me.Unique.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Unique.Location = New System.Drawing.Point(3, 91)
+        Me.Unique.Name = "Unique"
+        Me.Unique.Size = New System.Drawing.Size(68, 17)
+        Me.Unique.TabIndex = 57
+        Me.Unique.Text = "UNIQUE"
+        Me.Unique.UseVisualStyleBackColor = True
+        '
+        'PrimCheck
+        '
+        Me.PrimCheck.AutoSize = True
+        Me.PrimCheck.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.PrimCheck.Location = New System.Drawing.Point(3, 24)
+        Me.PrimCheck.Name = "PrimCheck"
+        Me.PrimCheck.Size = New System.Drawing.Size(99, 17)
+        Me.PrimCheck.TabIndex = 44
+        Me.PrimCheck.Text = "PRIMARY KEY"
+        Me.PrimCheck.UseVisualStyleBackColor = True
         '
         'CreateField
         '
@@ -916,75 +1255,6 @@ Partial Class Home
         Me.CreateField.TabIndex = 72
         Me.CreateField.Text = "Done"
         Me.CreateField.UseVisualStyleBackColor = True
-        '
-        'CheckBox
-        '
-        Me.CheckBox.AutoSize = True
-        Me.CheckBox.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.CheckBox.Location = New System.Drawing.Point(5, 37)
-        Me.CheckBox.Name = "CheckBox"
-        Me.CheckBox.Size = New System.Drawing.Size(57, 17)
-        Me.CheckBox.TabIndex = 56
-        Me.CheckBox.Text = "Check"
-        Me.CheckBox.UseVisualStyleBackColor = True
-        '
-        'Check_Type
-        '
-        Me.Check_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Check_Type.Enabled = False
-        Me.Check_Type.FormattingEnabled = True
-        Me.Check_Type.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.Check_Type.Items.AddRange(New Object() {"LIKE", "IN", "Numeric/Logical Expresion/Other"})
-        Me.Check_Type.Location = New System.Drawing.Point(88, 40)
-        Me.Check_Type.Name = "Check_Type"
-        Me.Check_Type.Size = New System.Drawing.Size(156, 21)
-        Me.Check_Type.TabIndex = 55
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label5.Location = New System.Drawing.Point(82, 21)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 13)
-        Me.Label5.TabIndex = 50
-        Me.Label5.Text = "Check Type"
-        '
-        'Check_String
-        '
-        Me.Check_String.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Check_String.Enabled = False
-        Me.Check_String.Location = New System.Drawing.Point(6, 70)
-        Me.Check_String.Multiline = True
-        Me.Check_String.Name = "Check_String"
-        Me.Check_String.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.Check_String.Size = New System.Drawing.Size(435, 104)
-        Me.Check_String.TabIndex = 53
-        Me.Check_String.WordWrap = False
-        '
-        'Check_Position
-        '
-        Me.Check_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Check_Position.Enabled = False
-        Me.Check_Position.FormattingEnabled = True
-        Me.Check_Position.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.Check_Position.Items.AddRange(New Object() {"Before any string", "After any string", "Between any string", "Other/Specific"})
-        Me.Check_Position.Location = New System.Drawing.Point(260, 40)
-        Me.Check_Position.Name = "Check_Position"
-        Me.Check_Position.Size = New System.Drawing.Size(156, 21)
-        Me.Check_Position.TabIndex = 51
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label6.Location = New System.Drawing.Point(254, 21)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 13)
-        Me.Label6.TabIndex = 52
-        Me.Label6.Text = "String Position"
         '
         'TableButtonTableLayout
         '
@@ -1679,196 +1949,20 @@ Partial Class Home
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Script"
         '
-        'ForeignKeyGroup
+        'Sequence
         '
-        Me.ForeignKeyGroup.Controls.Add(Me.Label18)
-        Me.ForeignKeyGroup.Controls.Add(Me.ForeignKeys)
-        Me.ForeignKeyGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ForeignKeyGroup.Location = New System.Drawing.Point(0, 0)
-        Me.ForeignKeyGroup.Name = "ForeignKeyGroup"
-        Me.ForeignKeyGroup.Size = New System.Drawing.Size(444, 160)
-        Me.ForeignKeyGroup.TabIndex = 0
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label18.Location = New System.Drawing.Point(7, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(111, 15)
-        Me.Label18.TabIndex = 68
-        Me.Label18.Text = "Add Foreign Key"
-        '
-        'ForeignKeys
-        '
-        Me.ForeignKeys.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ForeignKeys.Location = New System.Drawing.Point(4, 23)
-        Me.ForeignKeys.Multiline = True
-        Me.ForeignKeys.Name = "ForeignKeys"
-        Me.ForeignKeys.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.ForeignKeys.Size = New System.Drawing.Size(434, 134)
-        Me.ForeignKeys.TabIndex = 54
-        Me.ForeignKeys.WordWrap = False
-        '
-        'FieldGroup
-        '
-        Me.FieldGroup.Controls.Add(Me.Label17)
-        Me.FieldGroup.Controls.Add(Me.Formula)
-        Me.FieldGroup.Controls.Add(Me.FieldType)
-        Me.FieldGroup.Controls.Add(Me.DefaultValue)
-        Me.FieldGroup.Controls.Add(Me.Label2)
-        Me.FieldGroup.Controls.Add(Me.Default_Value_Checkbox)
-        Me.FieldGroup.Controls.Add(Me.FieldField)
-        Me.FieldGroup.Controls.Add(Me.Precision)
-        Me.FieldGroup.Controls.Add(Me.Label8)
-        Me.FieldGroup.Controls.Add(Me.Label4)
-        Me.FieldGroup.Controls.Add(Me.Label3)
-        Me.FieldGroup.Controls.Add(Me.FieldSize)
-        Me.FieldGroup.Controls.Add(Me.Scale_)
-        Me.FieldGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
-        Me.FieldGroup.Margin = New System.Windows.Forms.Padding(0)
-        Me.FieldGroup.Name = "FieldGroup"
-        Me.FieldGroup.Size = New System.Drawing.Size(444, 160)
-        Me.FieldGroup.TabIndex = 8
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(6, 5)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(84, 15)
-        Me.Label17.TabIndex = 67
-        Me.Label17.Text = "Add Column"
-        '
-        'Formula
-        '
-        Me.Formula.AccessibleDescription = "Formula"
-        Me.Formula.AutoSize = True
-        Me.Formula.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Formula.Location = New System.Drawing.Point(111, 128)
-        Me.Formula.Name = "Formula"
-        Me.Formula.Size = New System.Drawing.Size(63, 17)
-        Me.Formula.TabIndex = 66
-        Me.Formula.Text = "Formula"
-        Me.Formula.UseVisualStyleBackColor = True
-        '
-        'FieldType
-        '
-        Me.FieldType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FieldType.FormattingEnabled = True
-        Me.FieldType.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.FieldType.Items.AddRange(New Object() {"CHAR", "VARCHAR", "BIT", "INTEGER", "SMALLINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DATE", "TIME"})
-        Me.FieldType.Location = New System.Drawing.Point(11, 85)
-        Me.FieldType.Name = "FieldType"
-        Me.FieldType.Size = New System.Drawing.Size(127, 21)
-        Me.FieldType.TabIndex = 42
-        '
-        'DefaultValue
-        '
-        Me.DefaultValue.Enabled = False
-        Me.DefaultValue.Location = New System.Drawing.Point(187, 125)
-        Me.DefaultValue.Name = "DefaultValue"
-        Me.DefaultValue.Size = New System.Drawing.Size(241, 20)
-        Me.DefaultValue.TabIndex = 65
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label2.Location = New System.Drawing.Point(161, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 13)
-        Me.Label2.TabIndex = 40
-        Me.Label2.Text = "Enter Column Name"
-        '
-        'Default_Value_Checkbox
-        '
-        Me.Default_Value_Checkbox.AutoSize = True
-        Me.Default_Value_Checkbox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Default_Value_Checkbox.Location = New System.Drawing.Point(15, 127)
-        Me.Default_Value_Checkbox.Name = "Default_Value_Checkbox"
-        Me.Default_Value_Checkbox.Size = New System.Drawing.Size(90, 17)
-        Me.Default_Value_Checkbox.TabIndex = 64
-        Me.Default_Value_Checkbox.Text = "Default Value"
-        Me.Default_Value_Checkbox.UseVisualStyleBackColor = True
-        '
-        'FieldField
-        '
-        Me.FieldField.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FieldField.Depth = 0
-        Me.FieldField.Hint = ""
-        Me.FieldField.Location = New System.Drawing.Point(11, 34)
-        Me.FieldField.MouseState = MaterialSkin.MouseState.HOVER
-        Me.FieldField.Name = "FieldField"
-        Me.FieldField.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.FieldField.SelectedText = ""
-        Me.FieldField.SelectionLength = 0
-        Me.FieldField.SelectionStart = 0
-        Me.FieldField.Size = New System.Drawing.Size(424, 23)
-        Me.FieldField.TabIndex = 41
-        Me.FieldField.UseSystemPasswordChar = False
-        '
-        'Precision
-        '
-        Me.Precision.Location = New System.Drawing.Point(340, 85)
-        Me.Precision.Name = "Precision"
-        Me.Precision.Size = New System.Drawing.Size(41, 20)
-        Me.Precision.TabIndex = 63
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label8.Location = New System.Drawing.Point(337, 66)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(91, 13)
-        Me.Label8.TabIndex = 60
-        Me.Label8.Text = "(Presision , Scale)"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label4.Location = New System.Drawing.Point(189, 69)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(27, 13)
-        Me.Label4.TabIndex = 45
-        Me.Label4.Text = "Size"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label3.Location = New System.Drawing.Point(9, 69)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 13)
-        Me.Label3.TabIndex = 43
-        Me.Label3.Text = "Type"
-        '
-        'FieldSize
-        '
-        Me.FieldSize.Enabled = False
-        Me.FieldSize.Location = New System.Drawing.Point(187, 85)
-        Me.FieldSize.Maximum = New Decimal(New Integer() {9999, 0, 0, 0})
-        Me.FieldSize.Name = "FieldSize"
-        Me.FieldSize.Size = New System.Drawing.Size(85, 20)
-        Me.FieldSize.TabIndex = 46
-        '
-        'Scale_
-        '
-        Me.Scale_.Location = New System.Drawing.Point(387, 85)
-        Me.Scale_.Name = "Scale_"
-        Me.Scale_.Size = New System.Drawing.Size(41, 20)
-        Me.Scale_.TabIndex = 62
+        Me.Sequence.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sequence.FormattingEnabled = True
+        Me.Sequence.HorizontalScrollbar = True
+        Me.Sequence.Location = New System.Drawing.Point(3, 16)
+        Me.Sequence.Name = "Sequence"
+        Me.Sequence.ScrollAlwaysVisible = True
+        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.Sequence.Size = New System.Drawing.Size(688, 657)
+        Me.Sequence.TabIndex = 0
+        Me.Tip.SetToolTip(Me.Sequence, "Clear Script")
         '
         'ToolStrip1
         '
@@ -1916,98 +2010,6 @@ Partial Class Home
         Me.MaterialTabSelector1.TabIndex = 2
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
-        'ReferenceGroup
-        '
-        Me.ReferenceGroup.Controls.Add(Me.Label20)
-        Me.ReferenceGroup.Controls.Add(Me.OnDeleteAction)
-        Me.ReferenceGroup.Controls.Add(Me.ReferenceBox)
-        Me.ReferenceGroup.Controls.Add(Me.OnUpdateAction)
-        Me.ReferenceGroup.Controls.Add(Me.ReferenceText)
-        Me.ReferenceGroup.Controls.Add(Me.OnDeleteBox)
-        Me.ReferenceGroup.Controls.Add(Me.OnUpdateBox)
-        Me.ReferenceGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReferenceGroup.Location = New System.Drawing.Point(0, 0)
-        Me.ReferenceGroup.Margin = New System.Windows.Forms.Padding(0)
-        Me.ReferenceGroup.Name = "ReferenceGroup"
-        Me.ReferenceGroup.Size = New System.Drawing.Size(268, 110)
-        Me.ReferenceGroup.TabIndex = 67
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label20.Location = New System.Drawing.Point(6, -3)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(78, 15)
-        Me.Label20.TabIndex = 70
-        Me.Label20.Text = "Referential"
-        '
-        'ConstraintGroup
-        '
-        Me.ConstraintGroup.Controls.Add(Me.Label21)
-        Me.ConstraintGroup.Controls.Add(Me.ForCheck)
-        Me.ConstraintGroup.Controls.Add(Me.NotNull)
-        Me.ConstraintGroup.Controls.Add(Me.Unique)
-        Me.ConstraintGroup.Controls.Add(Me.PrimCheck)
-        Me.ConstraintGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ConstraintGroup.Location = New System.Drawing.Point(268, 0)
-        Me.ConstraintGroup.Margin = New System.Windows.Forms.Padding(0)
-        Me.ConstraintGroup.Name = "ConstraintGroup"
-        Me.ConstraintGroup.Size = New System.Drawing.Size(179, 110)
-        Me.ConstraintGroup.TabIndex = 68
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label21.Location = New System.Drawing.Point(0, -3)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(79, 15)
-        Me.Label21.TabIndex = 70
-        Me.Label21.Text = "Constraints"
-        '
-        'CheckGroup
-        '
-        Me.CheckGroup.Controls.Add(Me.Label22)
-        Me.CheckGroup.Controls.Add(Me.CheckBox)
-        Me.CheckGroup.Controls.Add(Me.Label5)
-        Me.CheckGroup.Controls.Add(Me.Check_Type)
-        Me.CheckGroup.Controls.Add(Me.Label6)
-        Me.CheckGroup.Controls.Add(Me.Check_Position)
-        Me.CheckGroup.Controls.Add(Me.Check_String)
-        Me.CheckGroup.Location = New System.Drawing.Point(0, 110)
-        Me.CheckGroup.Name = "CheckGroup"
-        Me.CheckGroup.Size = New System.Drawing.Size(441, 174)
-        Me.CheckGroup.TabIndex = 74
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label22.Location = New System.Drawing.Point(6, 3)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(46, 15)
-        Me.Label22.TabIndex = 70
-        Me.Label22.Text = "Check"
-        '
-        'Sequence
-        '
-        Me.Sequence.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Sequence.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Sequence.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sequence.FormattingEnabled = True
-        Me.Sequence.HorizontalScrollbar = True
-        Me.Sequence.Location = New System.Drawing.Point(3, 16)
-        Me.Sequence.Name = "Sequence"
-        Me.Sequence.ScrollAlwaysVisible = True
-        Me.Sequence.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.Sequence.Size = New System.Drawing.Size(688, 657)
-        Me.Sequence.TabIndex = 0
-        Me.Tip.SetToolTip(Me.Sequence, "Clear Script")
-        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2048,11 +2050,24 @@ Partial Class Home
         Me.Panel2.PerformLayout()
         Me.FieldDetails.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
+        Me.FieldGroup.ResumeLayout(False)
+        Me.FieldGroup.PerformLayout()
+        CType(Me.Precision, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Scale_, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ForeignKeyGroup.ResumeLayout(False)
+        Me.ForeignKeyGroup.PerformLayout()
         Me.PrimaryGroup.ResumeLayout(False)
         Me.PrimaryGroup.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.CheckGroup.ResumeLayout(False)
+        Me.CheckGroup.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.ReferenceGroup.ResumeLayout(False)
+        Me.ReferenceGroup.PerformLayout()
+        Me.ConstraintGroup.ResumeLayout(False)
+        Me.ConstraintGroup.PerformLayout()
         Me.TableButtonTableLayout.ResumeLayout(False)
         Me.TableButtonTableLayout.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -2085,21 +2100,8 @@ Partial Class Home
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
-        Me.ForeignKeyGroup.ResumeLayout(False)
-        Me.ForeignKeyGroup.PerformLayout()
-        Me.FieldGroup.ResumeLayout(False)
-        Me.FieldGroup.PerformLayout()
-        CType(Me.Precision, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FieldSize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Scale_, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.ReferenceGroup.ResumeLayout(False)
-        Me.ReferenceGroup.PerformLayout()
-        Me.ConstraintGroup.ResumeLayout(False)
-        Me.ConstraintGroup.PerformLayout()
-        Me.CheckGroup.ResumeLayout(False)
-        Me.CheckGroup.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
