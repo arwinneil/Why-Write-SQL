@@ -124,11 +124,11 @@
     <Compile Include="Approve.vb" />
     <Compile Include="Generate.vb" />
     <Compile Include="Initialise.vb" />
-    <Compile Include="SQLGen.vb">
+    <Compile Include="Home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SQLGen.Designer.vb">
-      <DependentUpon>SQLGen.vb</DependentUpon>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLGen.resx">
-      <DependentUpon>SQLGen.vb</DependentUpon>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
