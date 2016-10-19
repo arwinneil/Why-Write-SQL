@@ -88,6 +88,7 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
       <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,6 +121,9 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Approve.vb" />
+    <Compile Include="Generate.vb" />
+    <Compile Include="Initialise.vb" />
     <Compile Include="SQLGen.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -186,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dowkkjn_QPS_icon.ico" />
-    <Content Include="download__4__0If_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
