@@ -13,46 +13,46 @@ Public Class Home
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
 
 #Region "New Table Operation Handles"
-    Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateButton.Click
+    Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
 
         If Approve.Table = True Then
-            CreateButton.Enabled = False
+            CreateTable_CreateBtn.Enabled = False
             Generate.Table()
             UpdateUI.EnableTableControls()
             UpdateLine()
 
-            NewTableField.Enabled = False
-            Add_Field_Button.Enabled = True
-            Add_Foreign_Key_Button.Enabled = True
-            Add_Primary_Key_Button.Enabled = True
-            CompleteTable_Button.Enabled = True
+            CreateTable_NameFld.Enabled = False
+            CreateTable_AddColumnBtn.Enabled = True
+            CreateTable_AddForeignKeyBtn.Enabled = True
+            CreateTable_AddPrimKeyBtn.Enabled = True
+            CreateTable_CompleteTableBtn.Enabled = True
 
             Add_Field()
 
         End If
 
     End Sub
-    Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CompleteTable_Button.Click
+    Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CreateTable_CompleteTableBtn.Click
 
         Sequence.Items.Add(");")
         Sequence.Items.Add("")
         Initialise.NewTable()
         UpdateUI.ClearUp()
 
-        Add_Field_Button.Enabled = False
-        Add_Primary_Key_Button.Enabled = False
-        Add_Foreign_Key_Button.Enabled = False
-        CompleteTable_Button.Enabled = False
+        CreateTable_AddColumnBtn.Enabled = False
+        CreateTable_AddPrimKeyBtn.Enabled = False
+        CreateTable_AddForeignKeyBtn.Enabled = False
+        CreateTable_CompleteTableBtn.Enabled = False
 
     End Sub
-    Private Sub Create_Click(sender As Object, e As EventArgs) Handles CreateField.Click
+    Private Sub Create_Click(sender As Object, e As EventArgs) Handles FieldDetails_CreateFieldBtn.Click
         Select Case CurrentlyDoing
 
             Case = "AddNewField"
                 If Approve.Field() = True Then
-                    If PrimCheck.Checked = True Then
-                        PrimCheck.Enabled = False
-                        Add_Primary_Key_Button.Enabled = False
+                    If FieldDetails_PrimChkbx.Checked = True Then
+                        FieldDetails_PrimChkbx.Enabled = False
+                        CreateTable_AddPrimKeyBtn.Enabled = False
                     End If
                     Generate.NewField()
                     Initialise.NewField()
@@ -63,8 +63,8 @@ Public Class Home
 
                 If Approve.PrimaryKey() = True Then
                     Generate.PrimaryKey()
-                    PrimCheck.Enabled = False
-                    Add_Primary_Key_Button.Enabled = False
+                    FieldDetails_PrimChkbx.Enabled = False
+                    CreateTable_AddPrimKeyBtn.Enabled = False
                     UpdateLine()
                 End If
 
@@ -84,7 +84,7 @@ Public Class Home
         End Select
 
     End Sub
-    Private Sub Add_Field_Butt(sender As Object, e As EventArgs) Handles Add_Field_Button.Click
+    Private Sub Add_Field_Butt(sender As Object, e As EventArgs) Handles CreateTable_AddColumnBtn.Click
         Add_Field()
 
     End Sub
@@ -94,138 +94,128 @@ Public Class Home
 
         FieldDetails.Visible = True
         Initialise.NewField()
-        ReferenceGroup.Enabled = True
+        FieldDetails_ReferenceGrp.Enabled = True
         FieldGroup.Visible = True
-        PrimaryGroup.Visible = False
-        ForeignKeyGroup.Visible = False
+        FieldDetails_PrimyGrp.Visible = False
+        FieldDetails_ForeignKeyGrp.Visible = False
 
-        CreateField.Enabled = True
+        FieldDetails_CreateFieldBtn.Enabled = True
 
     End Sub
 
 #End Region
 
 #Region "New Table Operation Dependent UI Changes"
-    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs) Handles ReferenceBox.CheckedChanged
+    Private Sub ReferenceBox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_ReferenceChkBx.CheckedChanged
 
-        If ReferenceBox.Checked = True Then
-            OnUpdateBox.Enabled = True
-            ReferenceText.Enabled = True
-            OnDeleteBox.Enabled = True
+        If FieldDetails_ReferenceChkBx.Checked = True Then
+            FieldDetails_OnUpdateChkBx.Enabled = True
+            FieldDetails_ReferenceFld.Enabled = True
+            FieldDetails_OnDeleteChkbx.Enabled = True
         Else
             Initialise.ReferenceComponents()
         End If
 
     End Sub
-    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnUpdateBox.CheckedChanged
-        If OnUpdateBox.Checked = True Then
-            OnUpdateAction.Enabled = True
+    Private Sub OnUpdateBox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_OnUpdateChkBx.CheckedChanged
+        If FieldDetails_OnUpdateChkBx.Checked = True Then
+            FieldDetails_OnUpdateCmbo.Enabled = True
         Else
-            OnUpdateAction.SelectedIndex = -1
-            OnUpdateAction.Enabled = False
+            FieldDetails_OnUpdateCmbo.SelectedIndex = -1
+            FieldDetails_OnUpdateCmbo.Enabled = False
         End If
 
     End Sub
-    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs) Handles OnDeleteBox.CheckedChanged
-        If OnDeleteBox.Checked = True Then
-            OnDeleteAction.Enabled = True
+    Private Sub OnDeleteBox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_OnDeleteChkbx.CheckedChanged
+        If FieldDetails_OnDeleteChkbx.Checked = True Then
+            FieldDetails_OnDeleteCmbo.Enabled = True
         Else
-            OnDeleteAction.SelectedIndex = -1
-            OnDeleteAction.Enabled = False
+            FieldDetails_OnDeleteCmbo.SelectedIndex = -1
+            FieldDetails_OnDeleteCmbo.Enabled = False
         End If
 
     End Sub
-    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox.CheckedChanged
-        If CheckBox.Checked = True Then
-            Check_Type.Enabled = True
-            Check_String.Enabled = True
+    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_CheckChkbx.CheckedChanged
+        If FieldDetails_CheckChkbx.Checked = True Then
+            FieldDetails_CheckTypeCmbo.Enabled = True
+            FieldDetails_CheckFld.Enabled = True
         Else
-            Check_Type.SelectedIndex = -1
-            Check_Type.Enabled = False
-            Check_String.Enabled = False
-            Check_String.Text = ""
+            FieldDetails_CheckTypeCmbo.SelectedIndex = -1
+            FieldDetails_CheckTypeCmbo.Enabled = False
+            FieldDetails_CheckFld.Enabled = False
+            FieldDetails_CheckFld.Text = ""
 
         End If
     End Sub
-    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs) Handles Check_Type.TextChanged
-        If Check_Type.Text = "LIKE" Then
-            Check_Position.Enabled = True
+    Private Sub Check_Type_TextChanged(sender As Object, e As EventArgs) Handles FieldDetails_CheckTypeCmbo.TextChanged
+        If FieldDetails_CheckTypeCmbo.Text = "LIKE" Then
+            FieldDetails_CheckPstnCmbo.Enabled = True
         Else
-            Check_Position.SelectedIndex = -1
-            Check_Position.Enabled = False
+            FieldDetails_CheckPstnCmbo.SelectedIndex = -1
+            FieldDetails_CheckPstnCmbo.Enabled = False
         End If
     End Sub
-    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldType.TextChanged
+    Private Sub FieldType_TextChanged(sender As Object, e As EventArgs) Handles FieldDetails_ColumnTYpeCmbo.TextChanged
 
         If Approve.DataTypeSize = "Precise" Then
-            FieldSize.Enabled = False
-            Precision.Enabled = True
-            Scale_.Enabled = True
+            FieldDetails_Size.Enabled = False
+            FieldDetails_Precision.Enabled = True
+            FieldDetails_Scale.Enabled = True
 
         ElseIf Approve.DataTypeSize = "NoSize" Then
-            FieldSize.Enabled = False
-            Precision.Enabled = False
-            Scale_.Enabled = False
+            FieldDetails_Size.Enabled = False
+            FieldDetails_Precision.Enabled = False
+            FieldDetails_Scale.Enabled = False
         Else
-            FieldSize.Enabled = True
-            Precision.Enabled = False
-            Scale_.Enabled = False
+            FieldDetails_Size.Enabled = True
+            FieldDetails_Precision.Enabled = False
+            FieldDetails_Scale.Enabled = False
 
         End If
     End Sub
-    Private Sub Add_Primary_Key_Button_Click(sender As Object, e As EventArgs) Handles Add_Primary_Key_Button.Click
+    Private Sub Add_Primary_Key_Button_Click(sender As Object, e As EventArgs) Handles CreateTable_AddPrimKeyBtn.Click
         CurrentlyDoing = "AddPrimaryKey"
         FieldGroup.Visible = False
-        PrimaryGroup.Visible = True
-        ForeignKeyGroup.Visible = False
-        ReferenceGroup.Enabled = False
+        FieldDetails_PrimyGrp.Visible = True
+        FieldDetails_ForeignKeyGrp.Visible = False
+        FieldDetails_ReferenceGrp.Enabled = False
         Initialise.Keys()
-        ConstraintGroup.Enabled = False
+        FieldDetails_ConstraintGrp.Enabled = False
     End Sub
-    Private Sub Add_Foreign_Key_Button_Click(sender As Object, e As EventArgs) Handles Add_Foreign_Key_Button.Click
-        CurrentlyDoing = "AddForeignKey"
-        ReferenceGroup.Enabled = True
-        FieldGroup.Visible = False
-        PrimaryGroup.Visible = False
-        ForeignKeyGroup.Visible = True
-
-        Initialise.Keys()
-        ConstraintGroup.Enabled = False
-    End Sub
-    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs) Handles ForCheck.CheckedChanged
-        If ForCheck.Checked = True Then
-            PrimCheck.Checked = False
-            PrimCheck.Enabled = False
-            NotNull.Enabled = False
-            Unique.Enabled = False
+    Private Sub ForCheck_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_ForeignChkbx.CheckedChanged
+        If FieldDetails_ForeignChkbx.Checked = True Then
+            FieldDetails_PrimChkbx.Checked = False
+            FieldDetails_PrimChkbx.Enabled = False
+            FieldDetails_NotNullChkbx.Enabled = False
+            FieldDetails_UniqueChkbx.Enabled = False
         Else
-            PrimCheck.Enabled = True
-            NotNull.Enabled = True
-            Unique.Enabled = True
+            FieldDetails_PrimChkbx.Enabled = True
+            FieldDetails_NotNullChkbx.Enabled = True
+            FieldDetails_UniqueChkbx.Enabled = True
         End If
     End Sub
-    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs) Handles PrimCheck.CheckedChanged
-        If PrimCheck.Checked = True Then
-            ForCheck.Checked = False
-            ForCheck.Enabled = False
-            NotNull.Enabled = False
-            Unique.Enabled = False
+    Private Sub PrimCheck_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_PrimChkbx.CheckedChanged
+        If FieldDetails_PrimChkbx.Checked = True Then
+            FieldDetails_ForeignChkbx.Checked = False
+            FieldDetails_ForeignChkbx.Enabled = False
+            FieldDetails_NotNullChkbx.Enabled = False
+            FieldDetails_UniqueChkbx.Enabled = False
         Else
-            ForCheck.Enabled = True
-            NotNull.Enabled = True
-            Unique.Enabled = True
+            FieldDetails_ForeignChkbx.Enabled = True
+            FieldDetails_NotNullChkbx.Enabled = True
+            FieldDetails_UniqueChkbx.Enabled = True
         End If
     End Sub
-    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Default_Value_Checkbox.CheckedChanged
-        If Default_Value_Checkbox.Checked = True Then
-            DefaultValue.Enabled = True
-            Formula.Enabled = True
+    Private Sub Default_Value_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_DefValChkbx.CheckedChanged
+        If FieldDetails_DefValChkbx.Checked = True Then
+            FieldDetails_DefFld.Enabled = True
+            FieldDetails_FormulaChkbx.Enabled = True
 
         Else
-            DefaultValue.Text = ""
-            Formula.Checked = False
-            Formula.Enabled = False
-            DefaultValue.Enabled = False
+            FieldDetails_DefFld.Text = ""
+            FieldDetails_FormulaChkbx.Checked = False
+            FieldDetails_FormulaChkbx.Enabled = False
+            FieldDetails_DefFld.Enabled = False
 
         End If
     End Sub
@@ -285,7 +275,7 @@ Public Class Home
 #End Region
 
 #Region "Database Operations Sub Operations"
-    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Create_Database.Click
+    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Database_CreateBtn.Click
 
         If Approve.Database = True Then
             Generate.CreateDatabase()
@@ -294,7 +284,7 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Drop_Database.Click
+    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Database_DeleteBtn.Click
 
         If Approve.Database = True Then
             Generate.DropDatabase()
@@ -303,7 +293,7 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Select_Database.Click
+    Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Database_SelectBtn.Click
         If Approve.Database = True Then
             Generate.SelectDatabase()
             Initialise.Database()
@@ -376,7 +366,7 @@ Public Class Home
     End Sub
 
     Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterAdd.Click
-        Label17.Text = "Add Column"
+        FieldDetails_ColumnLbl.Text = "Add Column"
 
         RenameGroup.Visible = False
         DropGroup.Visible = False
@@ -389,7 +379,7 @@ Public Class Home
     End Sub
 
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
-        Label17.Text = "Modify Column"
+        FieldDetails_ColumnLbl.Text = "Modify Column"
 
         RenameGroup.Visible = False
         DropGroup.Visible = False
@@ -415,8 +405,7 @@ Public Class Home
 
 #Region "Home UI"
 
-
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Inc.Click
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Home_ScriptIncTxtBtn.Click
         If Sequence.Font.Size >= 40 Then
             ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Max.)"
         Else
@@ -426,7 +415,7 @@ Public Class Home
 
     End Sub
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Dec.Click
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Home_ScriptDecTxtBtn.Click
 
         If Sequence.Font.Size <= 6 Then
             ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Min.)"
@@ -436,12 +425,12 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles Br.Click
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles Home_ScriptBrkBtn.Click
         Sequence.Items.Add("")
         UpdateLine()
     End Sub
 
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles Undo.Click
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles Home_ScriptUndoBtn.Click
         If Sequence.Items.Count > 0 Then
 
             Sequence.Items.RemoveAt(Sequence.Items.Count - 1)
@@ -469,7 +458,7 @@ Public Class Home
         ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
     End Sub
 
-    Private Sub Export_Click(sender As Object, e As EventArgs) Handles Export.Click
+    Private Sub Export_Click(sender As Object, e As EventArgs) Handles Home_ScriptExprtBtn.Click
         SaveFileDialog1.Filter = "SQL File|*.sql|Text File|*.txt"
         SaveFileDialog1.Title = "Export Script"
 
@@ -515,27 +504,26 @@ Public Class Home
 
         If MaterialTabControl1.SelectedIndex = 2 Then
 
-            Label17.Text = "Add Column"
+            FieldDetails_ColumnLbl.Text = "Add Column"
 
             FieldDetails.Parent = CreateActionLayout
             CreateActionLayout.SetRow(FieldDetails, 2)
             FieldGroup.Text = "Add Field"
-            CreateField.Visible = True
+            FieldDetails_CreateFieldBtn.Visible = True
 
             FieldDetails.Visible = True
         End If
 
     End Sub
 
-    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles Home_ScriptNewBtn.Click
         Sequence.Items.Clear()
     End Sub
 
-    Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles PictureBox7.Click
+    Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles Home_InfoBtn.Click
         About.Show()
 
     End Sub
-
 
 
 
@@ -550,8 +538,8 @@ Public Class UpdateUI
 
     End Sub
     Shared Sub EnableTableControls()
-        Home.Add_Field_Button.Enabled = True
-        Home.CompleteTable_Button.Enabled = True
+        Home.CreateTable_AddColumnBtn.Enabled = True
+        Home.CreateTable_CompleteTableBtn.Enabled = True
     End Sub
 
 End Class

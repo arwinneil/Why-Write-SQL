@@ -3,7 +3,7 @@
 #Region "New Table Generators"
     Shared Sub Table()
         Dim NewLine As String
-        NewLine = "CREATE TABLE " & Home.NewTableField.Text & " ("
+        NewLine = "CREATE TABLE " & Home.CreateTable_NameFld.Text & " ("
         Home.Sequence.Items.Add(NewLine)
 
     End Sub
@@ -19,12 +19,12 @@
         Dim LineConstraint As String
         Dim Constraint As String
 
-        Constraint = Home.Check_String.Text
+        Constraint = Home.FieldDetails_CheckFld.Text
 
-        Select Case Home.Check_Type.Text
+        Select Case Home.FieldDetails_CheckTypeCmbo.Text
             Case "LIKE"
 
-                Select Case Home.Check_Position.Text 'Case of Position of LIKE String
+                Select Case Home.FieldDetails_CheckPstnCmbo.Text 'Case of Position of LIKE String
                     Case "Before any string"
                         LineConstraint = "LIKE '" & Constraint & "%" & "'"
                     Case "After any string"
@@ -37,13 +37,13 @@
 
             Case "IN"
 
-                Dim Str As String() = Home.Check_String.Lines 'Multiline list converted to array
+                Dim Str As String() = Home.FieldDetails_CheckFld.Lines 'Multiline list converted to array
 
                 LineConstraint = "IN('"
 
-                For i As Integer = 0 To Home.Check_String.Lines.Count - 1  'Loop creat string from array
+                For i As Integer = 0 To Home.FieldDetails_CheckFld.Lines.Count - 1  'Loop creat string from array
                     LineConstraint = LineConstraint + Str(i)
-                    If i < Home.Check_String.Lines.Count - 1 Then
+                    If i < Home.FieldDetails_CheckFld.Lines.Count - 1 Then
                         LineConstraint = LineConstraint + "','"
                     Else
                         LineConstraint = LineConstraint + "')"
@@ -64,20 +64,20 @@
 
         NewLine = "PRIMARY KEY ("
 
-        Dim Keys As String() = Home.PrimaryKeys.Lines 'Multiline list converted to array
+        Dim Keys As String() = Home.FieldDetails_PrimFld.Lines 'Multiline list converted to array
 
-        For i As Integer = 0 To Home.PrimaryKeys.Lines.Count - 1  'Loop creat string from array
+        For i As Integer = 0 To Home.FieldDetails_PrimFld.Lines.Count - 1  'Loop creat string from array
 
             NewLine = NewLine + Keys(i)
 
-            If i < Home.PrimaryKeys.Lines.Count - 1 Then
+            If i < Home.FieldDetails_PrimFld.Lines.Count - 1 Then
                 NewLine = NewLine + ","
             Else
                 NewLine = NewLine + ") "
             End If
         Next
 
-        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+        If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
             LineConstraint = Constraints()
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
@@ -94,20 +94,20 @@
 
         NewLine = "FOREIGN KEY ("
 
-        Dim Keys As String() = Home.ForeignKeys.Lines 'Multiline list converted to array
+        Dim Keys As String() = Home.FieldDetails_ForeignKeyFld.Lines 'Multiline list converted to array
 
-        For i As Integer = 0 To Home.ForeignKeys.Lines.Count - 1  'Loop creat string from array
+        For i As Integer = 0 To Home.FieldDetails_ForeignKeyFld.Lines.Count - 1  'Loop creat string from array
 
             NewLine = NewLine + Keys(i)
 
-            If i < Home.ForeignKeys.Lines.Count - 1 Then
+            If i < Home.FieldDetails_ForeignKeyFld.Lines.Count - 1 Then
                 NewLine = NewLine + ","
             Else
                 NewLine = NewLine + ") "
             End If
         Next
 
-        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+        If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
             LineConstraint = Constraints()
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
@@ -189,7 +189,7 @@
     Shared Sub CreateDatabase()
         Dim NewLine As String
 
-        NewLine = "CREATE DATABASE " & Home.DatabaseName.Text & ";"
+        NewLine = "CREATE DATABASE " & Home.Database_NameFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
 
@@ -197,14 +197,14 @@
     Shared Sub DropDatabase()
         Dim NewLine As String
 
-        NewLine = "DROP DATABASE " & Home.DatabaseName.Text & ";"
+        NewLine = "DROP DATABASE " & Home.Database_NameFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
     Shared Sub SelectDatabase()
         Dim NewLine As String
 
-        NewLine = "USE " & Home.DatabaseName.Text & ";"
+        NewLine = "USE " & Home.Database_NameFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
@@ -215,14 +215,12 @@
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
-
     Shared Sub AlterTable()
         Dim NewLine As String
         NewLine = "ALTER TABLE " & Home.Alter_Table_Name.Text
 
         Home.Sequence.Items.Add(NewLine)
     End Sub
-
     Shared Sub AddField()
 
         Dim NewLine As String
@@ -232,7 +230,6 @@
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
-
     Shared Sub DropField()
         Dim NewLine As String
 
@@ -240,7 +237,6 @@
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
-
     Shared Sub ModifyField()
         Dim NewLine As String
 
@@ -250,7 +246,6 @@
         Home.Sequence.Items.Add("")
 
     End Sub
-
     Shared Sub RenameTable()
         Dim NewLine As String
 
@@ -258,7 +253,6 @@
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
-
     Shared Function Field()
         Dim FieldName As String
         Dim LineType As String
@@ -267,64 +261,64 @@
         Dim Constraint As String
         Dim NewLine As String
 
-        If Home.CheckBox.Checked = True Then 'Check if any constraint apply
+        If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
             LineConstraint = Constraints()
 
         End If
 
-        FieldName = Home.FieldField.Text
-        LineSize = Home.FieldSize.Value
+        FieldName = Home.FieldDetails_ColumnNameFld.Text
+        LineSize = Home.FieldDetails_Size.Value
 
-        NewLine = FieldName & " " & Home.FieldType.Text & " "
+        NewLine = FieldName & " " & Home.FieldDetails_ColumnTYpeCmbo.Text & " "
 
         If Approve.DataTypeSize = "Precise" Then
 
-            NewLine = NewLine & "(" & Home.Precision.Value & "," & Home.Scale_.Value & ") "
+            NewLine = NewLine & "(" & Home.FieldDetails_Precision.Value & "," & Home.FieldDetails_Scale.Value & ") "
 
         ElseIf Approve.DataTypeSize = "Integer" Then
 
-            NewLine = NewLine & "(" & Home.FieldSize.Value & ") "
+            NewLine = NewLine & "(" & Home.FieldDetails_Size.Value & ") "
         End If
 
-        If Home.Default_Value_Checkbox.Checked = True Then
+        If Home.FieldDetails_DefValChkbx.Checked = True Then
 
-            If Home.Formula.Checked = True Or IsNumeric(Home.DefaultValue.Text) = True Then
+            If Home.FieldDetails_FormulaChkbx.Checked = True Or IsNumeric(Home.FieldDetails_DefFld.Text) = True Then
 
-                NewLine = NewLine & "DEFAULT " & Home.DefaultValue.Text & " "
+                NewLine = NewLine & "DEFAULT " & Home.FieldDetails_DefFld.Text & " "
             Else
-                NewLine = NewLine & "DEFAULT '" & Home.DefaultValue.Text & "' "
+                NewLine = NewLine & "DEFAULT '" & Home.FieldDetails_DefFld.Text & "' "
             End If
 
         End If
-        If Home.PrimCheck.Checked = True Then
+        If Home.FieldDetails_PrimChkbx.Checked = True Then
             NewLine = NewLine & "PRIMARY KEY "
         End If
 
-        If Home.ForCheck.Checked = True Then
+        If Home.FieldDetails_ForeignChkbx.Checked = True Then
             NewLine = NewLine & "FOREIGN KEY "
         End If
 
-        If Home.NotNull.Checked = True Then
+        If Home.FieldDetails_NotNullChkbx.Checked = True Then
             NewLine = NewLine & "NOT NULL "
         End If
 
-        If Home.Unique.Checked = True Then
+        If Home.FieldDetails_UniqueChkbx.Checked = True Then
             NewLine = NewLine & "UNIQUE "
         End If
 
-        If Home.CheckBox.Checked = True Then
+        If Home.FieldDetails_CheckChkbx.Checked = True Then
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
-        If Home.ReferenceBox.Checked = True Then
-            NewLine = NewLine & "REFERENCES " & Home.ReferenceText.Text & " "
+        If Home.FieldDetails_ReferenceChkBx.Checked = True Then
+            NewLine = NewLine & "REFERENCES " & Home.FieldDetails_ReferenceFld.Text & " "
 
-            If Home.OnUpdateBox.Checked = True Then
-                NewLine = NewLine & "ON UPDATE " & Home.OnUpdateAction.Text & " "
+            If Home.FieldDetails_OnUpdateChkBx.Checked = True Then
+                NewLine = NewLine & "ON UPDATE " & Home.FieldDetails_OnUpdateCmbo.Text & " "
             End If
 
-            If Home.OnDeleteBox.Checked = True Then
-                NewLine = NewLine & "ON DELETE " & Home.OnDeleteAction.Text & " "
+            If Home.FieldDetails_OnDeleteChkbx.Checked = True Then
+                NewLine = NewLine & "ON DELETE " & Home.FieldDetails_OnDeleteCmbo.Text & " "
             End If
         End If
 
