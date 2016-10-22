@@ -5,12 +5,12 @@
         Approved = True
 
         If Home.FieldDetails_ColumnNameFld.Text = "" Then
-            MsgBox("Please enter field name")
+            MsgBox("Please enter column name")
             Approved = False
         End If
 
         If Home.FieldDetails_ColumnTYpeCmbo.SelectedIndex = -1 Then
-            MsgBox("Please select field type.")
+            MsgBox("Please select column type.")
             Approved = False
         End If
 
@@ -40,7 +40,7 @@
         End If
 
         If Home.FieldDetails_DefValChkbx.Checked = True And Home.FieldDetails_DefFld.Text = "" Then
-            MsgBox("Please specify field default value.")
+            MsgBox("Please specify column default value.")
             Approved = False
         End If
 
@@ -122,12 +122,12 @@
         Approved = True
 
         If Home.InsertTable.Text = "" Then
-            MsgBox("Please enter name of Table.")
+            MsgBox("Please enter name of table.")
             Approved = False
         End If
 
         If Home.Specify_CheckBox.Checked = True And Home.Columns.Text = "" Then
-            MsgBox("Please enter Columns.")
+            MsgBox("Please enter columns.")
             Approved = False
         End If
 
@@ -144,7 +144,7 @@
         Approved = True
 
         If Home.Database_NameFld.Text = "" Then
-            MsgBox("Please enter name of Database.")
+            MsgBox("Please enter name of database.")
             Approved = False
 
         End If
