@@ -504,6 +504,8 @@ Public Class Home
 
         If MaterialTabControl1.SelectedIndex = 2 Then
 
+            Initialise.NewTable()
+
             FieldDetails_ColumnLbl.Text = "Add Column"
 
             FieldDetails.Parent = CreateActionLayout
@@ -518,14 +520,13 @@ Public Class Home
 
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles Home_ScriptNewBtn.Click
         Sequence.Items.Clear()
+        UpdateLine()
     End Sub
 
     Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles Home_InfoBtn.Click
         About.Show()
 
     End Sub
-
-
 
 #End Region
 

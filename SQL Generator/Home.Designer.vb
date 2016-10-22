@@ -328,7 +328,7 @@ Partial Class Home
         '
         'Home_MngScriptTableLayout
         '
-        Me.Home_MngScriptTableLayout.BackColor = System.Drawing.Color.Turquoise
+        Me.Home_MngScriptTableLayout.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Home_MngScriptTableLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Home_MngScriptTableLayout.ColumnCount = 5
         Me.Home_MngScriptTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
