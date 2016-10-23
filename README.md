@@ -31,11 +31,10 @@ Current Task:
 ##Resources
 
 Icons from [Material Icons](https://design.google.com/icons/) 
-
 Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
 
 ##Tools & Utilities
-
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/)- A web-based set of tools for generating graphics and other assets 
 - [ILMerge](https://www.microsoft.com/en-us/download/confirmation.aspx?id=17630) & [ILMerge-GUI](http://ilmergegui.codeplex.com/)- For merging assemblies. (.exe & dlls)
 - [CodeMaid](http://www.codemaid.net/) - Visual Studio Extenion with some handy coding tools.
 
