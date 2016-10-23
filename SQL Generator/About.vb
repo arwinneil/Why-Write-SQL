@@ -24,5 +24,4 @@ Public Class About
         Animation.Close(sender)
     End Sub
 
-
 End Class

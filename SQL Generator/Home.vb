@@ -233,6 +233,7 @@ Public Class Home
             Generate.InsertData()
             UpdateLine()
             UpdateUI.ClearUp()
+            Initialise.InsertData()
 
         End If
 
@@ -243,7 +244,7 @@ Public Class Home
             Columns.Enabled = True
         Else
             Columns.Text = ""
-            DataItemsGroup.Text = "Data Values"
+            Label14.Text = "Data Values"
             Columns.Enabled = False
         End If
     End Sub
@@ -252,9 +253,9 @@ Public Class Home
 
         If Specify_CheckBox.Checked = True Then
             If DataItems.Lines.Count <= Columns.Lines.Count Then
-                DataItemsGroup.Text = "Data Items" & " ( Enter " & (Columns.Lines.Count - DataItems.Lines.Count) & " more item(s). )"
+                Label14.Text = "Data Items" & " ( Enter " & (Columns.Lines.Count - DataItems.Lines.Count) & " more item(s). )"
             Else
-                DataItemsGroup.Text = "Data Items" & " ( " & (DataItems.Lines.Count - Columns.Lines.Count) & " redundent item(s). )"
+                Label14.Text = "Data Items" & " ( " & (DataItems.Lines.Count - Columns.Lines.Count) & " redundent item(s). )"
             End If
         End If
 

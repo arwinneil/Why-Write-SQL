@@ -84,14 +84,17 @@
     Shared Sub Database()
         Home.Database_NameFld.Text = ""
     End Sub
-    Shared Sub TableUpdate()
+    Shared Sub Insert()
 
         Home.InsertTable.Text = ""
+
+    End Sub
+
+    Shared Sub InsertData()
         Home.Specify_CheckBox.Checked = False
         Home.Columns.Text = ""
-        Home.DataItemsGroup.Text = "Data Items"
+        Home.Label14.Text = "Data Items"
         Home.DataItems.Text = ""
-
     End Sub
 
 #Region "Alter Table Initialisers"

@@ -105,8 +105,8 @@ Partial Class Home
         Me.CreateTable_BtbTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.CreateTable_AddPrimKeyBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CreateTable_CompleteTableBtn = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.CreateTable_AddForeignKeyBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CreateTable_AddColumnBtn = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.CreateTable_AddForeignKeyBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTablePage = New System.Windows.Forms.TabPage()
         Me.AlterTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -1308,24 +1308,8 @@ Partial Class Home
         Me.CreateTable_CompleteTableBtn.Primary = False
         Me.CreateTable_CompleteTableBtn.Size = New System.Drawing.Size(103, 43)
         Me.CreateTable_CompleteTableBtn.TabIndex = 68
-        Me.CreateTable_CompleteTableBtn.Text = "complete table"
+        Me.CreateTable_CompleteTableBtn.Text = "complete Statement"
         Me.CreateTable_CompleteTableBtn.UseVisualStyleBackColor = True
-        '
-        'CreateTable_AddForeignKeyBtn
-        '
-        Me.CreateTable_AddForeignKeyBtn.AutoSize = True
-        Me.CreateTable_AddForeignKeyBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.CreateTable_AddForeignKeyBtn.Depth = 0
-        Me.CreateTable_AddForeignKeyBtn.Enabled = False
-        Me.CreateTable_AddForeignKeyBtn.Location = New System.Drawing.Point(226, 6)
-        Me.CreateTable_AddForeignKeyBtn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.CreateTable_AddForeignKeyBtn.MouseState = MaterialSkin.MouseState.HOVER
-        Me.CreateTable_AddForeignKeyBtn.Name = "CreateTable_AddForeignKeyBtn"
-        Me.CreateTable_AddForeignKeyBtn.Primary = False
-        Me.CreateTable_AddForeignKeyBtn.Size = New System.Drawing.Size(103, 36)
-        Me.CreateTable_AddForeignKeyBtn.TabIndex = 67
-        Me.CreateTable_AddForeignKeyBtn.Text = "Add Foreign Key"
-        Me.CreateTable_AddForeignKeyBtn.UseVisualStyleBackColor = True
         '
         'CreateTable_AddColumnBtn
         '
@@ -1343,6 +1327,22 @@ Partial Class Home
         Me.CreateTable_AddColumnBtn.TabIndex = 66
         Me.CreateTable_AddColumnBtn.Text = "Add Column"
         Me.CreateTable_AddColumnBtn.UseVisualStyleBackColor = True
+        '
+        'CreateTable_AddForeignKeyBtn
+        '
+        Me.CreateTable_AddForeignKeyBtn.AutoSize = True
+        Me.CreateTable_AddForeignKeyBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.CreateTable_AddForeignKeyBtn.Depth = 0
+        Me.CreateTable_AddForeignKeyBtn.Enabled = False
+        Me.CreateTable_AddForeignKeyBtn.Location = New System.Drawing.Point(226, 6)
+        Me.CreateTable_AddForeignKeyBtn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.CreateTable_AddForeignKeyBtn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.CreateTable_AddForeignKeyBtn.Name = "CreateTable_AddForeignKeyBtn"
+        Me.CreateTable_AddForeignKeyBtn.Primary = False
+        Me.CreateTable_AddForeignKeyBtn.Size = New System.Drawing.Size(103, 36)
+        Me.CreateTable_AddForeignKeyBtn.TabIndex = 67
+        Me.CreateTable_AddForeignKeyBtn.Text = "Add Foreign Key"
+        Me.CreateTable_AddForeignKeyBtn.UseVisualStyleBackColor = True
         '
         'AlterTablePage
         '
