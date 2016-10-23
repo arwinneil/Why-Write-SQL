@@ -1,28 +1,28 @@
-<p align="center">
-<img src="http://i.imgur.com/M058kks.jpg"  height="200" >
-<p/>
+![SQL SCRIPT GENERATOR LOGO](http://i.imgur.com/M058kks.jpg)
+
 
 ## Getting Started
-[SQL Script Generator](https://github.com/arwinneil/Why-Write-SQL) is a SQL code generator, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.
+[SQL Script Generator](https://github.com/arwinneil/Why-Write-SQL) is a SQL code generator database building tool, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.
 
 Code is generated based on GUI inputs.
 
+![SQL SCRIPT GENERATOR](http://i.imgur.com/AfATThQ.png)
 
-![SQL SCRIPT GENERATOR](http://i.imgur.com/fujnaeb.png)
-
-The aim of tthis open source  to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
+The aim of this open source  to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
 
 <p align="center">
 <img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
 <p/>
 
 ## Progress & Features
+
 - [x] [Material Design Form](#resources)
 - [x] CREATE,DROP & USE Database Commands
 - [x] CREATE,DROP & INSERT INTO Table Commands
 - [x] ALTER TABLE : ADD, DROP, RENAME TO & MODIFY Commands
 - [x] EXPORT to .sql & .txt
-- [ ] SELECT QUERIES
+
+Current Task:
 - [ ] CODE CLEANUP
 
 ## Version
