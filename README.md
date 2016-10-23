@@ -25,7 +25,7 @@ The aim of this open source  to demonstrate basic coding structures, Visual Basi
 Current Task:
 - [ ] CODE CLEANUP
 
-## Version
+## Release
 -  [0.9_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.9_Alpha)
 
 ##Resources
