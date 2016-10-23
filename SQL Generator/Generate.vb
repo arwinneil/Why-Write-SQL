@@ -124,18 +124,18 @@
     Shared Sub InsertData()
         Dim NewLine As String
 
-        NewLine = "INSERT INTO " & Home.InsertTable.Text
+        NewLine = "INSERT INTO " & Home.Insert_TableNameFld.Text
 
-        If Home.Specify_CheckBox.Checked = True Then
+        If Home.Insert_SpecifyColumnChkbx.Checked = True Then
 
             NewLine = NewLine + "("
 
-            Dim columns As String() = Home.Columns.Lines 'Multiline list converted to array
+            Dim columns As String() = Home.Insert_SpecifyColumnFld.Lines 'Multiline list converted to array
 
-            For i As Integer = 0 To Home.Columns.Lines.Count - 1  'Loop creat string from array
+            For i As Integer = 0 To Home.Insert_SpecifyColumnFld.Lines.Count - 1  'Loop creat string from array
                 NewLine = NewLine + columns(i)
 
-                If i < Home.Columns.Lines.Count - 1 Then
+                If i < Home.Insert_SpecifyColumnFld.Lines.Count - 1 Then
                     NewLine = NewLine + ","
                 Else
                     NewLine = NewLine + ") "
@@ -148,9 +148,9 @@
 
         NewLine = "VALUES ("
 
-        Dim DataItem As String() = Home.DataItems.Lines 'Multiline list converted to array
+        Dim DataItem As String() = Home.Insert_DataItemsFld.Lines 'Multiline list converted to array
 
-        For i As Integer = 0 To Home.DataItems.Lines.Count - 1  'Loop creat string from array
+        For i As Integer = 0 To Home.Insert_DataItemsFld.Lines.Count - 1  'Loop creat string from array
 
             If i = 0 And IsNumeric(DataItem(i)) = False Then
                 NewLine = NewLine + "'"
@@ -158,11 +158,11 @@
 
             NewLine = NewLine + DataItem(i)
 
-            If IsNumeric(DataItem(i)) = False And (i < (Home.DataItems.Lines.Count - 1)) Then
+            If IsNumeric(DataItem(i)) = False And (i < (Home.Insert_DataItemsFld.Lines.Count - 1)) Then
                 NewLine = NewLine + "'"
             End If
 
-            If i < Home.DataItems.Lines.Count - 1 Then
+            If i < Home.Insert_DataItemsFld.Lines.Count - 1 Then
                 NewLine = NewLine + ","
 
                 If IsNumeric(DataItem(i + 1)) = False Then
@@ -211,13 +211,13 @@
     Shared Sub DropTable()
         Dim NewLine As String
 
-        NewLine = "DROP TABLE " & Home.TableName.Text & ";"
+        NewLine = "DROP TABLE " & Home.Delete_TableNameFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
     Shared Sub AlterTable()
         Dim NewLine As String
-        NewLine = "ALTER TABLE " & Home.Alter_Table_Name.Text
+        NewLine = "ALTER TABLE " & Home.AlterTable_TableNameFld.Text
 
         Home.Sequence.Items.Add(NewLine)
     End Sub
@@ -233,7 +233,7 @@
     Shared Sub DropField()
         Dim NewLine As String
 
-        NewLine = "DROP COLUMN " & Home.Alter_Drop_Table.Text & ";"
+        NewLine = "DROP COLUMN " & Home.AlterTable_DropColumnFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
@@ -249,7 +249,7 @@
     Shared Sub RenameTable()
         Dim NewLine As String
 
-        NewLine = "RENAME TO " & Home.NewTableName.Text & ";"
+        NewLine = "RENAME TO " & Home.AlterTable_RenameFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub

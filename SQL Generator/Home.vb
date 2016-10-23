@@ -3,7 +3,7 @@ Public Class Home
     Public CurrentlyDoing As String
     Public First As Boolean
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
+        ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Default)"
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
@@ -228,7 +228,7 @@ Public Class Home
 
 #Region "Insert Table Sub-Operation"
 
-    Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_Button.Click
+    Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_DataItemsConfirmBtn.Click
         If Approve.Insert() = True Then
             Generate.InsertData()
             UpdateLine()
@@ -239,23 +239,23 @@ Public Class Home
 
     End Sub
 
-    Private Sub Specify_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Specify_CheckBox.CheckedChanged
-        If Specify_CheckBox.Checked = True Then
-            Columns.Enabled = True
+    Private Sub Specify_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Insert_SpecifyColumnChkbx.CheckedChanged
+        If Insert_SpecifyColumnChkbx.Checked = True Then
+            Insert_SpecifyColumnFld.Enabled = True
         Else
-            Columns.Text = ""
-            Label14.Text = "Data Values"
-            Columns.Enabled = False
+            Insert_SpecifyColumnFld.Text = ""
+            Insert_DataItemsLbl.Text = "Data Values"
+            Insert_SpecifyColumnFld.Enabled = False
         End If
     End Sub
 
-    Private Sub Columns_TextChanged(sender As Object, e As EventArgs) Handles DataItems.TextChanged, Columns.TextChanged
+    Private Sub Columns_TextChanged(sender As Object, e As EventArgs) Handles Insert_DataItemsFld.TextChanged, Insert_SpecifyColumnFld.TextChanged
 
-        If Specify_CheckBox.Checked = True Then
-            If DataItems.Lines.Count <= Columns.Lines.Count Then
-                Label14.Text = "Data Items" & " ( Enter " & (Columns.Lines.Count - DataItems.Lines.Count) & " more item(s). )"
+        If Insert_SpecifyColumnChkbx.Checked = True Then
+            If Insert_DataItemsFld.Lines.Count <= Insert_SpecifyColumnFld.Lines.Count Then
+                Insert_DataItemsLbl.Text = "Data Items" & " ( Enter " & (Insert_SpecifyColumnFld.Lines.Count - Insert_DataItemsFld.Lines.Count) & " more item(s). )"
             Else
-                Label14.Text = "Data Items" & " ( " & (DataItems.Lines.Count - Columns.Lines.Count) & " redundent item(s). )"
+                Insert_DataItemsLbl.Text = "Data Items" & " ( " & (Insert_DataItemsFld.Lines.Count - Insert_SpecifyColumnFld.Lines.Count) & " redundent item(s). )"
             End If
         End If
 
@@ -264,7 +264,7 @@ Public Class Home
 #End Region
 
 #Region "Drop Table Sub-Operation"
-    Private Sub DropButton_Click(sender As Object, e As EventArgs) Handles DropButton.Click
+    Private Sub DropButton_Click(sender As Object, e As EventArgs) Handles Delete_ConfirmBtn.Click
 
         If Approve.DropTable = True Then
             Generate.DropTable()
@@ -314,7 +314,7 @@ Public Class Home
 
 #Region "Alter Table Sub Operation"
 
-    Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles DropColumn.Click
+    Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnConfirmBtn.Click
         If Approve.Alter_Table() = True And Approve.DropColumn() = True Then
             Generate.AlterTable()
             Generate.DropField()
@@ -350,7 +350,7 @@ Public Class Home
 
     End Sub
 
-    Private Sub Rename_Click(sender As Object, e As EventArgs) Handles Rename.Click
+    Private Sub Rename_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameConfirmBtn.Click
 
         If Approve.Alter_Table() = True And Approve.Rename() = True Then
             Generate.AlterTable()
@@ -361,20 +361,20 @@ Public Class Home
 
     End Sub
 
-    Private Sub AlterRename_Click(sender As Object, e As EventArgs) Handles AlterRename.Click
-        RenameGroup.Visible = True
-        DropGroup.Visible = False
+    Private Sub AlterRename_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameBtn.Click
+        AlterTable_RenamePnl.Visible = True
+        AlterTable_DeleteColumnPnl.Visible = False
         FieldDetails.Visible = False
 
     End Sub
 
-    Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterAdd.Click
+    Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterTable_AddColumnBtn.Click
         FieldDetails_ColumnLbl.Text = "Add Column"
 
         FieldGroup.Enabled = True
 
-        RenameGroup.Visible = False
-        DropGroup.Visible = False
+        AlterTable_RenamePnl.Visible = False
+        AlterTable_DeleteColumnPnl.Visible = False
         FieldDetails.Visible = True
 
         FieldGroup.Text = "Add Field"
@@ -383,13 +383,13 @@ Public Class Home
 
     End Sub
 
-    Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
+    Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterTable_ModifyColumnBtn.Click
         FieldDetails_ColumnLbl.Text = "Modify Column"
 
         FieldGroup.Enabled = True
 
-        RenameGroup.Visible = False
-        DropGroup.Visible = False
+        AlterTable_RenamePnl.Visible = False
+        AlterTable_DeleteColumnPnl.Visible = False
         FieldDetails.Visible = True
 
         FieldGroup.Text = "Modify Field"
@@ -397,10 +397,10 @@ Public Class Home
         First = True
     End Sub
 
-    Private Sub AlterDrop_Click(sender As Object, e As EventArgs) Handles AlterDrop.Click
+    Private Sub AlterDrop_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnBtn.Click
 
-        RenameGroup.Visible = False
-        DropGroup.Visible = True
+        AlterTable_RenamePnl.Visible = False
+        AlterTable_DeleteColumnPnl.Visible = True
         FieldDetails.Visible = False
     End Sub
 
@@ -415,10 +415,10 @@ Public Class Home
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Home_ScriptIncTxtBtn.Click
         If Sequence.Font.Size >= 40 Then
-            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Max.)"
+            ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Max.)"
         Else
             Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size + 1, Sequence.Font.Style)
-            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size
+            ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size
         End If
 
     End Sub
@@ -426,10 +426,10 @@ Public Class Home
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Home_ScriptDecTxtBtn.Click
 
         If Sequence.Font.Size <= 6 Then
-            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Min.)"
+            ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Min.)"
         Else
             Sequence.Font = New Font(Sequence.Font.FontFamily, Sequence.Font.Size - 1, Sequence.Font.Style)
-            ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size
+            ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size
         End If
     End Sub
 
@@ -451,7 +451,7 @@ Public Class Home
 
     End Sub
     Sub UpdateLine()
-        ToolStripLabel1.Text = (Sequence.Items.Count) & " lines"
+        ToolStrip_Line.Text = (Sequence.Items.Count) & " lines"
     End Sub
 
     Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -460,18 +460,18 @@ Public Class Home
 
     End Sub
 
-    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStrip_FontSize.Click
 
         Sequence.Font = New Font(Sequence.Font.FontFamily, 9.75, Sequence.Font.Style)
-        ToolStripLabel2.Text = " Font size : " & Sequence.Font.Size & " (Default)"
+        ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Default)"
     End Sub
 
     Private Sub Export_Click(sender As Object, e As EventArgs) Handles Home_ScriptExprtBtn.Click
-        SaveFileDialog1.Filter = "SQL File|*.sql|Text File|*.txt"
-        SaveFileDialog1.Title = "Export Script"
+        SaveFileDialog.Filter = "SQL File|*.sql|Text File|*.txt"
+        SaveFileDialog.Title = "Export Script"
 
-        If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
-            Dim objWriter As New System.IO.StreamWriter(SaveFileDialog1.FileName)
+        If SaveFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim objWriter As New System.IO.StreamWriter(SaveFileDialog.FileName)
 
             For i As Integer = 0 To Sequence.Items.Count - 1  'Loop creat string from array
 
@@ -484,7 +484,7 @@ Public Class Home
 
         End If
 
-        SaveFileDialog1.Dispose()
+        SaveFileDialog.Dispose()
 
     End Sub
 
@@ -492,13 +492,13 @@ Public Class Home
         Dim tabpage As New TabPage
         tabpage.Text = "Database"
 
-        MaterialTabControl1.TabPages.Add(tabpage)
-        MaterialTabControl1.SelectTab(2)
+        MaterialTabControl.TabPages.Add(tabpage)
+        MaterialTabControl.SelectTab(2)
 
     End Sub
 
-    Private Sub MaterialTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaterialTabControl1.SelectedIndexChanged
-        If MaterialTabControl1.SelectedIndex = 3 Then
+    Private Sub MaterialTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaterialTabControl.SelectedIndexChanged
+        If MaterialTabControl.SelectedIndex = 3 Then
             CurrentlyDoing = "AlterTable"
             AlterTableLayoutPanel.Visible = True
             FieldDetails.Parent = AlterTableLayoutPanel
@@ -510,7 +510,7 @@ Public Class Home
 
         End If
 
-        If MaterialTabControl1.SelectedIndex = 2 Then
+        If MaterialTabControl.SelectedIndex = 2 Then
 
             Initialise.NewTable()
 

@@ -79,33 +79,33 @@
 
     Shared Sub DropTable()
 
-        Home.TableName.Text = ""
+        Home.Delete_TableNameFld.Text = ""
     End Sub
     Shared Sub Database()
         Home.Database_NameFld.Text = ""
     End Sub
     Shared Sub Insert()
 
-        Home.InsertTable.Text = ""
+        Home.Insert_TableNameFld.Text = ""
 
     End Sub
 
     Shared Sub InsertData()
-        Home.Specify_CheckBox.Checked = False
-        Home.Columns.Text = ""
-        Home.Label14.Text = "Data Items"
-        Home.DataItems.Text = ""
+        Home.Insert_SpecifyColumnChkbx.Checked = False
+        Home.Insert_SpecifyColumnFld.Text = ""
+        Home.Insert_DataItemsLbl.Text = "Data Items"
+        Home.Insert_DataItemsFld.Text = ""
     End Sub
 
 #Region "Alter Table Initialisers"
     Shared Sub Rename()
-        Home.NewTableName.Text = ""
+        Home.AlterTable_RenameFld.Text = ""
     End Sub
     Shared Sub DropColumn()
-        Home.Alter_Drop_Table.Text = ""
+        Home.AlterTable_DropColumnFld.Text = ""
     End Sub
     Shared Sub Alter_table()
-        Home.Alter_Table_Name.Text = ""
+        Home.AlterTable_TableNameFld.Text = ""
 
         DropColumn()
         Rename()

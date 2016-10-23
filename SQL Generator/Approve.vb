@@ -84,7 +84,7 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.Alter_Table_Name.Text = "" Then
+        If Home.AlterTable_TableNameFld.Text = "" Then
             MsgBox("Please enter table name before continuing.")
             Approved = False
 
@@ -96,7 +96,7 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.NewTableName.Text = "" Then
+        If Home.AlterTable_RenameFld.Text = "" Then
             MsgBox("Please enter new table name before continuing.")
             Approved = False
 
@@ -108,7 +108,7 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.Alter_Drop_Table.Text = "" Then
+        If Home.AlterTable_DropColumnFld.Text = "" Then
             MsgBox("Please enter name of column to be deleted.")
             Approved = False
 
@@ -121,17 +121,17 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.InsertTable.Text = "" Then
+        If Home.Insert_TableNameFld.Text = "" Then
             MsgBox("Please enter name of table.")
             Approved = False
         End If
 
-        If Home.Specify_CheckBox.Checked = True And Home.Columns.Text = "" Then
+        If Home.Insert_SpecifyColumnChkbx.Checked = True And Home.Insert_SpecifyColumnFld.Text = "" Then
             MsgBox("Please enter columns.")
             Approved = False
         End If
 
-        If Home.DataItems.Text = "" Then
+        If Home.Insert_DataItemsFld.Text = "" Then
             MsgBox("Please enter data items.")
             Approved = False
         End If
@@ -155,7 +155,7 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.TableName.Text = "" Then
+        If Home.Delete_TableNameFld.Text = "" Then
             MsgBox("Please enter name of table.")
             Approved = False
 
