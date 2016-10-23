@@ -498,31 +498,42 @@ Public Class Home
     End Sub
 
     Private Sub MaterialTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaterialTabControl.SelectedIndexChanged
-        If MaterialTabControl.SelectedIndex = 3 Then
-            CurrentlyDoing = "AlterTable"
-            AlterTableLayoutPanel.Visible = True
-            FieldDetails.Parent = AlterTableLayoutPanel
-            AlterTableLayoutPanel.SetRow(FieldDetails, 2)
-            AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
-            FieldDetails.Dock = DockStyle.Fill
+        Select Case MaterialTabControl.SelectedIndex
+            Case 1
+                Initialise.Database()
 
-            FieldDetails.Visible = False
+            Case 2
+                Initialise.NewTable()
 
-        End If
+                FieldDetails_ColumnLbl.Text = "Add Column"
 
-        If MaterialTabControl.SelectedIndex = 2 Then
+                FieldDetails.Parent = CreateActionLayout
+                CreateActionLayout.SetRow(FieldDetails, 2)
+                FieldGroup.Text = "Add Field"
+                FieldDetails_CreateFieldBtn.Visible = True
 
-            Initialise.NewTable()
+                FieldDetails.Visible = True
 
-            FieldDetails_ColumnLbl.Text = "Add Column"
+            Case 3
 
-            FieldDetails.Parent = CreateActionLayout
-            CreateActionLayout.SetRow(FieldDetails, 2)
-            FieldGroup.Text = "Add Field"
-            FieldDetails_CreateFieldBtn.Visible = True
+                CurrentlyDoing = "AlterTable"
+                AlterTableLayoutPanel.Visible = True
+                FieldDetails.Parent = AlterTableLayoutPanel
+                AlterTableLayoutPanel.SetRow(FieldDetails, 2)
+                AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
+                FieldDetails.Dock = DockStyle.Fill
 
-            FieldDetails.Visible = True
-        End If
+                FieldDetails.Visible = False
+
+            Case 4
+
+                Initialise.Insert()
+
+            Case 5
+
+                Initialise.DropTable()
+
+        End Select
 
     End Sub
 

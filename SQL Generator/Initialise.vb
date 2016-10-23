@@ -87,7 +87,7 @@
     Shared Sub Insert()
 
         Home.Insert_TableNameFld.Text = ""
-
+        InsertData()
     End Sub
 
     Shared Sub InsertData()
