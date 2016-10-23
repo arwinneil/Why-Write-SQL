@@ -693,7 +693,8 @@ Partial Class Home
         '
         'CreateTable_NameFld
         '
-        Me.CreateTable_NameFld.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.CreateTable_NameFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CreateTable_NameFld.Depth = 0
         Me.CreateTable_NameFld.Hint = ""
@@ -746,6 +747,7 @@ Partial Class Home
         Me.FieldGroup.Controls.Add(Me.FieldDetails_Size)
         Me.FieldGroup.Controls.Add(Me.FieldDetails_Scale)
         Me.FieldGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FieldGroup.Enabled = False
         Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
         Me.FieldGroup.Margin = New System.Windows.Forms.Padding(0)
         Me.FieldGroup.Name = "FieldGroup"
@@ -1266,8 +1268,8 @@ Partial Class Home
         Me.CreateTable_BtbTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.CreateTable_BtbTableLayout.Controls.Add(Me.CreateTable_AddPrimKeyBtn, 1, 0)
         Me.CreateTable_BtbTableLayout.Controls.Add(Me.CreateTable_CompleteTableBtn, 3, 0)
-        Me.CreateTable_BtbTableLayout.Controls.Add(Me.CreateTable_AddForeignKeyBtn, 2, 0)
         Me.CreateTable_BtbTableLayout.Controls.Add(Me.CreateTable_AddColumnBtn, 0, 0)
+        Me.CreateTable_BtbTableLayout.Controls.Add(Me.CreateTable_AddForeignKeyBtn, 2, 0)
         Me.CreateTable_BtbTableLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CreateTable_BtbTableLayout.Location = New System.Drawing.Point(3, 64)
         Me.CreateTable_BtbTableLayout.Name = "CreateTable_BtbTableLayout"
@@ -1289,7 +1291,7 @@ Partial Class Home
         Me.CreateTable_AddPrimKeyBtn.Primary = False
         Me.CreateTable_AddPrimKeyBtn.Size = New System.Drawing.Size(103, 36)
         Me.CreateTable_AddPrimKeyBtn.TabIndex = 65
-        Me.CreateTable_AddPrimKeyBtn.Text = "Add Primay Key"
+        Me.CreateTable_AddPrimKeyBtn.Text = "Add Primary Key"
         Me.CreateTable_AddPrimKeyBtn.UseVisualStyleBackColor = True
         '
         'CreateTable_CompleteTableBtn
@@ -1391,8 +1393,6 @@ Partial Class Home
         '
         'Label11
         '
-        Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Label11.Location = New System.Drawing.Point(176, 2)

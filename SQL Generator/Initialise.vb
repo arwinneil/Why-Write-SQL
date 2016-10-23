@@ -9,6 +9,8 @@
 
         NewField()
 
+        Home.FieldGroup.Enabled = False
+
         Keys()
 
         Check()

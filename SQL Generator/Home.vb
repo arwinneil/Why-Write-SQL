@@ -85,6 +85,8 @@ Public Class Home
 
     End Sub
     Private Sub Add_Field_Butt(sender As Object, e As EventArgs) Handles CreateTable_AddColumnBtn.Click
+        FieldGroup.Enabled = True
+
         Add_Field()
 
     End Sub
@@ -368,6 +370,8 @@ Public Class Home
     Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterAdd.Click
         FieldDetails_ColumnLbl.Text = "Add Column"
 
+        FieldGroup.Enabled = True
+
         RenameGroup.Visible = False
         DropGroup.Visible = False
         FieldDetails.Visible = True
@@ -381,6 +385,8 @@ Public Class Home
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterModify.Click
         FieldDetails_ColumnLbl.Text = "Modify Column"
 
+        FieldGroup.Enabled = True
+
         RenameGroup.Visible = False
         DropGroup.Visible = False
         FieldDetails.Visible = True
@@ -391,6 +397,7 @@ Public Class Home
     End Sub
 
     Private Sub AlterDrop_Click(sender As Object, e As EventArgs) Handles AlterDrop.Click
+
         RenameGroup.Visible = False
         DropGroup.Visible = True
         FieldDetails.Visible = False
@@ -526,6 +533,17 @@ Public Class Home
     Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles Home_InfoBtn.Click
         About.Show()
 
+    End Sub
+
+    Private Sub CreateTable_AddForeignKeyBtn_Click(sender As Object, e As EventArgs) Handles CreateTable_AddForeignKeyBtn.Click
+        CurrentlyDoing = "AddForeignKey"
+
+        FieldGroup.Visible = False
+        FieldDetails_PrimyGrp.Visible = False
+        FieldDetails_ForeignKeyGrp.Visible = True
+        FieldDetails_ReferenceGrp.Enabled = False
+        Initialise.Keys()
+        FieldDetails_ConstraintGrp.Enabled = False
     End Sub
 
 #End Region

@@ -249,7 +249,7 @@
     Shared Sub RenameTable()
         Dim NewLine As String
 
-        NewLine = vbTab & "RENAME TO " & Home.NewTableName.Text & ";"
+        NewLine = "RENAME TO " & Home.NewTableName.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub
