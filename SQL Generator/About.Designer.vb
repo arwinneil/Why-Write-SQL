@@ -36,6 +36,7 @@ Partial Class About
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,7 +163,7 @@ Partial Class About
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel1.Location = New System.Drawing.Point(27, 539)
+        Me.LinkLabel1.Location = New System.Drawing.Point(27, 554)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(125, 13)
         Me.LinkLabel1.TabIndex = 18
@@ -174,7 +175,7 @@ Partial Class About
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLabel2.Location = New System.Drawing.Point(27, 514)
+        Me.LinkLabel2.Location = New System.Drawing.Point(27, 509)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(235, 13)
         Me.LinkLabel2.TabIndex = 19
@@ -194,11 +195,22 @@ Partial Class About
         Me.TextBox1.TabIndex = 20
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(27, 527)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(158, 13)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Copyright (c) 2014 Ignace Maes"
+        '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(529, 577)
+        Me.ClientSize = New System.Drawing.Size(529, 594)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
@@ -241,4 +253,5 @@ Partial Class About
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label6 As Label
 End Class

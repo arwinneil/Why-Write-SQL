@@ -23,4 +23,6 @@ Public Class About
     Private Sub About_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Animation.Close(sender)
     End Sub
+
+
 End Class
