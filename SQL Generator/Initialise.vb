@@ -77,7 +77,7 @@
 
 #End Region
 
-    Shared Sub DropTable()
+    Shared Sub DeleteTable()
 
         Home.Delete_TableNameFld.Text = ""
     End Sub
@@ -101,13 +101,13 @@
     Shared Sub Rename()
         Home.AlterTable_RenameFld.Text = ""
     End Sub
-    Shared Sub DropColumn()
+    Shared Sub DeleteColumn()
         Home.AlterTable_DropColumnFld.Text = ""
     End Sub
     Shared Sub Alter_table()
         Home.AlterTable_TableNameFld.Text = ""
 
-        DropColumn()
+        DeleteColumn()
         Rename()
         NewField()
 

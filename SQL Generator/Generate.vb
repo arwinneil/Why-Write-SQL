@@ -55,7 +55,9 @@
 
         End Select
 
+#Disable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
         Return LineConstraint
+#Enable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
 
     End Function
     Shared Sub PrimaryKey()
@@ -255,10 +257,14 @@
     End Sub
     Shared Function Field()
         Dim FieldName As String
+#Disable Warning BC42024 ' Unused local variable: 'LineType'.
         Dim LineType As String
+#Enable Warning BC42024 ' Unused local variable: 'LineType'.
         Dim LineSize As String
         Dim LineConstraint As String
+#Disable Warning BC42024 ' Unused local variable: 'Constraint'.
         Dim Constraint As String
+#Enable Warning BC42024 ' Unused local variable: 'Constraint'.
         Dim NewLine As String
 
         If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
@@ -307,7 +313,9 @@
         End If
 
         If Home.FieldDetails_CheckChkbx.Checked = True Then
+#Disable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
+#Enable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
         End If
 
         If Home.FieldDetails_ReferenceChkBx.Checked = True Then

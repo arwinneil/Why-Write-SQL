@@ -1,7 +1,7 @@
 ﻿Imports MaterialSkin
 Public Class Home
     Public CurrentlyDoing As String
-    Public First As Boolean
+
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Default)"
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
@@ -13,12 +13,15 @@ Public Class Home
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
 
 #Region "New Table Operation Handles"
-    Private Sub NewTable(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
+    Private Sub CreateTable(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
 
         If Approve.Table = True Then
             CreateTable_CreateBtn.Enabled = False
             Generate.Table()
-            UpdateUI.EnableTableControls()
+
+            CreateTable_AddColumnBtn.Enabled = True
+            CreateTable_CompleteTableBtn.Enabled = True
+
             UpdateLine()
 
             CreateTable_NameFld.Enabled = False
@@ -32,12 +35,11 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub NewTableComplete(sender As Object, e As EventArgs) Handles CreateTable_CompleteTableBtn.Click
+    Private Sub CompleteTableStatement(sender As Object, e As EventArgs) Handles CreateTable_CompleteTableBtn.Click
 
         Sequence.Items.Add(");")
         Sequence.Items.Add("")
         Initialise.NewTable()
-        UpdateUI.ClearUp()
 
         CreateTable_AddColumnBtn.Enabled = False
         CreateTable_AddPrimKeyBtn.Enabled = False
@@ -45,7 +47,8 @@ Public Class Home
         CreateTable_CompleteTableBtn.Enabled = False
 
     End Sub
-    Private Sub Create_Click(sender As Object, e As EventArgs) Handles FieldDetails_CreateFieldBtn.Click
+    Private Sub CreateField(sender As Object, e As EventArgs) Handles FieldDetails_CreateFieldBtn.Click
+
         Select Case CurrentlyDoing
 
             Case = "AddNewField"
@@ -84,13 +87,12 @@ Public Class Home
         End Select
 
     End Sub
-    Private Sub Add_Field_Butt(sender As Object, e As EventArgs) Handles CreateTable_AddColumnBtn.Click
+    Private Sub AddColumn(sender As Object, e As EventArgs) Handles CreateTable_AddColumnBtn.Click
         FieldGroup.Enabled = True
 
         Add_Field()
 
     End Sub
-
     Private Sub Add_Field()
         CurrentlyDoing = "AddNewField"
 
@@ -137,7 +139,7 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub CheckBOx_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_CheckChkbx.CheckedChanged
+    Private Sub Check_CheckedChanged(sender As Object, e As EventArgs) Handles FieldDetails_CheckChkbx.CheckedChanged
         If FieldDetails_CheckChkbx.Checked = True Then
             FieldDetails_CheckTypeCmbo.Enabled = True
             FieldDetails_CheckFld.Enabled = True
@@ -228,18 +230,18 @@ Public Class Home
 
 #Region "Insert Table Sub-Operation"
 
-    Private Sub Insert_Button_Click(sender As Object, e As EventArgs) Handles Insert_DataItemsConfirmBtn.Click
+    Private Sub Insert(sender As Object, e As EventArgs) Handles Insert_DataItemsConfirmBtn.Click
+
         If Approve.Insert() = True Then
             Generate.InsertData()
             UpdateLine()
-            UpdateUI.ClearUp()
             Initialise.InsertData()
 
         End If
 
     End Sub
-
     Private Sub Specify_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Insert_SpecifyColumnChkbx.CheckedChanged
+
         If Insert_SpecifyColumnChkbx.Checked = True Then
             Insert_SpecifyColumnFld.Enabled = True
         Else
@@ -247,8 +249,8 @@ Public Class Home
             Insert_DataItemsLbl.Text = "Data Values"
             Insert_SpecifyColumnFld.Enabled = False
         End If
-    End Sub
 
+    End Sub
     Private Sub Columns_TextChanged(sender As Object, e As EventArgs) Handles Insert_DataItemsFld.TextChanged, Insert_SpecifyColumnFld.TextChanged
 
         If Insert_SpecifyColumnChkbx.Checked = True Then
@@ -264,12 +266,12 @@ Public Class Home
 #End Region
 
 #Region "Drop Table Sub-Operation"
-    Private Sub DropButton_Click(sender As Object, e As EventArgs) Handles Delete_ConfirmBtn.Click
+    Private Sub DeleteTable(sender As Object, e As EventArgs) Handles Delete_ConfirmBtn.Click
 
         If Approve.DropTable = True Then
             Generate.DropTable()
-            Initialise.DropTable()
-            UpdateUI.ClearUp()
+            Initialise.DeleteTable()
+
             UpdateLine()
         End If
 
@@ -278,7 +280,7 @@ Public Class Home
 #End Region
 
 #Region "Database Operations Sub Operations"
-    Private Sub Create_Database_Click(sender As Object, e As EventArgs) Handles Database_CreateBtn.Click
+    Private Sub Create_Database(sender As Object, e As EventArgs) Handles Database_CreateBtn.Click
 
         If Approve.Database = True Then
             Generate.CreateDatabase()
@@ -287,7 +289,7 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub Drop_Database_Click(sender As Object, e As EventArgs) Handles Database_DeleteBtn.Click
+    Private Sub Delete_Database(sender As Object, e As EventArgs) Handles Database_DeleteBtn.Click
 
         If Approve.Database = True Then
             Generate.DropDatabase()
@@ -297,6 +299,7 @@ Public Class Home
 
     End Sub
     Private Sub Select_Database_Click(sender As Object, e As EventArgs) Handles Database_SelectBtn.Click
+
         If Approve.Database = True Then
             Generate.SelectDatabase()
             Initialise.Database()
@@ -305,51 +308,45 @@ Public Class Home
 
     End Sub
 
-    Private Sub Select_Query_Click(sender As Object, e As EventArgs)
-        MsgBox("Comming Soon!")
-
-    End Sub
-
 #End Region
 
 #Region "Alter Table Sub Operation"
 
     Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnConfirmBtn.Click
+
         If Approve.Alter_Table() = True And Approve.DropColumn() = True Then
             Generate.AlterTable()
             Generate.DropField()
-            Initialise.DropColumn()
+            Initialise.DeleteColumn()
             UpdateLine()
 
         End If
-    End Sub
 
+    End Sub
     Private Sub AlterModifyField()
+
         If Approve.Field() And Approve.Alter_Table = True Then
 
             Generate.AlterTable()
-
             Generate.ModifyField()
             UpdateLine()
             Initialise.NewField()
+
         End If
 
     End Sub
-
     Private Sub AlterAddField()
 
         If Approve.Alter_Table() = True And Approve.Field() = True Then
 
             Generate.AlterTable()
-
             Generate.AddField()
             UpdateLine()
-
             Initialise.NewField()
+
         End If
 
     End Sub
-
     Private Sub Rename_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameConfirmBtn.Click
 
         If Approve.Alter_Table() = True And Approve.Rename() = True Then
@@ -360,15 +357,15 @@ Public Class Home
         End If
 
     End Sub
-
     Private Sub AlterRename_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameBtn.Click
+
         AlterTable_RenamePnl.Visible = True
         AlterTable_DeleteColumnPnl.Visible = False
         FieldDetails.Visible = False
 
     End Sub
-
     Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterTable_AddColumnBtn.Click
+
         FieldDetails_ColumnLbl.Text = "Add Column"
 
         FieldGroup.Enabled = True
@@ -379,41 +376,36 @@ Public Class Home
 
         FieldGroup.Text = "Add Field"
         CurrentlyDoing = "AddField"
-        First = True
 
     End Sub
-
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterTable_ModifyColumnBtn.Click
+
         FieldDetails_ColumnLbl.Text = "Modify Column"
 
         FieldGroup.Enabled = True
 
-        AlterTable_RenamePnl.Visible = False
-        AlterTable_DeleteColumnPnl.Visible = False
         FieldDetails.Visible = True
 
         FieldGroup.Text = "Modify Field"
+        AlterTable_RenamePnl.Visible = False
+        AlterTable_DeleteColumnPnl.Visible = False
         CurrentlyDoing = "ModifyField"
-        First = True
-    End Sub
 
+    End Sub
     Private Sub AlterDrop_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnBtn.Click
 
         AlterTable_RenamePnl.Visible = False
         AlterTable_DeleteColumnPnl.Visible = True
         FieldDetails.Visible = False
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-        UpdateUI.ClearUp()
 
     End Sub
 
 #End Region
 
-#Region "Home UI"
+#Region "Scipt Management"
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles Home_ScriptIncTxtBtn.Click
+    Private Sub IncreaseFontSize(sender As Object, e As EventArgs) Handles Home_ScriptIncTxtBtn.Click
+
         If Sequence.Font.Size >= 40 Then
             ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Max.)"
         Else
@@ -422,8 +414,7 @@ Public Class Home
         End If
 
     End Sub
-
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles Home_ScriptDecTxtBtn.Click
+    Private Sub DecreaseFontSize(sender As Object, e As EventArgs) Handles Home_ScriptDecTxtBtn.Click
 
         If Sequence.Font.Size <= 6 Then
             ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Min.)"
@@ -432,13 +423,14 @@ Public Class Home
             ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size
         End If
     End Sub
+    Private Sub Break(sender As Object, e As EventArgs) Handles Home_ScriptBrkBtn.Click
 
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles Home_ScriptBrkBtn.Click
         Sequence.Items.Add("")
         UpdateLine()
-    End Sub
 
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles Home_ScriptUndoBtn.Click
+    End Sub
+    Private Sub Undo(sender As Object, e As EventArgs) Handles Home_ScriptUndoBtn.Click
+
         If Sequence.Items.Count > 0 Then
 
             Sequence.Items.RemoveAt(Sequence.Items.Count - 1)
@@ -450,27 +442,18 @@ Public Class Home
         UpdateLine()
 
     End Sub
-    Sub UpdateLine()
-        ToolStrip_Line.Text = (Sequence.Items.Count) & " lines"
-    End Sub
-
-    Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
-        Animation.Close(sender)
-
-    End Sub
-
     Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStrip_FontSize.Click
 
         Sequence.Font = New Font(Sequence.Font.FontFamily, 9.75, Sequence.Font.Style)
         ToolStrip_FontSize.Text = " Font size : " & Sequence.Font.Size & " (Default)"
     End Sub
-
     Private Sub Export_Click(sender As Object, e As EventArgs) Handles Home_ScriptExprtBtn.Click
+
         SaveFileDialog.Filter = "SQL File|*.sql|Text File|*.txt"
         SaveFileDialog.Title = "Export Script"
 
         If SaveFileDialog.ShowDialog() = DialogResult.OK Then
+
             Dim objWriter As New System.IO.StreamWriter(SaveFileDialog.FileName)
 
             For i As Integer = 0 To Sequence.Items.Count - 1  'Loop creat string from array
@@ -479,7 +462,9 @@ Public Class Home
 
             Next
             objWriter.Close()
+
         Else
+
             Return
 
         End If
@@ -487,17 +472,8 @@ Public Class Home
         SaveFileDialog.Dispose()
 
     End Sub
-
-    Private Sub Database_Operations_Click_1(sender As Object, e As EventArgs)
-        Dim tabpage As New TabPage
-        tabpage.Text = "Database"
-
-        MaterialTabControl.TabPages.Add(tabpage)
-        MaterialTabControl.SelectTab(2)
-
-    End Sub
-
     Private Sub MaterialTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MaterialTabControl.SelectedIndexChanged
+
         Select Case MaterialTabControl.SelectedIndex
             Case 1
                 Initialise.Database()
@@ -531,19 +507,15 @@ Public Class Home
 
             Case 5
 
-                Initialise.DropTable()
+                Initialise.DeleteTable()
 
         End Select
 
     End Sub
+    Private Sub Clear(sender As Object, e As EventArgs) Handles Home_ScriptNewBtn.Click
 
-    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles Home_ScriptNewBtn.Click
         Sequence.Items.Clear()
         UpdateLine()
-    End Sub
-
-    Private Sub PictureBox7_Click_1(sender As Object, e As EventArgs) Handles Home_InfoBtn.Click
-        About.Show()
 
     End Sub
 
@@ -557,20 +529,21 @@ Public Class Home
         Initialise.Keys()
         FieldDetails_ConstraintGrp.Enabled = False
     End Sub
+    Sub UpdateLine()
+        ToolStrip_Line.Text = (Sequence.Items.Count) & " lines"
+    End Sub
+
+    Private Sub Info(sender As Object, e As EventArgs) Handles Home_InfoBtn.Click
+
+        About.Show()
+
+    End Sub
+    Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        Animation.Close(sender)
+
+    End Sub
 
 #End Region
-
-End Class
-Public Class UpdateUI
-
-    Shared Sub ClearUp()
-
-        Home.First = False
-
-    End Sub
-    Shared Sub EnableTableControls()
-        Home.CreateTable_AddColumnBtn.Enabled = True
-        Home.CreateTable_CompleteTableBtn.Enabled = True
-    End Sub
 
 End Class

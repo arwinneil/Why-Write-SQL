@@ -56,6 +56,27 @@ Partial Class Home
         Me.CreateTable_CreateBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.CreateTable_NameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.FieldDetails = New System.Windows.Forms.Panel()
+        Me.CreateTable_ActionDetailContainerPnl = New System.Windows.Forms.Panel()
+        Me.FieldGroup = New System.Windows.Forms.Panel()
+        Me.FieldDetails_ColumnLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_FormulaChkbx = New System.Windows.Forms.CheckBox()
+        Me.FieldDetails_ColumnTYpeCmbo = New System.Windows.Forms.ComboBox()
+        Me.FieldDetails_DefFld = New System.Windows.Forms.TextBox()
+        Me.FieldDetails_ColumnNameLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_DefValChkbx = New System.Windows.Forms.CheckBox()
+        Me.FieldDetails_ColumnNameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.FieldDetails_Precision = New System.Windows.Forms.NumericUpDown()
+        Me.FieldDetails_PreScleLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_SizeLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_TypeLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_Size = New System.Windows.Forms.NumericUpDown()
+        Me.FieldDetails_Scale = New System.Windows.Forms.NumericUpDown()
+        Me.FieldDetails_ForeignKeyGrp = New System.Windows.Forms.Panel()
+        Me.FieldDetails_ForeignKeyLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_ForeignKeyFld = New System.Windows.Forms.TextBox()
+        Me.FieldDetails_PrimyGrp = New System.Windows.Forms.Panel()
+        Me.FieldDetails_PrimLbl = New System.Windows.Forms.Label()
+        Me.FieldDetails_PrimFld = New System.Windows.Forms.TextBox()
         Me.CreateTable_ActionDetailContainerPnl2 = New System.Windows.Forms.Panel()
         Me.FieldDetails_CheckGrp = New System.Windows.Forms.Panel()
         Me.FieldDetails_CheckLbl = New System.Windows.Forms.Label()
@@ -92,14 +113,14 @@ Partial Class Home
         Me.AlterTable_TableNamaLbl = New System.Windows.Forms.Label()
         Me.AlterTable_TableNameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.AlterTable_ActionContainerPnl = New System.Windows.Forms.Panel()
+        Me.AlterTable_DeleteColumnPnl = New System.Windows.Forms.Panel()
+        Me.AlterTable_DeleteColumnLbl = New System.Windows.Forms.Label()
+        Me.AlterTable_DeleteColumnFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.AlterTable_DeleteColumnConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenamePnl = New System.Windows.Forms.Panel()
         Me.AlterTable_RenameLbl = New System.Windows.Forms.Label()
         Me.AlterTable_RenameConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.AlterTable_DeleteColumnPnl = New System.Windows.Forms.Panel()
-        Me.AlterTable_DeleteColumnLbl = New System.Windows.Forms.Label()
-        Me.AlterTable_DropColumnFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.AlterTable_DeleteColumnConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_BtnTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.AlterTable_ModifyColumnBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenameBtn = New MaterialSkin.Controls.MaterialFlatButton()
@@ -136,27 +157,6 @@ Partial Class Home
         Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.MaterialTabSelector = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.FieldDetails_PrimyGrp = New System.Windows.Forms.Panel()
-        Me.FieldDetails_PrimFld = New System.Windows.Forms.TextBox()
-        Me.FieldDetails_PrimLbl = New System.Windows.Forms.Label()
-        Me.FieldDetails_ForeignKeyGrp = New System.Windows.Forms.Panel()
-        Me.FieldDetails_ForeignKeyFld = New System.Windows.Forms.TextBox()
-        Me.FieldDetails_ForeignKeyLbl = New System.Windows.Forms.Label()
-        Me.FieldGroup = New System.Windows.Forms.Panel()
-        Me.FieldDetails_Scale = New System.Windows.Forms.NumericUpDown()
-        Me.FieldDetails_Size = New System.Windows.Forms.NumericUpDown()
-        Me.FieldDetails_TypeLbl = New System.Windows.Forms.Label()
-        Me.FieldDetails_SizeLbl = New System.Windows.Forms.Label()
-        Me.FieldDetails_PreScleLbl = New System.Windows.Forms.Label()
-        Me.FieldDetails_Precision = New System.Windows.Forms.NumericUpDown()
-        Me.FieldDetails_ColumnNameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.FieldDetails_DefValChkbx = New System.Windows.Forms.CheckBox()
-        Me.FieldDetails_ColumnNameLbl = New System.Windows.Forms.Label()
-        Me.FieldDetails_DefFld = New System.Windows.Forms.TextBox()
-        Me.FieldDetails_ColumnTYpeCmbo = New System.Windows.Forms.ComboBox()
-        Me.FieldDetails_FormulaChkbx = New System.Windows.Forms.CheckBox()
-        Me.FieldDetails_ColumnLbl = New System.Windows.Forms.Label()
-        Me.CreateTable_ActionDetailContainerPnl = New System.Windows.Forms.Panel()
         Me.Home_Main_Layout.SuspendLayout()
         Me.TabContainerPanel.SuspendLayout()
         Me.MaterialTabControl.SuspendLayout()
@@ -179,6 +179,13 @@ Partial Class Home
         Me.CreateActionLayout.SuspendLayout()
         Me.CreateTable_NameGrp.SuspendLayout()
         Me.FieldDetails.SuspendLayout()
+        Me.CreateTable_ActionDetailContainerPnl.SuspendLayout()
+        Me.FieldGroup.SuspendLayout()
+        CType(Me.FieldDetails_Precision, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FieldDetails_Size, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FieldDetails_Scale, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FieldDetails_ForeignKeyGrp.SuspendLayout()
+        Me.FieldDetails_PrimyGrp.SuspendLayout()
         Me.CreateTable_ActionDetailContainerPnl2.SuspendLayout()
         Me.FieldDetails_CheckGrp.SuspendLayout()
         Me.FieldDetails_RefConsTableLayout.SuspendLayout()
@@ -189,8 +196,8 @@ Partial Class Home
         Me.AlterTableLayoutPanel.SuspendLayout()
         Me.AlterTable_TableNamePnl.SuspendLayout()
         Me.AlterTable_ActionContainerPnl.SuspendLayout()
-        Me.AlterTable_RenamePnl.SuspendLayout()
         Me.AlterTable_DeleteColumnPnl.SuspendLayout()
+        Me.AlterTable_RenamePnl.SuspendLayout()
         Me.AlterTable_BtnTableLayout.SuspendLayout()
         Me.InsertPage.SuspendLayout()
         Me.InsertTableLayout.SuspendLayout()
@@ -205,13 +212,6 @@ Partial Class Home
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ScriptGrp.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
-        Me.FieldDetails_PrimyGrp.SuspendLayout()
-        Me.FieldDetails_ForeignKeyGrp.SuspendLayout()
-        Me.FieldGroup.SuspendLayout()
-        CType(Me.FieldDetails_Scale, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FieldDetails_Size, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FieldDetails_Precision, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CreateTable_ActionDetailContainerPnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'Home_Main_Layout
@@ -720,6 +720,243 @@ Partial Class Home
         Me.FieldDetails.Size = New System.Drawing.Size(444, 552)
         Me.FieldDetails.TabIndex = 0
         '
+        'CreateTable_ActionDetailContainerPnl
+        '
+        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldGroup)
+        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldDetails_ForeignKeyGrp)
+        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldDetails_PrimyGrp)
+        Me.CreateTable_ActionDetailContainerPnl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CreateTable_ActionDetailContainerPnl.Location = New System.Drawing.Point(0, 0)
+        Me.CreateTable_ActionDetailContainerPnl.Name = "CreateTable_ActionDetailContainerPnl"
+        Me.CreateTable_ActionDetailContainerPnl.Size = New System.Drawing.Size(444, 160)
+        Me.CreateTable_ActionDetailContainerPnl.TabIndex = 13
+        '
+        'FieldGroup
+        '
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnLbl)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_FormulaChkbx)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnTYpeCmbo)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_DefFld)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnNameLbl)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_DefValChkbx)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnNameFld)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_Precision)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_PreScleLbl)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_SizeLbl)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_TypeLbl)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_Size)
+        Me.FieldGroup.Controls.Add(Me.FieldDetails_Scale)
+        Me.FieldGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FieldGroup.Enabled = False
+        Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
+        Me.FieldGroup.Margin = New System.Windows.Forms.Padding(0)
+        Me.FieldGroup.Name = "FieldGroup"
+        Me.FieldGroup.Size = New System.Drawing.Size(444, 160)
+        Me.FieldGroup.TabIndex = 8
+        '
+        'FieldDetails_ColumnLbl
+        '
+        Me.FieldDetails_ColumnLbl.AutoSize = True
+        Me.FieldDetails_ColumnLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FieldDetails_ColumnLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.FieldDetails_ColumnLbl.Location = New System.Drawing.Point(6, 5)
+        Me.FieldDetails_ColumnLbl.Name = "FieldDetails_ColumnLbl"
+        Me.FieldDetails_ColumnLbl.Size = New System.Drawing.Size(84, 15)
+        Me.FieldDetails_ColumnLbl.TabIndex = 67
+        Me.FieldDetails_ColumnLbl.Text = "Add Column"
+        '
+        'FieldDetails_FormulaChkbx
+        '
+        Me.FieldDetails_FormulaChkbx.AccessibleDescription = "Formula"
+        Me.FieldDetails_FormulaChkbx.AutoSize = True
+        Me.FieldDetails_FormulaChkbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.FieldDetails_FormulaChkbx.Location = New System.Drawing.Point(111, 128)
+        Me.FieldDetails_FormulaChkbx.Name = "FieldDetails_FormulaChkbx"
+        Me.FieldDetails_FormulaChkbx.Size = New System.Drawing.Size(63, 17)
+        Me.FieldDetails_FormulaChkbx.TabIndex = 66
+        Me.FieldDetails_FormulaChkbx.Text = "Formula"
+        Me.FieldDetails_FormulaChkbx.UseVisualStyleBackColor = True
+        '
+        'FieldDetails_ColumnTYpeCmbo
+        '
+        Me.FieldDetails_ColumnTYpeCmbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FieldDetails_ColumnTYpeCmbo.FormattingEnabled = True
+        Me.FieldDetails_ColumnTYpeCmbo.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.FieldDetails_ColumnTYpeCmbo.Items.AddRange(New Object() {"CHAR", "VARCHAR", "BIT", "INTEGER", "SMALLINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DATE", "TIME"})
+        Me.FieldDetails_ColumnTYpeCmbo.Location = New System.Drawing.Point(11, 85)
+        Me.FieldDetails_ColumnTYpeCmbo.Name = "FieldDetails_ColumnTYpeCmbo"
+        Me.FieldDetails_ColumnTYpeCmbo.Size = New System.Drawing.Size(127, 21)
+        Me.FieldDetails_ColumnTYpeCmbo.TabIndex = 42
+        '
+        'FieldDetails_DefFld
+        '
+        Me.FieldDetails_DefFld.Enabled = False
+        Me.FieldDetails_DefFld.Location = New System.Drawing.Point(187, 125)
+        Me.FieldDetails_DefFld.Name = "FieldDetails_DefFld"
+        Me.FieldDetails_DefFld.Size = New System.Drawing.Size(241, 20)
+        Me.FieldDetails_DefFld.TabIndex = 65
+        '
+        'FieldDetails_ColumnNameLbl
+        '
+        Me.FieldDetails_ColumnNameLbl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_ColumnNameLbl.AutoSize = True
+        Me.FieldDetails_ColumnNameLbl.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FieldDetails_ColumnNameLbl.Location = New System.Drawing.Point(161, 18)
+        Me.FieldDetails_ColumnNameLbl.Name = "FieldDetails_ColumnNameLbl"
+        Me.FieldDetails_ColumnNameLbl.Size = New System.Drawing.Size(101, 13)
+        Me.FieldDetails_ColumnNameLbl.TabIndex = 40
+        Me.FieldDetails_ColumnNameLbl.Text = "Enter Column Name"
+        '
+        'FieldDetails_DefValChkbx
+        '
+        Me.FieldDetails_DefValChkbx.AutoSize = True
+        Me.FieldDetails_DefValChkbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.FieldDetails_DefValChkbx.Location = New System.Drawing.Point(15, 127)
+        Me.FieldDetails_DefValChkbx.Name = "FieldDetails_DefValChkbx"
+        Me.FieldDetails_DefValChkbx.Size = New System.Drawing.Size(90, 17)
+        Me.FieldDetails_DefValChkbx.TabIndex = 64
+        Me.FieldDetails_DefValChkbx.Text = "Default Value"
+        Me.FieldDetails_DefValChkbx.UseVisualStyleBackColor = True
+        '
+        'FieldDetails_ColumnNameFld
+        '
+        Me.FieldDetails_ColumnNameFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_ColumnNameFld.Depth = 0
+        Me.FieldDetails_ColumnNameFld.Hint = ""
+        Me.FieldDetails_ColumnNameFld.Location = New System.Drawing.Point(11, 34)
+        Me.FieldDetails_ColumnNameFld.MouseState = MaterialSkin.MouseState.HOVER
+        Me.FieldDetails_ColumnNameFld.Name = "FieldDetails_ColumnNameFld"
+        Me.FieldDetails_ColumnNameFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.FieldDetails_ColumnNameFld.SelectedText = ""
+        Me.FieldDetails_ColumnNameFld.SelectionLength = 0
+        Me.FieldDetails_ColumnNameFld.SelectionStart = 0
+        Me.FieldDetails_ColumnNameFld.Size = New System.Drawing.Size(424, 23)
+        Me.FieldDetails_ColumnNameFld.TabIndex = 41
+        Me.FieldDetails_ColumnNameFld.UseSystemPasswordChar = False
+        '
+        'FieldDetails_Precision
+        '
+        Me.FieldDetails_Precision.Location = New System.Drawing.Point(340, 85)
+        Me.FieldDetails_Precision.Name = "FieldDetails_Precision"
+        Me.FieldDetails_Precision.Size = New System.Drawing.Size(41, 20)
+        Me.FieldDetails_Precision.TabIndex = 63
+        '
+        'FieldDetails_PreScleLbl
+        '
+        Me.FieldDetails_PreScleLbl.AutoSize = True
+        Me.FieldDetails_PreScleLbl.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FieldDetails_PreScleLbl.Location = New System.Drawing.Point(337, 66)
+        Me.FieldDetails_PreScleLbl.Name = "FieldDetails_PreScleLbl"
+        Me.FieldDetails_PreScleLbl.Size = New System.Drawing.Size(91, 13)
+        Me.FieldDetails_PreScleLbl.TabIndex = 60
+        Me.FieldDetails_PreScleLbl.Text = "(Presision , Scale)"
+        '
+        'FieldDetails_SizeLbl
+        '
+        Me.FieldDetails_SizeLbl.AutoSize = True
+        Me.FieldDetails_SizeLbl.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FieldDetails_SizeLbl.Location = New System.Drawing.Point(189, 69)
+        Me.FieldDetails_SizeLbl.Name = "FieldDetails_SizeLbl"
+        Me.FieldDetails_SizeLbl.Size = New System.Drawing.Size(27, 13)
+        Me.FieldDetails_SizeLbl.TabIndex = 45
+        Me.FieldDetails_SizeLbl.Text = "Size"
+        '
+        'FieldDetails_TypeLbl
+        '
+        Me.FieldDetails_TypeLbl.AutoSize = True
+        Me.FieldDetails_TypeLbl.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FieldDetails_TypeLbl.Location = New System.Drawing.Point(9, 69)
+        Me.FieldDetails_TypeLbl.Name = "FieldDetails_TypeLbl"
+        Me.FieldDetails_TypeLbl.Size = New System.Drawing.Size(31, 13)
+        Me.FieldDetails_TypeLbl.TabIndex = 43
+        Me.FieldDetails_TypeLbl.Text = "Type"
+        '
+        'FieldDetails_Size
+        '
+        Me.FieldDetails_Size.Enabled = False
+        Me.FieldDetails_Size.Location = New System.Drawing.Point(187, 85)
+        Me.FieldDetails_Size.Maximum = New Decimal(New Integer() {9999, 0, 0, 0})
+        Me.FieldDetails_Size.Name = "FieldDetails_Size"
+        Me.FieldDetails_Size.Size = New System.Drawing.Size(85, 20)
+        Me.FieldDetails_Size.TabIndex = 46
+        '
+        'FieldDetails_Scale
+        '
+        Me.FieldDetails_Scale.Location = New System.Drawing.Point(387, 85)
+        Me.FieldDetails_Scale.Name = "FieldDetails_Scale"
+        Me.FieldDetails_Scale.Size = New System.Drawing.Size(41, 20)
+        Me.FieldDetails_Scale.TabIndex = 62
+        '
+        'FieldDetails_ForeignKeyGrp
+        '
+        Me.FieldDetails_ForeignKeyGrp.Controls.Add(Me.FieldDetails_ForeignKeyLbl)
+        Me.FieldDetails_ForeignKeyGrp.Controls.Add(Me.FieldDetails_ForeignKeyFld)
+        Me.FieldDetails_ForeignKeyGrp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FieldDetails_ForeignKeyGrp.Location = New System.Drawing.Point(0, 0)
+        Me.FieldDetails_ForeignKeyGrp.Name = "FieldDetails_ForeignKeyGrp"
+        Me.FieldDetails_ForeignKeyGrp.Size = New System.Drawing.Size(444, 160)
+        Me.FieldDetails_ForeignKeyGrp.TabIndex = 0
+        Me.FieldDetails_ForeignKeyGrp.Visible = False
+        '
+        'FieldDetails_ForeignKeyLbl
+        '
+        Me.FieldDetails_ForeignKeyLbl.AutoSize = True
+        Me.FieldDetails_ForeignKeyLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FieldDetails_ForeignKeyLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.FieldDetails_ForeignKeyLbl.Location = New System.Drawing.Point(7, 0)
+        Me.FieldDetails_ForeignKeyLbl.Name = "FieldDetails_ForeignKeyLbl"
+        Me.FieldDetails_ForeignKeyLbl.Size = New System.Drawing.Size(111, 15)
+        Me.FieldDetails_ForeignKeyLbl.TabIndex = 68
+        Me.FieldDetails_ForeignKeyLbl.Text = "Add Foreign Key"
+        '
+        'FieldDetails_ForeignKeyFld
+        '
+        Me.FieldDetails_ForeignKeyFld.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_ForeignKeyFld.Location = New System.Drawing.Point(4, 23)
+        Me.FieldDetails_ForeignKeyFld.Multiline = True
+        Me.FieldDetails_ForeignKeyFld.Name = "FieldDetails_ForeignKeyFld"
+        Me.FieldDetails_ForeignKeyFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.FieldDetails_ForeignKeyFld.Size = New System.Drawing.Size(434, 134)
+        Me.FieldDetails_ForeignKeyFld.TabIndex = 54
+        Me.FieldDetails_ForeignKeyFld.WordWrap = False
+        '
+        'FieldDetails_PrimyGrp
+        '
+        Me.FieldDetails_PrimyGrp.Controls.Add(Me.FieldDetails_PrimLbl)
+        Me.FieldDetails_PrimyGrp.Controls.Add(Me.FieldDetails_PrimFld)
+        Me.FieldDetails_PrimyGrp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FieldDetails_PrimyGrp.Location = New System.Drawing.Point(0, 0)
+        Me.FieldDetails_PrimyGrp.Name = "FieldDetails_PrimyGrp"
+        Me.FieldDetails_PrimyGrp.Size = New System.Drawing.Size(444, 160)
+        Me.FieldDetails_PrimyGrp.TabIndex = 0
+        Me.FieldDetails_PrimyGrp.Visible = False
+        '
+        'FieldDetails_PrimLbl
+        '
+        Me.FieldDetails_PrimLbl.AutoSize = True
+        Me.FieldDetails_PrimLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FieldDetails_PrimLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.FieldDetails_PrimLbl.Location = New System.Drawing.Point(7, 0)
+        Me.FieldDetails_PrimLbl.Name = "FieldDetails_PrimLbl"
+        Me.FieldDetails_PrimLbl.Size = New System.Drawing.Size(111, 15)
+        Me.FieldDetails_PrimLbl.TabIndex = 69
+        Me.FieldDetails_PrimLbl.Text = "Add Primary Key"
+        '
+        'FieldDetails_PrimFld
+        '
+        Me.FieldDetails_PrimFld.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_PrimFld.Location = New System.Drawing.Point(4, 23)
+        Me.FieldDetails_PrimFld.Multiline = True
+        Me.FieldDetails_PrimFld.Name = "FieldDetails_PrimFld"
+        Me.FieldDetails_PrimFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.FieldDetails_PrimFld.Size = New System.Drawing.Size(434, 134)
+        Me.FieldDetails_PrimFld.TabIndex = 54
+        Me.FieldDetails_PrimFld.WordWrap = False
+        '
         'CreateTable_ActionDetailContainerPnl2
         '
         Me.CreateTable_ActionDetailContainerPnl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -1193,6 +1430,64 @@ Partial Class Home
         Me.AlterTable_ActionContainerPnl.Size = New System.Drawing.Size(450, 61)
         Me.AlterTable_ActionContainerPnl.TabIndex = 40
         '
+        'AlterTable_DeleteColumnPnl
+        '
+        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DeleteColumnLbl)
+        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DeleteColumnFld)
+        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DeleteColumnConfirmBtn)
+        Me.AlterTable_DeleteColumnPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AlterTable_DeleteColumnPnl.Location = New System.Drawing.Point(0, 0)
+        Me.AlterTable_DeleteColumnPnl.Name = "AlterTable_DeleteColumnPnl"
+        Me.AlterTable_DeleteColumnPnl.Size = New System.Drawing.Size(450, 61)
+        Me.AlterTable_DeleteColumnPnl.TabIndex = 5
+        Me.AlterTable_DeleteColumnPnl.Visible = False
+        '
+        'AlterTable_DeleteColumnLbl
+        '
+        Me.AlterTable_DeleteColumnLbl.AutoSize = True
+        Me.AlterTable_DeleteColumnLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AlterTable_DeleteColumnLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AlterTable_DeleteColumnLbl.Location = New System.Drawing.Point(12, 8)
+        Me.AlterTable_DeleteColumnLbl.Name = "AlterTable_DeleteColumnLbl"
+        Me.AlterTable_DeleteColumnLbl.Size = New System.Drawing.Size(102, 15)
+        Me.AlterTable_DeleteColumnLbl.TabIndex = 57
+        Me.AlterTable_DeleteColumnLbl.Text = "Delete Column"
+        '
+        'AlterTable_DeleteColumnFld
+        '
+        Me.AlterTable_DeleteColumnFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AlterTable_DeleteColumnFld.Depth = 0
+        Me.AlterTable_DeleteColumnFld.Hint = ""
+        Me.AlterTable_DeleteColumnFld.Location = New System.Drawing.Point(15, 33)
+        Me.AlterTable_DeleteColumnFld.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AlterTable_DeleteColumnFld.Name = "AlterTable_DeleteColumnFld"
+        Me.AlterTable_DeleteColumnFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.AlterTable_DeleteColumnFld.SelectedText = ""
+        Me.AlterTable_DeleteColumnFld.SelectionLength = 0
+        Me.AlterTable_DeleteColumnFld.SelectionStart = 0
+        Me.AlterTable_DeleteColumnFld.Size = New System.Drawing.Size(364, 23)
+        Me.AlterTable_DeleteColumnFld.TabIndex = 38
+        Me.AlterTable_DeleteColumnFld.UseSystemPasswordChar = False
+        '
+        'AlterTable_DeleteColumnConfirmBtn
+        '
+        Me.AlterTable_DeleteColumnConfirmBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.AlterTable_DeleteColumnConfirmBtn.AutoSize = True
+        Me.AlterTable_DeleteColumnConfirmBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AlterTable_DeleteColumnConfirmBtn.BackColor = System.Drawing.Color.White
+        Me.AlterTable_DeleteColumnConfirmBtn.Depth = 0
+        Me.AlterTable_DeleteColumnConfirmBtn.Location = New System.Drawing.Point(395, 23)
+        Me.AlterTable_DeleteColumnConfirmBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.AlterTable_DeleteColumnConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AlterTable_DeleteColumnConfirmBtn.Name = "AlterTable_DeleteColumnConfirmBtn"
+        Me.AlterTable_DeleteColumnConfirmBtn.Primary = False
+        Me.AlterTable_DeleteColumnConfirmBtn.Size = New System.Drawing.Size(48, 36)
+        Me.AlterTable_DeleteColumnConfirmBtn.TabIndex = 39
+        Me.AlterTable_DeleteColumnConfirmBtn.Text = "Done"
+        Me.AlterTable_DeleteColumnConfirmBtn.UseVisualStyleBackColor = False
+        '
         'AlterTable_RenamePnl
         '
         Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameLbl)
@@ -1251,64 +1546,6 @@ Partial Class Home
         Me.AlterTable_RenameFld.Size = New System.Drawing.Size(364, 23)
         Me.AlterTable_RenameFld.TabIndex = 38
         Me.AlterTable_RenameFld.UseSystemPasswordChar = False
-        '
-        'AlterTable_DeleteColumnPnl
-        '
-        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DeleteColumnLbl)
-        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DropColumnFld)
-        Me.AlterTable_DeleteColumnPnl.Controls.Add(Me.AlterTable_DeleteColumnConfirmBtn)
-        Me.AlterTable_DeleteColumnPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AlterTable_DeleteColumnPnl.Location = New System.Drawing.Point(0, 0)
-        Me.AlterTable_DeleteColumnPnl.Name = "AlterTable_DeleteColumnPnl"
-        Me.AlterTable_DeleteColumnPnl.Size = New System.Drawing.Size(450, 61)
-        Me.AlterTable_DeleteColumnPnl.TabIndex = 5
-        Me.AlterTable_DeleteColumnPnl.Visible = False
-        '
-        'AlterTable_DeleteColumnLbl
-        '
-        Me.AlterTable_DeleteColumnLbl.AutoSize = True
-        Me.AlterTable_DeleteColumnLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AlterTable_DeleteColumnLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AlterTable_DeleteColumnLbl.Location = New System.Drawing.Point(12, 8)
-        Me.AlterTable_DeleteColumnLbl.Name = "AlterTable_DeleteColumnLbl"
-        Me.AlterTable_DeleteColumnLbl.Size = New System.Drawing.Size(102, 15)
-        Me.AlterTable_DeleteColumnLbl.TabIndex = 57
-        Me.AlterTable_DeleteColumnLbl.Text = "Delete Column"
-        '
-        'AlterTable_DropColumnFld
-        '
-        Me.AlterTable_DropColumnFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AlterTable_DropColumnFld.Depth = 0
-        Me.AlterTable_DropColumnFld.Hint = ""
-        Me.AlterTable_DropColumnFld.Location = New System.Drawing.Point(15, 33)
-        Me.AlterTable_DropColumnFld.MouseState = MaterialSkin.MouseState.HOVER
-        Me.AlterTable_DropColumnFld.Name = "AlterTable_DropColumnFld"
-        Me.AlterTable_DropColumnFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.AlterTable_DropColumnFld.SelectedText = ""
-        Me.AlterTable_DropColumnFld.SelectionLength = 0
-        Me.AlterTable_DropColumnFld.SelectionStart = 0
-        Me.AlterTable_DropColumnFld.Size = New System.Drawing.Size(364, 23)
-        Me.AlterTable_DropColumnFld.TabIndex = 38
-        Me.AlterTable_DropColumnFld.UseSystemPasswordChar = False
-        '
-        'AlterTable_DeleteColumnConfirmBtn
-        '
-        Me.AlterTable_DeleteColumnConfirmBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.AlterTable_DeleteColumnConfirmBtn.AutoSize = True
-        Me.AlterTable_DeleteColumnConfirmBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.AlterTable_DeleteColumnConfirmBtn.BackColor = System.Drawing.Color.White
-        Me.AlterTable_DeleteColumnConfirmBtn.Depth = 0
-        Me.AlterTable_DeleteColumnConfirmBtn.Location = New System.Drawing.Point(395, 23)
-        Me.AlterTable_DeleteColumnConfirmBtn.Margin = New System.Windows.Forms.Padding(0)
-        Me.AlterTable_DeleteColumnConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER
-        Me.AlterTable_DeleteColumnConfirmBtn.Name = "AlterTable_DeleteColumnConfirmBtn"
-        Me.AlterTable_DeleteColumnConfirmBtn.Primary = False
-        Me.AlterTable_DeleteColumnConfirmBtn.Size = New System.Drawing.Size(48, 36)
-        Me.AlterTable_DeleteColumnConfirmBtn.TabIndex = 39
-        Me.AlterTable_DeleteColumnConfirmBtn.Text = "Done"
-        Me.AlterTable_DeleteColumnConfirmBtn.UseVisualStyleBackColor = False
         '
         'AlterTable_BtnTableLayout
         '
@@ -1774,243 +2011,6 @@ Partial Class Home
         Me.MaterialTabSelector.TabIndex = 2
         Me.MaterialTabSelector.Text = "MaterialTabSelector1"
         '
-        'FieldDetails_PrimyGrp
-        '
-        Me.FieldDetails_PrimyGrp.Controls.Add(Me.FieldDetails_PrimLbl)
-        Me.FieldDetails_PrimyGrp.Controls.Add(Me.FieldDetails_PrimFld)
-        Me.FieldDetails_PrimyGrp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FieldDetails_PrimyGrp.Location = New System.Drawing.Point(0, 0)
-        Me.FieldDetails_PrimyGrp.Name = "FieldDetails_PrimyGrp"
-        Me.FieldDetails_PrimyGrp.Size = New System.Drawing.Size(444, 160)
-        Me.FieldDetails_PrimyGrp.TabIndex = 0
-        Me.FieldDetails_PrimyGrp.Visible = False
-        '
-        'FieldDetails_PrimFld
-        '
-        Me.FieldDetails_PrimFld.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FieldDetails_PrimFld.Location = New System.Drawing.Point(4, 23)
-        Me.FieldDetails_PrimFld.Multiline = True
-        Me.FieldDetails_PrimFld.Name = "FieldDetails_PrimFld"
-        Me.FieldDetails_PrimFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FieldDetails_PrimFld.Size = New System.Drawing.Size(434, 134)
-        Me.FieldDetails_PrimFld.TabIndex = 54
-        Me.FieldDetails_PrimFld.WordWrap = False
-        '
-        'FieldDetails_PrimLbl
-        '
-        Me.FieldDetails_PrimLbl.AutoSize = True
-        Me.FieldDetails_PrimLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FieldDetails_PrimLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.FieldDetails_PrimLbl.Location = New System.Drawing.Point(7, 0)
-        Me.FieldDetails_PrimLbl.Name = "FieldDetails_PrimLbl"
-        Me.FieldDetails_PrimLbl.Size = New System.Drawing.Size(111, 15)
-        Me.FieldDetails_PrimLbl.TabIndex = 69
-        Me.FieldDetails_PrimLbl.Text = "Add Primary Key"
-        '
-        'FieldDetails_ForeignKeyGrp
-        '
-        Me.FieldDetails_ForeignKeyGrp.Controls.Add(Me.FieldDetails_ForeignKeyLbl)
-        Me.FieldDetails_ForeignKeyGrp.Controls.Add(Me.FieldDetails_ForeignKeyFld)
-        Me.FieldDetails_ForeignKeyGrp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FieldDetails_ForeignKeyGrp.Location = New System.Drawing.Point(0, 0)
-        Me.FieldDetails_ForeignKeyGrp.Name = "FieldDetails_ForeignKeyGrp"
-        Me.FieldDetails_ForeignKeyGrp.Size = New System.Drawing.Size(444, 160)
-        Me.FieldDetails_ForeignKeyGrp.TabIndex = 0
-        Me.FieldDetails_ForeignKeyGrp.Visible = False
-        '
-        'FieldDetails_ForeignKeyFld
-        '
-        Me.FieldDetails_ForeignKeyFld.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FieldDetails_ForeignKeyFld.Location = New System.Drawing.Point(4, 23)
-        Me.FieldDetails_ForeignKeyFld.Multiline = True
-        Me.FieldDetails_ForeignKeyFld.Name = "FieldDetails_ForeignKeyFld"
-        Me.FieldDetails_ForeignKeyFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.FieldDetails_ForeignKeyFld.Size = New System.Drawing.Size(434, 134)
-        Me.FieldDetails_ForeignKeyFld.TabIndex = 54
-        Me.FieldDetails_ForeignKeyFld.WordWrap = False
-        '
-        'FieldDetails_ForeignKeyLbl
-        '
-        Me.FieldDetails_ForeignKeyLbl.AutoSize = True
-        Me.FieldDetails_ForeignKeyLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FieldDetails_ForeignKeyLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.FieldDetails_ForeignKeyLbl.Location = New System.Drawing.Point(7, 0)
-        Me.FieldDetails_ForeignKeyLbl.Name = "FieldDetails_ForeignKeyLbl"
-        Me.FieldDetails_ForeignKeyLbl.Size = New System.Drawing.Size(111, 15)
-        Me.FieldDetails_ForeignKeyLbl.TabIndex = 68
-        Me.FieldDetails_ForeignKeyLbl.Text = "Add Foreign Key"
-        '
-        'FieldGroup
-        '
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnLbl)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_FormulaChkbx)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnTYpeCmbo)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_DefFld)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnNameLbl)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_DefValChkbx)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_ColumnNameFld)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_Precision)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_PreScleLbl)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_SizeLbl)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_TypeLbl)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_Size)
-        Me.FieldGroup.Controls.Add(Me.FieldDetails_Scale)
-        Me.FieldGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FieldGroup.Enabled = False
-        Me.FieldGroup.Location = New System.Drawing.Point(0, 0)
-        Me.FieldGroup.Margin = New System.Windows.Forms.Padding(0)
-        Me.FieldGroup.Name = "FieldGroup"
-        Me.FieldGroup.Size = New System.Drawing.Size(444, 160)
-        Me.FieldGroup.TabIndex = 8
-        '
-        'FieldDetails_Scale
-        '
-        Me.FieldDetails_Scale.Location = New System.Drawing.Point(387, 85)
-        Me.FieldDetails_Scale.Name = "FieldDetails_Scale"
-        Me.FieldDetails_Scale.Size = New System.Drawing.Size(41, 20)
-        Me.FieldDetails_Scale.TabIndex = 62
-        '
-        'FieldDetails_Size
-        '
-        Me.FieldDetails_Size.Enabled = False
-        Me.FieldDetails_Size.Location = New System.Drawing.Point(187, 85)
-        Me.FieldDetails_Size.Maximum = New Decimal(New Integer() {9999, 0, 0, 0})
-        Me.FieldDetails_Size.Name = "FieldDetails_Size"
-        Me.FieldDetails_Size.Size = New System.Drawing.Size(85, 20)
-        Me.FieldDetails_Size.TabIndex = 46
-        '
-        'FieldDetails_TypeLbl
-        '
-        Me.FieldDetails_TypeLbl.AutoSize = True
-        Me.FieldDetails_TypeLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_TypeLbl.Location = New System.Drawing.Point(9, 69)
-        Me.FieldDetails_TypeLbl.Name = "FieldDetails_TypeLbl"
-        Me.FieldDetails_TypeLbl.Size = New System.Drawing.Size(31, 13)
-        Me.FieldDetails_TypeLbl.TabIndex = 43
-        Me.FieldDetails_TypeLbl.Text = "Type"
-        '
-        'FieldDetails_SizeLbl
-        '
-        Me.FieldDetails_SizeLbl.AutoSize = True
-        Me.FieldDetails_SizeLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_SizeLbl.Location = New System.Drawing.Point(189, 69)
-        Me.FieldDetails_SizeLbl.Name = "FieldDetails_SizeLbl"
-        Me.FieldDetails_SizeLbl.Size = New System.Drawing.Size(27, 13)
-        Me.FieldDetails_SizeLbl.TabIndex = 45
-        Me.FieldDetails_SizeLbl.Text = "Size"
-        '
-        'FieldDetails_PreScleLbl
-        '
-        Me.FieldDetails_PreScleLbl.AutoSize = True
-        Me.FieldDetails_PreScleLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_PreScleLbl.Location = New System.Drawing.Point(337, 66)
-        Me.FieldDetails_PreScleLbl.Name = "FieldDetails_PreScleLbl"
-        Me.FieldDetails_PreScleLbl.Size = New System.Drawing.Size(91, 13)
-        Me.FieldDetails_PreScleLbl.TabIndex = 60
-        Me.FieldDetails_PreScleLbl.Text = "(Presision , Scale)"
-        '
-        'FieldDetails_Precision
-        '
-        Me.FieldDetails_Precision.Location = New System.Drawing.Point(340, 85)
-        Me.FieldDetails_Precision.Name = "FieldDetails_Precision"
-        Me.FieldDetails_Precision.Size = New System.Drawing.Size(41, 20)
-        Me.FieldDetails_Precision.TabIndex = 63
-        '
-        'FieldDetails_ColumnNameFld
-        '
-        Me.FieldDetails_ColumnNameFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FieldDetails_ColumnNameFld.Depth = 0
-        Me.FieldDetails_ColumnNameFld.Hint = ""
-        Me.FieldDetails_ColumnNameFld.Location = New System.Drawing.Point(11, 34)
-        Me.FieldDetails_ColumnNameFld.MouseState = MaterialSkin.MouseState.HOVER
-        Me.FieldDetails_ColumnNameFld.Name = "FieldDetails_ColumnNameFld"
-        Me.FieldDetails_ColumnNameFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.FieldDetails_ColumnNameFld.SelectedText = ""
-        Me.FieldDetails_ColumnNameFld.SelectionLength = 0
-        Me.FieldDetails_ColumnNameFld.SelectionStart = 0
-        Me.FieldDetails_ColumnNameFld.Size = New System.Drawing.Size(424, 23)
-        Me.FieldDetails_ColumnNameFld.TabIndex = 41
-        Me.FieldDetails_ColumnNameFld.UseSystemPasswordChar = False
-        '
-        'FieldDetails_DefValChkbx
-        '
-        Me.FieldDetails_DefValChkbx.AutoSize = True
-        Me.FieldDetails_DefValChkbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.FieldDetails_DefValChkbx.Location = New System.Drawing.Point(15, 127)
-        Me.FieldDetails_DefValChkbx.Name = "FieldDetails_DefValChkbx"
-        Me.FieldDetails_DefValChkbx.Size = New System.Drawing.Size(90, 17)
-        Me.FieldDetails_DefValChkbx.TabIndex = 64
-        Me.FieldDetails_DefValChkbx.Text = "Default Value"
-        Me.FieldDetails_DefValChkbx.UseVisualStyleBackColor = True
-        '
-        'FieldDetails_ColumnNameLbl
-        '
-        Me.FieldDetails_ColumnNameLbl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FieldDetails_ColumnNameLbl.AutoSize = True
-        Me.FieldDetails_ColumnNameLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_ColumnNameLbl.Location = New System.Drawing.Point(161, 18)
-        Me.FieldDetails_ColumnNameLbl.Name = "FieldDetails_ColumnNameLbl"
-        Me.FieldDetails_ColumnNameLbl.Size = New System.Drawing.Size(101, 13)
-        Me.FieldDetails_ColumnNameLbl.TabIndex = 40
-        Me.FieldDetails_ColumnNameLbl.Text = "Enter Column Name"
-        '
-        'FieldDetails_DefFld
-        '
-        Me.FieldDetails_DefFld.Enabled = False
-        Me.FieldDetails_DefFld.Location = New System.Drawing.Point(187, 125)
-        Me.FieldDetails_DefFld.Name = "FieldDetails_DefFld"
-        Me.FieldDetails_DefFld.Size = New System.Drawing.Size(241, 20)
-        Me.FieldDetails_DefFld.TabIndex = 65
-        '
-        'FieldDetails_ColumnTYpeCmbo
-        '
-        Me.FieldDetails_ColumnTYpeCmbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FieldDetails_ColumnTYpeCmbo.FormattingEnabled = True
-        Me.FieldDetails_ColumnTYpeCmbo.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.FieldDetails_ColumnTYpeCmbo.Items.AddRange(New Object() {"CHAR", "VARCHAR", "BIT", "INTEGER", "SMALLINT", "DECIMAL", "NUMERIC", "REAL", "FLOAT", "DATE", "TIME"})
-        Me.FieldDetails_ColumnTYpeCmbo.Location = New System.Drawing.Point(11, 85)
-        Me.FieldDetails_ColumnTYpeCmbo.Name = "FieldDetails_ColumnTYpeCmbo"
-        Me.FieldDetails_ColumnTYpeCmbo.Size = New System.Drawing.Size(127, 21)
-        Me.FieldDetails_ColumnTYpeCmbo.TabIndex = 42
-        '
-        'FieldDetails_FormulaChkbx
-        '
-        Me.FieldDetails_FormulaChkbx.AccessibleDescription = "Formula"
-        Me.FieldDetails_FormulaChkbx.AutoSize = True
-        Me.FieldDetails_FormulaChkbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.FieldDetails_FormulaChkbx.Location = New System.Drawing.Point(111, 128)
-        Me.FieldDetails_FormulaChkbx.Name = "FieldDetails_FormulaChkbx"
-        Me.FieldDetails_FormulaChkbx.Size = New System.Drawing.Size(63, 17)
-        Me.FieldDetails_FormulaChkbx.TabIndex = 66
-        Me.FieldDetails_FormulaChkbx.Text = "Formula"
-        Me.FieldDetails_FormulaChkbx.UseVisualStyleBackColor = True
-        '
-        'FieldDetails_ColumnLbl
-        '
-        Me.FieldDetails_ColumnLbl.AutoSize = True
-        Me.FieldDetails_ColumnLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FieldDetails_ColumnLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.FieldDetails_ColumnLbl.Location = New System.Drawing.Point(6, 5)
-        Me.FieldDetails_ColumnLbl.Name = "FieldDetails_ColumnLbl"
-        Me.FieldDetails_ColumnLbl.Size = New System.Drawing.Size(84, 15)
-        Me.FieldDetails_ColumnLbl.TabIndex = 67
-        Me.FieldDetails_ColumnLbl.Text = "Add Column"
-        '
-        'CreateTable_ActionDetailContainerPnl
-        '
-        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldGroup)
-        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldDetails_ForeignKeyGrp)
-        Me.CreateTable_ActionDetailContainerPnl.Controls.Add(Me.FieldDetails_PrimyGrp)
-        Me.CreateTable_ActionDetailContainerPnl.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CreateTable_ActionDetailContainerPnl.Location = New System.Drawing.Point(0, 0)
-        Me.CreateTable_ActionDetailContainerPnl.Name = "CreateTable_ActionDetailContainerPnl"
-        Me.CreateTable_ActionDetailContainerPnl.Size = New System.Drawing.Size(444, 160)
-        Me.CreateTable_ActionDetailContainerPnl.TabIndex = 13
-        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2050,6 +2050,16 @@ Partial Class Home
         Me.CreateTable_NameGrp.ResumeLayout(False)
         Me.CreateTable_NameGrp.PerformLayout()
         Me.FieldDetails.ResumeLayout(False)
+        Me.CreateTable_ActionDetailContainerPnl.ResumeLayout(False)
+        Me.FieldGroup.ResumeLayout(False)
+        Me.FieldGroup.PerformLayout()
+        CType(Me.FieldDetails_Precision, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FieldDetails_Size, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FieldDetails_Scale, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FieldDetails_ForeignKeyGrp.ResumeLayout(False)
+        Me.FieldDetails_ForeignKeyGrp.PerformLayout()
+        Me.FieldDetails_PrimyGrp.ResumeLayout(False)
+        Me.FieldDetails_PrimyGrp.PerformLayout()
         Me.CreateTable_ActionDetailContainerPnl2.ResumeLayout(False)
         Me.CreateTable_ActionDetailContainerPnl2.PerformLayout()
         Me.FieldDetails_CheckGrp.ResumeLayout(False)
@@ -2066,10 +2076,10 @@ Partial Class Home
         Me.AlterTable_TableNamePnl.ResumeLayout(False)
         Me.AlterTable_TableNamePnl.PerformLayout()
         Me.AlterTable_ActionContainerPnl.ResumeLayout(False)
-        Me.AlterTable_RenamePnl.ResumeLayout(False)
-        Me.AlterTable_RenamePnl.PerformLayout()
         Me.AlterTable_DeleteColumnPnl.ResumeLayout(False)
         Me.AlterTable_DeleteColumnPnl.PerformLayout()
+        Me.AlterTable_RenamePnl.ResumeLayout(False)
+        Me.AlterTable_RenamePnl.PerformLayout()
         Me.AlterTable_BtnTableLayout.ResumeLayout(False)
         Me.AlterTable_BtnTableLayout.PerformLayout()
         Me.InsertPage.ResumeLayout(False)
@@ -2093,16 +2103,6 @@ Partial Class Home
         Me.ScriptGrp.ResumeLayout(False)
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
-        Me.FieldDetails_PrimyGrp.ResumeLayout(False)
-        Me.FieldDetails_PrimyGrp.PerformLayout()
-        Me.FieldDetails_ForeignKeyGrp.ResumeLayout(False)
-        Me.FieldDetails_ForeignKeyGrp.PerformLayout()
-        Me.FieldGroup.ResumeLayout(False)
-        Me.FieldGroup.PerformLayout()
-        CType(Me.FieldDetails_Scale, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FieldDetails_Size, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FieldDetails_Precision, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CreateTable_ActionDetailContainerPnl.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2150,7 +2150,7 @@ Partial Class Home
     Friend WithEvents AlterTable_TableNamaLbl As Label
     Friend WithEvents AlterTable_TableNameFld As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents AlterTable_DeleteColumnPnl As Panel
-    Friend WithEvents AlterTable_DropColumnFld As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents AlterTable_DeleteColumnFld As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents AlterTable_DeleteColumnConfirmBtn As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents AlterTable_RenameConfirmBtn As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents AlterTable_RenameFld As MaterialSkin.Controls.MaterialSingleLineTextField
