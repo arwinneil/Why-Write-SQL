@@ -1921,9 +1921,9 @@ Partial Class Home
         Me.Delete_ConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER
         Me.Delete_ConfirmBtn.Name = "Delete_ConfirmBtn"
         Me.Delete_ConfirmBtn.Primary = False
-        Me.Delete_ConfirmBtn.Size = New System.Drawing.Size(48, 36)
+        Me.Delete_ConfirmBtn.Size = New System.Drawing.Size(105, 36)
         Me.Delete_ConfirmBtn.TabIndex = 2
-        Me.Delete_ConfirmBtn.Text = "Done"
+        Me.Delete_ConfirmBtn.Text = "Delete Table"
         Me.Delete_ConfirmBtn.UseVisualStyleBackColor = False
         '
         'MainTableLayoutPanel

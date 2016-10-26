@@ -13,7 +13,19 @@ Public Class Home
 #Region "New Table Sub-Operation" 'Handles For the 'New Table" Operation
 
 #Region "New Table Operation Handles"
-    Private Sub CreateTable(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
+
+    Private Sub CreateTable_CreateBtn_Click(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
+        CreateTable()
+    End Sub
+
+    Private Sub CreateTable_NameFld_KeyDown(sender As Object, e As KeyEventArgs) Handles CreateTable_NameFld.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            CreateTable()
+        End If
+    End Sub
+
+    Private Sub CreateTable()
 
         If Approve.Table = True Then
             CreateTable_CreateBtn.Enabled = False
@@ -265,8 +277,20 @@ Public Class Home
 
 #End Region
 
-#Region "Drop Table Sub-Operation"
-    Private Sub DeleteTable(sender As Object, e As EventArgs) Handles Delete_ConfirmBtn.Click
+#Region "Delete Table Sub-Operation"
+
+    Private Sub Delete_ConfirmBtn_Click(sender As Object, e As EventArgs) Handles Delete_ConfirmBtn.Click
+        DeleteTable()
+    End Sub
+
+    Private Sub Delete_TableNameFld_KeyDown(sender As Object, e As KeyEventArgs) Handles Delete_TableNameFld.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            DeleteTable()
+        End If
+    End Sub
+
+    Private Sub DeleteTable()
 
         If Approve.DropTable = True Then
             Generate.DropTable()
@@ -311,8 +335,16 @@ Public Class Home
 #End Region
 
 #Region "Alter Table Sub Operation"
-
-    Private Sub DropColumn_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnConfirmBtn.Click
+    Private Sub AlterTable_DeleteColumnConfirmBtn_Click(sender As Object, e As EventArgs) Handles AlterTable_DeleteColumnConfirmBtn.Click
+        DeleteColumn()
+    End Sub
+    Private Sub AlterTable_DeleteColumnFld_KeyDown(sender As Object, e As KeyEventArgs) Handles AlterTable_DeleteColumnFld.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            DeleteColumn()
+        End If
+    End Sub
+    Private Sub DeleteColumn()
 
         If Approve.Alter_Table() = True And Approve.DropColumn() = True Then
             Generate.AlterTable()
