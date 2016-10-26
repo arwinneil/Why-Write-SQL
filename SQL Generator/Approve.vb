@@ -108,7 +108,7 @@
         Dim Approved As Boolean
         Approved = True
 
-        If Home.AlterTable_DropColumnFld.Text = "" Then
+        If Home.AlterTable_DeleteColumnFld.Text = "" Then
             MsgBox("Please enter name of column to be deleted.")
             Approved = False
 

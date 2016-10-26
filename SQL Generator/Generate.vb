@@ -235,7 +235,7 @@
     Shared Sub DropField()
         Dim NewLine As String
 
-        NewLine = "DROP COLUMN " & Home.AlterTable_DropColumnFld.Text & ";"
+        NewLine = "DROP COLUMN " & Home.AlterTable_DeleteColumnFld.Text & ";"
         Home.Sequence.Items.Add(NewLine)
         Home.Sequence.Items.Add("")
     End Sub

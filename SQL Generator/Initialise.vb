@@ -102,7 +102,7 @@
         Home.AlterTable_RenameFld.Text = ""
     End Sub
     Shared Sub DeleteColumn()
-        Home.AlterTable_DropColumnFld.Text = ""
+        Home.AlterTable_DeleteColumnFld.Text = ""
     End Sub
     Shared Sub Alter_table()
         Home.AlterTable_TableNameFld.Text = ""

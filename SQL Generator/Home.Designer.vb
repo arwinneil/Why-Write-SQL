@@ -922,6 +922,7 @@ Partial Class Home
         Me.FieldDetails_ForeignKeyFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.FieldDetails_ForeignKeyFld.Size = New System.Drawing.Size(434, 134)
         Me.FieldDetails_ForeignKeyFld.TabIndex = 54
+        Me.Tip.SetToolTip(Me.FieldDetails_ForeignKeyFld, "Enter 1 Item Per Line")
         Me.FieldDetails_ForeignKeyFld.WordWrap = False
         '
         'FieldDetails_PrimyGrp
@@ -933,6 +934,7 @@ Partial Class Home
         Me.FieldDetails_PrimyGrp.Name = "FieldDetails_PrimyGrp"
         Me.FieldDetails_PrimyGrp.Size = New System.Drawing.Size(444, 160)
         Me.FieldDetails_PrimyGrp.TabIndex = 0
+        Me.Tip.SetToolTip(Me.FieldDetails_PrimyGrp, "Enter 1 Item Per Line")
         Me.FieldDetails_PrimyGrp.Visible = False
         '
         'FieldDetails_PrimLbl
@@ -1062,6 +1064,7 @@ Partial Class Home
         Me.FieldDetails_CheckFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.FieldDetails_CheckFld.Size = New System.Drawing.Size(435, 104)
         Me.FieldDetails_CheckFld.TabIndex = 53
+        Me.Tip.SetToolTip(Me.FieldDetails_CheckFld, "Enter 1 Item Per Line")
         Me.FieldDetails_CheckFld.WordWrap = False
         '
         'FieldDetails_RefConsTableLayout
@@ -1782,6 +1785,7 @@ Partial Class Home
         Me.Insert_SpecifyColumnFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.Insert_SpecifyColumnFld.Size = New System.Drawing.Size(425, 188)
         Me.Insert_SpecifyColumnFld.TabIndex = 54
+        Me.Tip.SetToolTip(Me.Insert_SpecifyColumnFld, "Enter 1 Item Per Line")
         Me.Insert_SpecifyColumnFld.WordWrap = False
         '
         'Insert_DataItemsPnl
@@ -1817,6 +1821,7 @@ Partial Class Home
         Me.Insert_DataItemsFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.Insert_DataItemsFld.Size = New System.Drawing.Size(425, 197)
         Me.Insert_DataItemsFld.TabIndex = 54
+        Me.Tip.SetToolTip(Me.Insert_DataItemsFld, "Enter 1 Item Per Line")
         Me.Insert_DataItemsFld.WordWrap = False
         '
         'DeleteTablePage
@@ -2217,7 +2222,6 @@ Partial Class Home
     Friend WithEvents FieldDetails_ConstraintsLbl As Label
     Friend WithEvents FieldDetails_CheckGrp As Panel
     Friend WithEvents FieldDetails_CheckLbl As Label
-    Friend WithEvents Sequence As ListBox
     Friend WithEvents CreateTable_ActionDetailContainerPnl As Panel
     Friend WithEvents FieldGroup As Panel
     Friend WithEvents FieldDetails_ColumnLbl As Label
@@ -2239,4 +2243,5 @@ Partial Class Home
     Friend WithEvents FieldDetails_PrimyGrp As Panel
     Friend WithEvents FieldDetails_PrimLbl As Label
     Friend WithEvents FieldDetails_PrimFld As TextBox
+    Friend WithEvents Sequence As ListBox
 End Class
