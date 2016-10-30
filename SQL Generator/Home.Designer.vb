@@ -39,6 +39,7 @@ Partial Class Home
         Me.Home_ScriptDecTxtBtn = New System.Windows.Forms.PictureBox()
         Me.Home_ScriptExprtBtn = New System.Windows.Forms.PictureBox()
         Me.Home_InfoTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.Home_FeedbackBtn = New System.Windows.Forms.PictureBox()
         Me.Home_InfoBtn = New System.Windows.Forms.PictureBox()
         Me.DatabasePage = New System.Windows.Forms.TabPage()
         Me.DatabaseTableLayout = New System.Windows.Forms.TableLayoutPanel()
@@ -170,6 +171,7 @@ Partial Class Home
         CType(Me.Home_ScriptDecTxtBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Home_ScriptExprtBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Home_InfoTableLayout.SuspendLayout()
+        CType(Me.Home_FeedbackBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Home_InfoBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DatabasePage.SuspendLayout()
         Me.DatabaseTableLayout.SuspendLayout()
@@ -447,6 +449,7 @@ Partial Class Home
         Me.Home_InfoTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.Home_InfoTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.Home_InfoTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.Home_InfoTableLayout.Controls.Add(Me.Home_FeedbackBtn, 3, 0)
         Me.Home_InfoTableLayout.Controls.Add(Me.Home_InfoBtn, 4, 0)
         Me.Home_InfoTableLayout.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Home_InfoTableLayout.Location = New System.Drawing.Point(3, 609)
@@ -457,6 +460,21 @@ Partial Class Home
         Me.Home_InfoTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
         Me.Home_InfoTableLayout.Size = New System.Drawing.Size(450, 74)
         Me.Home_InfoTableLayout.TabIndex = 2
+        '
+        'Home_FeedbackBtn
+        '
+        Me.Home_FeedbackBtn.BackColor = System.Drawing.Color.Transparent
+        Me.Home_FeedbackBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Home_FeedbackBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Home_FeedbackBtn.Image = CType(resources.GetObject("Home_FeedbackBtn.Image"), System.Drawing.Image)
+        Me.Home_FeedbackBtn.Location = New System.Drawing.Point(273, 3)
+        Me.Home_FeedbackBtn.Name = "Home_FeedbackBtn"
+        Me.Home_FeedbackBtn.Padding = New System.Windows.Forms.Padding(10)
+        Me.Home_FeedbackBtn.Size = New System.Drawing.Size(84, 58)
+        Me.Home_FeedbackBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Home_FeedbackBtn.TabIndex = 12
+        Me.Home_FeedbackBtn.TabStop = False
+        Me.Tip.SetToolTip(Me.Home_FeedbackBtn, "Leave Feedback")
         '
         'Home_InfoBtn
         '
@@ -2043,6 +2061,7 @@ Partial Class Home
         CType(Me.Home_ScriptDecTxtBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Home_ScriptExprtBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Home_InfoTableLayout.ResumeLayout(False)
+        CType(Me.Home_FeedbackBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Home_InfoBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DatabasePage.ResumeLayout(False)
         Me.DatabaseTableLayout.ResumeLayout(False)
@@ -2244,4 +2263,5 @@ Partial Class Home
     Friend WithEvents FieldDetails_PrimLbl As Label
     Friend WithEvents FieldDetails_PrimFld As TextBox
     Friend WithEvents Sequence As ListBox
+    Friend WithEvents Home_FeedbackBtn As PictureBox
 End Class

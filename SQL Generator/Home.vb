@@ -588,6 +588,10 @@ Public Class Home
 
     End Sub
 
+    Private Sub Home_FeedbackBtn_Click(sender As Object, e As EventArgs) Handles Home_FeedbackBtn.Click
+        Process.Start("https://goo.gl/forms/rldiWUoFZx4LjSeq2")
+    End Sub
+
 #End Region
 
 End Class
