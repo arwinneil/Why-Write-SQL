@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SQL Generator")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("SQL Script Generator")>
+<Assembly: AssemblyDescription("SQL Script Generator is a SQL code generator database building tool, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("SQL Generator")>
-<Assembly: AssemblyCopyright("Copyright ©  2016")>
+<Assembly: AssemblyProduct("SQL Script Generator")>
+<Assembly: AssemblyCopyright("Copyright ©  2016 Arwin Neil Baichoo")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
