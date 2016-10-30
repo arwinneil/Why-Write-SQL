@@ -38,14 +38,14 @@
 
                 Dim Str As String() = Home.FieldDetails_CheckFld.Lines 'Multiline list converted to array
 
-                LineConstraint = "IN('"
+                LineConstraint = "(" & ColumnName & " IN('"
 
                 For i As Integer = 0 To Home.FieldDetails_CheckFld.Lines.Count - 1  'Loop creat string from array
                     LineConstraint = LineConstraint + Str(i)
                     If i < Home.FieldDetails_CheckFld.Lines.Count - 1 Then
                         LineConstraint = LineConstraint + "','"
                     Else
-                        LineConstraint = LineConstraint + "')"
+                        LineConstraint = LineConstraint + "'))"
                     End If
                 Next
 
