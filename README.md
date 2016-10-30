@@ -28,10 +28,9 @@ Current Task:
 ## Release
 -  [0.9_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.9_Alpha)
 
-##Resources
-
-Icons from [Material Icons](https://design.google.com/icons/) 
-Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin) 
+## Resources
+- Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin)
+- Icons from [Material Icons](https://design.google.com/icons/)
 
 ##Tools & Utilities
 - [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/)- A web-based set of tools for generating graphics and other assets 
