@@ -32,7 +32,9 @@
         Home.FieldDetails_DefValChkbx.Checked = False
         Home.FieldDetails_FormulaChkbx.Checked = False
         Home.FieldDetails_FormulaChkbx.Enabled = False
-
+        Home.FieldDetails_ForeignKeyGrp.Visible = False
+        Home.FieldDetails_PrimyGrp.Visible = False
+        Home.FieldGroup.Visible = True
         Keys()
 
         Check()
@@ -71,6 +73,7 @@
     Shared Sub Constraints()
         Home.FieldDetails_ConstraintGrp.Enabled = True
         Home.FieldDetails_PrimChkbx.Checked = False
+        Home.FieldDetails_PrimChkbx.Enabled = True
         Home.FieldDetails_NotNullChkbx.Checked = False
         Home.FieldDetails_UniqueChkbx.Checked = False
     End Sub

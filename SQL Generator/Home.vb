@@ -50,12 +50,15 @@ Public Class Home
     End Sub
     Private Sub CompleteTableStatement(sender As Object, e As EventArgs) Handles CreateTable_CompleteTableBtn.Click
 
+        FieldDetails_CreateFieldBtn.Enabled = True
+
         Dim i As Integer = Sequence.Items.Count - 1
         Dim str As String = Sequence.Items(i)
         Sequence.Items.Item(i) = str.Trim(",")
 
         Sequence.Items.Add(");")
         Sequence.Items.Add("")
+
         Initialise.NewTable()
 
         CreateTable_AddColumnBtn.Enabled = False
@@ -529,6 +532,8 @@ Public Class Home
 
             Case 2
                 Initialise.NewTable()
+
+                FieldDetails_CreateFieldBtn.Enabled = False
 
                 FieldDetails_ColumnLbl.Text = "Add Column"
 
