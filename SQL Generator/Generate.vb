@@ -15,24 +15,23 @@
         Home.Sequence.Items.Add(NewLine)
 
     End Sub
-    Shared Function Constraints()
-        Dim LineConstraint As String
-        Dim Constraint As String
+    Shared Function Constraints(ColumnName As String)
 
-        Constraint = Home.FieldDetails_CheckFld.Text
+        Dim LineConstraint As String
+        Dim Constraint As String = Home.FieldDetails_CheckFld.Text
 
         Select Case Home.FieldDetails_CheckTypeCmbo.Text
             Case "LIKE"
 
                 Select Case Home.FieldDetails_CheckPstnCmbo.Text 'Case of Position of LIKE String
                     Case "Before any string"
-                        LineConstraint = "LIKE '" & Constraint & "%" & "'"
+                        LineConstraint = "(" & ColumnName & " LIKE '" & Constraint & "%" & "')"
                     Case "After any string"
-                        LineConstraint = "LIKE '" & "%" & Constraint & "'"
+                        LineConstraint = "(" & ColumnName & " LIKE '" & "%" & Constraint & "')"
                     Case "Between any string"
-                        LineConstraint = "LIKE '" & "%" & Constraint & "%'"
+                        LineConstraint = "(" & ColumnName & " LIKE '" & "%" & Constraint & "%')"
                     Case "Other/Specific"
-                        LineConstraint = "LIKE '" & Constraint & "'"
+                        LineConstraint = "(" & ColumnName & " LIKE '" & Constraint & "')"
                 End Select
 
             Case "IN"
@@ -55,9 +54,7 @@
 
         End Select
 
-#Disable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
         Return LineConstraint
-#Enable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
 
     End Function
     Shared Sub PrimaryKey()
@@ -80,7 +77,7 @@
         Next
 
         If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
-            LineConstraint = Constraints()
+
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
@@ -110,7 +107,7 @@
         Next
 
         If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
-            LineConstraint = Constraints()
+
             NewLine = NewLine & "CHECK (" & LineConstraint & ") "
         End If
 
@@ -267,13 +264,13 @@
 #Enable Warning BC42024 ' Unused local variable: 'Constraint'.
         Dim NewLine As String
 
-        If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
-            LineConstraint = Constraints()
-
-        End If
-
         FieldName = Home.FieldDetails_ColumnNameFld.Text
         LineSize = Home.FieldDetails_Size.Value
+
+        If Home.FieldDetails_CheckChkbx.Checked = True Then 'Check if any constraint apply
+            LineConstraint = Constraints(FieldName)
+
+        End If
 
         NewLine = FieldName & " " & Home.FieldDetails_ColumnTYpeCmbo.Text & " "
 
@@ -313,9 +310,7 @@
         End If
 
         If Home.FieldDetails_CheckChkbx.Checked = True Then
-#Disable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
-            NewLine = NewLine & "CHECK (" & LineConstraint & ") "
-#Enable Warning BC42104 ' Variable 'LineConstraint' is used before it has been assigned a value. A null reference exception could result at runtime.
+            NewLine = NewLine & "CHECK " & LineConstraint
         End If
 
         If Home.FieldDetails_ReferenceChkBx.Checked = True Then
