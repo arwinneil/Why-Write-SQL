@@ -15,6 +15,7 @@ Public Class Home
 #Region "New Table Operation Handles"
 
     Private Sub CreateTable_CreateBtn_Click(sender As Object, e As EventArgs) Handles CreateTable_CreateBtn.Click
+
         CreateTable()
     End Sub
 
@@ -48,6 +49,10 @@ Public Class Home
 
     End Sub
     Private Sub CompleteTableStatement(sender As Object, e As EventArgs) Handles CreateTable_CompleteTableBtn.Click
+
+        Dim i As Integer = Sequence.Items.Count - 1
+        Dim str As String = Sequence.Items(i)
+        Sequence.Items.Item(i) = str.Trim(",")
 
         Sequence.Items.Add(");")
         Sequence.Items.Add("")
