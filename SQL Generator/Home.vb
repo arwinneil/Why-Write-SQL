@@ -379,7 +379,19 @@ Public Class Home
         End If
 
     End Sub
-    Private Sub Rename_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameConfirmBtn.Click
+
+    Private Sub AlterTable_RenameFld_KeyDown(sender As Object, e As KeyEventArgs) Handles AlterTable_RenameFld.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            RenameTable()
+        End If
+    End Sub
+
+    Private Sub AlterTable_RenameConfirmBtn_Click(sender As Object, e As EventArgs) Handles AlterTable_RenameConfirmBtn.Click
+        RenameTable()
+    End Sub
+
+    Private Sub RenameTable()
 
         If Approve.Alter_Table() = True And Approve.Rename() = True Then
             Generate.AlterTable()

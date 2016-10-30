@@ -113,14 +113,14 @@ Partial Class Home
         Me.AlterTable_TableNamaLbl = New System.Windows.Forms.Label()
         Me.AlterTable_TableNameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.AlterTable_ActionContainerPnl = New System.Windows.Forms.Panel()
-        Me.AlterTable_DeleteColumnPnl = New System.Windows.Forms.Panel()
-        Me.AlterTable_DeleteColumnLbl = New System.Windows.Forms.Label()
-        Me.AlterTable_DeleteColumnFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.AlterTable_DeleteColumnConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenamePnl = New System.Windows.Forms.Panel()
         Me.AlterTable_RenameLbl = New System.Windows.Forms.Label()
         Me.AlterTable_RenameConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenameFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.AlterTable_DeleteColumnPnl = New System.Windows.Forms.Panel()
+        Me.AlterTable_DeleteColumnLbl = New System.Windows.Forms.Label()
+        Me.AlterTable_DeleteColumnFld = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.AlterTable_DeleteColumnConfirmBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_BtnTableLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.AlterTable_ModifyColumnBtn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.AlterTable_RenameBtn = New MaterialSkin.Controls.MaterialFlatButton()
@@ -196,8 +196,8 @@ Partial Class Home
         Me.AlterTableLayoutPanel.SuspendLayout()
         Me.AlterTable_TableNamePnl.SuspendLayout()
         Me.AlterTable_ActionContainerPnl.SuspendLayout()
-        Me.AlterTable_DeleteColumnPnl.SuspendLayout()
         Me.AlterTable_RenamePnl.SuspendLayout()
+        Me.AlterTable_DeleteColumnPnl.SuspendLayout()
         Me.AlterTable_BtnTableLayout.SuspendLayout()
         Me.InsertPage.SuspendLayout()
         Me.InsertTableLayout.SuspendLayout()
@@ -1424,14 +1424,73 @@ Partial Class Home
         '
         'AlterTable_ActionContainerPnl
         '
-        Me.AlterTable_ActionContainerPnl.Controls.Add(Me.AlterTable_DeleteColumnPnl)
         Me.AlterTable_ActionContainerPnl.Controls.Add(Me.AlterTable_RenamePnl)
+        Me.AlterTable_ActionContainerPnl.Controls.Add(Me.AlterTable_DeleteColumnPnl)
         Me.AlterTable_ActionContainerPnl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AlterTable_ActionContainerPnl.Location = New System.Drawing.Point(0, 122)
         Me.AlterTable_ActionContainerPnl.Margin = New System.Windows.Forms.Padding(0)
         Me.AlterTable_ActionContainerPnl.Name = "AlterTable_ActionContainerPnl"
         Me.AlterTable_ActionContainerPnl.Size = New System.Drawing.Size(450, 61)
         Me.AlterTable_ActionContainerPnl.TabIndex = 40
+        '
+        'AlterTable_RenamePnl
+        '
+        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameLbl)
+        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameConfirmBtn)
+        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameFld)
+        Me.AlterTable_RenamePnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AlterTable_RenamePnl.Location = New System.Drawing.Point(0, 0)
+        Me.AlterTable_RenamePnl.Name = "AlterTable_RenamePnl"
+        Me.AlterTable_RenamePnl.Size = New System.Drawing.Size(450, 61)
+        Me.AlterTable_RenamePnl.TabIndex = 6
+        Me.AlterTable_RenamePnl.Visible = False
+        '
+        'AlterTable_RenameLbl
+        '
+        Me.AlterTable_RenameLbl.AutoSize = True
+        Me.AlterTable_RenameLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AlterTable_RenameLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AlterTable_RenameLbl.Location = New System.Drawing.Point(13, 8)
+        Me.AlterTable_RenameLbl.Name = "AlterTable_RenameLbl"
+        Me.AlterTable_RenameLbl.Size = New System.Drawing.Size(101, 15)
+        Me.AlterTable_RenameLbl.TabIndex = 57
+        Me.AlterTable_RenameLbl.Text = "Rename Table"
+        '
+        'AlterTable_RenameConfirmBtn
+        '
+        Me.AlterTable_RenameConfirmBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.AlterTable_RenameConfirmBtn.AutoSize = True
+        Me.AlterTable_RenameConfirmBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AlterTable_RenameConfirmBtn.BackColor = System.Drawing.Color.White
+        Me.AlterTable_RenameConfirmBtn.Depth = 0
+        Me.AlterTable_RenameConfirmBtn.ForeColor = System.Drawing.Color.Transparent
+        Me.AlterTable_RenameConfirmBtn.Location = New System.Drawing.Point(382, 26)
+        Me.AlterTable_RenameConfirmBtn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.AlterTable_RenameConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AlterTable_RenameConfirmBtn.Name = "AlterTable_RenameConfirmBtn"
+        Me.AlterTable_RenameConfirmBtn.Primary = False
+        Me.AlterTable_RenameConfirmBtn.Size = New System.Drawing.Size(48, 36)
+        Me.AlterTable_RenameConfirmBtn.TabIndex = 39
+        Me.AlterTable_RenameConfirmBtn.Text = "Done"
+        Me.AlterTable_RenameConfirmBtn.UseVisualStyleBackColor = False
+        '
+        'AlterTable_RenameFld
+        '
+        Me.AlterTable_RenameFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AlterTable_RenameFld.Depth = 0
+        Me.AlterTable_RenameFld.Hint = ""
+        Me.AlterTable_RenameFld.Location = New System.Drawing.Point(7, 33)
+        Me.AlterTable_RenameFld.MouseState = MaterialSkin.MouseState.HOVER
+        Me.AlterTable_RenameFld.Name = "AlterTable_RenameFld"
+        Me.AlterTable_RenameFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.AlterTable_RenameFld.SelectedText = ""
+        Me.AlterTable_RenameFld.SelectionLength = 0
+        Me.AlterTable_RenameFld.SelectionStart = 0
+        Me.AlterTable_RenameFld.Size = New System.Drawing.Size(364, 23)
+        Me.AlterTable_RenameFld.TabIndex = 38
+        Me.AlterTable_RenameFld.UseSystemPasswordChar = False
         '
         'AlterTable_DeleteColumnPnl
         '
@@ -1490,65 +1549,6 @@ Partial Class Home
         Me.AlterTable_DeleteColumnConfirmBtn.TabIndex = 39
         Me.AlterTable_DeleteColumnConfirmBtn.Text = "Done"
         Me.AlterTable_DeleteColumnConfirmBtn.UseVisualStyleBackColor = False
-        '
-        'AlterTable_RenamePnl
-        '
-        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameLbl)
-        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameConfirmBtn)
-        Me.AlterTable_RenamePnl.Controls.Add(Me.AlterTable_RenameFld)
-        Me.AlterTable_RenamePnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AlterTable_RenamePnl.Location = New System.Drawing.Point(0, 0)
-        Me.AlterTable_RenamePnl.Name = "AlterTable_RenamePnl"
-        Me.AlterTable_RenamePnl.Size = New System.Drawing.Size(450, 61)
-        Me.AlterTable_RenamePnl.TabIndex = 6
-        Me.AlterTable_RenamePnl.Visible = False
-        '
-        'AlterTable_RenameLbl
-        '
-        Me.AlterTable_RenameLbl.AutoSize = True
-        Me.AlterTable_RenameLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AlterTable_RenameLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AlterTable_RenameLbl.Location = New System.Drawing.Point(13, 8)
-        Me.AlterTable_RenameLbl.Name = "AlterTable_RenameLbl"
-        Me.AlterTable_RenameLbl.Size = New System.Drawing.Size(101, 15)
-        Me.AlterTable_RenameLbl.TabIndex = 57
-        Me.AlterTable_RenameLbl.Text = "Rename Table"
-        '
-        'AlterTable_RenameConfirmBtn
-        '
-        Me.AlterTable_RenameConfirmBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.AlterTable_RenameConfirmBtn.AutoSize = True
-        Me.AlterTable_RenameConfirmBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.AlterTable_RenameConfirmBtn.BackColor = System.Drawing.Color.White
-        Me.AlterTable_RenameConfirmBtn.Depth = 0
-        Me.AlterTable_RenameConfirmBtn.ForeColor = System.Drawing.Color.Transparent
-        Me.AlterTable_RenameConfirmBtn.Location = New System.Drawing.Point(382, 26)
-        Me.AlterTable_RenameConfirmBtn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.AlterTable_RenameConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER
-        Me.AlterTable_RenameConfirmBtn.Name = "AlterTable_RenameConfirmBtn"
-        Me.AlterTable_RenameConfirmBtn.Primary = False
-        Me.AlterTable_RenameConfirmBtn.Size = New System.Drawing.Size(48, 36)
-        Me.AlterTable_RenameConfirmBtn.TabIndex = 39
-        Me.AlterTable_RenameConfirmBtn.Text = "Done"
-        Me.AlterTable_RenameConfirmBtn.UseVisualStyleBackColor = False
-        '
-        'AlterTable_RenameFld
-        '
-        Me.AlterTable_RenameFld.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AlterTable_RenameFld.Depth = 0
-        Me.AlterTable_RenameFld.Hint = ""
-        Me.AlterTable_RenameFld.Location = New System.Drawing.Point(6, 36)
-        Me.AlterTable_RenameFld.MouseState = MaterialSkin.MouseState.HOVER
-        Me.AlterTable_RenameFld.Name = "AlterTable_RenameFld"
-        Me.AlterTable_RenameFld.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.AlterTable_RenameFld.SelectedText = ""
-        Me.AlterTable_RenameFld.SelectionLength = 0
-        Me.AlterTable_RenameFld.SelectionStart = 0
-        Me.AlterTable_RenameFld.Size = New System.Drawing.Size(364, 23)
-        Me.AlterTable_RenameFld.TabIndex = 38
-        Me.AlterTable_RenameFld.UseSystemPasswordChar = False
         '
         'AlterTable_BtnTableLayout
         '
@@ -2081,10 +2081,10 @@ Partial Class Home
         Me.AlterTable_TableNamePnl.ResumeLayout(False)
         Me.AlterTable_TableNamePnl.PerformLayout()
         Me.AlterTable_ActionContainerPnl.ResumeLayout(False)
-        Me.AlterTable_DeleteColumnPnl.ResumeLayout(False)
-        Me.AlterTable_DeleteColumnPnl.PerformLayout()
         Me.AlterTable_RenamePnl.ResumeLayout(False)
         Me.AlterTable_RenamePnl.PerformLayout()
+        Me.AlterTable_DeleteColumnPnl.ResumeLayout(False)
+        Me.AlterTable_DeleteColumnPnl.PerformLayout()
         Me.AlterTable_BtnTableLayout.ResumeLayout(False)
         Me.AlterTable_BtnTableLayout.PerformLayout()
         Me.InsertPage.ResumeLayout(False)
