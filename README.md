@@ -26,7 +26,9 @@ Current Task:
 - [ ] CODE CLEANUP
 
 ## Release
--  [0.9_Alpha](https://github.com/arwinneil/Why-Write-SQL/releases/tag/0.9_Alpha)
+-  [v1.0 Beta](https://github.com/arwinneil/Why-Write-SQL/releases/tag/v1.0)
+
+<a href="https://github.com/arwinneil/Why-Write-SQL/releases/download/v1.0_Beta/SQL.Script.Generator.v1.0.Beta.zip"><img src="http://i.imgur.com/T8yrIII.png" height="55" ></a>
 
 ## Resources
 - Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin)
