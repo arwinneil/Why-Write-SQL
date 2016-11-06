@@ -10,7 +10,7 @@ Code is generated based on GUI inputs.
 
 ![SQL SCRIPT GENERATOR](http://i.imgur.com/AfATThQ.png)
 
-The initial goal to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
+The initial goal of this prject was to to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
 
 <p align="center">
 <img src="https://i.imgflip.com/1aulgw.jpg"  height="200" >
