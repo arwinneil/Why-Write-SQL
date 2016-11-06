@@ -1,3 +1,5 @@
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/no-ragrets.svg)](http://forthebadge.com)
+
 ![SQL SCRIPT GENERATOR LOGO](http://i.imgur.com/M058kks.jpg)
 
 
