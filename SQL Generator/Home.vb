@@ -418,6 +418,8 @@ Public Class Home
     End Sub
     Private Sub AlterAdd_Click(sender As Object, e As EventArgs) Handles AlterTable_AddColumnBtn.Click
 
+        FieldDetails_CreateFieldBtn.Enabled = True
+
         FieldDetails_ColumnLbl.Text = "Add Column"
 
         FieldGroup.Enabled = True
@@ -431,6 +433,8 @@ Public Class Home
 
     End Sub
     Private Sub AlterModify_Click(sender As Object, e As EventArgs) Handles AlterTable_ModifyColumnBtn.Click
+
+        FieldDetails_CreateFieldBtn.Enabled = True
 
         FieldDetails_ColumnLbl.Text = "Modify Column"
 
@@ -552,6 +556,8 @@ Public Class Home
                 AlterTableLayoutPanel.SetRow(FieldDetails, 2)
                 AlterTableLayoutPanel.SetRowSpan(FieldDetails, 10)
                 FieldDetails.Dock = DockStyle.Fill
+
+                Initialise.NewTable()
 
                 FieldDetails.Visible = False
 
