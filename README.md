@@ -8,7 +8,7 @@
 
 Code is generated based on GUI inputs.
 
-![SQL SCRIPT GENERATOR](http://i.imgur.com/AfATThQ.png)
+![SQL SCRIPT GENERATOR](http://i.imgur.com/DGHYNE0.png)
 
 The initial goal of this prject was to to demonstrate basic coding structures, Visual Basic Language, SQL, [.NET WinForms theming](#resources) and doing my Database Course homework, cause, why not?
 
@@ -22,7 +22,7 @@ The initial goal of this prject was to to demonstrate basic coding structures, V
 - [x] CREATE,DROP & USE Database Commands
 - [x] CREATE,DROP & INSERT INTO Table Commands
 - [x] ALTER TABLE : ADD, DROP, RENAME TO & MODIFY Commands
-- [x] EXPORT to .sql & .txt
+- [x] EXPORT to .sql & .txt, copy script to clipboard.
 
 Current Task:
 - [ ] CODE CLEANUP
