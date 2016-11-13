@@ -32,6 +32,7 @@ Partial Class Home
         Me.Home_MngScriptGrp = New System.Windows.Forms.Panel()
         Me.Home_MngScriptLlb = New System.Windows.Forms.Label()
         Me.Home_MngScriptTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.Home_ScriptCopyBtn = New System.Windows.Forms.PictureBox()
         Me.Home_ScriptNewBtn = New System.Windows.Forms.PictureBox()
         Me.Home_ScriptBrkBtn = New System.Windows.Forms.PictureBox()
         Me.Home_ScriptUndoBtn = New System.Windows.Forms.PictureBox()
@@ -158,13 +159,15 @@ Partial Class Home
         Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.MaterialTabSelector = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.Home_ScriptCopyBtn = New System.Windows.Forms.PictureBox()
+        Me.Insert_Help = New System.Windows.Forms.PictureBox()
+        Me.FieldDetails_CheckHelp = New System.Windows.Forms.PictureBox()
         Me.Home_Main_Layout.SuspendLayout()
         Me.TabContainerPanel.SuspendLayout()
         Me.MaterialTabControl.SuspendLayout()
         Me.HomePage.SuspendLayout()
         Me.Home_MngScriptGrp.SuspendLayout()
         Me.Home_MngScriptTableLayout.SuspendLayout()
+        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Home_ScriptNewBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Home_ScriptBrkBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Home_ScriptUndoBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -215,7 +218,8 @@ Partial Class Home
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ScriptGrp.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
-        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Insert_Help, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FieldDetails_CheckHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Home_Main_Layout
@@ -357,6 +361,20 @@ Partial Class Home
         Me.Home_MngScriptTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.Home_MngScriptTableLayout.Size = New System.Drawing.Size(450, 135)
         Me.Home_MngScriptTableLayout.TabIndex = 0
+        '
+        'Home_ScriptCopyBtn
+        '
+        Me.Home_ScriptCopyBtn.BackColor = System.Drawing.Color.Transparent
+        Me.Home_ScriptCopyBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Home_ScriptCopyBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Home_ScriptCopyBtn.Image = CType(resources.GetObject("Home_ScriptCopyBtn.Image"), System.Drawing.Image)
+        Me.Home_ScriptCopyBtn.Location = New System.Drawing.Point(3, 64)
+        Me.Home_ScriptCopyBtn.Name = "Home_ScriptCopyBtn"
+        Me.Home_ScriptCopyBtn.Size = New System.Drawing.Size(84, 58)
+        Me.Home_ScriptCopyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Home_ScriptCopyBtn.TabIndex = 17
+        Me.Home_ScriptCopyBtn.TabStop = False
+        Me.Tip.SetToolTip(Me.Home_ScriptCopyBtn, "Copy To Clipboard")
         '
         'Home_ScriptNewBtn
         '
@@ -995,6 +1013,9 @@ Partial Class Home
         '
         'FieldDetails_CheckGrp
         '
+        Me.FieldDetails_CheckGrp.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckHelp)
         Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckLbl)
         Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckChkbx)
         Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckTypeLbl)
@@ -1003,6 +1024,7 @@ Partial Class Home
         Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckPstnCmbo)
         Me.FieldDetails_CheckGrp.Controls.Add(Me.FieldDetails_CheckFld)
         Me.FieldDetails_CheckGrp.Location = New System.Drawing.Point(0, 110)
+        Me.FieldDetails_CheckGrp.Margin = New System.Windows.Forms.Padding(0)
         Me.FieldDetails_CheckGrp.Name = "FieldDetails_CheckGrp"
         Me.FieldDetails_CheckGrp.Size = New System.Drawing.Size(441, 174)
         Me.FieldDetails_CheckGrp.TabIndex = 74
@@ -1033,7 +1055,7 @@ Partial Class Home
         '
         Me.FieldDetails_CheckTypeLbl.AutoSize = True
         Me.FieldDetails_CheckTypeLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_CheckTypeLbl.Location = New System.Drawing.Point(88, 21)
+        Me.FieldDetails_CheckTypeLbl.Location = New System.Drawing.Point(67, 16)
         Me.FieldDetails_CheckTypeLbl.Name = "FieldDetails_CheckTypeLbl"
         Me.FieldDetails_CheckTypeLbl.Size = New System.Drawing.Size(65, 13)
         Me.FieldDetails_CheckTypeLbl.TabIndex = 50
@@ -1046,7 +1068,7 @@ Partial Class Home
         Me.FieldDetails_CheckTypeCmbo.FormattingEnabled = True
         Me.FieldDetails_CheckTypeCmbo.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.FieldDetails_CheckTypeCmbo.Items.AddRange(New Object() {"LIKE", "IN", "Numeric/Logical Expresion/Other"})
-        Me.FieldDetails_CheckTypeCmbo.Location = New System.Drawing.Point(88, 40)
+        Me.FieldDetails_CheckTypeCmbo.Location = New System.Drawing.Point(67, 35)
         Me.FieldDetails_CheckTypeCmbo.Name = "FieldDetails_CheckTypeCmbo"
         Me.FieldDetails_CheckTypeCmbo.Size = New System.Drawing.Size(156, 21)
         Me.FieldDetails_CheckTypeCmbo.TabIndex = 55
@@ -1055,7 +1077,7 @@ Partial Class Home
         '
         Me.FieldDetails_StringPstnLbl.AutoSize = True
         Me.FieldDetails_StringPstnLbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.FieldDetails_StringPstnLbl.Location = New System.Drawing.Point(257, 21)
+        Me.FieldDetails_StringPstnLbl.Location = New System.Drawing.Point(236, 16)
         Me.FieldDetails_StringPstnLbl.Name = "FieldDetails_StringPstnLbl"
         Me.FieldDetails_StringPstnLbl.Size = New System.Drawing.Size(74, 13)
         Me.FieldDetails_StringPstnLbl.TabIndex = 52
@@ -1068,7 +1090,7 @@ Partial Class Home
         Me.FieldDetails_CheckPstnCmbo.FormattingEnabled = True
         Me.FieldDetails_CheckPstnCmbo.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.FieldDetails_CheckPstnCmbo.Items.AddRange(New Object() {"Before any string", "After any string", "Between any string", "Other/Specific"})
-        Me.FieldDetails_CheckPstnCmbo.Location = New System.Drawing.Point(260, 40)
+        Me.FieldDetails_CheckPstnCmbo.Location = New System.Drawing.Point(239, 35)
         Me.FieldDetails_CheckPstnCmbo.Name = "FieldDetails_CheckPstnCmbo"
         Me.FieldDetails_CheckPstnCmbo.Size = New System.Drawing.Size(156, 21)
         Me.FieldDetails_CheckPstnCmbo.TabIndex = 51
@@ -1764,6 +1786,7 @@ Partial Class Home
         '
         'Insert_SpecifyColumnPnl
         '
+        Me.Insert_SpecifyColumnPnl.Controls.Add(Me.Insert_Help)
         Me.Insert_SpecifyColumnPnl.Controls.Add(Me.Insert_SpecifyColumnLbl)
         Me.Insert_SpecifyColumnPnl.Controls.Add(Me.Insert_SpecifyColumnChkbx)
         Me.Insert_SpecifyColumnPnl.Controls.Add(Me.Insert_SpecifyColumnFld)
@@ -1800,7 +1823,7 @@ Partial Class Home
         '
         Me.Insert_SpecifyColumnFld.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Insert_SpecifyColumnFld.Enabled = False
-        Me.Insert_SpecifyColumnFld.Location = New System.Drawing.Point(9, 76)
+        Me.Insert_SpecifyColumnFld.Location = New System.Drawing.Point(10, 63)
         Me.Insert_SpecifyColumnFld.Multiline = True
         Me.Insert_SpecifyColumnFld.Name = "Insert_SpecifyColumnFld"
         Me.Insert_SpecifyColumnFld.ScrollBars = System.Windows.Forms.ScrollBars.Both
@@ -2037,19 +2060,35 @@ Partial Class Home
         Me.MaterialTabSelector.TabIndex = 2
         Me.MaterialTabSelector.Text = "MaterialTabSelector1"
         '
-        'Home_ScriptCopyBtn
+        'Insert_Help
         '
-        Me.Home_ScriptCopyBtn.BackColor = System.Drawing.Color.Transparent
-        Me.Home_ScriptCopyBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Home_ScriptCopyBtn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Home_ScriptCopyBtn.Image = CType(resources.GetObject("Home_ScriptCopyBtn.Image"), System.Drawing.Image)
-        Me.Home_ScriptCopyBtn.Location = New System.Drawing.Point(3, 64)
-        Me.Home_ScriptCopyBtn.Name = "Home_ScriptCopyBtn"
-        Me.Home_ScriptCopyBtn.Size = New System.Drawing.Size(84, 58)
-        Me.Home_ScriptCopyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Home_ScriptCopyBtn.TabIndex = 17
-        Me.Home_ScriptCopyBtn.TabStop = False
-        Me.Tip.SetToolTip(Me.Home_ScriptCopyBtn, "Copy To Clipboard")
+        Me.Insert_Help.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Insert_Help.BackColor = System.Drawing.Color.Transparent
+        Me.Insert_Help.Cursor = System.Windows.Forms.Cursors.Help
+        Me.Insert_Help.Image = CType(resources.GetObject("Insert_Help.Image"), System.Drawing.Image)
+        Me.Insert_Help.Location = New System.Drawing.Point(396, 13)
+        Me.Insert_Help.Name = "Insert_Help"
+        Me.Insert_Help.Size = New System.Drawing.Size(39, 34)
+        Me.Insert_Help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Insert_Help.TabIndex = 57
+        Me.Insert_Help.TabStop = False
+        Me.Tip.SetToolTip(Me.Insert_Help, "Enter 1 Item Per Line" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Separate each items by changing lines, for example:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ite" &
+        "m 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Item 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Item 3" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Field autodetects numeric values." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        '
+        'FieldDetails_CheckHelp
+        '
+        Me.FieldDetails_CheckHelp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FieldDetails_CheckHelp.BackColor = System.Drawing.Color.Transparent
+        Me.FieldDetails_CheckHelp.Cursor = System.Windows.Forms.Cursors.Help
+        Me.FieldDetails_CheckHelp.Image = CType(resources.GetObject("FieldDetails_CheckHelp.Image"), System.Drawing.Image)
+        Me.FieldDetails_CheckHelp.Location = New System.Drawing.Point(401, 20)
+        Me.FieldDetails_CheckHelp.Name = "FieldDetails_CheckHelp"
+        Me.FieldDetails_CheckHelp.Size = New System.Drawing.Size(39, 34)
+        Me.FieldDetails_CheckHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.FieldDetails_CheckHelp.TabIndex = 71
+        Me.FieldDetails_CheckHelp.TabStop = False
+        Me.Tip.SetToolTip(Me.FieldDetails_CheckHelp, "Enter 1 Item Per Line" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Separate each items by changing lines, for example:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ite" &
+        "m 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Item 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Item 3" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Field autodetects numeric values.")
         '
         'Home
         '
@@ -2071,6 +2110,7 @@ Partial Class Home
         Me.Home_MngScriptGrp.ResumeLayout(False)
         Me.Home_MngScriptGrp.PerformLayout()
         Me.Home_MngScriptTableLayout.ResumeLayout(False)
+        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Home_ScriptNewBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Home_ScriptBrkBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Home_ScriptUndoBtn, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2144,7 +2184,8 @@ Partial Class Home
         Me.ScriptGrp.ResumeLayout(False)
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
-        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Insert_Help, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FieldDetails_CheckHelp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2283,4 +2324,6 @@ Partial Class Home
     Friend WithEvents Sequence As ListBox
     Friend WithEvents Home_FeedbackBtn As PictureBox
     Friend WithEvents Home_ScriptCopyBtn As PictureBox
+    Friend WithEvents Insert_Help As PictureBox
+    Friend WithEvents FieldDetails_CheckHelp As PictureBox
 End Class
