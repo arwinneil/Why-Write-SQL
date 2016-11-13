@@ -158,6 +158,7 @@ Partial Class Home
         Me.Tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.MaterialTabSelector = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.Home_ScriptCopyBtn = New System.Windows.Forms.PictureBox()
         Me.Home_Main_Layout.SuspendLayout()
         Me.TabContainerPanel.SuspendLayout()
         Me.MaterialTabControl.SuspendLayout()
@@ -214,6 +215,7 @@ Partial Class Home
         Me.MainTableLayoutPanel.SuspendLayout()
         Me.ScriptGrp.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
+        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Home_Main_Layout
@@ -338,6 +340,7 @@ Partial Class Home
         Me.Home_MngScriptTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.Home_MngScriptTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.Home_MngScriptTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.Home_MngScriptTableLayout.Controls.Add(Me.Home_ScriptCopyBtn, 0, 1)
         Me.Home_MngScriptTableLayout.Controls.Add(Me.Home_ScriptNewBtn, 0, 1)
         Me.Home_MngScriptTableLayout.Controls.Add(Me.Home_ScriptBrkBtn, 3, 0)
         Me.Home_MngScriptTableLayout.Controls.Add(Me.Home_ScriptUndoBtn, 0, 0)
@@ -361,7 +364,7 @@ Partial Class Home
         Me.Home_ScriptNewBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Home_ScriptNewBtn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Home_ScriptNewBtn.Image = CType(resources.GetObject("Home_ScriptNewBtn.Image"), System.Drawing.Image)
-        Me.Home_ScriptNewBtn.Location = New System.Drawing.Point(3, 64)
+        Me.Home_ScriptNewBtn.Location = New System.Drawing.Point(93, 64)
         Me.Home_ScriptNewBtn.Name = "Home_ScriptNewBtn"
         Me.Home_ScriptNewBtn.Size = New System.Drawing.Size(84, 58)
         Me.Home_ScriptNewBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -2034,6 +2037,20 @@ Partial Class Home
         Me.MaterialTabSelector.TabIndex = 2
         Me.MaterialTabSelector.Text = "MaterialTabSelector1"
         '
+        'Home_ScriptCopyBtn
+        '
+        Me.Home_ScriptCopyBtn.BackColor = System.Drawing.Color.Transparent
+        Me.Home_ScriptCopyBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Home_ScriptCopyBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Home_ScriptCopyBtn.Image = CType(resources.GetObject("Home_ScriptCopyBtn.Image"), System.Drawing.Image)
+        Me.Home_ScriptCopyBtn.Location = New System.Drawing.Point(3, 64)
+        Me.Home_ScriptCopyBtn.Name = "Home_ScriptCopyBtn"
+        Me.Home_ScriptCopyBtn.Size = New System.Drawing.Size(84, 58)
+        Me.Home_ScriptCopyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Home_ScriptCopyBtn.TabIndex = 17
+        Me.Home_ScriptCopyBtn.TabStop = False
+        Me.Tip.SetToolTip(Me.Home_ScriptCopyBtn, "Copy To Clipboard")
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2127,6 +2144,7 @@ Partial Class Home
         Me.ScriptGrp.ResumeLayout(False)
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
+        CType(Me.Home_ScriptCopyBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2264,4 +2282,5 @@ Partial Class Home
     Friend WithEvents FieldDetails_PrimFld As TextBox
     Friend WithEvents Sequence As ListBox
     Friend WithEvents Home_FeedbackBtn As PictureBox
+    Friend WithEvents Home_ScriptCopyBtn As PictureBox
 End Class

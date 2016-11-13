@@ -608,6 +608,20 @@ Public Class Home
         Process.Start("https://goo.gl/forms/rldiWUoFZx4LjSeq2")
     End Sub
 
+    Private Sub Home_ScriptCopyBtn_Click(sender As Object, e As EventArgs) Handles Home_ScriptCopyBtn.Click
+
+        Dim buffer As String
+
+        For i = 0 To Sequence.Items.Count - 1
+
+            buffer = buffer + Sequence.Items.Item(i) + vbCrLf
+
+        Next
+
+        Clipboard.Clear()
+        Clipboard.SetText(buffer)
+    End Sub
+
 #End Region
 
 End Class
