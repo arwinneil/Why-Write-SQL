@@ -3,7 +3,6 @@
 ![SQL SCRIPT GENERATOR LOGO](http://i.imgur.com/M058kks.jpg)
 
 
-## Getting Started
 [SQL Script Generator](https://github.com/arwinneil/Why-Write-SQL) is a SQL code generator database building tool, aiming to reduce time of coding and debugging, speed up projects, reducing human errors and avoiding repetitive tasks.
 
 Code is generated based on GUI inputs.
