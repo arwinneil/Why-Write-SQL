@@ -35,15 +35,15 @@ Current Task:
 - Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin)
 - Icons from [Material Icons](https://design.google.com/icons/)
 
-##Tools & Utilities
+## Tools & Utilities
 - [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/)- A web-based set of tools for generating graphics and other assets 
 - [ILMerge](https://www.microsoft.com/en-us/download/confirmation.aspx?id=17630) & [ILMerge-GUI](http://ilmergegui.codeplex.com/)- For merging assemblies. (.exe & dlls)
 - [CodeMaid](http://www.codemaid.net/) - Visual Studio Extenion with some handy coding tools.
 
-##Licence
+## Licence
 [MIT License](LICENSE)
 
-##Author
+## Author
 [Arwin Neil Baichoo](https://github.com/arwinneil)
 
 <a href="https://www.linkedin.com/in/arwinneil"><img src="http://image.flaticon.com/icons/svg/179/179330.svg" align="left" height="48" width="48" ></a><a href="https://www.instagram.com/arwinneil/"><img src="http://image.flaticon.com/icons/svg/145/145805.svg" align="left" height="48" width="48" ></a>
